@@ -2362,3 +2362,26 @@
 			}
 
 	}
+
+#livros {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+#book {
+	margin-bottom: 40px;
+}
+
+#capa {
+	width: 100px;
+	height: 160px;
+}	
+
+#titulo {
+	font-weight: bold;
+}
+
+#titulo {
+	font-weight: bold;
+	margin: 300px;
+	padding: 0px;
+}
