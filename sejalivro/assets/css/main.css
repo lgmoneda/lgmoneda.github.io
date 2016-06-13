@@ -2385,3 +2385,13 @@
 	margin: 300px;
 	padding: 0px;
 }
+
+.youtube h3::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -4px;
+    width: 43px;
+    height: 40px;
+    background: transparent url("../images/sprite-social.png") no-repeat scroll 0% 0%;
+}
