@@ -3,6 +3,7 @@
 	ZeroFour by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	oi
 -->
 <html>
 	<head>
@@ -14,6 +15,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
 		</script>
 		<style type="text/css">
 		* {
@@ -51,22 +53,27 @@
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
+
 			<!-- Header -->
-				<div id="header-wrapper" style="background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg02.png");">
+				<div id="header-wrapper">
 					<div class="container">
+
 						<!-- Header -->
 							<header id="header">
 								<div class="inner">
+
 									<!-- Logo -->
 										<h1><a href="index.html" id="logo">SejaLivro</a></h1>
+
 									<!-- Nav -->
 										<nav id="nav">
 											<ul>
+												<!--<li class="current_page_item"><a href="index.html">Menu</a></li> -->
 												<li> 
 													<a href="#">Como funciona</a>
 													<ul> 
-														<div class="4u 12u(mobile)">
-															<div class="row"> 
+														<div class="row">
+															<div class="4u 12u(mobile)"> 
 																<section>
 																	Cadastre-se: </br>
 																	Entra aqui e faz o seu </br> 
@@ -119,24 +126,32 @@
 														<li><a href="#">Veroeros feugiat</a></li>
 													</ul>
 												</li> 
+												<!--
+												<li><a href="left-sidebar.html">Left Sidebar</a></li>
+												<li><a href="right-sidebar.html">Right Sidebar</a></li>
+												<li><a href="no-sidebar.html">No Sidebar</a></li>
+												-->
 											</ul>
 										</nav>
 								</div>
 							</header>
-					</div>
+						</div>
 				</div>
 
 			<!-- Main Wrapper -->
 				<div id="main-wrapper">
-					<div class="wrapper style1">
+					<div class="wrapper style2">
 						<div class="inner">
+
 							<!-- Feature 1 -->
 								<section class="container box feature1">
 									<div class="row" id="cadastro">
-										<div class="4u 12u(mobile)">
+										<div class="6u 12u(mobile)">
 											<section>
-												<header> 
-													<h3>Dados pessoais</h3>
+												<header>
+													<h3>Dados pessoais</h3>													
+												</header>	
+												<article>
 													<form action="#" method="post">
 														<fieldset>
 															<p><input type="text" id="name" value="Nome" onfocus="this.value='';" /></p>
@@ -147,13 +162,15 @@
 															<p><input type="text" id="birthDate" value="Data de nascimento" onfocus="this.value='';" /></p>
 														</fieldset>
 													</form>
-												</header>
+												</article>
 											</section>
 										</div>
-										<div class="4u 12u(mobile)">
+										<div class="6u 12u(mobile)">
 											<section>
 												<header>
 													<h3>Endereço</h3>
+												</header>
+												<article>
 													<form>
 														<fieldset>
 															<p><input type="text" id="cep" value="CEP" onfocus="this.value='';" /></p>
@@ -161,14 +178,18 @@
 															<p><input type="text" id="compl" value="Complemento" onfocus="this.value='';" /></p>
 														</fieldset>
 													</form>
-												</header>
+												</article>
+												<footer>
+													<a href="cadastro.html" class="button medium icon">Cadastrar</a>
+												</footer>
 											</section>
 										</div>
-										<div class="4u 12u(mobile)">
+										<div class="6u 12u(mobile)">
 											<section>
-												
 												<header>
 													<h3>Cadastre uma senha</h3>
+												</header>
+												<article>
 													<form>
 														<fieldset>
 															<p><input type="email" id="email" value="Email" onfocus="this.value='';" /></p>
@@ -176,20 +197,19 @@
 															<p><input type="password" id="confPassword" value="Confirmar senha" onfocus="this.value='';" /></p>
 														</fieldset>
 													</form>
-												</header>
+												</article>
+												<footer>
+													<a href="profile.html" class="button big icon fa-arrow-circle-right">Cadastrar</a>
+												</footer>
 											</section>
 										</div>
 									</div>
-									<div class="row">
-										<div class="12u">
-											<a href="#" class="button big icon fa-arrow-circle-right">Cadastrar</a>
-										</div>
-									</div>
 								</section>
-
-						</div>
+							</div>
 					</div>
-						<!-- Footer Wrapper -->
+				</div>
+
+			<!-- Footer Wrapper -->
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
 						<div class="row">
