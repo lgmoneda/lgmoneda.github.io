@@ -2559,7 +2559,8 @@
 }
 
 dl.inline dd {
-  display: inline;
+  display: block;
+  vertical-align:middle;
   margin:  0 0 1em 6em;
 }
 
