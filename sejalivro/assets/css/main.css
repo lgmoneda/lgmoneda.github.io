@@ -2395,3 +2395,7 @@
     height: 40px;
     background: transparent url("../images/sprite-social.png") no-repeat scroll 0% 0%;
 }
+
+.valorDestaque {
+	font-size: 20px;
+}
