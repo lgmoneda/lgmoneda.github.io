@@ -1517,10 +1517,12 @@
 		color: #696969;
 		float: left;
 		width: 6em;
+		vertical-align: middle;
 	}
 
 	dl.contact dd {
 		margin: 0 0 1em 6em;
+		vertical-align: middle;
 	}
 
 	ul.default {
