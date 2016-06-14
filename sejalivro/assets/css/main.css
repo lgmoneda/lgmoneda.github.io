@@ -2560,6 +2560,7 @@
 
 dl.inline dd {
   display: inline;
+  float: right;
   margin: 0;
 }
 dl.inline dd:after{
@@ -2571,7 +2572,7 @@ dl.inline dt{
   text-transform: uppercase;
   font-size: 0.9em;
   color: #696969;
-  float: left;
+  float: right;
   min-width: 100px;
 }
 /*dl.inline dd {
