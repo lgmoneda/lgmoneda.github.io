@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	oi
+-->
+<html>
+	<head>
+		<title>SejaLivro - Assinatura Literária</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+		</script>
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper" style="background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg02.png");">
+					<div class="container">
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">SejaLivro</a></h1>
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li> 
+													<a href="profile.html">Meu Perfil</a>
+												</li>
+												<li>
+													<a href="my_books.html">Meus livros</a>
+												</li>
+												<li>
+													<a href="logout.html">Sair</a>
+												</li>
+											</ul>
+										</nav>
+								</div>
+							</header>
+					</div>
+				</div>
+				
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style3">
+						<div class="inner">
+							<div class="container">
+							<section class="container box feature1">
+									<div class="row" id="createBook">
+										<div class="12u">
+											<header>
+												<h2>Visualizar item</h2>
+											</header>
+											<a href="#" class="image featured"><img src="images/avatar.png" alt="" /></a>
+												<dl class="inline">
+													<dt>Nome: </dt>
+													<dd>Nome do Livro</dd>
+													<dt>ISBN: </dt>
+													<dd>ISBN do livro</dd>
+													<dt>Autor: </dt>
+													<dd>Autor do Livro</dd>
+													<dt>Ano: </dt>
+													<dd>Ano de publicação</dd>
+													<dt>Idioma: </dt>
+													<dd>Idioma do livro</dd>
+													<dt>Editora: </dt>
+													<dd>Editora do Livro</dd>
+												</dl>
+											<footer>
+											  <span> <a href="#" class="button">Voltar</a>  
+											  <a href="#" class="button">Editar</a>
+											  <a href="#" class="button">Excluir</a> 
+											  </span>
+											</footer>	
+										</div>
+									</div>
+							  </section>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="6u 12u(mobile)"> 
+								<!-- About -->
+									<section>
+										<h2><strong>SejaLivro</strong></h2>
+										<p>Olá! Este é o <strong>SejaLivro</strong>, um serviço de assinatura de livros. Você adquire um pacote por valor fixo e nós nos encarregamos de te surpreender com novas leituras, sem qualquer dor de cabeça e entrega em sua casa!</p>
+										<a href="#simular" class="button icon fa-arrow-circle-right" style="align: center;">Simular Assinatura</a>
+									</section>
+							</div>
+							
+							<div class="6u 12u(mobile)">
+								<!-- Contact -->
+									<section>
+										<h2>Redes Sociais</h2>
+										<div>
+											<div class="row">
+												<div class="6u 12u(mobile)">
+													<dl class="contact">
+														<dt>Twitter</dt>
+														<dd><a href="#">@SejaLivro</a></dd>
+														<dt>Facebook</dt>
+														<dd><a href="#">facebook.com/SejaLivro</a></dd>
+														<dt>WWW</dt>
+														<dd><a href="#">sejalivro.com</a></dd>
+														<dt>Email</dt>
+														<dd><a href="#">contato@sejalivro.com</a></dd>
+													</dl>
+												</div>
+												<div class="6u 12u(mobile)">
+													<dl class="contact">
+														<dt>Endereço</dt>
+														<dd>
+															Av. Luciano Gualberto, 314, Cid. Universitária<br />
+															São Paulo, SP 01300-7800<br />
+															Brasil
+														</dd>
+														<dt>Telefone</dt>
+														<dd>(11) 0800-9999</dd>
+													</dl>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
