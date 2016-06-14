@@ -2573,6 +2573,7 @@ dl.inline dt{
   font-size: 0.9em;
   color: #696969;
   float: left;
+  font-weight: 700;
   min-width: 100px;
 }
 /*dl.inline dd {
