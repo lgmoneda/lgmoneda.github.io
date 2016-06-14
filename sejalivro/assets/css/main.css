@@ -2560,15 +2560,11 @@
 
 dl.inline dd {
   display: inline;
-  
   margin:  0 0 1em 6em;
 }
-dl.inline dd:after{
-  display: block;
-  content: '';
-}
+
 dl.inline dt{
-  display:table-cell;
+  display:block;
   vertical-align:middle;
   text-transform: uppercase;
   font-weight: 700;
