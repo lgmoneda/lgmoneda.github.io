@@ -2572,7 +2572,7 @@ dl.inline dt{
   text-transform: uppercase;
   font-size: 0.9em;
   color: #696969;
-  float: right;
+  float: left;
   min-width: 100px;
 }
 /*dl.inline dd {
