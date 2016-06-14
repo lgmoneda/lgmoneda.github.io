@@ -2560,6 +2560,7 @@
 
 dl.inline dd {
   display: inline;
+  float: left;
   margin: 0;
 }
 dl.inline dd:after{
