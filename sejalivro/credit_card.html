@@ -1,0 +1,70 @@
+<!-- Tipo de pagamento -->
+<div class=row id="credit_payment">
+	<div class="wrapper style2">
+	  <div class="4u 12u(mobile)">
+	    <section>
+	      <header>
+		<h3>Dados de pagamento </h3>													
+		</header>	
+	      <article>
+					<form action="action_page.php">
+						<fieldset>
+							<p>
+							  <label for="number">
+							    <span>Número do cartão </span>
+							    <input type="text" id="number" />
+							  </label>
+							</p>
+							<p>
+							  <label for="name">
+							    <span>Nome impresso no cartão </span>
+							    <input type="text" id="name" />
+							  </label>
+							</p>
+							<p>
+							  <label for="date">
+							    <span>Validade </span>
+							    <input type="month" id="date" />
+							  </label>
+							</p>
+							<p>
+							  <label for="secCode">
+							    <span>Código de segurança </span>
+							    <input type="text" id="secCode" />
+							  </label>
+							</p>
+							<p>
+							  <label for="payment">
+							    <span>Pagar </span>
+							    <select id="parcela">
+                    <option value="parcelas">Parcelas</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <span> x R$ o valor da parcela aqui </span>
+							  </label>
+							</p> 
+						</fieldset>
+					</form>
+				</article>
+				<footer>
+				  <div class="row">
+							<div class="12u">
+								<a href="#" class="button big icon fa-arrow-circle-right">Pagar</a>
+							</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+	</div>
+</div>

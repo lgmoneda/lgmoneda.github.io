@@ -16,39 +16,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 		</script>
-		<style type="text/css">
-		* {
-			margin:0;
-			padding:0;
-		}
-		form fieldset {
-			margin:20px;
-			padding:20px;
-		}
-		form fieldset label {
-			display:inline;
-			float:left;
-			width:100px;
-			height:22px;
-			line-height:22px;
-			text-align:left;
-			font-weight:normal;
-			font-size:100%;
-			color:#333;
-			margin:6px 10px 0 0;
-			overflow:hidden;
-		}
-		form fieldset label input {
-			display:inline;
-			float:left;
-			width:auto;
-			height:22px;
-			line-height:22px;
-			margin:0 3px 0 0;
-			padding:0;
-			border:none;
-		}
-		</style>
+		</script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -86,40 +54,79 @@
 						<div class="inner">
 
 							<!-- Feature 1 -->
-								<section class="container box feature2">
-									<div class="row" id="logar">
-										<div class="6u 12u(mobile)">
+								<section class="container box feature1">
+									<div class="row" id="vantagens">
+										<div class="4u 12u(mobile)">
 											<section>
 												<header>
-													<h2>Valor da assinatura </h2>
-													
+													<h3>Dados pessoais</h3>													
 												</header>
-												<p>R$ <span class="valorDestaque" id="valor">"O VALOR VARIÁVEL AQUI!" </span></p>
+												<a href="#" class="image featured"><img src="images/avatar.png" alt="" /></a>
+												<article>
+													<p>Nome: </><span>Fulano de Tal</span></p>
+													<p>CPF: </><span>O número aqui</span></p>
+													<p>Data de nascimento: </><span>A data aqui</span></p>
+													<p>Endereço: </><span>O endereço aqui</span></p>
+												</article>
+												<footer>
+												  <p><a href="cadastro.html" class="button" style="align: center;">Atualizar dados</a></p>
+												  <p><a href="cancel.html" class="button" style="align: center;">Cancelar conta</a></p>
+												</footer>
 											</section>
 										</div>
-										<div class="6u 12u(mobile)">
+										<div class="4u 12u(mobile)">
 											<section>
 												<header>
-													<h2>Forma de pagamento</h2>
+													<h3>Dados de assinatura</h3>
 												</header>
 												<article>
-													<form action="#" method="post">
-														<fieldset>
-															<p><label for="boleto"><input type="radio" name="formaPagamento" id="boleto" value="boleto" /> Boleto</label>
-															<label for="card"><input type="radio" name="formaPagamento" id="card" value="card" /> Cartão de crédito</label>
-          													</p>
-														</fieldset>
-													</form>
-													<div id=paymentType>
-														<p>Escolha a forma de pagamento</p>
-													</div>
-													
+													<p>Status da assinatura: </><span>Ativo/Inativo aqui </span></p>
+													<p>Periodicidade: </><span>Periodicidade aqui </span></p>
+													<p>Quantidade: </><span>Quantidade de livros aqui </span></p>
+													<p>Preferências: </><span>Preferências aqui </span></p>
 												</article>
+												<footer>
+												  <p><a href="assinatura.html" class="button" style="align: center;">Alterar assinatura</a></p>
+												  <p><a href="cancelAssinatura.html" class="button" style="align: center;">Cancelar assinatura</a></p>
+												</footer>
+											</section>
+										</div>
+										<div class="4u 12u(mobile)">
+											<section>
+												<header>
+													<h3>Biblioteca pessoal</h3>
+												</header>
+												<article>
+													<div class="row" id="livros">
+										        			<div class="1.5u 6u(mobile)">
+											        			<img id="capa" src="images/overcoat.jpg"/><br>
+        														<span style="font-weight: bold;"> Overcoat</span><br>
+						        								<span style="font-style: italic;"> Nikolai Gogol</span><br>
+									        				</div>
+													        <div class="1.5u 6u(mobile)">
+													        	<img id="capa" src="images/overcoat.jpg"/><br>
+					        									<span style="font-weight: bold;"> Overcoat</span><br>
+									        					<span style="font-style: italic;"> Nikolai Gogol</span><br>
+											                        </div>
+        													<div class="1.5u 6u(mobile)">
+							        							<img id="capa" src="images/overcoat.jpg"/><br>
+											        			<span style="font-weight: bold;"> Overcoat</span><br>
+        														<span style="font-style: italic;"> Nikolai Gogol</span><br>
+        													</div>
+        													<div class="1.5u 6u(mobile)">
+							        							<img id="capa" src="images/overcoat.jpg"/><br>
+											        			<span style="font-weight: bold;"> Overcoat</span><br>
+        														<span style="font-style: italic;"> Nikolai Gogol</span><br>
+        													</div>
+        												</div>
+												</article>
+												<footer>
+												  <a href="#importar" class="button" style="align: center;">Importar</a>
+												</footer>
 											</section>
 										</div>
 									</div>
 								</section>
-
 							</div>
 					</div>
 				</div>
