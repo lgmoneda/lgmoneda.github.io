@@ -2568,7 +2568,8 @@ dl.inline dd:after{
   content: '';
 }
 dl.inline dt{
-  display: inline-block;
+  display:table-cell;
+  vertical-align:middle;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.065em;
