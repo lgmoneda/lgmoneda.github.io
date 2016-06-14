@@ -2559,6 +2559,18 @@
 }
 
 dl.inline dd {
+  display: inline;
+  margin: 0;
+}
+dl.inline dd:after{
+  display: block;
+  content: '';
+}
+dl.inline dt{
+  display: inline-block;
+  min-width: 100px;
+}
+/*dl.inline dd {
   display: block;
   vertical-align:middle;
   margin:  0 0 1em 6em;
@@ -2576,3 +2588,4 @@ dl.inline dt{
   width: 8em;
   min-width: 100px;
 }
+*/
