@@ -50,6 +50,11 @@ ul.posts li {
 }
 
 img {
-   padding:1px;
-   border:2px solid #021a40;
+    padding:1px;
+    border:2px solid #021a40;
+}
+
+p.meta {
+    font-size: 1.0em;
+    text-decoration: underline;
 }
