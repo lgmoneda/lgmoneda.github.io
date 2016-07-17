@@ -10,12 +10,31 @@
 		<body>
 			<h1 align="center">@lgmoneda</h1>
 			<nav align="center">
-	    		<ul>
+				<ul>
+	  				{% for menu in site.t[page.lang] %}
+	    			<li><a href="{{ menu[1].url }}">{{ menu[1].name }}</a></li>
+	  				{% endfor %}
+	  				<li><a href="/"> / </a></li> 
+	  				{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+					{% for page in pages %}
+  					<li>
+    					<a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+  					</li>
+					{% endfor %}
+				</ul>
+	    		<!--<ul>
 	        		<li><a href="/">Home</a></li>
 		        	<li><a href="/about">About</a></li>
 	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	    		</ul>
+	        		<li><a href="/blog">Blog</a></li> 
+	        		<li><a href="/"> / </a></li> 
+					{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+					{% for page in pages %}
+  					<li>
+    					<a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+  					</li>
+					{% endfor %}
+	    		</ul> -->
 			</nav>
 			<div class="container">
 			

@@ -19,6 +19,7 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
+
 a {
     text-decoration: none;
     color: #999;
@@ -57,4 +58,12 @@ img {
 p.meta {
     font-size: 1.0em;
     text-decoration: underline;
+}
+
+.en:lang(en), .fr:lang(fr), .pt:lang(pt){
+    font-weight: bold;
+}
+
+.lang {
+    float: right;
 }

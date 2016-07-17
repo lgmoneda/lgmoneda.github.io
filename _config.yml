@@ -1,2 +1,40 @@
 name: lgmoneda
 markdown: kramdown
+
+t:
+  en:
+    home:
+      name: "Home"
+      url: "/"
+    about:
+      name: "About"
+      url: "/about/"
+    cv:
+      name: "cv"
+      url: "/cv/"
+    blog:
+      name: "blog"
+      url: "/blog/"
+  fr:
+    home:
+      name: "Accueil"
+      url: "/accueil/"
+    about:
+      name: "À propos"
+      url: "/a-propos/"
+    cv:
+      name: "cv"
+      url:  "/cv/"
+  pt:
+    home:
+      name: "Início"
+      url: "index-pt.html"
+    about:
+      name: "Sobre"
+      url: "/about/index-pt.html"
+    cv:
+      name: "cv"
+      url: "/cv/index-pt.html"
+    blog:
+      name: "blog"
+      url: "/blog/index-pt.html"
