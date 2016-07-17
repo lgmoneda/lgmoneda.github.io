@@ -28,7 +28,7 @@ t:
   pt:
     home:
       name: "Início"
-      url: "index-pt.html"
+      url: "/index-pt.html"
     about:
       name: "Sobre"
       url: "/about/index-pt.html"
