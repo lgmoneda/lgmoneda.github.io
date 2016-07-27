@@ -21,6 +21,16 @@
     					<a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
   					</li>
 					{% endfor %}
+					<!-- Multi languages for posts too -->
+
+					{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+					{% for post in posts %}
+  					<li>
+  						<span class="flag-icon flag-icon-gr flag-icon-squared"></span>
+    					<a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+  					</li>
+					{% endfor %}
+
 				</ul>
 	    		<!--<ul>
 	        		<li><a href="/">Home</a></li>
