@@ -52,6 +52,11 @@ ul.posts li {
 
 img {
     padding:1px;
+
+}
+
+img.profile {
+    padding:1px;
     border:2px solid #021a40;
 }
 
