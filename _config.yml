@@ -4,10 +4,10 @@ markdown: kramdown
 t:
   en:
     home:
-      name: "Home"
+      name: "home"
       url: "/"
     about:
-      name: "About"
+      name: "about"
       url: "/about/"
     cv:
       name: "cv"
@@ -27,10 +27,10 @@ t:
       url:  "/cv/"
   pt:
     home:
-      name: "Início"
+      name: "início"
       url: "/index-pt.html"
     about:
-      name: "Sobre"
+      name: "sobre"
       url: "/about/index-pt.html"
     cv:
       name: "cv"
