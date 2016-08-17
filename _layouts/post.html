@@ -2,7 +2,14 @@
 layout: default
 ---
 
-
+<ul>
+{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+{% for post in posts %}
+  <li>
+  	<span class="flag-icon flag-icon-gr flag-icon-squared"></span>
+    <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+  </li>
+{% endfor %}
 
 
 <h2>{{ page.title }}</h2>
