@@ -1,5 +1,6 @@
 name: lgmoneda
 markdown: kramdown
+highlighter: rouge
 
 t:
   en:
@@ -15,6 +16,9 @@ t:
     blog:
       name: "blog"
       url: "/blog/"
+    projects:
+      name: "projects"
+      url: "/projects/"
   fr:
     home:
       name: "Accueil"
@@ -38,3 +42,8 @@ t:
     blog:
       name: "blog"
       url: "/blog/index-pt.html"
+    projects:
+      name: "projetos"
+      url: "/projects/index-pt.html"
+
+gems: [jekyll-gist]
