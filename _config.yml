@@ -46,4 +46,4 @@ t:
       name: "projetos"
       url: "/projects/index-pt.html"
 
-gems: [jekyll-gist]
+gems: [rouge]
