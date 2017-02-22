@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "Alternativa para recarregamento de módulos no Python Shell do Emacs"
+title: "A solution for the reload modules problem in Emacs Python Shell"
 date: 2017-02-19
-lang: pt
-ref: emacs-python-shell
+lang: en
+ref: emacs-python-shell-eng
 comments: true
 ---
 
-Um grande problema de utilizar o ```C-c C-c``` para enviar o buffer atual para o interpretador Python é que os módulos não são recarregados. Ou seja, após a primeira vez em que se roda um programa em Python, todos os imports permanecem os mesmos e, portanto, caso você esteja editando um módulo, as modificações não terão efeito. A saída para isso é forçar que o processo seja terminado e reiniciá-lo. Além disso, alguns outros comportamentos foram pensados para deixar mais cômodo:
+An annoying problem in using the ```C-c C-c``` to send the current buffer to the python shell is that the modules are not reloaded. I mean, after the first time we run our script, all the imported modules still the same, even if we modify them, the interpreter would not reload it to make the changes take effect. We can solve it by forcing the Python Process to restart each time we call the ```python-shell-send-buffer```. Beyond that, some other behaviours are added to it: 
 
-1. Na primeira vez que um buffer é enviado para rodar, o shell será inicializado automaticamente.
-2. Na demais vezes, o processo do Python será reinicializado.
-3. Caso a window do Python Shell não esteja visível, ela será trazida para frente.
+1. The first time a buffer is sent to shell, it'll be started automatically;
+2. For the forther tmes, the Python process will be restarted;
+3. If the Python Shell window is no visible in any frame, we pop up it;
 
-Para tal, basta adicionar ao init.el:  
+Just add to your init.el:
 
 ```elisp
 ;; Run python and pop-up its shell.
