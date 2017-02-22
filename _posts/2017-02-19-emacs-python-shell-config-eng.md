@@ -3,7 +3,7 @@ layout: post
 title: "A solution for the reload modules problem in Emacs Python Shell"
 date: 2017-02-19
 lang: en
-ref: emacs-python-shell-eng
+ref: emacs-python-shell
 comments: true
 ---
 
