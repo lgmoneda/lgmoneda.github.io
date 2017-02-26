@@ -30,24 +30,20 @@ Para tal, basta adicionar ao init.el:
      )
   (run-python (python-shell-parse-command) nil nil)
   (python-shell-send-buffer)
-  ;; Pop new window only if shell isn't visible
+  ;; Pop new window only if shell isnt visible
   ;; in any frame.
   (unless (get-buffer-window "*Python*" t) 
-    (python-shell-switch-to-shell)
-    )
- )
+    (python-shell-switch-to-shell)))
 
 (defun my-python-shell-run-region ()
   (interactive)
   (python-shell-send-region (region-beginning) (region-end))
-  (python-shell-switch-to-shell)
-  )
+  (python-shell-switch-to-shell))
 
 (eval-after-load "python"
   '(progn
      (define-key python-mode-map (kbd "C-c C-c") 'my-python-shell-run)
      (define-key python-mode-map (kbd "C-c C-r") 'my-python-shell-run-region)
-     (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)
-     ))
+     (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)))
 
 ```
