@@ -1,0 +1,75 @@
+<html> 
+	<head> 
+		<style> 
+			
+		#time {
+			font-family: "open sans";
+			font-size: 120px;
+			font-weight: 300;
+			color: white;
+			transition: all 0.6s;
+			-webkit-transition: all 0.6s;
+			 margin-left: auto;
+   			 margin-right: auto;
+			margin-top: auto;
+		}
+
+		#back-color {
+			display: block;
+			font-size: 1.5em;
+			-webkit-margin-before: 0.83em;
+			-webkit-margin-after: 0.83em;
+			-webkit-margin-start: 0px;
+			-webkit-margin-end: 0px;
+			font-weight: bold;
+		}
+
+		</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+		<script> 
+			$(document).ready(function() {
+				var runTime = function() {
+					var time = new Date($.now());
+					var segundos = "";
+					var minutos = "";
+					var hora = "";
+					if(time.getSeconds() < 10)
+						segundos = "0" + time.getSeconds();
+					else
+						segundos = time.getSeconds();
+					if(time.getMinutes() < 10)
+						minutos = "0" + time.getMinutes();
+					else
+						minutos = time.getMinutes();
+					if(time.getHours() < 10)
+						hora = "0" + time.getHours();
+					else
+						hora = time.getHours();
+					
+					var R = Math.round(hora*255/24);
+       				var G = Math.round(minutos*255/60);
+                    var B = Math.round(segundos*255/60);
+					 var hex = "#" + R.toString(16) + G.toString(16) + B.toString(16);
+					$('#time').html('<p>' + hora + ':' + minutos + ':' + segundos + '</p>');
+					$('body').css('background-color', hex );
+					$('#back-color').html('<p>' + hex + '</p>');
+				};
+				setInterval(runTime, 500); 
+				
+				
+
+
+			});
+		</script>
+	</head>
+	
+
+	<body align="center"> 
+		<div id="time"> </div>
+		<div id="back-color"> </div>
+		
+	</body>
+
+</html>

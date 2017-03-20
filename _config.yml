@@ -4,25 +4,25 @@ highlighter: rouge
 
 t:
   en:
-    home:
-      name: "home"
-      url: "/"
+    # home:
+    #   name: "home"
+    #   url: "/"
+    blog:
+      name: "blog"
+      url: "/blog/"
     about:
       name: "about"
       url: "/about/"
     cv:
       name: "cv"
       url: "/cv/"
-    blog:
-      name: "blog"
-      url: "/blog/"
     projects:
       name: "projects"
       url: "/projects/"
   fr:
-    home:
-      name: "Accueil"
-      url: "/accueil/"
+    # home:
+    #   name: "Accueil"
+    #   url: "/accueil/"
     about:
       name: "À propos"
       url: "/a-propos/"
@@ -30,18 +30,18 @@ t:
       name: "cv"
       url:  "/cv/"
   pt:
-    home:
-      name: "início"
-      url: "/index-pt.html"
+    # home:
+    #   name: "início"
+    #   url: "/index-pt.html"
+    blog:
+      name: "blog"
+      url: "/blog/index-pt.html"
     about:
       name: "sobre"
       url: "/about/index-pt.html"
     cv:
       name: "cv"
       url: "/cv/index-pt.html"
-    blog:
-      name: "blog"
-      url: "/blog/index-pt.html"
     projects:
       name: "projetos"
       url: "/projects/index-pt.html"
