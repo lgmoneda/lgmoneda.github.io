@@ -5,6 +5,7 @@ date: 2016-04-02
 lang: pt
 ref: tweet-proust
 comments: true
+description: Utilização de um modelo estatístico simples alimentado com a obra "Em busca do tempo perdido" para gerar Tweets com o estilo de Marcel Proust.
 ---
 
 Há uns dias vi um notebook do <a href="https://twitter.com/yoavgo">@yaovgo</a> sobre como um modelo linguístico usando apenas a probabilidade da ocorrência do próximo caractere pode gerar textos relativamente bons. 

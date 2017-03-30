@@ -5,6 +5,7 @@ date: 2017-02-19
 lang: pt
 ref: emacs-python-shell
 comments: true
+description: Quando se executa mais de uma vez um programa em Python no Emacs, os módulos importados não são recarregados e mudança no código destes não é refletida na execução. Porém, podemos escrever uma função para mudar esse comportamento.
 ---
 
 Um grande problema de utilizar o ```C-c C-c``` para enviar o buffer atual para o interpretador Python é que os módulos não são recarregados. Ou seja, após a primeira vez em que se roda um programa em Python, todos os imports permanecem os mesmos e, portanto, caso você esteja editando um módulo, as modificações não terão efeito. A saída para isso é forçar que o processo seja terminado e reiniciá-lo. Além disso, alguns outros comportamentos foram pensados para deixar mais cômodo:

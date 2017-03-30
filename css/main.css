@@ -132,3 +132,36 @@ p {
   border-radius: .25em;
 }
 */
+
+/* author info */
+
+.box {
+  box-sizing: border-box; 
+}
+
+.author {
+  @media (max-width: $on-laptop) {
+    display:inline-block;
+    text-align:center;
+  }
+}
+
+.authorimage {
+  @media (min-width: $on-laptop+1) {
+    float:left;
+  }
+  display:inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 5%;
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  margin-right: 10px;
+}
+
+.authorinfo {
+  .bio {
+    color:#999;
+  }
+}

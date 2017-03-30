@@ -5,6 +5,7 @@ date: 2017-02-17
 lang: pt
 ref: google-ortografico
 comments: true
+description: Usando o "Você quis dizer" da busca da Google para realizar correção ortográfica.
 ---
 
 1. [Introdução](#introducao)

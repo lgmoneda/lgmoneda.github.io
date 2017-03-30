@@ -5,6 +5,7 @@ date: 2017-02-19
 lang: en
 ref: emacs-python-shell
 comments: true
+description: Running Python scripts in Emacs multiple times won't reload the imported modules. Then, changes made to them won't be reflected. We can change this behavior with a custom function. 
 ---
 
 An annoying problem in using the ```C-c C-c``` to send the current buffer to the python shell is that the modules are not reloaded. I mean, after the first time we run our script, all the imported modules still the same, even if we modify them, the interpreter would not reload it to make the changes take effect. We can solve it by forcing the Python Process to restart each time we call the ```python-shell-send-buffer```. Beyond that, some other behaviours are added to it: 

@@ -4,9 +4,9 @@ highlighter: rouge
 
 t:
   en:
-    # home:
-    #   name: "home"
-    #   url: "/"
+    home:
+      name: "home"
+      url: "/index-eng.html"
     blog:
       name: "blog"
       url: "/blog/"
@@ -20,9 +20,9 @@ t:
       name: "projects"
       url: "/projects/"
   fr:
-    # home:
-    #   name: "Accueil"
-    #   url: "/accueil/"
+    home:
+      name: "Accueil"
+      url: "/accueil/"
     about:
       name: "À propos"
       url: "/a-propos/"
@@ -30,9 +30,9 @@ t:
       name: "cv"
       url:  "/cv/"
   pt:
-    # home:
-    #   name: "início"
-    #   url: "/index-pt.html"
+    home:
+      name: "início"
+      url: "/"
     blog:
       name: "blog"
       url: "/blog/index-pt.html"
