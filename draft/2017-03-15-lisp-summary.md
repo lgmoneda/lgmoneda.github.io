@@ -4,6 +4,7 @@ title: "A brief introduction to Emacs Lisp for people with programming backgroun
 date: 2017-03-15
 lang: en
 ref: elisp-intro
+description: Sharing my summary of the "An Introduction to Programming in Emacs Lisp" book.
 ---
 
 It's been now 45 days i am an Emacs user, which implies going through some Elisp, the Lisp family language for Emacs. After modifying some modes and writing my own functions, it was time to get some conscious about how Elisp works, its special forms and syntax. 
