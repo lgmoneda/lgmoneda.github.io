@@ -52,9 +52,9 @@ LISP stands for List Processing. And that's a really meaningful name! Lists are 
 ("John" 1 (2 3 "Paul") ("Ringo" george))
 ```
 
-<!-- A list in Lisp—any list—is a program ready to run. If you run it (for which the Lisp jargon is evaluate), the computer will do one of three things: do nothing except return to you the list itself; send you an error message; or, treat the first symbol in the list as a command to do something. (Usually, of course, it is the last of these three things that you really want!) -->
+<div  style="display: none;"> A list in Lisp—any list—is a program ready to run. If you run it (for which the Lisp jargon is evaluate), the computer will do one of three things: do nothing except return to you the list itself; send you an error message; or, treat the first symbol in the list as a command to do something. (Usually, of course, it is the last of these three things that you really want!)
 
-<!-- The single apostrophe, ', that I put in front of some of the example lists in preceding sections is called a quote; when it precedes a list, it tells Lisp to do nothing with the list, other than take it as it is written. But if there is no quote preceding a list, the first item of the list is special: it is a command for the computer to obey. (In Lisp, these commands are called functions.) The list (+ 2 2) shown above did not have a quote in front of it, so Lisp understands that the + is an instruction to do something with the rest of the list: add the numbers that follow.  -->
+The single apostrophe, ', that I put in front of some of the example lists in preceding sections is called a quote; when it precedes a list, it tells Lisp to do nothing with the list, other than take it as it is written. But if there is no quote preceding a list, the first item of the list is special: it is a command for the computer to obey. (In Lisp, these commands are called functions.) The list (+ 2 2) shown above did not have a quote in front of it, so Lisp understands that the + is an instruction to do something with the rest of the list: add the numbers that follow. </div>
 
 ##  2. Atoms, symbols, symbol expression and variables <a name="#symbols"></a>
 
@@ -419,17 +419,19 @@ The **defcustom** let the user specify a variable value. Though you can use setq
 
 ```M-x customize``` let you search for groups.
 
-<!-- **Advising Functions** is a feature to add code to existing functions without having to redefining that function. Then, if you want to add a behavior to a emacs-mode function, you can use these features: -->
+<div  style="display: none;">
+**Advising Functions** is a feature to add code to existing functions without having to redefining that function. Then, if you want to add a behavior to a emacs-mode function, you can use these features:
 
-<!-- ```elisp -->
-<!-- (defun original-function (x) -->
-<!-- 	(* 10 x) -->
-<!-- 	) -->
-<!-- (defun other-func (x) -->
-<!-- (+ 10 x)) -->
+```elisp
+(defun original-function (x)
+	(* 10 x)
+	)
+(defun other-func (x)
+(+ 10 x))
 
-<!-- (add-function :before (other-func x) #'original-function) -->
+(add-function :before (other-func x) #'original-function)
 
-<!-- (add-function :before (message "oi") #'original-function) -->
+(add-function :before (message "oi") #'original-function)
 
-<!-- ``` -->
+```
+</div>
