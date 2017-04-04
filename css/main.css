@@ -32,7 +32,7 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-    font-size: 1.3em;
+    font-size: 1.1em; /* it was 1.3em */
     line-height: 1.4em;
     color: #333;
 }
@@ -119,6 +119,10 @@ p.meta {
   content: 'Ver menos';
 }
 
+figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+}
 /* Other style  
 body {
   padding: 2%;
