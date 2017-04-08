@@ -78,6 +78,8 @@ You can use **setq** and **defvar** to define a variable. **defvar** differs fro
 
 
 From my point of view, the beauty in Elisp comes from this general list processing: everything is evaluated and the default behavior is to treat a list as a function call, unless you explicitly advise with a quote that it should be seen as "plain". So a list ``` (function_name arg1 arg2)``` is seen as a call to a function named as the first argument,the other elements are passed as arguments to that function. You can **evaluate** symbols expressions with the bind ```C-x C-e``` with the cursor at the end of the s-exp.
+
+The evaluation itself happens too in a very general form and only differs for the _special forms_, like **defun** and others that will be seen below.
 ```
 ("John" "Ringo" "Paul" "George")
 => Invalid function "John"
@@ -327,7 +329,7 @@ Goes backward if ARG is negative; error if CHAR not found."
 
 ```
 
-In the ```(kill-region ...)``` call we need to pass to points. At the second argument we want to make more tbefore passing it, so we use **progn**, make a search-foward and then use ```(point)```.
+In the ```(kill-region ...)``` call we need to pass two points. At the second argument we want to make more tbefore passing it, so we use **progn**, make a search-foward and then use ```(point)```.
 
 The **lambda** define a **lambda expression**, it is used as in other languages, to write anonymous functions, you can just write a function on the fly without having to name it using the **defun** form. It's useful to use with **mapcar**, since one of its arguments is a function, you can just write it inside mapcar using lambda.
 
@@ -388,7 +390,7 @@ In accumulative, the result is a combination of every call result:
 (+ (car list) (recursive-function (cdr list)))
 ```
 
-With keep we cat only on elements of interest, do a test to check it.
+With keep we act only on elements of interest, do a test to check it.
 
 The book's recursion chapter is short but way more informative than this little summary: <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html#Recursion">book.</a>.
 
