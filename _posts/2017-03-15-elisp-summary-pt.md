@@ -4,7 +4,7 @@ title: "Uma breve introdução ao Emacs Lisp"
 date: 2017-03-15
 lang: pt
 ref: elisp-intro
-description: Compartilhando o meu resumo do livro "An Introduction to Programming in Emacs Lisp".
+description: Compartilhando o minhas anotações do livro "An Introduction to Programming in Emacs Lisp".
 ---
 
 Há 45 dias comecei a usar o Emacs, o que implica em passar a utilizar o Elisp, a linguagem de programação da família Lisp para uso no Emacs. Após modificar alguns módulos e escrever minhas próprias funções, senti necessidade de entender melhor a linguagem, suas formas especiais e sintaxe.
@@ -12,7 +12,7 @@ Há 45 dias comecei a usar o Emacs, o que implica em passar a utilizar o Elisp, 
 <div align="center">
 <figure>
 	<a href="images/elisp-cover.png">
-		<img  style="width:250px;margin:10px" src="images/elisp-cover.png"/>
+		<img  style="width:250px;margin:10px" src="../../../images/elisp-cover.png"/>
 	</a>
 	<figcaption>Não foi fácil explicar essa capa aos que me perguntava o que eu estava lendo.</figcaption>
 </figure>

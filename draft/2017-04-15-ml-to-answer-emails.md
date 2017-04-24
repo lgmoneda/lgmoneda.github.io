@@ -68,8 +68,14 @@ new_values = tsne_model.fit_transform(tokens)
 
 ```
 
-The greater the window of our word2vec, the more closer words will share context instead of interchangeability.
+The greater the window of our word2vec, the more closer words will share context instead of interchangeability. We can use the Word2Vec representation to check the words similarities. Inspecting the 5 most similar vectors for three words:
 
+```python
+model.most_similar("material")[:5]
+
+```
+
+<div style="display:none;"> 
 <div align="center">
 <figure>
 	<a href="images/tsne.png">
@@ -80,7 +86,7 @@ The greater the window of our word2vec, the more closer words will share context
 </div>
 
 This graph shall reveal words similarities. Inspecting it and verifying that closer words are really similar, they present some interchangeability, usually appear in the same context and so on, is an evidence of our corpus quality, that our data is fine, consist of what we were expecting and can be used to feed a predictive model.
-
+</div>
 Now, we look to the labels. They were manually assigned and can help us to have an idea about the characteristics of our problem, but also to validate the labeling process and the early assumptions. 
 
 <div align="center">
@@ -116,7 +122,7 @@ Most of our documents have only one label. None presented more than four of the 
 
 ### Reasoning About the Problem <a name="problem"></a>
 
-If someone ask you "What does Sin(x) meaning?", you could certainly retrieve a high-school math book as an answer and hope the person will search there until he finds the exactly information he was looking for. In Code Club e-mails we could also make a text or redirect to our FAQ every doubt received, but how boring it's to consider volunteering and still have to invest a lot of your time to just find out how? 
+If someone ask you "What does Sin(x) mean?", you could certainly retrieve a high-school math book as an answer and hope the person will search there until he finds the exactly information he was looking for. In Code Club e-mails we could also make a text or redirect to our FAQ every doubt received, but how boring it's to consider volunteering and still have to invest a lot of your time to just find out how? 
 
 So we want to retrieve exactly what people want to know about the project, but we also do not want to allocate a lot of coordination effort on it. Considering it'd be very hard to predict correctly every e-mail, we should put our attention in the largest labels and try to solve the maximum of our problem without having to put much complexity on it.
 
@@ -125,3 +131,7 @@ The labeling process was run with the assumption, built over my own perception a
 1. Transform the problem in a binary classification, trying different combinations of labels for both classes. (use just e-mail subject!)
 2. Build a single classifier for each label and apply all of them to decide which answers should compose the response.
 3. Let the information from each classifier help the others and construct a classifier-chain
+
+### The simplest model we could use
+
+The subject of an e-mail
