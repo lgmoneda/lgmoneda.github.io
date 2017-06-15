@@ -1,0 +1,22 @@
+pt:
+    months:
+        - Janeiro
+        - Fevereiro
+        - Março
+        - Abril
+        - Maio
+        - Junho
+        - Julho
+        - Agosto
+        - Setembro
+        - Outubro
+        - Novembro
+        - Dezembro
+    weekdays:
+        Monday: "Segunda-Feira"
+        Tuesday: "Terça-Feira"
+        Wednesday: "Quarta-Feira"
+        Thursday: "Quinta-Feira"
+        Friday: "Sexta-Feira"
+        Saturday: "Sábado"
+        Sunday: "Domingo"	
