@@ -14,7 +14,12 @@ layout: default
 -->
 
 <h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+{% if page.lang == "pt" %}
+    {% assign m = page.date | date: "%-m" | minus: 1 %}
+    <p class="meta">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</p>
+{% else %}
+    <p class="meta">{{ page.date | date_to_string }}</p>
+{% endif %}
 
 <div class="post">
   {{ content }}

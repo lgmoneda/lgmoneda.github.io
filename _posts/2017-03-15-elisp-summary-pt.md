@@ -14,7 +14,7 @@ Há 45 dias comecei a usar o Emacs, o que implica em passar a utilizar o Elisp, 
 	<a href="images/elisp-cover.png">
 		<img  style="width:250px;margin:10px" src="../../../images/elisp-cover.png"/>
 	</a>
-	<figcaption>Não foi fácil explicar essa capa aos que me perguntava o que eu estava lendo.</figcaption>
+	<figcaption>Não foi fácil explicar essa capa aos que me perguntavam o que eu estava lendo.</figcaption>
 </figure>
 </div>
 

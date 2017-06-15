@@ -1,7 +1,19 @@
     <article class="post_card post">
       <header class="post_header">
         <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <!-- <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time> -->
+	{% if post.lang == "pt" %}
+        {% assign m = post.date | date: "%-m" | minus: 1 %}
+	{% assign d = post.date | date: "%A" %}
+	<time class="post_date">
+	  {{post.date | date:"%d "}}
+	  {{site.data.dates.pt.months[m]}}
+	  {{post.date | date:" %Y, "}}
+	  {{site.data.dates.pt.weekdays[d]}}
+	</time>
+	{% else %}
         <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+	{% endif %}
       </header>
       <div class="post_excerpt">
         <p>
