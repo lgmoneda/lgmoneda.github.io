@@ -3,7 +3,7 @@ layout: post
 title: "Encontrando uma vaga de trabalho!"
 date: 2018-01-21
 lang: pt
-ref: find-job-pt
+ref: find-job
 description: Como encontrar um trabalho legal utilizando Python e um Raspberry Pi.
 ---
 
