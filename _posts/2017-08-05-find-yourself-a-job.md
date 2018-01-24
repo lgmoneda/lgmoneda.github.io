@@ -147,6 +147,7 @@ if __name__ == "__main__":
         pass
 ```
 
+You need to enable less segure login in your Gmail account. For that, use this <a href="https://stackoverflow.com/questions/10147455/how-to-send-an-email-with-gmail-as-provider-using-python">Gmail's settings page.</a>.
 
 ## Configuring RPi to run a script periodically <a name="#rpi"> </a>
 
