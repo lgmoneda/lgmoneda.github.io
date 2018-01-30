@@ -1,0 +1,122 @@
+---
+layout: default
+title: Barber Exercises
+lang: en
+ref: barber-excercises
+---
+<p>David Barber</p>
+
+It's asked about the probability of a person being a terrorist considering he was identified as one by the scan. That is $P(B=T \mid S=T)$. To calculate it, the Bayes' Theorem can be used:
+
+$$ P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} $$
+
+$$P(B=T \mid sS=T) = \frac{P(S=T \mid B=T) * P(B=T)}{P(S=T)}$$
+
+The components are known except for $P(S=T)$. Using the law of total probability, it can be found:
+
+$$P(S=T) = \sum_{T, C} P(S=T \mid B=x)*P(B=x) $$
+
+$$ P(S=T) = P(S=T \mid B=T) * P(B=T) + P(S=T \mid B=C) * P(B=C) $$  
+$$P(S=T) = 0.95*0.001 + 0.05 * 0.99 $$
+$$P(S=T) = 0.059 $$
+
+Then:
+ 
+$$P(B=T \mid S=T) = \frac{0.95 * 0.01}{0.059}$$
+$$P(B=T \mid S=T) = 0.161$$
+
+So the probability that the identified terrorist is indeed a terrorist is 0.161.
+
+<!-- <div> -->
+<!--   <input type="checkbox" class="read-more-state" id="post-5" /> -->
+<!--   <h2>GreenPyce</h2>   -->
+<!--   <div class="read-more-wrap"><p> Organizing utilities for the Python data analysis library Pandas. -->
+<!--       <span class="read-more-target">Implementing and/or wrapping preprocessing and feature engineering functions to be applied to DataFrames. They're added according to my own need in projects, competitions and etc involving Machine Learning and Data Science.</p> -->
+<!--       <ul class="read-more-target" > -->
+<!-- 	<li>Source Code: <a href="https://github.com/lgmoneda/greenpyce">Github</a></li> -->
+<!--       </ul> -->
+<!--       </span> -->
+<!--   </div> -->
+<!--   <label for="post-5" class="read-more-trigger read-more-trigger"></label> -->
+<!-- </div> -->
+
+<!-- <div> -->
+<!--   <input type="checkbox" class="read-more-state" id="post-1" /> -->
+<!--   <h2>Proust Dataset</h2>  -->
+<!--   <div class="read-more-wrap"><p>Building and exploring a dataset created from Marcel Proust's "À la recherche du temps perdu". -->
+<!--       <span class="read-more-target"> The datasets were extracted from ebooks. English and brazilian portuguese versions, csv file with paragraphs and full text in text file.</p> -->
+<!--       <ul class="read-more-target" > -->
+<!-- 	<li>Source Code: <a href="https://github.com/lgmoneda/proust-dataset">Github</a></li> -->
+<!-- 	<li>Blog Post: <a href="http://lgmoneda.github.io/2016/04/02/tweetando-como-proust.html">Tweet like Proust</a></li> -->
+<!--       </ul> -->
+<!--       </span> -->
+<!--   </div> -->
+<!--   <label for="post-1" class="read-more-trigger"></label> -->
+<!-- </div> -->
+
+
+<!-- <div> -->
+<!--   <input type="checkbox" class="read-more-state" id="post-4" /> -->
+<!--   <h2>Wally IPS</h2>  -->
+<!--   <div class="read-more-wrap"><p> A simple web panel to be feed with data from an IPS (Indoor Positioning System) application and generate some visualizations. -->
+<!--       <span class="read-more-target"> This project was tought to receive data with a timestamp, label and user id. It wasn't connect with a real application, so artificial data was generated thinking of it as a Shopping Mall System.</p> -->
+<!--       <ul class="read-more-target" > -->
+<!-- 	<li>Código Fonte: <a href="https://github.com/lgmoneda/wally-ips">Github</a>.</li> -->
+<!-- 	<li>Languages: Python, HTML, JQuery and CSS. </li> -->
+<!-- 	<li>Frameworks: Flask. </li> -->
+<!-- 	<li>Other technologies: Pandas and MySQL. </li> -->
+<!--       </ul> -->
+<!--       <div  class="read-more-target" style="text-align:center"> -->
+<!-- 	<figure> -->
+<!-- 	  <a href="images/wally1.png"> -->
+<!-- 	    <img  style="width:400px;margin:10px" src="images/wally1.png"/> -->
+<!-- 	  </a> -->
+<!-- 	  <figcaption>Time Series generation.</figcaption> -->
+<!-- 	</figure> -->
+ 
+<!-- 	<figure> -->
+<!-- 	<a href="images/wally2.png"> -->
+<!-- 	  <img  style="width:400px;margin:10px" src="images/wally2.png"/> -->
+<!-- 	</a> -->
+<!-- 	  <figcaption>A simple recommender system.</figcaption> -->
+<!-- 	</figure> -->
+<!--       </div> -->
+
+<!--       </span> -->
+<!--   </div> -->
+<!--   <label for="post-4" class="read-more-trigger"></label> -->
+<!-- </div> -->
+
+<!-- <div> -->
+<!--   <input type="checkbox" class="read-more-state" id="post-2" /> -->
+<!--   <h2>Intro to Programming</h2>  -->
+<!--   <div class="read-more-wrap"><p>A 10 classes course to introduct programming using Processing language with visual appealing  activities. The course is in brazilian portuguese. The final project is a simple game.</p> -->
+<!--     <span class="read-more-target"> -->
+
+<!--       <ul class="read-more-target" > -->
+<!-- 	<li><a href="https://www.youtube.com/playlist?list=PLxv-NNCXkBT2TFm6SMsc3_W-PpjkPP10N">Youtube Playlist</a></li> -->
+<!-- 	<li>Content: -->
+<!-- 	  <ol>	    	     -->
+<!-- 	    <li> Introduction (Environment and how a program works)</li> -->
+<!-- 	    <li> Variable assignment </li> -->
+<!-- 	    <li> Loops and variable manipulation I </li> -->
+<!-- 	    <li> Loops and variable manipulation II </li> -->
+<!-- 	    <li> Conditionals I </li> -->
+<!-- 	    <li> Conditionals II </li> -->
+<!-- 	    <li> While command </li> -->
+<!-- 	    <li> For command </li> -->
+<!-- 	    <li> Matrix and Boolean I </li> -->
+<!-- 	    <li> Matrix and Boolean II </li> -->
+<!-- 	  </ol> -->
+<!--       </ul> -->
+<!--       <div style="text-align:center"> -->
+<!-- 	<figure> -->
+<!-- 	  <img class="read-more-target" style="align:middle;margin:10px" src="images/intro_prog_game.png"/> -->
+<!-- 	  <figcaption>Course's final project is a simple tile game. </figcaption> -->
+<!-- 	</figure> -->
+<!--       </div> -->
+<!--     </span> -->
+<!--   </div> -->
+<!--   <label for="post-2" class="read-more-trigger"></label> -->
+<!-- </div> -->
+<!-- <br> -->
