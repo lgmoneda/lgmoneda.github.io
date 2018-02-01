@@ -7,7 +7,7 @@ ref: find-job
 description: Como encontrar um trabalho legal utilizando Python e um Raspberry Pi.
 ---
 
-Neste post irie mostrar como um HTML bem estruturado, Python e um leal Raspberry Pi podem ajudar na hora de encontrar aquela vaga legal em uma empresa que você gosta.  
+Neste post irei mostrar como um HTML bem estruturado, Python e um leal Raspberry Pi podem ajudar na hora de encontrar aquela vaga legal em uma empresa que você gosta.  
 
 Ao final, você será capaz de receber em seu e-mail uma mensagem assim: 
 
