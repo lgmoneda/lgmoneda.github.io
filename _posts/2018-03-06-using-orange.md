@@ -29,7 +29,7 @@ After downloading the data, get [Orange](). Then open it. First of all, let's lo
 
 <div align="center">
 <figure>
-	<a href="images/orange/load_data.png">
+	<a href="../../../images/orange/load_data.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/load_data.png"/>
 	</a>
 	<figcaption>Load the .csv data and don't forget to define the target column</figcaption>
@@ -40,7 +40,7 @@ Now we're going to explore it briefly, because we are more interested in the pre
 
 <div align="center">
 <figure>
-	<a href="images/orange/boxplot_widget.png">
+	<a href="../../../images/orange/boxplot_widget.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/boxplot_widget.png"/>
 	</a>
 	<figcaption>With the links you define the data flow through the different widgets</figcaption>
@@ -51,7 +51,7 @@ It's easy to observe that many features in this dataset suffer with outliers. As
 
 <div align="center">
 <figure>
-	<a href="images/orange/income_outlier.png">
+	<a href="../../../images/orange/income_outlier.png">
 		<img  style="width:650px;margin:10px" src="../../../images/orange/income_outlier.png"/>
 	</a>
 	<figcaption>What is worse: a spoiled box plot or not being the 3 million of monthly income outlier?</figcaption>
@@ -62,7 +62,7 @@ The two rows are for the `0` and `1` values for the target. Being the `1` people
 
 <div align="center">
 <figure>
-	<a href="images/orange/revolving_outlier.png">
+	<a href="../../../images/orange/revolving_outlier.png">
 		<img  style="width:650px;margin:10px" src="../../../images/orange/revolving_outlier.png"/>
 	</a>
 	<figcaption>The intuition says it should be a value between 0-1, but data just gets crazy when it comes to the real world, doesn't it?</figcaption>
@@ -80,7 +80,7 @@ So it's needed to treat the [outliers](https://docs.orange.biolab.si/3/visual-pr
 
 <div align="center">
 <figure>
-	<a href="images/orange/outliers.png">
+	<a href="../../../images/orange/outliers.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/outliers.png"/>
 	</a>
 	<figcaption>The Outliers widget outputs the inliers and outliers data</figcaption>
@@ -91,7 +91,7 @@ Even so, the distributions still very skewed. So the `Select Rows` will be used 
 
 <div align="center">
 <figure>
-	<a href="images/orange/rows.png">
+	<a href="../../../images/orange/rows.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/rows.png"/>
 	</a>
 	<figcaption>The Outliers widget outputs the inliers and outliers data</figcaption>
@@ -102,7 +102,7 @@ And now the distribution looks better:
 
 <div align="center">
 <figure>
-	<a href="images/orange/income_right.png">
+	<a href="../../../images/orange/income_right.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/income_right.png"/>
 	</a>
 	<figcaption>A lot of useful preprocessing steps available!</figcaption>
@@ -114,7 +114,7 @@ Now it's time to missing data imputation. The average is going to be used to rep
 
 <div align="center">
 <figure>
-	<a href="images/orange/preprocessing.png">
+	<a href="../../../images/orange/preprocessing.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/preprocessing.png"/>
 	</a>
 	<figcaption>A lot of useful preprocessing steps available!</figcaption>
@@ -130,7 +130,7 @@ Here's just a demonstration on how to do it. So the only feature engineered will
 
 <div align="center">
 <figure>
-	<a href="images/orange/feature_eng.png">
+	<a href="../../../images/orange/feature_eng.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/feature_eng.png"/>
 	</a>
 	<figcaption>You can manipulate the existent features and use a list of functions to create new ones</figcaption>
@@ -146,7 +146,7 @@ It's possible to test a nice range of models. Here the models used are Decision 
 
 <div align="center">
 <figure>
-	<a href="images/orange/models.png">
+	<a href="../../../images/orange/models.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/models.png"/>
 	</a>
 	<figcaption>You can manipulate the existent features and use a list of functions to create new ones</figcaption>
@@ -157,7 +157,7 @@ The widgets allow to control the model complexity. In the Logistic Regression yo
 
 <div align="center">
 <figure>
-	<a href="images/orange/logistic.png">
+	<a href="../../../images/orange/logistic.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/logistic.png"/>
 	</a>
 	<figcaption>Adjust the regularization to avoid overfitting</figcaption>
@@ -170,7 +170,7 @@ Another cool thing is to visualize the model. For that, use the widget `Tree vie
 
 <div align="center">
 <figure>
-	<a href="images/orange/tree_viewer.png">
+	<a href="../../../images/orange/tree_viewer.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/tree_viewer.png"/>
 	</a>
 	<figcaption>Adjust the regularization to avoid overfitting</figcaption>
@@ -183,7 +183,7 @@ The Logistic Regression weights can also be seen. Just grab a link from its widg
 
 <div align="center">
 <figure>
-	<a href="images/orange/weights.png">
+	<a href="../../../images/orange/weights.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/weights.png"/>
 	</a>
 	<figcaption>The relation between the features and the target can be inspected by looking to the learned weights</figcaption>
@@ -196,7 +196,7 @@ But it's needed to **validate** all these models and it's super easy! Using the 
 
 <div align="center">
 <figure>
-	<a href="images/orange/validation.png">
+	<a href="../../../images/orange/validation.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/validation.png"/>
 	</a>
 	<figcaption>The relation between the features and the target can be inspected by looking to the learned weights</figcaption>
@@ -211,7 +211,7 @@ The unseen data need to pass through the same pipeline that the training data. A
 
 <div align="center">
 <figure>
-	<a href="images/orange/prediction.png">
+	<a href="../../../images/orange/prediction.png">
 		<img  style="width:350px;margin:10px" src="../../../images/orange/prediction.png"/>
 	</a>
 	<figcaption>The final part of the entire pipeline: prediction and save it</figcaption>
