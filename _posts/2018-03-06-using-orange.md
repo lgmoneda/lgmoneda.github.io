@@ -203,7 +203,7 @@ But it's needed to **validate** all these models and it's super easy! Using the 
 </figure>
 </div>
 
-As it can be seen, using a 10-fold cross validation, the Logistic Regression achieves a 0.82 AUC and it's the best model tested in the present task considering this metric.
+As it can be seen, using a 10-fold cross validation, the Logistic Regression achieves a 0.82 AUC and it's the best model tested in the present task considering this metric. You can also do it in a way cleaner way if you pass the "Feature constructor" and the "Preprocessor" directly to the "Test & Score" and just connect the widget from the models you want to try.
 
 ## Making Predictions
 
