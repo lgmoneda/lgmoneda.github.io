@@ -22,7 +22,59 @@ Compiling my activities as a MSc candidate in the Computer Science Department fr
 <h3 id="papers">Papers</h3>
 <ul>
   <li><a href="http://www.pnas.org/content/pnas/113/27/7310.full.pdf">Causal Inference in eocnomics and marking</a>
-    <div></div>
+    <div>
+      Some techniques for causal inference. In causal inference, one should always be aware of the confounded variables, that is, a variable that influence both the treatment and the outcome.
+
+<div align="center">
+<figure>
+	<a href="../../../images/master/causal-inference-identity.png">
+		<img  style="width:450px;margin:10px" src="../../../images/master/causal-inference-identity.png"/>
+	</a>
+	<figcaption>Causal Inference identity</figcaption>
+</figure>
+</div>      
+
+      Experiments/Train-test-treat-compare (TTTC): Train a model using regular ML techniques (validation and so on). Then use it to predict the outcome of the varible o interest before the treatment date. The idea is to predict the outcome in a world without the treatment and then wait for the real outcome (the one in the presence of the treatment) and compare them.
+
+<div align="center">
+<figure>
+	<a href="../../../images/master/tttc.png">
+		<img  style="width:450px;margin:10px" src="../../../images/master/tttc.png"/>
+	</a>
+	<figcaption>TTTC example</figcaption>
+</figure>
+</div>
+
+</br></br>
+Regression discontinuity: a common pratice to a policy is to define a threshold and apply different action for groups above and below it. Examples near this threshold are usually very similar and thus an experiment is created, because it's essentially random which side of the threshold a particular example ends up, specially if you're using models or just guessing a number (give credit for users above X score). Even better, you can add noise the the decision: "if (score + e > threshold), do treatment". 
+
+<div align="center">
+<figure>
+	<a href="../../../images/master/discontinuity.png">
+		<img  style="width:450px;margin:10px" src="../../../images/master/discontinuity.png"/>
+	</a>
+	<figcaption>Regression discontinuity example</figcaption>
+</figure>
+</div>
+</br></br>
+
+Instrumental Variables: trying to find a variable that is able to influence outcome but only via it's influence over a independent variable used to predict the outcome.
+</br></br>
+
+Difference in differences: you have two groups, treated and non-treated, and two time periods, before and after treatment. You can use the non-treated outcome to predict the counterfactual for the treated group.
+
+
+<div align="center">
+<figure>
+	<a href="../../../images/master/diff-diff.png">
+		<img  style="width:450px;margin:10px" src="../../../images/master/diff-diff.png"/>
+	</a>
+	<figcaption>Difference in differences example</figcaption>
+</figure>
+</div>
+
+</br></br>
+    </div>
   </li>
 
   <li><a href="https://arxiv.org/abs/1804.10846">Data science is science's second chance to get causal inference right: A classification of data science tasks</a>
