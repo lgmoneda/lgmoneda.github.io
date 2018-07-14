@@ -57,17 +57,27 @@ Compiling my activities as a MSc candidate in the Computer Science Department fr
 	  The Seven Tools of Causal Inference with Reflections on Machine Learning (http://ftp.cs.ucla.edu/pub/stat_ser/r481.pdf)
 	</a>
       </li>
+
+      <li>
+	<a href="#paper-limits-heterogeneous">
+	  Limits of Estimating Heterogeneous Treatment Effects: Guidelines for Practical Algorithm Design (http://proceedings.mlr.press/v80/alaa18a.html)
+	</a>
+      </li>
+
+      <li>
+	<a href="#applied-mullainathan">
+	  Machine Learning: An Applied Econometric Approach (https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87)
+	</a>
+      </li>
     </ol>
     
   </li>
   <li>
     <a href="#books">People to follow</a>
     <ol>
-      <li>
-	<a href="">Susan Athey</a>
-	<a href="">Shalit</a>
-	<a href="http://web.stanford.edu/~swager/index.html">Stefan Wager</a>
-      </li>      	      
+      <li> <a href="">Susan Athey</a></li>
+      <li><a href="">Shalit</a></li>
+      <li><a href="http://web.stanford.edu/~swager/index.html">Stefan Wager</a></li>            	      
     </ol>
     
   </li>
@@ -150,7 +160,7 @@ Compiling my activities as a MSc candidate in the Computer Science Department fr
 </div>
 
 </br></br>
-Regression discontinuity: a common pratice to a policy is to define a threshold and apply different action for groups above and below it. Examples near this threshold are usually very similar and thus an experiment is created, because it's essentially random which side of the threshold a particular example ends up, specially if you're using models or just guessing a number (give credit for users above X score). Even better, you can add noise the the decision: "if (score + e > threshold), do treatment". 
+Regression discontinuity: a common pratice to a policy is to define a threshold and apply different action for groups above and below it. Examples near this threshold are usually very similar and thus an experiment is created, because it's essentially random which side of the threshold a particular example ends up, specially if you're using models or just guessing a number (give credit for users above X score). Even better, you can add noise the the decision: if (score + e > threshold), do treatment. 
 
 <div align="center">
 <figure>
@@ -210,6 +220,23 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
 </br></br>
     </div>
   </li>
+
+
+  <li id="applied-mullainathan"><a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87">Machine Learning: An applied Econometric Approach</a>
+    <div>
+      Critic about the misusage of Machine Learning techniques for estimation purposes. A cool example about Lasso, that picks different variables in each fold: how could I interpret model parameters with different folds with similar predictive power present very different structure? The author points as ML weakness the absent of strong and mostly unverifiable assumptions, as ML does not produce stable estimates of the underlying parameters. And points as its strength the predictive power that is useful for "$\hat{y}$ problems": new data, prediction in the service of estimation (use for linear instrumental variable), prediction for policies and testing theories about predictability.
+<div align="center">
+<figure>
+	<a href="../../../images/master/lasso.png">
+		<img  style="width:450px;margin:10px" src="../../../images/master/lasso.png"/>
+	</a>
+	<figcaption>Lasso coefficients are unstable across different folds.</figcaption>
+</figure>
+</div>      
+
+    </div>
+  </li>
+
 </ul>
 
 <h3 id="misc">Misc</h3>
@@ -234,5 +261,4 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
 
   </div>  
 </li>
-
 </ol>
