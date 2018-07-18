@@ -52,10 +52,8 @@ Compiling my activities as a MSc candidate in the Computer Science Department fr
 	</a>
       </li>
 
-      <li>
-	<a href="#paper-do-seven-rules">
-	  The Seven Tools of Causal Inference with Reflections on Machine Learning (http://ftp.cs.ucla.edu/pub/stat_ser/r481.pdf)
-	</a>
+      <li> The Seven Tools of Causal Inference with Reflections on Machine Learning, 
+	<a href="#paper-do-seven-rules"> summary</a>, <a href="http://ftp.cs.ucla.edu/pub/stat_ser/r481.pdf"> link </a>
       </li>
 
       <li>
@@ -69,8 +67,22 @@ Compiling my activities as a MSc candidate in the Computer Science Department fr
 	  Machine Learning: An Applied Econometric Approach (https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87)
 	</a>
       </li>
+
+      <li>
+	<a href="#human-decisions">
+	  Humans Decisions and Machine Predictions (https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf)
+	</a>
+      </li>
+
+      <li>
+	<a href="#prediction-policy-problems">
+	  Prediction Policy Problems  (http://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf)
+	</a>
+      </li>
+
     </ol>
-    
+
+
   </li>
   <li>
     <a href="#books">People to follow</a>
@@ -221,10 +233,52 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
     </div>
   </li>
 
+  <!--Seven Rules -->
 
+    <li id="paper-do-seven-rules"><a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87">The Seven Tools of Causal Inference with Reflections on Machine Learning, </a>
+      <div>
+	All the things that Structured Causal Models (SCM) can do. The tools described are:
+	<ol>
+	  <li>Encoding Causal Assumptions – Transparency and Testability: so being able to encode the assumptions accounts for transparency. Then being able to test then with available data makes it testable. Graphical models can provide both, using d-separation for testability. </li>
+	  <li>Do -calculus and the control of confounding: using the back-door to block the paths and control for confounding. </li>
+	  <li>The Algorithmization of Counterfactuals: with structural equation model, it's possible to analyze if a counterfactual question there can be answered using observational data, experimental data or both. </li>
+	  <li>Mediation Analysis and the Assessment of Direct and Indirect Effects: it's about how the effects promote the cause. You can measure how much of the effect of X in Z is meadiated by Z, for example. </li>
+	  <li>Adaptability, External Validity and Sample Selection Bias: this is very nice I'm going to have to copy and paste:
+	    "The validity of every experimental study is challenged by disparities
+	    between the experimental and implementational setups. A machine
+	    trained in one environment cannot be expected to perform well
+	    when environmental conditions change, unless the changes are
+	    localized and identified. This problem, and its various manifesta-
+	    tions are well recognized by AI researchers, and enterprises such
+	    as “domain adaptation,” “transfer learning,” “life-long learning,” and
+	    “explainable AI” [Chen and Liu 2016], are just some of the subtasks
+	    identified by researchers and funding agencies in an attempt to alle-
+	    viate the general problem of robustness. Unfortunately, the problem
+	    of robustness, in its broadest form, requires a causal model of the
+	    environment, and cannot be handled at the level of Association."
+	    "Associations are not sufficient for identifying the mechanisms affected
+	    by changes that occurred [Pearl and Bareinboim 2014]. The reason
+	    being that surface changes in observed associations do not uniquely
+	    identify the underlying mechanism responsible for the change. The
+	    do
+	    -calculus discussed above now offers a complete methodology
+	    for overcoming bias due to environmental changes. It can be used
+	    both for re-adjusting learned policies to circumvent environmental
+	    changes and for controlling bias due to non-representative samples
+	    [Bareinboim and Pearl 2016]."
+	  </li>
+	  <li> Recovering from Missing Data: when the missing in our data is not random, you better go causal. </li>
+	  <li>Causal Discovery: when you're trying to define the right graphical model, you can use techniques to test the candidates and discover/test the causal relation there.</li>
+	  
+	</ol>
+      </div>
+  </li>
+
+    <!--Seven Rules -->
+    
   <li id="applied-mullainathan"><a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87">Machine Learning: An applied Econometric Approach</a>
     <div>
-      Critic about the misusage of Machine Learning techniques for estimation purposes. A cool example about Lasso, that picks different variables in each fold: how could I interpret model parameters with different folds with similar predictive power present very different structure? The author points as ML weakness the absent of strong and mostly unverifiable assumptions, as ML does not produce stable estimates of the underlying parameters. And points as its strength the predictive power that is useful for "$\hat{y}$ problems": new data, prediction in the service of estimation (use for linear instrumental variable), prediction for policies and testing theories about predictability.
+      Critic about the misusage of Machine Learning techniques for estimation purposes. A cool example about Lasso, that picks different variables in each fold: how could I interpret model parameters with different folds with similar predictive power present very different structure? The author points as ML weakness the absent of strong and mostly unverifiable assumptions, as ML does not produce stable estimates of the underlying parameters. And points as its strength the predictive power that is useful for "$\hat{y}$ problems": new data (text and images), prediction in the service of estimation (use for linear instrumental variable), prediction for policies (the judge example) and testing theories about predictability (can this info from the past be used to predict this future outcome?).
 <div align="center">
 <figure>
 	<a href="../../../images/master/lasso.png">
