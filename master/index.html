@@ -39,46 +39,55 @@ Compiling my activities as a MSc candidate in the Computer Science Department fr
     <a href="#papers">Papers</a>
     <ol>
       <li>
-      <a href="#varian-mkt">Causal Inference in eocnomics and marking</a>
+	Causal Inference in economics and marking:
+	<a href="#varian-mkt"> summary</a>, <a href="http://ftp.cs.ucla.edu/pub/stat_ser/r481.pdf"> link </a>
       </li>
       
       <li>
-	<a href="https://arxiv.org/abs/1804.10846">Data science is science's second chance to get causal inference right: A classification of data science tasks</a>
+	Data science is science's second chance to get causal inference right: A classification of data science tasks:
+	<a href="#paper-do-seven-rules"> summary</a>, <a href="https://arxiv.org/abs/1804.10846"> link </a>
       </li>
 	
       <li>
 	<a href="#paper-do-calculus">
-	  Introduction to Judea Pearl's Do-Calculus (https://arxiv.org/abs/1305.5506)
-	</a>
+	  Introduction to Judea Pearl's Do-Calculus: 
+	  	<a href="#judea-do-calculus"> summary</a>, <a href="https://arxiv.org/abs/1305.5506"> link </a>
       </li>
 
-      <li> The Seven Tools of Causal Inference with Reflections on Machine Learning, 
+      <li> The Seven Tools of Causal Inference with Reflections on Machine Learning:
 	<a href="#paper-do-seven-rules"> summary</a>, <a href="http://ftp.cs.ucla.edu/pub/stat_ser/r481.pdf"> link </a>
       </li>
 
       <li>
-	<a href="#paper-limits-heterogeneous">
-	  Limits of Estimating Heterogeneous Treatment Effects: Guidelines for Practical Algorithm Design (http://proceedings.mlr.press/v80/alaa18a.html)
-	</a>
+	Limits of Estimating Heterogeneous Treatment Effects: Guidelines for Practical Algorithm Design:
+	  <a href="#paper-limits-heterogeneous"> summary</a>, <a href="http://proceedings.mlr.press/v80/alaa18a.html"> link </a>
       </li>
 
       <li>
-	<a href="#applied-mullainathan">
-	  Machine Learning: An Applied Econometric Approach (https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87)
-	</a>
+	  Machine Learning: An Applied Econometric Approach:
+	  <a href="#applied-mullainathan"> summary</a>, <a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87"> link </a>
       </li>
 
       <li>
-	<a href="#human-decisions">
-	  Humans Decisions and Machine Predictions (https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf)
-	</a>
+	Humans Decisions and Machine Predictions: 
+	<a href="#human-decisions"> summary</a>, <a href="https://cs.stanford.edu/~jure/pubs/bail-qje17.pdf"> link </a>
       </li>
 
       <li>
-	<a href="#prediction-policy-problems">
-	  Prediction Policy Problems  (http://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf)
-	</a>
+	Prediction Policy Problems:
+	<a href="#prediction-policy-problems"> summary</a>, <a href="http://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf"> link </a>
       </li>
+
+      <li> Estimations considerations in Contextual Bandits:
+	<a href="#thompson-contextual-bandits"> summary</a>, <a href="https://arxiv.org/abs/1711.07077"> link </a>
+      </li>
+	    
+      <li> Thompson Sampling for Contextual Bandits with Linear Payoffs:
+	<a href="#thompson-contextual-bandits"> summary</a>, <a href="http://proceedings.mlr.press/v28/agrawal13.pdf"> link </a>
+      </li>
+
+
+      
 
     </ol>
 
@@ -255,8 +264,8 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
 	    identified by researchers and funding agencies in an attempt to alle-
 	    viate the general problem of robustness. Unfortunately, the problem
 	    of robustness, in its broadest form, requires a causal model of the
-	    environment, and cannot be handled at the level of Association."
-	    "Associations are not sufficient for identifying the mechanisms affected
+	    environment, and cannot be handled at the level of Association.
+	    Associations are not sufficient for identifying the mechanisms affected
 	    by changes that occurred [Pearl and Bareinboim 2014]. The reason
 	    being that surface changes in observed associations do not uniquely
 	    identify the underlying mechanism responsible for the change. The
@@ -268,9 +277,13 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
 	    [Bareinboim and Pearl 2016]."
 	  </li>
 	  <li> Recovering from Missing Data: when the missing in our data is not random, you better go causal. </li>
-	  <li>Causal Discovery: when you're trying to define the right graphical model, you can use techniques to test the candidates and discover/test the causal relation there.</li>
-	  
+	  <li>Causal Discovery: when you're trying to define the right graphical model, you can use techniques to test the candidates and discover/test the causal relation there.</li>	  
 	</ol>
+	At conclusion:
+	"It is also important to keep in mind that the theoretical limitations
+	of model-free machine learning do not apply to tasks of prediction,
+	diagnosis and recognition, where interventions and counterfactuals
+	assume a secondary role."
       </div>
   </li>
 
@@ -290,6 +303,18 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
 
     </div>
   </li>
+
+  <!-- End -->
+
+  <!--Begin  -->
+
+  <li id="paper-do-seven-rules"><a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87">Estimation Considerations in Contextual Bandits, </a>
+    <div>
+      A discussion/guidance for how to choose between contextual bandits algorithms alternatives accordingly with your application, considering the problems that arise from the choosen function to learn the outcome given the covariates and biased data considering the learning early stage. Long history short: IPW (inverse probability weighting) helps when you have a "bad" start with biased data, it makes the contextual bandit explore that region and don't abandon it early. Also, Thompson Sampling, a randomized way to assign treatments, is better to deal with bias data and misspecified potential outcome model.
+    </div>
+  </li>
+
+    <!-- End -->  
 
 </ul>
 
