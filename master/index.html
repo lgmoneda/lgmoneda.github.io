@@ -325,8 +325,25 @@ When the relevant expert knowledge can be easily encoded and incorporated into t
     </div>
   </li>
 
-    <!-- End -->  
+  <!-- End -->
 
+  <!--Begin  -->
+
+  <li id="prediction-policy-problems"><a href="http://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf"> Prediction Problem Policies  </a>
+    <div>
+      A cool discussion about policies that can be build on top of pure predictive models (instead of causal ones). It states the problem with the equation:
+
+      $$\frac{d\pi(X_{0}, Y)}{dX_{0}} = \frac{\partial \pi}{\partial X_{0}} (Y) + \frac{\partial \pi}{\partial Y} \frac{\partial Y}{\partial X_{0}} $$
+
+      Where the \(\pi\) is the pay-off function, \(X_{0} \) is the decision one can take and \(Y\) is the outcome of the matter of study. So the first argument is about how the pay-off respond to our decision considering the \(Y\), so it depends on \(Y\) so predicting \(Y\) correctly is the important thing here. The second argument is how \(X_{0} \) impacts \(Y\) and then how this change will impact on \(\pi\).
+
+      The paper example about pure predictive is about a rain dance and takin an umbrella. So for someone that wants to make it rain, it's important that the rain dance causes rain and the pay-off depends on the second part (how much rain dance can influence rain). If you want to decide about taking and umbrella to work, the payoff depends on the fact that it may rain or not, and it's also known that takin an umbrella or not cannot influence rain, so the first argument is the important part and the second is zero. The real-life example is the knee surgery for elderly people, the benefit \(\pi\) depends on the prediction about how many years the person will live to take advantage of the surgery. So predicting it right is the only thing needed to make a good policy, so it can be built upon a purely predictive model.
+    </div>
+  </li>
+
+  <!-- End -->
+
+     
 </ul>
 
 <h3 id="misc">Misc</h3>
