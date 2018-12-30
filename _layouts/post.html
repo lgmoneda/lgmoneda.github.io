@@ -13,7 +13,7 @@ layout: default
 {% endfor %}
 -->
 
-<h2>{{ page.title }}</h2>
+<h2 class="post-title">{{ page.title }}</h2>
 {% if page.lang == "pt" %}
     {% assign m = page.date | date: "%-m" | minus: 1 %}
     <p class="meta">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</p>
@@ -26,4 +26,3 @@ layout: default
 </div>
 
 <!-- {% include author.html %} -->
-
