@@ -33,6 +33,14 @@ h1 {
     font-size: 3em;
     font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
 }
+h1.blog-title {
+    font-size: 3em;
+    font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+	color: #286748;
+}
+.post-title {
+	color: #286748;
+}
 p {
     font-family: "Roboto";
     font-size: 1.1em; /* it was 1.3em */
@@ -44,8 +52,8 @@ footer {
     font-size: .8em;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
+ul.posts {
+    margin: 20px auto 40px;
     font-size: 1.5em;
 }
 
@@ -126,7 +134,7 @@ figcaption {
     font-size: 0.9em;
     font-style: italic;
 }
-/* Other style  
+/* Other style
 body {
   padding: 2%;
 }
@@ -143,7 +151,7 @@ p {
 /* author info */
 
 .box {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .author {

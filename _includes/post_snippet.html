@@ -1,6 +1,6 @@
     <article class="post_card post">
       <header class="post_header">
-        <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <h2><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
         <!-- <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time> -->
 	{% if post.lang == "pt" %}
         {% assign m = post.date | date: "%-m" | minus: 1 %}
@@ -21,7 +21,7 @@
           {{ post.description}}
           {% else %}
           {{ post.excerpt }}
-          {% endif %} 
+          {% endif %}
           <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
         </p>
 	<a class="btn btn-default" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
