@@ -1,9 +1,27 @@
-<section class="author">
-  <div class="authorimage box" style="background: url(http://lgmoneda.github.io/about/profil.jpg)"></div>
-  <div class="authorinfo box">
-    <p>Luis Moneda</p>
-    <p class="bio">
-      Economist and Computer Engineering student.
+{% assign author = site.data.authors[page.author] %}
+{% assign lang = page.lang %}
+<div class="full-article-footer">
+  <div class="article-footer">
+    {% if author.avatar %}
+    <div class="avatar-module">
+      <img class="avatar" height="100px" src="{{ author.avatar }}">
+    </div>
+    {% endif %}
+    <p>
+      {% if lang == "pt" %}
+      <span class="post_date">Escrito por</span>
+      {% else %}
+      <span class="post_date">Written by</span>
+      {% endif %}
+      <br>
+      <a class="author-link" href="{{ group.absolute_url }}/author/{{ author.slug }}">{{ author.name }}</a>
+      <br>
+      {% if lang == "pt" %}
+      {{ author.bio.pt }}
+      {% else %}
+      {{ author.bio.eng }}
+      {% endif %}
+
     </p>
   </div>
-</section>
+</div>

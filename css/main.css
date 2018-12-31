@@ -2,7 +2,7 @@
 
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 50%;
 }
 
 nav ul, footer ul {
@@ -40,6 +40,15 @@ h1.blog-title {
 }
 .post-title {
 	color: #286748;
+}
+h2.post-title {
+    color: #286748;
+    margin-bottom: 5px;
+}
+.post_date {
+    line-height: 1em;
+    font-size: 0.9em;
+    color: #999;
 }
 p {
     font-family: "Roboto";
@@ -149,33 +158,57 @@ p {
 
 /* author info */
 
-.box {
-  box-sizing: border-box;
+.full-article-footer {
+    border-top: 1px solid #E0DFDB;
 }
-
-.author {
-  @media (max-width: $on-laptop) {
-    display:inline-block;
-    text-align:center;
-  }
+.article-footer {
+    padding: 20px 10px 10px 10px;
+    min-height: 115px;
+    display:table;
 }
-
-.authorimage {
-  @media (min-width: $on-laptop+1) {
-    float:left;
-  }
-  display:inline-block;
-  width: 90px;
-  height: 90px;
-  border-radius: 5%;
-  -webkit-background-size: cover !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  margin-right: 10px;
+.avatar-module {
+    display: table-cell; 
+    vertical-align: middle;
 }
-
-.authorinfo {
-  .bio {
-    color:#999;
-  }
+.avatar-module img {
+    border-radius: 50%!important;
+    height: 120px;
+    width: 120px;
+    float: left;
+    margin:0px 20px 0px 20px;
+}
+.article-footer p {
+    line-height:1.5em;
+    padding-left:15px;
+}
+a.author-link {
+    font-size:21px;
+    line-height:2em;
+    color:#617a3a;
+    text-decoration:none;
+}
+a.author-link:hover {
+    color:#000000;
+    text-decoration:none;
+}
+@media (max-width:750px) {
+.article-footer {
+display:inherit;
+margin:0px;
+}
+.avatar-module {
+display:inherit; 
+vertical-align: none;
+}
+.avatar-module img {
+margin-left: auto;
+margin-right: auto;
+display: block;
+float:none;
+margin-top:0px;
+}
+.article-footer p {
+text-align:center;
+padding-left:0px;
+}
 }

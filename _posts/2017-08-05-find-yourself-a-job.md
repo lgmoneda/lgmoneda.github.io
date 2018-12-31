@@ -5,6 +5,7 @@ date: 2018-01-21
 lang: en
 ref: find-job
 description: How to find youself a job using Python and Raspberry Pi.
+author: moneda
 ---
 
 In this post I'm going to show how a well structured HTML, Python and a loyal Raspberry Pi can help you to find a nice position in a company you like.

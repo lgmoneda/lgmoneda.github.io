@@ -16,13 +16,16 @@ layout: default
 <h2 class="post-title">{{ page.title }}</h2>
 {% if page.lang == "pt" %}
     {% assign m = page.date | date: "%-m" | minus: 1 %}
-    <p class="meta">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</p>
+    <time class="meta post_date">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</time>
 {% else %}
-    <p class="meta">{{ page.date | date_to_string }}</p>
+    <time class="meta post_date">{{ page.date | date_to_string }}</time>
 {% endif %}
 
 <div class="post">
   {{ content }}
 </div>
 
-<!-- {% include author.html %} -->
+{% assign author = site.data.authors[page.author] %}
+{% if author %}
+{% include author.html %}
+{% endif %}
