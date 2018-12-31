@@ -19,6 +19,9 @@ t:
     projects:
       name: "projects"
       url: "/projects/"
+    ds-course:
+      name: "data science course"
+      url: "/data-science-course/index.html"     
   fr:
     home:
       name: "Accueil"
@@ -45,5 +48,8 @@ t:
     projects:
       name: "projetos"
       url: "/projects/index-pt.html"
+    ds-course:
+      name: "curso de data science"
+      url: "/data-science-course/index-pt.html"
 
 gems: [rouge]
