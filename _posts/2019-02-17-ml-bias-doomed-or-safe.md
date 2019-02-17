@@ -43,7 +43,7 @@ Here it's about actions taken using the model prediction having different effect
 
 ## The optimistic
 
-After my comments it may be clear that I'm more on the optimistic side. However, on its Blog, Coursera tone looks they may have overlooked it a little. 
+After my comments it may be clear that I'm more on the optimistic side. However, on its Blog [^fn2], Coursera tone looks they may have overlooked it a little. 
 
 > Coursera’s experience underscores the fact that although there is no silver bullet for avoiding algorithmic bias, it’s also not too complicated a problem to fix, either. In fact, it’s more a matter of awareness than a difficult engineering problem to solve, and it begins with the knowledge that artificial intelligence is by no means perfect. According to Bakthavachalam, data scientists must avoid treating machine learning algorithms as black boxes because “if you don’t know what’s going on under the hood, it’s hard to imagine and diagnose issues.”
 
