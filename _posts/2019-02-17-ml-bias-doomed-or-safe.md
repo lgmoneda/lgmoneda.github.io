@@ -39,6 +39,8 @@ In my opinion, for biased data you have to focus on the output and not on the in
 
 > Finally, even ostensibly fair, neutral A.I. has the potential to worsen disparities if its implementation has disproportionate effects for certain groups. Consider a program that helps doctors decide whether a patient should go home or to a rehab facility after knee surgery. It’s a decision imbued with uncertainty but has real consequences: Evidence suggests discharge to an institution is associated with higher costs and higher risk of readmission. If an algorithm incorporates residence in a low-income neighborhood as a marker for poor social support, it may recommend minority patients go to nursing facilities instead of receive home-based physical therapy. Worse yet, a program designed to maximize efficiency or lower medical costs might discourage operating on those patients altogether.
 
+Here it's about actions taken using the model prediction having different effects for different groups. You can build more complex policies when using a model output and include variable costs and benefits depending on other characteristics available at action time. 
+
 ## The optimistic
 
 After my comments it may be clear that I'm more on the optimistic side. However, on its Blog, Coursera tone looks they may have overlooked it a little. 
