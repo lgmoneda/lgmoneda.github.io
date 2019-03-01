@@ -176,9 +176,8 @@ Ainda aqui a preocupação é dividida entre uma questão prática que vai contr
 ### Estudos de caso
 
 #### COMPAS
-http://advances.sciencemag.org/content/4/1/eaao5580.full
 
-Em um dos casos mais famosos sobre viés em aprendizado de máquina temos o _Correctional Offender Management Profiling for Alternative Sanctions_ (COMPAS), que era composto por um modelo para prever a probabilidade de reincidência criminal para indivíduos em julgamento. 
+Em um dos casos mais famosos sobre viés em aprendizado de máquina temos o _Correctional Offender Management Profiling for Alternative Sanctions_ ([COMPAS](http://advances.sciencemag.org/content/4/1/eaao5580.full)), que era composto por um modelo para prever a probabilidade de reincidência criminal para indivíduos em julgamento. 
 
 A utilidade do modelo é que há um custo em manter em custódia alguém que não gerará dados à sociedade até que ele seja julgado, assim como é danoso deixar em liberdade quem irá comenter delitos neste tempo.
 
@@ -270,6 +269,11 @@ No final, a abertura no tema indica uma opotunidade enorme para pesquisa e debat
 <!-- ## Falácia Ecológica -->
 
 <!-- https://en.wikipedia.org/wiki/Ecological_fallacy -->
+## Extra: Podcast
+
+Este texto foi feito a partir da pesquisa para participar do Podcast [Hipsters.tech](https://hipsters.tech/desafios-em-machine-learning-hipsters-137/) sobre desafios na aplicação de Machine Learning. Você pode ouvir o episódio aqui:
+
+<iframe width="320" height="30" src="https://hipsters.tech/?powerpress_embed=2171-podcast&amp;powerpress_player=mediaelement-audio" frameborder="0" scrolling="no"></iframe>
 
 ## Bibliografia
 
