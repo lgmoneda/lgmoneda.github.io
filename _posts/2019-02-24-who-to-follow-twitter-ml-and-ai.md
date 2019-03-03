@@ -19,7 +19,7 @@ Como o Twitter possui um recurso de listas, eu adicionei todos nessa [ML/AI Peop
 <div align="center">
 <figure>
 	<a href="../../../images/twitter-robot-heart.png">
-		<img  style="width:350px;margin:10px" src="../../../images/twitter-robot-heart.png"/>
+		<img style="width:250px;margin:10px" src="../../../images/twitter-robot-heart.png"/>
 	</a>
 	<figcaption>Créditos da imagem: Bryce Durbin.</figcaption>
 </figure>
