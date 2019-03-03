@@ -18,9 +18,9 @@ Bom, começamos com o meu: [@lgmoneda](https://twitter.com/lgmoneda)! Então daq
 
 - [Andrew Ng, @AndrewYNg](https://twitter.com/AndrewYNg): boa parte de nós somos frutos do curso de Machine Learning do Andrew no Coursera! Ele é fundador da plataforma e professor de Stanford.
 
-- [Judea Pearl, @yudeapearl](https://twitter.com/yudapearl): Ganhador do Turing Award, um dos grandes nomes da área e o grande nome na área de causalidade.
+- [Judea Pearl, @yudeapearl](https://twitter.com/yudapearl): Ganhador de um Turing Award, um dos grandes nomes da área e o grande nome na área de causalidade.
 
-- [Elias Bareinboim, @eliasbareinboim](https://twitter.com/eliasbareinboim): pesquisador brasileiro da Purdue University, um dos herdeiros de Judea Pearl na área da causalidade.
+- [Elias Bareinboim, @eliasbareinboim](https://twitter.com/eliasbareinboim): pesquisador brasileiro da Purdue University, também da área de causalidade e com trabalhos junto com o Pearl.
 
 - [Christopher Manning, @chrmanning](https://twitter.com/chrmanning): Stanford, NLP.
 
@@ -54,6 +54,10 @@ Bom, começamos com o meu: [@lgmoneda](https://twitter.com/lgmoneda)! Então daq
 
 - [Gilles Louppe, @glouppe](https://twitter.com/glouppe): professor na Université de Liège, cientista visitante no CERN.
 
+- [Sebastian Raschka, @rasbt](https://twitter.com/rasbt): UWMadison, ótimo tutoriais!
+
+- [Andrew Ng, @AndrewYNg](https://twitter.com/AndrewYNg): Ex Google e Baidu, co-fundador do Coursera, pesquisador em Stanford. 
+
 ### Grupos de pesquisa, Institutos e empresas de P&D
 
 - [Harvard NLP, @harvardnlp](https://twitter.com/harvardnlp)
@@ -71,11 +75,15 @@ Bom, começamos com o meu: [@lgmoneda](https://twitter.com/lgmoneda)! Então daq
 
 - [Demis Hassabis](https://twitter.com/demishassabis): Fundador e CEO da DeepMind.
 
+- [Andrej Karpathy, @karpathy](https://twitter.com/karpathy): Diretor de AI na Tesla, ex pesquisador na OpenAI.
+
 - [Chris Olah, @ch402](https://twitter.com/ch402): Google Brain.
 
 - [Greg Brockman, @gdb](https://twitter.com/gdb): Co-founder e CTO OpenAI.
 
 - [Danilo J. REsende, @DeepSpiker](https://twitter.com/DeepSpiker): DeepMind.
+
+- [Sebastian Thrun, @@SebastianThrun](https://twitter.com/SebastianThrun): Ex-Google, fundador da Udacity.
 
 - [Fernando Pereira, @earnmyturns](https://twitter.com/earnmyturns): Google VP, NLP.
 
@@ -101,7 +109,9 @@ Bom, começamos com o meu: [@lgmoneda](https://twitter.com/lgmoneda)! Então daq
 
 - [Hugo Larochelle, @hugo_larochelle](https://twitter.com/hugo_larochelle): pesquisador na Google Brain.
 
--[Michel Nielsen)[https://twitter.com/michael_nielsen]: pesquisador da Y Combinator.
+- [Michel Nielsen][https://twitter.com/michael_nielsen]: pesquisador da Y Combinator.
+
+- [Jess Hamrick, @jhamrick](https://twitter.com/jhamrick): Pesquisadora na DeepMind.
 
 ### Cientistas de dados, engenheiros de machine learning e pessoas da indústria em geral
 
