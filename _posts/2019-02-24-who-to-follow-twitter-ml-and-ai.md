@@ -12,7 +12,7 @@ Uns anos atrás eu certamente não apostaria no Twitter como ferramenta para me 
 
 Portanto, resolvi criar uma lista de usuários interessantes no Twitter para acompanhar Machine Learning. Estou listando apenas pessoas relativamente ativas. Não estou seguindo qualquer ordem. 
 
-Bom, começamos com o meu: [@lgmoneda](https://twitter.com/lgmoneda)! Então daqui pra frente só melhora :)
+Bom, começamos com o meu: [@lgmoneda](https://twitter.com/lgmoneda), então daqui pra frente só melhora :)
 
 ### Pesquisadores - Academia
 
