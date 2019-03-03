@@ -154,8 +154,3 @@ Alguns competidores de destaque do [Kaggle](www.kaggle.com):
 E um último perfil de bônus...
 
 - [AI Memes for Artificially Intelligent Teens, @ai_memes](https://twitter.com/ai_memes): memes de IA :)
-
-
-
-https://twitter.com/karpathy
-https://twitter.com/rasbt
