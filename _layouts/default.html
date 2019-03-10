@@ -26,13 +26,13 @@
 			<nav align="center">
 				<ul>
 	  				{% for menu in site.t[page.lang] %}
-	    			<li><a href="{{ menu[1].url }}">{{ menu[1].name }}</a></li>
+	    			<li><a class="menu_element" href="{{ menu[1].url }}">{{ menu[1].name }}</a></li>
 	  				{% endfor %}
-	  				<li><a href="/"> / </a></li>
+	  				<li><a class="menu_element" href="/"> / </a></li>
 	  				{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
 					{% for page in pages %}
   					<li>
-    					<a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+    					<a class="menu_element" href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
   					</li>
 					{% endfor %}
 					<!-- Multi languages for posts too -->
@@ -41,7 +41,7 @@
 					{% for post in posts %}
   					<li>
   						<span class="flag-icon flag-icon-gr flag-icon-squared"></span>
-    					<a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+    					<a class="menu_element" href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
   					</li>
 					{% endfor %}
 
@@ -67,15 +67,15 @@
 			</div><!-- /.container -->
 			<footer>
 	    		<ul>
-	        		<li><a href="mailto:lg.moneda@gmail.com"> <i class="fa fa-mail-reply fa-lg"> E-mail</i></a></li>
-	        		<li><a href="https://github.com/lgmoneda"><i class="fa fa-github fa-lg"> Github</i></a></li>
-	        		<li><a href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"> Twitter</i></a></li>
+	        		<li><a class="menu_element" href="mailto:lg.moneda@gmail.com"> <i class="fa fa-mail-reply fa-lg"> E-mail</i></a></li>
+	        		<li><a class="menu_element" href="https://github.com/lgmoneda"><i class="fa fa-github fa-lg"> Github</i></a></li>
+	        		<li><a class="menu_element" href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"> Twitter</i></a></li>
 	        		<!--
-	        		<li><a href="https://facebook.com/lgmoneda"><i class="fa fa-facebook fa-lg"> Facebook</i></a></li>
-	        		<li><a href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"> Twitter</i></a></li>
-	        		 <li><a href="https://instagram.com/lgmoneda"><i class="fa fa-instagram fa-lg"> Instagram</i></a></li>
+	        		<li><a class="menu_element" href="https://facebook.com/lgmoneda"><i class="fa fa-facebook fa-lg"> Facebook</i></a></li>
+	        		<li><a class="menu_element"  href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"> Twitter</i></a></li>
+	        		 <li><a class="menu_element" href="https://instagram.com/lgmoneda"><i class="fa fa-instagram fa-lg"> Instagram</i></a></li>
 	        		 -->
-	        		<li><a href="https://www.linkedin.com/in/luis-moneda-310b0010a"><i class="fa fa-linkedin fa-lg"> Linkedin</i></a></li>
+	        		<li><a class="menu_element" href="https://www.linkedin.com/in/luis-moneda-310b0010a"><i class="fa fa-linkedin fa-lg"> Linkedin</i></a></li>
 				</ul>
 			</footer>
 		</body>

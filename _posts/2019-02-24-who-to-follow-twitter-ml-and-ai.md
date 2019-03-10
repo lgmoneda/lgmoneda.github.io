@@ -8,7 +8,7 @@ author: moneda
 description: Uma lista de usuários interessantes para seguir para quem deseja manter-se próximo ao que é feito em Machine Learning.
 ---
 
-Uns anos atrás eu certamente não apostaria no Twitter como ferramenta para me manter atualizado em um campo técnico. Porém, aos poucos fui seguindo pessoas envolvidas com Machine Learning e no final tornou-se uma das mais interessantes formas de acompanhar os avanços e conteúdo interessante na área e ter um contato com pesquisadores, líderes e outros profissionais.
+Uns anos atrás eu certamente não apostaria no **Twitter** como ferramenta para me manter atualizado em um campo técnico. Porém, aos poucos fui seguindo pessoas envolvidas com Machine Learning e no final tornou-se uma das mais interessantes formas de acompanhar os avanços e conteúdo interessante na área e ter um contato com pesquisadores, líderes e outros profissionais.
 
 Resolvi, então, criar uma lista de usuários interessantes do Twitter para acompanhar Machine Learning. Estou listando apenas pessoas relativamente ativas. Não estou seguindo qualquer ordem.
 
@@ -19,7 +19,7 @@ Como o Twitter possui um recurso de listas, eu adicionei todos nessa [ML/AI Peop
 <div align="center">
 <figure>
 	<a href="../../../images/twitter-robot-heart.png">
-		<img  style="width:500px;margin:10px" src="../../../images/robot.png"/>
+		<img  style="width:350px;margin:10px" src="../../../images/robot.png"/>
 	</a>
 	<figcaption>Créditos da imagem: Bryce Durbin.</figcaption>
 </figure>
