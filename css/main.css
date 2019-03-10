@@ -24,7 +24,8 @@ nav ul li, footer ul li {
 
 a {
     text-decoration: none;
-    color: #999;
+    color: #606fc0;
+    font-weight: bold;
 }
 a:hover {
     text-decoration: underline;
@@ -39,7 +40,8 @@ h1.blog-title {
 	color: #286748;
 }
 .post-title {
-	color: #286748;
+    color: #286748;
+    font-weight: lighter;
 }
 h2.post-title {
     color: #286748;
@@ -50,11 +52,20 @@ h2.post-title {
     font-size: 0.9em;
     color: #999;
 }
+.menu_element {
+    text-decoration: none;
+    color: #999;
+}
 p {
-    font-family: "Roboto";
-    font-size: 1.1em; /* it was 1.3em */
-    line-height: 1.4em;
+    margin-bottom: 20px;
+    font-family: Lora, sans-serif;
     color: #333;
+    font-size: 16px;
+    line-height: 1.6em;
+    font-weight: 400;
+}
+b, strong {
+    font-weight: bold;
 }
 footer {
     border-top: 1px solid #d5d5d5;
