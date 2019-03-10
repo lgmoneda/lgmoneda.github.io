@@ -17,6 +17,7 @@ Neste texto pretendo abordar o significado de bias para ciência de dados. Para 
    4.1 [Com quem a máquina está aprendendo?](#com-quem-a-máquina-está-aprendendo)  
    4.2 [Estudos de caso](#estudos-de-caso)
 5. [Ética e justiça](#ética-e-justiça)
+6. [Bibliografia](#bibliografia)
 
 ### Significado de Bias
 
@@ -176,7 +177,7 @@ Ainda aqui a preocupação é dividida entre uma questão prática que vai contr
 
 #### Estudos de caso
 
-##### COMPAS
+#### COMPAS
 
 Em um dos casos mais famosos sobre viés em aprendizado de máquina temos o _Correctional Offender Management Profiling for Alternative Sanctions_ ([COMPAS](http://advances.sciencemag.org/content/4/1/eaao5580.full)), que era composto por um modelo para prever a probabilidade de reincidência criminal para indivíduos em julgamento. 
 
@@ -188,7 +189,7 @@ O modelo previa erroneamente que uma pessoa negra sera reincidente em uma taxa d
 
 O que fica claro neste caso é que o viés não é sobre usar características para prever melhor, mas é sobre superestimar ou subestimar probabilidades utilizando viéses presentes na sociedade. 
 
-##### Amazon
+#### Amazon
 
 A [Amazon desenvolveu uma ferramental experimental](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G) para avaliar currículos automaticamente que envolvia aprendizado de máquina. O que foi percebido após um tempo é que mesmo não tendo o gênero explícito no modelo, ele aprendeu que palavras associadas teriam um impacto negativo, como fazer parte do clube de xadrez para mulheres, ou ter estudado em escolas apenas para meninas. 
 
