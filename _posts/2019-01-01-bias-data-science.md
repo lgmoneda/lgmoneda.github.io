@@ -18,7 +18,7 @@ Neste texto pretendo abordar o significado de bias para ciência de dados. Para 
    4.2 [Estudos de caso](#estudos-de-caso)
 5. [Ética e justiça](#ética-e-justiça)
 
-## Significado de Bias
+### Significado de Bias
 
 A tradução de bias para o português é viés, cujo significado é:
 
@@ -31,7 +31,7 @@ A tradução de bias para o português é viés, cujo significado é:
 
 Os significados mais relevantes para um contexto de dados são o de tendência e distorção. 
 
-## Bias em estatística
+### Bias em estatística
 
 A primeira vez que a maioria dos cientistas de dados ouviu o termo "bias" foi provavelmente em aulas introdutórias de estatística. Qual o significado de bias em um livro de estatística básica? É o de **desvio sistemático** do valor real. É desvio por não coincidir com o valor real e é sistemático por acontecer consistentemente, em média. 
 
@@ -94,7 +94,7 @@ Portanto, até aqui estamos chamando de não viesada as técnicas que utilizamos
 
 Muito provavelmente
 
-## Aprendizado de Máquina
+### Aprendizado de Máquina
 
 Um dos grandes temas em aprendizado de máquina é o _trade-off_ entre viés e variância (Bias x Variance), que reflete também no sub-ajuste e sobre-ajuste (underfitting e overfitting). 
 
@@ -131,14 +131,15 @@ Qual o resultado obtido? Um modelo que é capaz de conectar novos exemplos vindo
 
 Qualquer aplicação que esteja fora disso terá um comportamento diferente. E é sobre isso que falaremos nas próximas secções.
 
-## Ciência de dados
+### Ciência de dados
+
 Vamos tratar essa secção como se fosse "aplicação de aprendizado de máquina". Boa parte do que é chamado de ciência de dados hoje é sobre previsão. E previsões são feitas de modelos e dados. 
 
 Vamos considerar que o bias em relação à modelo é o relacionado ao _trade off_ anteriormente explicado e que é uma questão teórica.
 
 Portanto, de onde vem o que comumente temos ouvido como "efeitos preocupantes causados pelo bias em machine learning"?
 
-### Com quem a máquina está aprendendo?
+#### Com quem a máquina está aprendendo?
 
 Como dito, em aprendizado de máquina queremos aprender uma relação, um fenômeno: churn, inadimplência, ocorrência de uma doença e etc. E em aprendizado supervisionado precisamos de uma base anotada para dizer para máquina: "Tá vendo como as coisas acontecem? É assim! Agora eu quero que você aprenda todas as regras que dizem como as características podem prever cada caso.". Mas como essa base foi anotada?
 
@@ -173,9 +174,9 @@ Das causas, podemos citar:
 
 Ainda aqui a preocupação é dividida entre uma questão prática que vai contra a teoria, com a diferença entre populações de treinamento e aplicação, e a sociedade em geral, que preocupa-se com qual é este viés que está sendo reproduzido pelo modelo e como ele afeta a vida das pessoas. 
 
-### Estudos de caso
+#### Estudos de caso
 
-#### COMPAS
+##### COMPAS
 
 Em um dos casos mais famosos sobre viés em aprendizado de máquina temos o _Correctional Offender Management Profiling for Alternative Sanctions_ ([COMPAS](http://advances.sciencemag.org/content/4/1/eaao5580.full)), que era composto por um modelo para prever a probabilidade de reincidência criminal para indivíduos em julgamento. 
 
@@ -187,7 +188,7 @@ O modelo previa erroneamente que uma pessoa negra sera reincidente em uma taxa d
 
 O que fica claro neste caso é que o viés não é sobre usar características para prever melhor, mas é sobre superestimar ou subestimar probabilidades utilizando viéses presentes na sociedade. 
 
-#### Amazon
+##### Amazon
 
 A [Amazon desenvolveu uma ferramental experimental](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G) para avaliar currículos automaticamente que envolvia aprendizado de máquina. O que foi percebido após um tempo é que mesmo não tendo o gênero explícito no modelo, ele aprendeu que palavras associadas teriam um impacto negativo, como fazer parte do clube de xadrez para mulheres, ou ter estudado em escolas apenas para meninas. 
 
@@ -218,7 +219,8 @@ E isso parece péssimo e provavelmente é. O modelo quer maximizar os acertos e 
 
 O que é preocupante não é só que a diferença nas proporções contribuem para o tratamento desigual, mas também o viés que foi usado no passado para aprovar os funcionários está inserido no modelo. Embora não haja informações de como foram geradas as anotações, pode-se imaginar que algo assim pode ter acontecido.
 
-## Ética e justiça
+### Ética e justiça
+
 Justiça em aprendizado de máquina e ciência de dados continua como um tema aberto. Embora a discussão sobre privacidade e uso de dados seja antiga, são novas as maneiras como dados tem sido usados e as suas consequências. 
 
 Por um lado, há a abordagem como um tema técnico: eliminar o bias estatístico dos modelos. Do outro, há a busca pela inserção de critérios no algoritmo que refletissem valores humanos.
@@ -269,13 +271,13 @@ No final, a abertura no tema indica uma opotunidade enorme para pesquisa e debat
 <!-- ## Falácia Ecológica -->
 
 <!-- https://en.wikipedia.org/wiki/Ecological_fallacy -->
-## Extra: Podcast
+### Extra: Podcast
 
 Este texto foi feito a partir da pesquisa para participar do Podcast [Hipsters.tech](https://hipsters.tech/desafios-em-machine-learning-hipsters-137/) sobre desafios na aplicação de Machine Learning. Você pode ouvir o episódio aqui:
 
 <iframe width="320" height="30" src="https://hipsters.tech/?powerpress_embed=2171-podcast&amp;powerpress_player=mediaelement-audio" frameborder="0" scrolling="no"></iframe>
 
-## Bibliografia
+### Bibliografia
 
 [^fn1]: Uriel, Ezequiel. [The simple regression model: estimation and properties](https://www.uv.es/uriel/2%20Simple%20regression%20model%20estimation%20and%20properties.pdf)
 [^fn2]: Wikipedia, [Gauss-Markov Theorem](https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem#Statement)
