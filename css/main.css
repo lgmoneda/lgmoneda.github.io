@@ -30,14 +30,23 @@ a {
 a:hover {
     text-decoration: underline;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* color: #286748; */
+    font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+}
 h1 {
-    font-size: 3em;
+    font-size: 48px;
     font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
 }
 h1.blog-title {
-    font-size: 3em;
+    font-size: 48px;
     font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
-	color: #286748;
+    color: #286748;
 }
 .post-title {
     color: #286748;
