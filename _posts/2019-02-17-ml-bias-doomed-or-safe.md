@@ -3,7 +3,7 @@ layout: post
 title: "The pessimist and the optmistic view of bias in Machine Learning"
 date: 2019-02-17
 lang: en
-ref: bias
+ref: doomed-bias
 author: moneda
 description: On how different bias in ML has been perceived
 ---
