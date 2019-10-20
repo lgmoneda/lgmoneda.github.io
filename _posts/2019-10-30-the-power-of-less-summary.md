@@ -331,7 +331,6 @@ Here are some simple tools you might use:
 
 The way to e-mail nirvana is by applying the Power of Less—simplify, set limits, and find yourself becoming more powerful with e-mail.
 
-## Added on Saturday, October 12, 2019 12:37:43 AM
 
 **LIMIT YOUR IN-BOXES**
 
@@ -400,8 +399,6 @@ Here are some things to consider:
 - When do you need to do serious, uninterrupted work, and when can you afford to browse the Internet and get distracted?
 
 I suggest that you set blocks of your day for doing uninterrupted work (without the Internet), for doing communication like e-mail or instant messaging, for doing research and other work-related Internet activities, and for doing fun stuff or just browsing.
-
-## Added on Saturday, October 12, 2019 6:15:11 AM
 
 When the internet is needed:
 - Do your Internet research first, so you don’t need to reconnect once you get started.
@@ -511,7 +508,6 @@ So avoid new commitments by learning to say “no” to new requests. A great re
 - I wish I could. Often I will honestly tell the person, “I really wish I could. It sounds great. But I just don’t have the time right now.” It validates the person’s request but makes it clear that you are unable to fulfill the commitment.
 - Don’t be sorry. Even if the person is insistent that you’re needed for this project, don’t worry—they’ll find another person to fill the need. Nothing in this world has failed because one person said “no” to a request—if the need was great enough, another person filled it. So while there’s a temptation to feel guilty that you’re ruining something good for someone you care about, don’t. That person will still get it done without you.
 
-## Added on Saturday, October 12, 2019 12:54:32 PM
 The same will work to free up time for enjoyable things you like to do in your free time:
 
 - First, make a list of the things you truly want to do. The things you love to do. The things you want to spend your precious time doing. Shorten it to four to five things, if possible—this is your Short List, the things that are most important.
@@ -629,8 +625,6 @@ Here’s how to get started:
 3. Clear everything off your desk except your computer, phone, in-box, and other essential equipment. Everything else goes, at least for now. Put it next to the pile of papers.
 4. Start with the pile of papers—take a chunk and start processing it from the top down. Never re-sort, never skip a single piece of paper, never put a piece of paper back on the pile. Do what needs to be done with that paper, and then move on to the next in the pile. The options: Trash it, delegate it, file it, do it, or put it on a list to do later. In that order of preference. If you can’t trash, delegate, or file it, then put it on a list of to-dos.
 5. Work for as long as you can, then schedule another block of time when you can do another chunk of papers or other items (or when you can finish the piles, if possible).
-
-## Added on Sunday, October 13, 2019 12:21:58 AM
 
 it’s time to ask yourself: What’s essential? What do you really need to do your job? What do you use often, and what is just cluttering your work space and drawers?
 
