@@ -8,7 +8,7 @@ author: moneda
 description: Power of less summary
 ---
 
-The `Power of Less` by Leo Babauta is a widely known and over explored in online content book. Nevertheless, I read the book realizing that though many of the described techniques are frequently offered in sources we access often, it's good to have it all together and well structured to be followed as a full program for habit change, so I decided to give it a try as a whole and summarizing the content was the first step. In particular, the book idea of simplification is extremely appealing to me considering I've been spreading too thin in the many things I've been letting get involved. The content below is the most important extracts from my highlights on Kindle, so it's literally what is in the book. I won't quote because most of it are quotes, they are slightly change to make it shorter and content just enough to get the idea. So where you read "I/me" it's Leo Babauta and not me!
+The `Power of Less` [^fn1] by Leo Babauta [^fn2] is a widely known and over explored in online content book. Nevertheless, I read the book realizing that though many of the described techniques are frequently offered in sources we access often, it's good to have it all together and well structured to be followed as a full program for habit change, so I decided to give it a try as a whole and summarizing the content was the first step - though it's more like just organizing my highlights. In particular, the book idea of simplification is extremely appealing to me considering I've been spreading too thin in the many things I've been letting get involved. The content below is the most important extracts from my highlights on Kindle, so it's literally what is in the book. I won't quote because most of it are quotes, they are slightly change to make it shorter and content just enough to get the idea. So where you read "I/me" it's Leo Babauta and not me! The bold in some sentences was added by me.
 
 0. [Introduction](#introduction)
 1. [Part I: The principles](#why-less-is-powerful)
@@ -408,7 +408,6 @@ When the internet is needed:
 - Clear all other distractions and disconnect from the Internet so you can focus on your task.
 - Set a timer and try to really focus on the task for a certain amount of time.
 - When you think of something you need to do on the Internet, write it down. You can do it later. It will wait.
-
 - Consider having an “offline hour” each day when you regularly work while disconnected. Or even an “offline day” if you think you can do it.
 - If necessary, actually unplug the Internet so that you can’t just reconnect with a couple clicks of the mouse.
 - If really necessary, give the cord that connects you to the Internet to someone else to hold for an hour or so. Or go somewhere quiet with your laptop that doesn’t have wireless Internet.
@@ -417,502 +416,408 @@ When the internet is needed:
 
 **DISCIPLINE: HOW TO STAY AWAY FROM DISTRACTIONS**
 
-The Internet, for many people, is an addiction like any other, even if we don’t realize it. That means that if you try to work while disconnected, you might have a really tough time—tougher than you think. In fact, you might not even want to consider working without a connection, if you’re addicted. Like any addiction, the urge to go on the Internet can be beaten. It takes focus and energy, but it can be done. Here’s how:
+Beat internet addiction takes focus and energy, but it can be done. Here’s how:
 
-## Added on Saturday, October 12, 2019 6:28:43 AM
+- Focus on breaking the addiction for at least one week. A month would be better, but I know you have other things to do. During this week, make it your goal to break free from the Internet and be able to work in disconnected mode when needed.
+- Set rules for using the Internet and stick to them. Rules could include “No e-mail except at 10 and 4” or “No Internet from 9 to 10 a.m.” or “No Internet in the mornings.” Make up the rules based on what will be optimal for your working situation, but stick to them.
+- When you get an urge to go on the Internet, let it pass. Every urge is like a wave—it builds up, then it goes away. Another wave will come, but just ride that one out too. Every urge will pass if you just wait a few minutes.
+- Apply positive public pressure to yourself. Ask family, friends, and coworkers to encourage you to stay away from the Internet during the times you designate—to help you follow your own rules. Tell them to keep an eye on you, and report to them each day. This positive public pressure will help you break your addiction.
+- Reward yourself. If you successfully stay away from the Internet for the time you set, give yourself a little reward—a treat, or some time checking e-mail, or whatever will help motivate you.
+- Use delay strategies that work for any addiction, such as deep breathing, drinking water, self-massage, and walking around. Do these things and the urge will pass.
+- Give it some time. It takes getting used to. But the more you practice being disconnected, the better you’ll get. It’s a great feeling.
 
-Focus on breaking the addiction for at least one week. A month would be better, but I know you have other things to do. During this week, make it your goal to break free from the Internet and be able to work in disconnected mode when needed. Set rules for using the Internet and stick to them. Rules could include “No e-mail except at 10 and 4” or “No Internet from 9 to 10 a.m.” or “No Internet in the mornings.” Make up the rules based on what will be optimal for your working situation, but stick to them. When you get an urge to go on the Internet, let it pass. Every urge is like a wave—it builds up, then it goes away. Another wave will come, but just ride that one out too. Every urge will pass if you just wait a few minutes. Apply positive public pressure to yourself. Ask family, friends, and coworkers to encourage you to stay away from the Internet during the times you designate—to help you follow your own rules. Tell them to keep an eye on you, and report to them each day. This positive public pressure will help you break your addiction. Reward yourself. If you successfully stay away from the Internet for the time you set, give yourself a little reward—a treat, or some time checking e-mail, or whatever will help motivate you. Use delay strategies that work for any addiction, such as deep breathing, drinking water, self-massage, and walking around. Do these things and the urge will pass. Give it some time. It takes getting used to. But the more you practice being disconnected, the better you’ll get. It’s a great feeling.
+## Simple Filing
 
-## Added on Saturday, October 12, 2019 6:29:48 AM
+`I'm not much interested in filing since I don't deal with a lot of paperwork, so I didn't take any notes beyond this one:`
 
-What is stacking, at its most basic level? It’s the failure on our parts to do two things: Create a simple system for organizing paperwork; and Get into the habit of using that system, immediately and routinely.
+- Create a simple system for organizing paperwork
+- Get into the habit of using that system, immediately and routinely.
 
-## Added on Saturday, October 12, 2019 11:31:43 AM
+## Simple commitments
 
-IF THERE’S ONE change that you could make today that would have the biggest impact on your life in terms of productivity, effectiveness, and being able to do the things you want to do, it would be to reduce the commitments in your life. With that one change, you could free up the time you need to focus on the important work and to achieve the things you want to achieve. With that simple change, you could free up time to pursue things you’re passionate about, to exercise, to read, to find quiet time, or to spend time with loved ones. I’m not going to lie to you: Reducing your commitments isn’t easy. It takes determination, it takes a willingness to say “no,” and it can take time. But it will pay off in so many ways, for the rest of your life.
+IF THERE’S ONE change that you could make today that would have the biggest impact on your life in terms of productivity, effectiveness, and being able to do the things you want to do, it would be **to reduce the commitments in your life**.
 
-## Added on Saturday, October 12, 2019 11:44:24 AM
+With that one change, you could free up the time you need to focus on the important work and to achieve the things you want to achieve. With that simple change, you could free up time to pursue things you’re passionate about, to exercise, to read, to find quiet time, or to spend time with loved ones. I’m not going to lie to you: Reducing your commitments isn’t easy. It takes determination, it takes a willingness to say “no,” and it can take time. But it will pay off in so many ways, for the rest of your life.
 
-Each time someone makes a request of you and you agree to that request, you’re making a commitment that will take up a part of your life. The curious thing is that we don’t ever decide to do them all at once. They are added to our lives, one at a time—and viewed individually, none of them ever seems like too much work. But cumulatively, these commitments add up, so that eventually they can consume your entire life, and your life no longer belongs to you. Cut back on those commitments, one at a time, leaving yourself with the time you need for the things that are important to you.
 
-## Added on Saturday, October 12, 2019 11:49:01 AM
+**Each time someone makes a request of you and you agree to that request, you’re making a commitment that will take up a part of your life**. The curious thing is that we don’t ever decide to do them all at once. They are added to our lives, one at a time—and viewed individually, none of them ever seems like too much work. But cumulatively, these commitments add up, so that eventually they can consume your entire life, and your life no longer belongs to you. Cut back on those commitments, one at a time, leaving yourself with the time you need for the things that are important to you.
 
-TAKE INVENTORY OF YOUR COMMITMENTS In order to get a handle on your commitments, you first have to take inventory, so you know what you have on your plate. Take an inventory of the commitments in your life right now. Here are some common ones (though you may have more): Work: We have multiple commitments at our jobs. List them all. Side work: Some of us do freelance work or do odd jobs to take in money. Family: We may play a role as husband, wife, father, mother, son, daughter. These roles come with many commitments. Kids: My kids have had soccer, choir, Academic Challenge Bowl, National Junior Honor Society, basketball, spelling bee, science fair, guitar lessons, and more. Each of your kids’ commitments is yours too. Civic: We may volunteer for different organizations, or be a board member or officer on a nonprofit organization. Religious: Many of us are very involved with our churches, or are part of a church organization. Or perhaps we are committed to going to service once a week. Hobbies: Perhaps you are a runner or a cyclist, or you build models, or are part of a secret underground comic book organization. These come with commitments. Home: Aside from regular family stuff, there’s the stuff you have to do at home. Online: We may be a regular on a forum or mailing list or Google group. These are online communities that come with commitments too. You might have other categories. List everything. The more honest and complete your list, the better. MAKE A SHORT LIST Now take a close look at each thing on the list and ask yourself: How does this give my life value? How important is it to me? Is it in line with my life priorities and values? How would it affect my life if I dropped out? Does this further my life goals? Then make a “Short List” of your four to five most important commitments. What are the things you love to do most, the things that are most important to you? Your list can include whatever you like, but here’s mine: Spending time with my wife and kids Writing Running Reading That’s my entire list. It might take some soul-searching to cut your list down to four to five things. Once you’ve created your Short List, I suggest you go over your list of commitments and decide which of those commitments fit on your Short List and which don’t. The commitments that align with your Short List are the essential commitments. For example, writing posts for my blog, Zen Habits, is one of my commitments. It falls under one of my Short List priorities—writing—so it is an essential commitment in my mind. What are your essential commitments? BEGIN ELIMINATING THE NONESSENTIAL Everything on your commitment list that isn’t essential is, by definition, nonessential. They’re all on the chopping block. Eliminating the nonessential commitments is crucial, as it will free up a lot of your time, leave you with less stress, and allow you to focus on the essential. Never have enough time for the truly important projects, or your family, or your passion in life? Now you will, if you eliminate the nonessentials and use the freed-up time for the essentials on your Short List. Here’s how to eliminate the nonessential commitments on your list: 1. Start with something small. Don’t try to eliminate everything at once. Maybe find something on the list that will be easy to eliminate. That’s your first target. Look for the thing that gives you the least return for your invested time and effort. The thing that’s least in line with your life values and priorities and goals. Cut it out, at least for a couple of weeks, and see if you can get along without it. 2. Call or e-mail to send your regrets. Explain that you have too much on your plate right now and you simply don’t have the time to fulfill the commitment. Apologize, but be firm, and don’t leave any room for negotiation. 3. Eliminate the commitment from your appointment, and instead fill that time with something from your Short List. Don’t just use that time to watch TV—use it wisely. 4. Repeat this process with the other nonessential commitments, one at a time, until you’re done. Strive to eliminate all nonessential commitments from your list. This might take a while, especially with some commitments where you’ll need to find a replacement or some other solution. But don’t stop until you’ve eliminated all of them. Each time you cut a commitment, it may give you a feeling of guilt, because others want you to keep that commitment. But it’s also a huge relief, not having to keep that commitment each day or week or month. It frees up a lot of your time, and while others may be disappointed, you have to keep what’s important to you in mind, not what’s important to everyone else. If we committed to what everyone else wanted all the time, we would never have any time left for ourselves.
+**TAKE INVENTORY OF YOUR COMMITMENTS**
 
-## Added on Saturday, October 12, 2019 11:52:10 AM
+In order to get a handle on your commitments, you first have to take inventory, so you know what you have on your plate.
 
-LEARN TO SAY “NO” Your list of commitments didn’t become overloaded by itself. Those commitments were added to your life, one by one, because you accepted them. Someone made a request and you said “yes,” one commitment at a time. Now that you’re in the process of eliminating your nonessential commitments and freeing up time for your Short List, keep your list short by not adding new commitments, if at all possible. Sometimes, adding a commitment is a good thing, if it’s something you love, and if you make time for it by dropping something you don’t love as much. But most of the time, new commitments just add to your load and take time and energy away from more important or enjoyable pursuits. So avoid new commitments by learning to say “no” to new requests. These requests come in all the time, at home and work, via phone or e-mail, when you run into someone at the supermarket. Learn to recognize them as requests for new commitments, and learn to turn them down. This is very difficult for many people, who feel a sense of obligation to say “yes,” who are uncomfortable turning people down, who think that they have no good reason to say no to a simple request by a friend or coworker or loved one in need. But you do have a good reason to say “no”—a great reason, in fact: Your time is limited and precious. You might think you have all the time in the world, and that a one-hour commitment won’t matter much. But most people only have a couple hours of free time each day, when you factor in sleep and getting ready and eating time and commuting time and work and chores. Protect your time—it’s your most valuable commodity. Guard it with your life. If you have difficulty saying “no” to requests, here are some tips: First, be aware. Learn to recognize requests for what they are—demands on your time. And be aware that your time is extremely limited, and that you want to fill that limited time with the things that are important to you. Consider your Short List. Is the request in line with the four to five priorities you wrote out in your Short List? If not, the commitment is nonessential. Don’t allow it to come into your life. Be honest. Tell the person that you’re trying to cut back on your commitments because you’ve been overloaded. Tell the person that you are trying to focus and can’t commit to anything new right now. Most likely, they’ll understand. If not, be assured that at least you are doing what is right for you. Be firm. Say, “I just can’t right now” and make it clear that you’re not open to negotiation or persuasion. If you don’t make that clear, they might pester you until you give in. I wish I could. Often I will honestly tell the person, “I really wish I could. It sounds great. But I just don’t have the time right now.” It validates the person’s request but makes it clear that you are unable to fulfill the commitment. Don’t be sorry. Even if the person is insistent that you’re needed for this project, don’t worry—they’ll find another person to fill the need. Nothing in this world has failed because one person said “no” to a request—if the need was great enough, another person filled it. So while there’s a temptation to feel guilty that you’re ruining something good for someone you care about, don’t. That person will still get it done without you.
+Here are some common ones (though you may have more):
+
+- Work: We have multiple commitments at our jobs. List them all.
+- Side work: Some of us do freelance work or do odd jobs to take in money.
+- Family: We may play a role as husband, wife, father, mother, son, daughter. These roles come with many commitments. - Kids: My kids have had soccer, choir, Academic Challenge Bowl, National Junior Honor Society, basketball, spelling bee, science fair, guitar lessons, and more. Each of your kids’ commitments is yours too.
+- Civic: We may volunteer for different organizations, or be a board member or officer on a nonprofit organization.
+- Religious: Many of us are very involved with our churches, or are part of a church organization. Or perhaps we are committed to going to service once a week.
+- Hobbies: Perhaps you are a runner or a cyclist, or you build models, or are part of a secret underground comic book organization. These come with commitments.
+- Home: Aside from regular family stuff, there’s the stuff you have to do at home.
+- Online: We may be a regular on a forum or mailing list or Google group. These are online communities that come with commitments too. You might have other categories. List everything. The more honest and complete your list, the better.
+
+**MAKE A SHORT LIST**
+
+Now take a close look at each thing on the list and ask yourself:
+
+- How does this give my life value?
+- How important is it to me?
+- Is it in line with my life priorities and values?
+- How would it affect my life if I dropped out?
+- Does this further my life goals?
+
+Then make a “Short List” of your four to five most important commitments. What are the things you love to do most, the things that are most important to you?
+
+Here’s mine:
+- Spending time with my wife and kids
+- Writing
+- Running
+- Reading
+
+It might take some soul-searching to cut your list down to four to five things.
+
+Once you’ve created your Short List, I suggest you go over your list of commitments and decide which of those commitments fit on your Short List and which don’t. The commitments that align with your Short List are the essential commitments.
+
+What are your essential commitments?
+
+**BEGIN ELIMINATING THE NONESSENTIAL**
+
+Everything on your commitment list that isn’t essential is, by definition, nonessential. They’re all on the chopping block. Eliminating the nonessential commitments is crucial, as it will free up a lot of your time, leave you with less stress, and allow you to focus on the essential. Never have enough time for the truly important projects, or your family, or your passion in life? Now you will, if you eliminate the nonessentials and use the freed-up time for the essentials on your Short List.
+
+Here’s how to eliminate the nonessential commitments on your list:
+
+1. Start with something small. Don’t try to eliminate everything at once. Maybe find something on the list that will be easy to eliminate. That’s your first target. Look for the thing that gives you the least return for your invested time and effort. The thing that’s least in line with your life values and priorities and goals. Cut it out, at least for a couple of weeks, and see if you can get along without it.
+2. Call or e-mail to send your regrets. Explain that you have too much on your plate right now and you simply don’t have the time to fulfill the commitment. Apologize, but be firm, and don’t leave any room for negotiation.
+3. Eliminate the commitment from your appointment, and instead fill that time with something from your Short List. Don’t just use that time to watch TV—use it wisely.
+4. Repeat this process with the other nonessential commitments, one at a time, until you’re done. Strive to eliminate all nonessential commitments from your list. This might take a while, especially with some commitments where you’ll need to find a replacement or some other solution. But don’t stop until you’ve eliminated all of them.
+
+Each time you cut a commitment, it may give you a feeling of guilt, because others want you to keep that commitment. But it’s also a huge relief, not having to keep that commitment each day or week or month. It frees up a lot of your time, and while others may be disappointed, you have to keep what’s important to you in mind, not what’s important to everyone else. If we committed to what everyone else wanted all the time, we would never have any time left for ourselves.
+
+**LEARN TO SAY “NO”**
+
+Your list of commitments didn’t become overloaded by itself.
+
+Sometimes, adding a commitment is a good thing, if it’s something you love, and if you make time for it by dropping something you don’t love as much. But most of the time, new commitments just add to your load and take time and energy away from more important or enjoyable pursuits.
+
+So avoid new commitments by learning to say “no” to new requests. A great reason, in fact: Your time is limited and precious. You might think you have all the time in the world, and that a one-hour commitment won’t matter much. But most people only have a couple hours of free time each day, when you factor in sleep and getting ready and eating time and commuting time and work and chores.
+
+**Protect your time—it’s your most valuable commodity**. Guard it with your life. If you have difficulty saying “no” to requests, here are some tips:
+
+- First, be aware. Learn to recognize requests for what they are—demands on your time. And be aware that your time is extremely limited, and that you want to fill that limited time with the things that are important to you.
+- Consider your Short List. Is the request in line with the four to five priorities you wrote out in your Short List? If not, the commitment is nonessential. Don’t allow it to come into your life.
+- Be honest. Tell the person that you’re trying to cut back on your commitments because you’ve been overloaded. Tell the person that you are trying to focus and can’t commit to anything new right now. Most likely, they’ll understand. If not, be assured that at least you are doing what is right for you.
+- Be firm. Say, “I just can’t right now” and make it clear that you’re not open to negotiation or persuasion. If you don’t make that clear, they might pester you until you give in.
+- I wish I could. Often I will honestly tell the person, “I really wish I could. It sounds great. But I just don’t have the time right now.” It validates the person’s request but makes it clear that you are unable to fulfill the commitment.
+- Don’t be sorry. Even if the person is insistent that you’re needed for this project, don’t worry—they’ll find another person to fill the need. Nothing in this world has failed because one person said “no” to a request—if the need was great enough, another person filled it. So while there’s a temptation to feel guilty that you’re ruining something good for someone you care about, don’t. That person will still get it done without you.
 
 ## Added on Saturday, October 12, 2019 12:54:32 PM
+The same will work to free up time for enjoyable things you like to do in your free time:
 
-First, make a list of the things you truly want to do. The things you love to do. The things you want to spend your precious time doing. Shorten it to four to five things, if possible—this is your Short List, the things that are most important. Eliminate as much of the rest of the stuff as possible from your private life. Schedule your free time so that you’re doing the things on your Short List. It really is that simple. When I decided I wanted to spend more time with my family, it was simply a matter of making that time a priority. I would turn down invitations to social engagements, say no to friends who wanted to go out, and cancel previous commitments—just because they weren’t as high a priority as spending time with my family.
+- First, make a list of the things you truly want to do. The things you love to do. The things you want to spend your precious time doing. Shorten it to four to five things, if possible—this is your Short List, the things that are most important.
+- Eliminate as much of the rest of the stuff as possible from your private life.
+- Schedule your free time so that you’re doing the things on your Short List.
 
-## Added on Saturday, October 12, 2019 1:02:49 PM
+It really is that simple. When I decided I wanted to spend more time with my family, it was simply a matter of making that time a priority. I would turn down invitations to social engagements, say no to friends who wanted to go out, and cancel previous commitments—just because they weren’t as high a priority as spending time with my family.
 
-TIPS FOR SIMPLIFYING YOUR PERSONAL LIFE While creating the simple life is as simple as the three steps I outlined above, you’ll get use out of the tips below. I suggest you take a weekend out of your life to examine these issues, to plan how you’re going to simplify your life, and to start making changes to your schedule. What’s important. First, take a step back and think about what’s important to you. What do you really want to be doing? Who do you want to spend your time with? What do you want to accomplish with your work? Make a Short List of four to five things you love doing. Examine your commitments. A big part of the problem is that our lives are way too full. We can’t possibly do everything we have committed to doing, and we certainly can’t enjoy it if we’re trying to do everything. Accept that you can’t do everything, know that you want to do what’s important to you, and try to eliminate the commitments that aren’t as important. Do less during your days. Don’t fill your day up with things to do. You will end up rushing to do them all. If you normally try (and fail) to do seven to ten things, do three important ones instead (with three more smaller items to do if you get those three done). This will give you time to do what you need to do, and not rush. Leave space between tasks or appointments. Another mistake is trying to schedule things back-to-back. This leaves no cushion in case things take longer than we planned (which they always do), and it also gives us a feeling of being rushed and stressed throughout the day. Instead, leave a good-sized gap between your appointments or tasks, allowing you to focus more on each one, and have a transition time between them. Eliminate as much as possible from your to-do list. You can’t do everything on your to-do list. Even if you could, more things will come up. Simplify your to-do list down to the essentials as much as you can. This allows you to rush less and focus more on what’s important. Now, slow down and enjoy every task. This is the most important tip in this chapter. Read it twice. Whatever you’re doing, whether it’s a work task or taking a shower or brushing your teeth or cooking dinner or driving to work, slow down. Try to enjoy whatever you’re doing. Try to pay attention, instead of thinking about other things. Be in the moment. This isn’t easy, as you will often forget. But find a way to remind yourself. Unless the task involves actual pain, there isn’t anything that can’t be enjoyable if you give it the proper attention. Single-task. This is kind of a mantra of mine. Do one thing at a time, and do it well. Eliminate stress. Find the stressors in your life, and find ways to eliminate them. Create time for solitude. In addition to slowing down and enjoying the tasks we do, and doing less of them, it’s also important to just have some time to yourself. Do nothing. Sometimes, it’s good to forget about doing things, and do nothing. Don’t be afraid to be lazy sometimes. Sprinkle simple pleasures throughout your day. Knowing what your simple pleasures are, and putting a few of them in each day, can go a long way to making life more enjoyable. Practice being present. You can practice being in the moment at any time during the day. Simply focus on what you’re doing right now, not on the past or the future. Free up time. Simplifying your life in general is a way to free up time to do the stuff you want to do. Unfortunately, it can be hard to find time to even think about how to simplify your life. If that’s the case, free up at least thirty minutes a day for thinking about simplifying. Or alternatively, free up a weekend and think about it then. How can you free up thirty minutes a day? Just a few ideas: Wake earlier, watch less TV, eat lunch at your desk, take a walk for lunch, disconnect from the Internet, do e-mail only once today, shut off your phones, do one fewer thing each day.
+**TIPS FOR SIMPLIFYING YOUR PERSONAL LIFE**
 
-## Added on Saturday, October 12, 2019 11:31:59 PM
+While creating the simple life is as simple as the three steps I outlined above, you’ll get use out of the tips below. I suggest you take a weekend out of your life to examine these issues, to plan how you’re going to simplify your life, and to start making changes to your schedule.
 
-OVER THE LAST couple of years I’ve discovered the power of having simple routines, especially in the morning and evening.
+- **What’s important**. First, take a step back and think about what’s important to you. What do you really want to be doing? Who do you want to spend your time with? What do you want to accomplish with your work? Make a Short List of four to five things you love doing.
+- **Examine your commitments**. A big part of the problem is that our lives are way too full. We can’t possibly do everything we have committed to doing, and we certainly can’t enjoy it if we’re trying to do everything. Accept that you can’t do everything, know that you want to do what’s important to you, and try to eliminate the commitments that aren’t as important.
+- **Do less during your days**. Don’t fill your day up with things to do. You will end up rushing to do them all. If you normally try (and fail) to do seven to ten things, do three important ones instead (with three more smaller items to do if you get those three done). This will give you time to do what you need to do, and not rush.
+- **Leave space between tasks or appointments**. Another mistake is trying to schedule things back-to-back. This leaves no cushion in case things take longer than we planned (which they always do), and it also gives us a feeling of being rushed and stressed throughout the day. Instead, leave a good-sized gap between your appointments or tasks, allowing you to focus more on each one, and have a transition time between them.
+- **Eliminate as much as possible from your to-do list**. You can’t do everything on your to-do list. Even if you could, more things will come up. Simplify your to-do list down to the essentials as much as you can. This allows you to rush less and focus more on what’s important.
+- **Now, slow down and enjoy every task**. This is the most important tip in this chapter. Read it twice. Whatever you’re doing, whether it’s a work task or taking a shower or brushing your teeth or cooking dinner or driving to work, slow down. Try to enjoy whatever you’re doing. Try to pay attention, instead of thinking about other things. Be in the moment. This isn’t easy, as you will often forget. But find a way to remind yourself. Unless the task involves actual pain, there isn’t anything that can’t be enjoyable if you give it the proper attention.
+- **Single-task**. This is kind of a mantra of mine. Do one thing at a time, and do it well.
+- **Eliminate stress**. Find the stressors in your life, and find ways to eliminate them.
+- **Create time for solitude**. In addition to slowing down and enjoying the tasks we do, and doing less of them, it’s also important to just have some time to yourself.
+- **Do nothing**. Sometimes, it’s good to forget about doing things, and do nothing. Don’t be afraid to be lazy sometimes.
+- **Sprinkle simple pleasures throughout your day**. Knowing what your simple pleasures are, and putting a few of them in each day, can go a long way to making life more enjoyable.
+- **Practice being present**. You can practice being in the moment at any time during the day. Simply focus on what you’re doing right now, not on the past or the future.
+- **Free up time**. Simplifying your life in general is a way to free up time to do the stuff you want to do. Unfortunately, it can be hard to find time to even think about how to simplify your life. If that’s the case, free up at least thirty minutes a day for thinking about simplifying. Or alternatively, free up a weekend and think about it then. How can you free up thirty minutes a day? Just a few ideas: Wake earlier, watch less TV, eat lunch at your desk, take a walk for lunch, disconnect from the Internet, do e-mail only once today, shut off your phones, do one fewer thing each day.
 
-## Added on Saturday, October 12, 2019 11:33:07 PM
+## Simple Daily Routine
 
-one that incorporates something that gives you solitude, quiet, or stress release.
+OVER THE LAST couple of years I’ve discovered the power of having simple routines, especially in the morning and evening. One that incorporates something that gives you solitude, quiet, or stress release.
 
-## Added on Saturday, October 12, 2019 11:34:01 PM
+If you haven’t yet, I recommend that you create your own calming routine.
 
-If you haven’t yet, I recommend that you create your own calming routine. Give it a couple of weeks to become a habit, focus on doing it every day, and soon you will not want to miss it. With a well-planned morning routine: You can prepare for your day and set your goals; You can get in exercise, reading, writing, or other things you normally don’t have time for; You can do something enjoyable, calming, and relaxing.
-
-## Added on Saturday, October 12, 2019 11:34:41 PM
+Give it a couple of weeks to become a habit, focus on doing it every day, and soon you will not want to miss it. With a well-planned morning routine: You can prepare for your day and set your goals; You can get in exercise, reading, writing, or other things you normally don’t have time for; You can do something enjoyable, calming, and relaxing.
 
 Choose four to six of the following ideas for your morning routine—or add activities of your own. These are just ideas to help get you started. Remember to keep your routine simple.
 
-## Added on Saturday, October 12, 2019 11:35:23 PM
+Some ideas for your morning routine:
+- Have coffee or tea
+- Watch the sunrise
+- Exercise. Shower
+- Take a bath
+- Read
+- Eat breakfast
+- Do yoga
+- Meditate
+- Take a walk in nature
+- Prepare lunch or lunches
+- Write
+- Journal
+- Choose your three Most Important Tasks for the day
+- Review your goals
+- Have a gratitude session (say thanks for all that you’re thankful for)
 
-Some ideas for your morning routine: Have coffee or tea. Watch the sunrise. Exercise. Shower. Take a bath. Read. Eat breakfast. Do yoga. Meditate. Take a walk in nature. Prepare lunch or lunches. Write. Journal. Choose your three Most Important Tasks for the day. Review your goals. Have a gratitude session (say thanks for all that you’re thankful for). Notice that “check e-mail” and other work-related activities aren’t on this list. I suggest you wait until after your morning routine to get started on these types of things, otherwise you might get so caught up in e-mail that you run out of time for the rest.
+Notice that “check e-mail” and other work-related activities aren’t on this list. I suggest you wait until after your morning routine to get started on these types of things, otherwise you might get so caught up in e-mail that you run out of time for the rest.
 
-## Added on Saturday, October 12, 2019 11:35:32 PM
+**SUPERCHARGE TOMORROW WITH AN EVENING ROUTINE**
 
-SUPERCHARGE TOMORROW WITH AN EVENING ROUTINE
+If the mornings are a great time for me, the evenings are just as wonderful. Planning a calming evening routine, especially one where you prepare for the next day, can make a huge difference to your mornings. An evening routine can take as little as ten to thirty minutes, or as long as a few hours, depending on your goals.
 
-## Added on Saturday, October 12, 2019 11:36:52 PM
+Some common goals of an evening routine include:
 
-If the mornings are a great time for me, the evenings are just as wonderful. Planning a calming evening routine, especially one where you prepare for the next day, can make a huge difference to your mornings. An evening routine can take as little as ten to thirty minutes, or as long as a few hours, depending on your goals. Some common goals of an evening routine include: Prepare for the next day. Unwind from a long day. Review your day. Keep your house clean. Calm yourself before bed. Spend quality time with loved ones. Log, journal, write, or exercise. EVENING ROUTINE IDEAS Pick four to six of the following activities for your evening routine, or add ideas of your own. And again, remember to keep the routine simple, try it out for a few days, and adjust as needed. Some ideas for your evening routine: Cook dinner. Eat dinner. Shower/take a bath. Brush your teeth/floss. Journal. Write. Read. Exercise. Prepare clothes/lunch for tomorrow. Meditate. Do your log. Review your day. Give yourself a facial treatment. Read to your kids. Clean up. Have a conversation with your partner. Notice there’s no “check e-mail” or work-related activities here either. Use the evening to relax and prepare for the next day, if possible.
+- Prepare for the next day
+- Unwind from a long day
+- Review your day
+- Keep your house clean
+- Calm yourself before bed
+- Spend quality time with loved ones
+- Log, journal, write, or exercise
 
-## Added on Sunday, October 13, 2019 12:12:06 AM
+**EVENING ROUTINE IDEAS**
 
-The key steps to establishing routines are to: 1. Focus on them. Keep your routine as your foremost goal for one month, focusing on nothing else. Having too many habits at once spreads your focus too thin, and makes success less likely. 2. Make them rewarding. If you establish a calming routine, the routine itself is your reward. Include enjoyable activities in the morning to start your day off right, so that you’re not rushed when you begin work. In the evening, quietly prepare for the next day, review your day, and have some quiet time. Satisfying routines like that will make you look forward to doing them. 3. Log your progress. Reporting your progress every day on an online forum is a great way to log progress, but you could also do it in a journal or some other type of log, or put a big “X” on a wall calendar. The key is to keep track of it and see how well you’ve done over the course of a month.
+Pick four to six of the following activities for your evening routine, or add ideas of your own. And again, remember to keep the routine simple, try it out for a few days, and adjust as needed.
 
-## Added on Sunday, October 13, 2019 12:13:55 AM
+Some ideas for your evening routine:
+
+- Cook dinner
+- Eat dinner
+- Shower/take a bath
+- Brush your teeth/floss
+- Journal
+- Write
+- Read
+- Exercise
+- Prepare clothes/lunch for tomorrow
+- Meditate
+- Do your log
+- Review your day
+- Give yourself a facial treatment
+- Read to your kids
+- Clean up
+- Have a conversation with your partner
+
+Notice there’s no “check e-mail” or work-related activities here either. Use the evening to relax and prepare for the next day, if possible.
+
+The key steps to establishing routines are to:
+
+1. Focus on them. Keep your routine as your foremost goal for one month, focusing on nothing else. Having too many habits at once spreads your focus too thin, and makes success less likely.
+2. Make them rewarding. If you establish a calming routine, the routine itself is your reward. Include enjoyable activities in the morning to start your day off right, so that you’re not rushed when you begin work. In the evening, quietly prepare for the next day, review your day, and have some quiet time. Satisfying routines like that will make you look forward to doing them.
+3. Log your progress. Reporting your progress every day on an online forum is a great way to log progress, but you could also do it in a journal or some other type of log, or put a big “X” on a wall calendar. The key is to keep track of it and see how well you’ve done over the course of a month.
+
+## Declutter your workspace
 
 A CLEAN DESK ALLOWS you to focus on the task at hand, which is the key to being effective in whatever you’re trying to do.
 
-## Added on Sunday, October 13, 2019 12:15:21 AM
-
 A cluttered desk is full of visual distractions—if you’re trying to focus on one task, but glance at a pile or folder or note that reminds you of something else, you’ll switch focus, at least for a few seconds. But if you clear your desk of distractions, then your mind has no choice but to focus on what you’re supposed to be doing.
-
-## Added on Sunday, October 13, 2019 12:15:47 AM
 
 Given that calm and focus are two keys to this book, I think any chance to improve them is worth the effort.
 
-## Added on Sunday, October 13, 2019 12:15:53 AM
-
 It gives you a Zen-like sense of calm.
 
-## Added on Sunday, October 13, 2019 12:20:10 AM
+Here’s how to get started:
 
-Here’s how to get started: 1. Set aside a little time. You don’t need to block off the whole day (though you can if you like). An hour is a good start, if you can manage it, or thirty minutes will also suffice if your day is busy. Put it on your calendar for today and don’t push it back. 2. Take all the paperwork off the top of your desk and put it in a big pile. You’ll tackle that soon. 3. Clear everything off your desk except your computer, phone, in-box, and other essential equipment. Everything else goes, at least for now. Put it next to the pile of papers. 4. Start with the pile of papers—take a chunk and start processing it from the top down. Never re-sort, never skip a single piece of paper, never put a piece of paper back on the pile. Do what needs to be done with that paper, and then move on to the next in the pile. The options: Trash it, delegate it, file it, do it, or put it on a list to do later. In that order of preference. If you can’t trash, delegate, or file it, then put it on a list of to-dos. 5. Work for as long as you can, then schedule another block of time when you can do another chunk of papers or other items (or when you can finish the piles, if possible).
+1. Set aside a little time. You don’t need to block off the whole day (though you can if you like). An hour is a good start, if you can manage it, or thirty minutes will also suffice if your day is busy. Put it on your calendar for today and don’t push it back.
+2. Take all the paperwork off the top of your desk and put it in a big pile. You’ll tackle that soon.
+3. Clear everything off your desk except your computer, phone, in-box, and other essential equipment. Everything else goes, at least for now. Put it next to the pile of papers.
+4. Start with the pile of papers—take a chunk and start processing it from the top down. Never re-sort, never skip a single piece of paper, never put a piece of paper back on the pile. Do what needs to be done with that paper, and then move on to the next in the pile. The options: Trash it, delegate it, file it, do it, or put it on a list to do later. In that order of preference. If you can’t trash, delegate, or file it, then put it on a list of to-dos.
+5. Work for as long as you can, then schedule another block of time when you can do another chunk of papers or other items (or when you can finish the piles, if possible).
 
 ## Added on Sunday, October 13, 2019 12:21:58 AM
 
 it’s time to ask yourself: What’s essential? What do you really need to do your job? What do you use often, and what is just cluttering your work space and drawers?
 
-## Added on Sunday, October 13, 2019 12:23:21 AM
 
-If you’ve got folders or stacks of paper on or around your desk, process them and put them away as in the previous section—listing
+- If you’ve got folders or stacks of paper on or around your desk, process them and put them away as in the previous section—listing
+- Get rid of distracting knickknacks, posters, pictures,
+- Take everything out of a shelf or drawer at once. Focus on one drawer or shelf at a time, and empty it completely.
+- Sort through your pile, one item at a time, and make quick decisions.
+- Papers? Be ruthless, unless it’s important.
+- If you are on the fence with a lot of things, create a “maybe” box.
 
-## Added on Sunday, October 13, 2019 12:23:28 AM
 
-Get rid of distracting knickknacks, posters, pictures,
-
-## Added on Sunday, October 13, 2019 12:23:45 AM
-
-Take everything out of a shelf or drawer at once. Focus on one drawer or shelf at a time, and empty it completely.
-
-## Added on Sunday, October 13, 2019 12:24:53 AM
-
-Sort through your pile, one item at a time, and make quick decisions.
-
-## Added on Sunday, October 13, 2019 12:25:54 AM
-
-Papers? Be ruthless, unless it’s important.
-
-## Added on Sunday, October 13, 2019 12:26:18 AM
-
-If you are on the fence with a lot of things, create a “maybe” box.
-
-## Added on Sunday, October 13, 2019 12:29:04 AM
-
-A SYSTEM TO KEEP THINGS DECLUTTERED
-
-## Added on Sunday, October 13, 2019 12:31:16 AM
+**A SYSTEM TO KEEP THINGS DECLUTTERED**
 
 Soon you’ll have habits that will be hard to break. And trust me, once you’re used to your desk being clear, you won’t want to go back.
 
-## Added on Sunday, October 13, 2019 12:31:51 AM
-
 One of the things that gives me the most peace in my life is having a clean, simple home.
-
-## Added on Sunday, October 13, 2019 12:32:34 AM
 
 A SIMPLE HOME Once you’ve decluttered your desk, you might want to declutter your home as well. You can use the same techniques as above to declutter your living space.
 
-## Added on Sunday, October 13, 2019 12:32:57 AM
+- Less stressful.
+- More appealing.
+- Easier to clean.
 
-Less stressful.
+How to do it:
 
-## Added on Sunday, October 13, 2019 12:35:29 AM
+- Designate a home for everything, and be fanatic. When you find stuff on flat surfaces, or draped over a chair, it might be because you don’t have a designated spot for that kind of thing.
+- Schedule regular decluttering sessions. Put them in your calendar.
+- Reduce your desires for more. If clutter is coming into your life at a rate that’s too great for you to handle, you might need to look at your buying habits.
+- Thirty-day list. This is really a way to control the desires mentioned above. Make a list: Anytime you want to buy something (other than absolute necessities), put it on the list with the date you added it. Then, don’t allow yourself to buy the item until it’s been on the list for thirty days. By then, your desire for that item might have passed. It’s a great way to control that impulse to buy.
+- Change your habits. You buy a lot, you don’t designate a home for things, you don’t put things away, you buy but don’t remove things…You may have other habits that create clutter.
 
-More appealing.
+## Slow Down
 
-## Added on Sunday, October 13, 2019 12:35:48 AM
-
-Easier to clean.
-
-## Added on Sunday, October 13, 2019 1:20:05 AM
-
-Designate a home for everything, and be fanatic. When you find stuff on flat surfaces, or draped over a chair, it might be because you don’t have a designated spot for that kind of thing.
-
-## Added on Sunday, October 13, 2019 1:22:42 AM
-
-Schedule regular decluttering sessions. Put them in your calendar.
-
-## Added on Sunday, October 13, 2019 1:24:14 AM
-
-Reduce your desires for more. If clutter is coming into your life at a rate that’s too great for you to handle, you might need to look at your buying habits.
-
-## Added on Sunday, October 13, 2019 1:25:15 AM
-
-Thirty-day list. This is really a way to control the desires mentioned above. Make a list: Anytime you want to buy something (other than absolute necessities), put it on the list with the date you added it. Then, don’t allow yourself to buy the item until it’s been on the list for thirty days. By then, your desire for that item might have passed. It’s a great way to control that impulse to buy.
-
-## Added on Sunday, October 13, 2019 1:26:51 AM
-
-Change your habits.
-
-## Added on Sunday, October 13, 2019 1:29:09 AM
-
-You buy a lot, you don’t designate a home for things, you don’t put things away, you buy but don’t remove things…You may have other habits that create clutter.
-
-## Added on Sunday, October 13, 2019 1:30:15 AM
-
-We have every minute of our schedules packed with errands and tasks and chores,
-
-## Added on Sunday, October 13, 2019 1:30:43 AM
-
-Learn to move at a slower pace and you will be happier, and just as importantly, you will become more effective and productive.
-
-## Added on Sunday, October 13, 2019 1:31:04 AM
+We have every minute of our schedules packed with errands and tasks and chores. Learn to move at a slower pace and you will be happier, and just as importantly, you will become more effective and productive.
 
 You won’t learn to do more in less time, but you’ll learn to do things better, and to do the right things. This simple combination can have a wondrous impact on your effectiveness,
 
-## Added on Sunday, October 13, 2019 1:33:16 AM
+**SLOW ATTENTION**
 
-SLOW ATTENTION Our attention is one of our most important assets. What we focus our attention on becomes our reality. The projects we focus on are the projects that get completed.
+Our attention is one of our most important assets. What we focus our attention on becomes our reality. The projects we focus on are the projects that get completed.
 
-## Added on Sunday, October 13, 2019 1:35:07 AM
+Unfortunately, with the hectic pace of our lives, our attention is pulled in a million different directions all the time. We switch our attention from one thing to the next and back again, and then back to another thing, then to a new thing. As a result, nothing gets enough attention.
 
-Unfortunately, with the hectic pace of our lives, our attention is pulled in a million different directions all the time. We switch our attention from one thing to the next and back again, and then back to another thing, then to a new thing. As a result, nothing gets enough attention. Learn, instead, to focus your attention, to move it from one thing to the next more reluctantly, more slowly, at a more relaxed pace. As a result, things will start getting done. You’ll start to notice things more. You’ll be less stressed. Here’s how to do it: Pick a simple task to start with. Try to keep your attention on this task without switching. This could be something like eating, gardening, washing dishes, ironing, or cooking. Every time you switch your attention, take note of it. After you become more aware of your attention, learn to stop yourself when you begin to switch your attention. Practice this method throughout your day, no matter what you’re doing. If you’re showering, focus on your showering. If you’re eating, focus on your eating (see below for more). Stop yourself when your attention wanders. If you’d like to try a very restful morning practice, try a simple meditation technique (no chanting or anything like that). Simply sit somewhere comfortable, early in the morning, and close your eyes (don’t fall asleep!). Then focus your attention on your breathing. If your attention wanders, simply become aware of it, acknowledge the thoughts that come into your head, and return your attention to your breathing. Feel your breath as it comes into your body, and then as it exits. Keep your attention on your breathing for as long as possible. It takes practice, but you’ll get better at it.
+Learn, instead, to focus your attention, to move it from one thing to the next more reluctantly, more slowly, at a more relaxed pace. As a result, things will start getting done. You’ll start to notice things more. You’ll be less stressed. Here’s how to do it:
 
-## Added on Sunday, October 13, 2019 1:36:42 AM
+- Pick a simple task to start with. Try to keep your attention on this task without switching. This could be something like eating, gardening, washing dishes, ironing, or cooking. Every time you switch your attention, take note of it. After you become more aware of your attention, learn to stop yourself when you begin to switch your attention.
+- Practice this method throughout your day, no matter what you’re doing. If you’re showering, focus on your showering. If you’re eating, focus on your eating (see below for more). Stop yourself when your attention wanders.
+- If you’d like to try a very restful morning practice, try a simple meditation technique (no chanting or anything like that). Simply sit somewhere comfortable, early in the morning, and close your eyes (don’t fall asleep!). Then focus your attention on your breathing. If your attention wanders, simply become aware of it, acknowledge the thoughts that come into your head, and return your attention to your breathing. Feel your breath as it comes into your body, and then as it exits. Keep your attention on your breathing for as long as possible. It takes practice, but you’ll get better at it.
 
-SLOW WORKING
+**SLOW WORKING**
 
-## Added on Sunday, October 13, 2019 1:47:17 AM
+Instead, try this method:
 
-Instead, try this method: 1. Choose work you love. If you dread a task, you’ll have a hard time losing yourself in it. If your job is made up of stuff you hate, you might want to consider finding another job. Or consider seeking projects you love to do within your current job. At any rate, be sure that whatever task you choose is something you can be passionate about. 2. Choose an important task. There’s work you love that’s easy and unimportant, and then there’s work you love that will make a long-term impact on your career and life. Choose the latter, as it will be a much better use of your time. 3. Make sure it’s challenging, but not too hard. If a task is too easy, you will be able to complete it without much thought or effort. A task should be challenging enough to require your full concentration. However, if it is too hard, you will find it difficult to lose yourself in it, as you will spend most of your concentration just trying to figure out how to do it—either that or you’ll end up discouraged. It may take some trial and error to find tasks of the appropriate level of difficulty. 4. Find your quiet, peak time. This is actually two steps grouped into one. First, you’ll want to find a time that’s quiet, or you’ll never be able to focus. For me, that’s mornings, before the hustle of everyday life builds to a dull roar. That might be early morning, when you just wake, or early in the workday, when most people haven’t arrived yet or are still getting their coffee and settling down. Or you might try the lunch hour, when people are usually out of the office. Evenings also work well for many people. Or, if you’re lucky, you can do it at any time of the day if you can find a quiet spot to work in. Whatever time you choose, it should also be a peak energy time for you. Some people get tired after lunch—that’s not a good time for this method. Find a time when you have lots of energy and can concentrate. 5. Clear away distractions, and focus. Aside from finding a quiet time and place to work, you’ll want to clear away all other distractions. That means turning off distracting music (unless you find music that helps you focus), turning off phones, e-mail, and IM notifications, and anything else that might pop up or make noise to interrupt your thoughts. Then learn to focus on that task for as long as possible. 6. Enjoy yourself. Losing yourself in a task is an amazing thing, in my experience. It feels great to be able to really pour yourself into something worthwhile, to make great progress on a project or important task, to do something you’re passionate about. Take the time to appreciate this feeling. 7. Keep practicing. Again, this takes practice. Each step will take some practice, from finding a quiet, peak time for yourself, to clearing distractions, to choosing the right task. And especially keeping your focus on a task for a long time. But each time you fail, try to learn from it. Each time you succeed, you should also learn from it—what did you do right? And the more you practice, the better you’ll get. 8. Reap the rewards. Aside from the pleasure of immersing yourself in a task, you’ll also be happier with your work in general. You’ll get important projects done. You’ll complete tasks more often, rather than starting and stopping frequently. All of this is hugely satisfying and rewarding. Take the time to appreciate this, and to continue to practice it every day.
+1. Choose work you love. If you dread a task, you’ll have a hard time losing yourself in it. If your job is made up of stuff you hate, you might want to consider finding another job. Or consider seeking projects you love to do within your current job. At any rate, be sure that whatever task you choose is something you can be passionate about.
+2. Choose an important task. There’s work you love that’s easy and unimportant, and then there’s work you love that will make a long-term impact on your career and life. Choose the latter, as it will be a much better use of your time.
+3. Make sure it’s challenging, but not too hard. If a task is too easy, you will be able to complete it without much thought or effort. A task should be challenging enough to require your full concentration. However, if it is too hard, you will find it difficult to lose yourself in it, as you will spend most of your concentration just trying to figure out how to do it—either that or you’ll end up discouraged. It may take some trial and error to find tasks of the appropriate level of difficulty.
+4. Find your quiet, peak time. This is actually two steps grouped into one. First, you’ll want to find a time that’s quiet, or you’ll never be able to focus. For me, that’s mornings, before the hustle of everyday life builds to a dull roar. That might be early morning, when you just wake, or early in the workday, when most people haven’t arrived yet or are still getting their coffee and settling down. Or you might try the lunch hour, when people are usually out of the office. Evenings also work well for many people. Or, if you’re lucky, you can do it at any time of the day if you can find a quiet spot to work in. Whatever time you choose, it should also be a peak energy time for you. Some people get tired after lunch—that’s not a good time for this method. Find a time when you have lots of energy and can concentrate.
+5. Clear away distractions, and focus. Aside from finding a quiet time and place to work, you’ll want to clear away all other distractions. That means turning off distracting music (unless you find music that helps you focus), turning off phones, e-mail, and IM notifications, and anything else that might pop up or make noise to interrupt your thoughts. Then learn to focus on that task for as long as possible.
+6. Enjoy yourself. Losing yourself in a task is an amazing thing, in my experience. It feels great to be able to really pour yourself into something worthwhile, to make great progress on a project or important task, to do something you’re passionate about. Take the time to appreciate this feeling.
+7. Keep practicing. Again, this takes practice. Each step will take some practice, from finding a quiet, peak time for yourself, to clearing distractions, to choosing the right task. And especially keeping your focus on a task for a long time. But each time you fail, try to learn from it. Each time you succeed, you should also learn from it—what did you do right? And the more you practice, the better you’ll get.
+8. Reap the rewards. Aside from the pleasure of immersing yourself in a task, you’ll also be happier with your work in general. You’ll get important projects done. You’ll complete tasks more often, rather than starting and stopping frequently. All of this is hugely satisfying and rewarding. Take the time to appreciate this, and to continue to practice it every day.
 
-## Added on Sunday, October 13, 2019 1:54:14 AM
+**SLOW EATING**
 
 Some good reasons you should consider the simple act of eating more slowly:
 
-## Added on Sunday, October 13, 2019 1:54:19 AM
+- Lose weight.
+- Enjoy your food.
+- Better digestion.
+- Less stress.
+- Rebel against fast food and fast life.
 
-Lose weight.
-
-## Added on Sunday, October 13, 2019 1:54:24 AM
-
-Enjoy your food.
-
-## Added on Sunday, October 13, 2019 1:54:31 AM
-
-Better digestion.
-
-## Added on Sunday, October 13, 2019 1:54:35 AM
-
-Less stress.
-
-## Added on Sunday, October 13, 2019 1:54:42 AM
-
-Rebel against fast food and fast life.
-
-## Added on Sunday, October 13, 2019 1:55:26 AM
-
-Simple Health and Fitness
-
-## Added on Sunday, October 13, 2019 5:34:12 AM
+## Simple Health and Fitness
 
 The recipe for getting lean and fit and healthy is simple, of course, and everyone knows it: Eat healthily and exercise regularly.
 
-## Added on Sunday, October 13, 2019 9:18:07 AM
+So our simple fitness plan is this:
 
-So our simple fitness plan is this: Use the first month to focus exclusively on forming the exercise habit. Don’t worry about the diet at this point, although you can start eating healthier foods if you like. But the habit of exercise is our focus: We want to make it as regular and as important as brushing our teeth. We will start small and focus on making it a regular thing, rather than going all out this first month. The second month, while continuing the exercise habit, we’ll focus on making gradual, healthy changes to our diet. Every month thereafter, we will set short-term goals for gradual improvements in our exercise and diet plans. We will reward ourselves each month for our progress, and stay accountable to others for our fitness plan.
+- Use the first month to focus exclusively on forming the exercise habit. Don’t worry about the diet at this point, although you can start eating healthier foods if you like. But the habit of exercise is our focus: We want to make it as regular and as important as brushing our teeth. We will start small and focus on making it a regular thing, rather than going all out this first month.
+- The second month, while continuing the exercise habit, we’ll focus on making gradual, healthy changes to our diet.
+- Every month thereafter, we will set short-term goals for gradual improvements in our exercise and diet plans. We will reward ourselves each month for our progress, and stay accountable to others for our fitness plan.
 
-## Added on Sunday, October 13, 2019 9:26:30 AM
+**FORMING THE EXERCISE HABIT**
 
-Here’s the plan: 1. Start light. Start your workout plan as easy as possible until you’ve learned to stick to it. You can gradually increase your exercise later, but at first it is vitally important that you hold yourself back. The first week, just do five to ten minutes of cardio—fast walking, running, cycling, or swimming. Only five to ten minutes, and no more. You will want to do more, most likely, but don’t. The next week, increase your time by five minutes, and do that every week for the first month, so that by the end of the month you’re doing twenty to twenty-five minutes each workout. If this seems like too little to you, don’t worry; after it becomes a habit you can do more. Focus on forming the habit first. 2. Schedule your workout time. This is crucial—figure out a time when you will be able to exercise, when nothing will interfere. For most people, morning is the best time, because evening workouts are often canceled due to social engagements or other obligations. But for some people, working out right after work is best, and for others, a lunchtime workout works well. Choose the time that works best for you, and create space in your schedule for your workouts. The first week, you just need to schedule three workouts—give yourself thirty minutes, as the workout appointment always takes longer than the workout itself. The second and third weeks, schedule four workouts, and the fourth week, schedule five workouts. Try to stay with five workouts a week from then on, as this is the best way to get in good shape. This is important: Treat these workout appointments as your most important appointments of the day. Don’t let anything get in the way of them. 3. Don’t allow yourself to miss a day. Just about the only good reasons to miss a workout are sickness or injury. Otherwise, don’t let yourself skip a workout. These workouts are so light, in the beginning, that they shouldn’t be tiring you out too much. If you’re tired from a long day’s work, just start the workout—you’ll be glad you did. If you start skipping workouts, you will soon make a habit of not exercising, instead of the other way around. When forming a habit, it’s very important that you be consistent. Remember, it’s just like brushing your teeth—do it for your health, do it regularly, and just do it. 4. Don’t give up. Even more important than not missing a day is sticking with the program. If for some reason you do miss a day or two, don’t stop. Get back on the program. If you miss more than a couple of days, back up the program a week or two and start working on forming the habit again. If you get discouraged and stop, motivate yourself and start again. Failure is not as important as starting again after you fail, and sticking with it for the long term. 5. Get a partner if you can. This isn’t mandatory, but if you can find a reliable partner, it makes it a bit easier. First, having someone to talk to while you exercise makes the time go by much more quickly. Second, if you make an appointment to meet that person for your workout, you’re more likely to stick to the appointment rather than wimp out. 6. Be accountable to others. This is how you motivate yourself to stick with the program—no one wants to look bad in front of others. Commit publicly, to your friends or to the entire world via a blog, to stick with the program. Keep a strict workout and eating log, and make it public. Share it with as many people as possible. Let the light shine where once there was darkness, and that accountability will motivate you.   7. Enjoy yourself. Very mandatory. If you don’t enjoy yourself, you’ll never stick with it. So try to have as much fun as possible. Enjoy getting fit and healthy! Enjoy burning off your fat! Enjoy the sweat! Enjoy the relaxation of burning off stress! Exercise should be fun, not torture.
+Here’s the plan:
 
-## Added on Sunday, October 13, 2019 9:28:54 AM
+1. Start light. Start your workout plan as easy as possible until you’ve learned to stick to it. You can gradually increase your exercise later, but at first it is vitally important that you hold yourself back. The first week, just do five to ten minutes of cardio—fast walking, running, cycling, or swimming. Only five to ten minutes, and no more. You will want to do more, most likely, but don’t. The next week, increase your time by five minutes, and do that every week for the first month, so that by the end of the month you’re doing twenty to twenty-five minutes each workout. If this seems like too little to you, don’t worry; after it becomes a habit you can do more. Focus on forming the habit first.
+2. Schedule your workout time. This is crucial—figure out a time when you will be able to exercise, when nothing will interfere. For most people, morning is the best time, because evening workouts are often canceled due to social engagements or other obligations. But for some people, working out right after work is best, and for others, a lunchtime workout works well. Choose the time that works best for you, and create space in your schedule for your workouts. The first week, you just need to schedule three workouts—give yourself thirty minutes, as the workout appointment always takes longer than the workout itself. The second and third weeks, schedule four workouts, and the fourth week, schedule five workouts. Try to stay with five workouts a week from then on, as this is the best way to get in good shape. This is important: Treat these workout appointments as your most important appointments of the day. Don’t let anything get in the way of them.
+3. Don’t allow yourself to miss a day. Just about the only good reasons to miss a workout are sickness or injury. Otherwise, don’t let yourself skip a workout. These workouts are so light, in the beginning, that they shouldn’t be tiring you out too much. If you’re tired from a long day’s work, just start the workout—you’ll be glad you did. If you start skipping workouts, you will soon make a habit of not exercising, instead of the other way around. When forming a habit, it’s very important that you be consistent. Remember, it’s just like brushing your teeth—do it for your health, do it regularly, and just do it.
+4. Don’t give up. Even more important than not missing a day is sticking with the program. If for some reason you do miss a day or two, don’t stop. Get back on the program. If you miss more than a couple of days, back up the program a week or two and start working on forming the habit again. If you get discouraged and stop, motivate yourself and start again. Failure is not as important as starting again after you fail, and sticking with it for the long term.
+5. Get a partner if you can. This isn’t mandatory, but if you can find a reliable partner, it makes it a bit easier. First, having someone to talk to while you exercise makes the time go by much more quickly. Second, if you make an appointment to meet that person for your workout, you’re more likely to stick to the appointment rather than wimp out.
+6. Be accountable to others. This is how you motivate yourself to stick with the program—no one wants to look bad in front of others. Commit publicly, to your friends or to the entire world via a blog, to stick with the program. Keep a strict workout and eating log, and make it public. Share it with as many people as possible. Let the light shine where once there was darkness, and that accountability will motivate you.  
+7. Enjoy yourself. Very mandatory. If you don’t enjoy yourself, you’ll never stick with it. So try to have as much fun as possible. Enjoy getting fit and healthy! Enjoy burning off your fat! Enjoy the sweat! Enjoy the relaxation of burning off stress! Exercise should be fun, not torture.
+
 
 After your month of forming the exercise habit, it’s time to start focusing on your eating habits. If you already eat fairly healthily, you can modify this to suit your needs, and try to make further improvements in your diet gradually.
 
-## Added on Sunday, October 13, 2019 9:30:05 AM
+**MAKING GRADUAL HEALTHY DIET CHANGES
 
-Here’s your plan: 1. Eat when you’re lightly hungry. Not when you’re ravenous.
+Here’s your plan:
 
-## Added on Sunday, October 13, 2019 9:31:05 AM
+1. Eat when you’re lightly hungry.
+2. Eat light foods
+3. Eat slowly
+4. Eat until you're lightly full, not stuffed.
 
-attention to your hunger. If you’re getting hungry, eat. Action steps: Plan meals every three to four hours, be more aware of your hunger, pack snacks or meals for on the road. This is your plan for the first week—don’t worry about the next steps until after the first week.
+**CONTINUATION, SHORT-TERM GOALS AND ACCOUNTABILITY**
 
-## Added on Sunday, October 13, 2019 9:38:51 AM
+1. Continue to gradually increase exercise, adding variety.
+2. Continue to eat healthier, also adding variety and flavor.
+3. Set short-term goals.
+4. Hold yourself accountable. Log your eating and exercise daily. This is the key habit. If you can log your workout, you will start to see your progress, and it will motivate you to keep going.
+5. Reward yourself.
 
-STEP 3: CONTINUATION, SHORT-TERM GOALS AND ACCOUNTABILITY
+**EXERCISE MOTIVATIONS**
 
-## Added on Sunday, October 13, 2019 9:38:57 AM
+1. How you feel after a workout.
+2. Time for you.
+3. Calories burned.
+4. Having fun.
+5. How you’re going to look.
+6. Being attractive.
+7. Stress relief.
+8. Adrenaline rush.
+9. Time for contemplation.
+10. An exercise log/graph.
+11. A coach or trainer.
+12. An exercise class.
+13. Your before picture.
+14. A 5K race or triathlon.
+15. Living long enough to see your grandkids…and play with them.
+16. The scale. It’s not motivating to weigh yourself every day, as your weight fluctuates. But if you weigh yourself once a week, you’ll be motivated to have it keep going down, instead of up. Combine the scale with the measuring tape, and measure your waist.
+17. Reaching a goal. Set a goal for weight, or your waist measurement, or a number of days to work out, or a number of miles to run this week. Setting and tracking a goal helps motivate you to complete that goal. Make it easily achievable.
+18. Posting it on your blog. Tell people you’re going to lose weight or exercise daily, and report to them. You’ll make it happen.
 
-Continue to gradually increase exercise, adding variety.
-
-## Added on Sunday, October 13, 2019 9:39:04 AM
-
-Continue to eat healthier, also adding variety and flavor.
-
-## Added on Sunday, October 13, 2019 9:39:16 AM
-
-Set short-term goals.
-
-## Added on Sunday, October 13, 2019 9:40:24 AM
-
-Hold yourself accountable. Log your eating and exercise daily. This is the key habit. If you can log your workout, you will start to see your progress, and it will motivate you to keep going.
-
-## Added on Sunday, October 13, 2019 9:41:32 AM
-
-Reward yourself.
-
-## Added on Sunday, October 13, 2019 9:41:56 AM
-
-How you feel after a workout.
-
-## Added on Sunday, October 13, 2019 9:42:15 AM
-
-Time for you.
-
-## Added on Sunday, October 13, 2019 9:42:31 AM
-
-Calories burned.
-
-## Added on Sunday, October 13, 2019 9:42:37 AM
-
-Having fun.
-
-## Added on Sunday, October 13, 2019 9:42:59 AM
-
-How you’re going to look.
-
-## Added on Sunday, October 13, 2019 9:44:16 AM
-
-Being attractive.
-
-## Added on Sunday, October 13, 2019 9:44:25 AM
-
-Stress relief.
-
-## Added on Sunday, October 13, 2019 9:44:31 AM
-
-Adrenaline rush.
-
-## Added on Sunday, October 13, 2019 9:44:42 AM
-
-Time for contemplation.
-
-## Added on Sunday, October 13, 2019 9:45:05 AM
-
-An exercise log/graph.
-
-## Added on Sunday, October 13, 2019 9:45:13 AM
-
-A coach or trainer.
-
-## Added on Sunday, October 13, 2019 9:45:19 AM
-
-An exercise class.
-
-## Added on Sunday, October 13, 2019 9:45:27 AM
-
-Your before picture.
-
-## Added on Sunday, October 13, 2019 9:45:38 AM
-
-A 5K race or triathlon.
-
-## Added on Sunday, October 13, 2019 9:46:46 AM
-
-Living long enough to see your grandkids…and play with them.
-
-## Added on Sunday, October 13, 2019 9:47:08 AM
-
-The scale. It’s not motivating to weigh yourself every day, as your weight fluctuates. But if you weigh yourself once a week, you’ll be motivated to have it keep going down, instead of up. Combine the scale with the measuring tape, and measure your waist.
-
-## Added on Sunday, October 13, 2019 9:47:31 AM
-
-Reaching a goal. Set a goal for weight, or your waist measurement, or a number of days to work out, or a number of miles to run this week. Setting and tracking a goal helps motivate you to complete that goal. Make it easily achievable.
-
-## Added on Sunday, October 13, 2019 9:47:44 AM
-
-Posting it on your blog. Tell people you’re going to lose weight or exercise daily, and report to them. You’ll make it happen.
-
-## Added on Sunday, October 13, 2019 9:52:48 AM
+## On motivation
 
 If you can stick with a goal long enough, you’ll get there. It just takes patience and motivation.
 
-## Added on Sunday, October 13, 2019 9:55:06 AM
-
 Don’t quit. Sticking with something for the long term is the true path to anything worthwhile.
-
-## Added on Sunday, October 13, 2019 9:57:19 AM
 
 Motivation is what drives you toward a goal, what keeps you going when things get tough, the reason you get up early to exercise or work late to finish a project.
 
-## Added on Sunday, October 13, 2019 10:02:22 AM
-
 So motivation, in its best form, is a way for you to want to do something. There may be times, for example, when you don’t feel like getting up early, and in those times you may just want to sleep in (not that there’s anything wrong with that). But if you have a reason to want to get up early, something you really want to do, you’ll jump up out of bed with excitement.
-
-## Added on Sunday, October 13, 2019 10:03:14 AM
 
 The best kind of motivation, then, is for you to really want something, to get excited about it, to be passionate about it.
 
-## Added on Sunday, October 13, 2019 10:04:48 AM
+**WAYS TO MOTIVATE YOURSELF FROM THE BEGINNING**
 
-WAYS TO MOTIVATE YOURSELF FROM THE BEGINNING It’s important to start out with the right motivation,
-
-## Added on Sunday, October 13, 2019 10:05:03 AM
+It’s important to start out with the right motivation:
 
 1. Start small. I’ve said this before, but that’s because it’s one of the most important tips in motivating yourself toward a goal. Don’t start out big! Start out with a ridiculously easy goal, and then grow from there.
 
-## Added on Sunday, October 13, 2019 10:07:56 AM
+2. One goal. Too many people start with too many goals at once, and try to do too much. And it saps energy and motivation. It’s probably the most common mistake that people make. You have to choose one goal, for now, and focus on it completely.
+3. Examine your motivation. Know your reasons. Give them some thought…and write them down. If you have loved ones, and you are doing it for them, that is more powerful than just doing it for self-interest. Doing it for yourself is good too, but you should do it for something that you really want to happen, for really good reasons.
+4. Really, really want it. This is essentially the same as the above tip, but I want to emphasize it: It’s not enough to think it would be cool to achieve something. It has to be something you’re passionate about, something you’re super excited about, something you want deeply. Make sure that your goal meets these criteria, or you won’t stick with it for long.
+5. Commit publicly.
+6. Get excited.
+7. Build anticipation.
+8. Print it out, post it up. Print out your goal in big words. Make your goal just a few words long, like a mantra (“Exercise 15 mins. Daily”), and post it up on your wall or refrigerator. Post it at home and work. Put it on your computer desktop. You want to have big reminders about your goal, to keep your focus and keep your excitement going. A picture of your goal (like a model with sexy abs, for example) also helps.
 
-2. One goal. Too many people start with too many goals at once, and try to do too much. And it saps energy and motivation. It’s probably the most common mistake that people make. You have to choose one goal, for now, and focus on it completely. 3. Examine your motivation. Know your reasons. Give them some thought…and write them down. If you have loved ones, and you are doing it for them, that is more powerful than just doing it for self-interest. Doing it for yourself is good too, but you should do it for something that you really want to happen, for really good reasons. 4. Really, really want it. This is essentially the same as the above tip, but I want to emphasize it: It’s not enough to think it would be cool to achieve something. It has to be something you’re passionate about, something you’re super excited about, something you want deeply. Make sure that your goal meets these criteria, or you won’t stick with it for long. 5. Commit publicly.
-
-## Added on Sunday, October 13, 2019 10:08:32 AM
-
-Get excited.
-
-## Added on Sunday, October 13, 2019 10:09:20 AM
-
-Build anticipation.
-
-## Added on Sunday, October 13, 2019 10:09:44 AM
-
-Print it out, post it up. Print out your goal in big words. Make your goal just a few words long, like a mantra (“Exercise 15 mins. Daily”), and post it up on your wall or refrigerator. Post it at home and work. Put it on your computer desktop. You want to have big reminders about your goal, to keep your focus and keep your excitement going. A picture of your goal (like a model with sexy abs, for example) also helps.
-
-## Added on Sunday, October 13, 2019 10:12:10 AM
+**STOP QUITTING**
 
 Here’s how you can stop from quitting, and get to your goal:
 
-## Added on Sunday, October 13, 2019 10:16:19 AM
+1. Hold yourself back. I might think I can run three miles at first. But instead of letting myself do that, I start by only running one mile. When I’m running that mile, I’ll be telling myself that I can do more! But I don’t let myself. After that workout, I’ll be looking forward to the next workout, when I’ll let myself do a mile and a half. I keep that energy reined in, harness it, so that I can ride it even further.
+2. Just start. Well, instead of thinking about how hard it is, and how long it will take, tell yourself that you just have to start. I have a rule that I just have to put on my running shoes and close the door behind me. After that, it all flows naturally. Once you start, it is never as hard as you thought it would be. This tip works for me every time.
+3. Stay accountable. If you committed yourself publicly.
+4. Squash negative thoughts and replace them with positive ones. This is one of the most important motivation skills, and I suggest you practice it daily. It’s important to start monitoring your thoughts, and to recognize negative self-talk. Just spend a few days becoming aware of every negative thought. Then, after a few days, try squashing those negative thoughts like a bug, and replacing them with a corresponding positive thought. Squash, “This is too hard!” and replace it with, “I can do this! If that wimp Leo can do it, so can I!” It sounds corny, but it works. Really.
+5. Think about the benefits.
+6. Get excited again! Think about why you lost your excitement…then think about why you were excited in the first place.
+7. Read about it. When I lose motivation, I just read a book or blog about my goal. It inspires me and reinvigorates me.
+8. Find like-minded friends. Staying motivated on your own is tough. But if you find someone with similar goals (running, dieting, finances, etc.), see if they’d like to partner with
+9. Read inspiring stories.
+10. Build on your successes. Every little step along the way is a success—celebrate the fact that you even started! And then did it for two days! Celebrate every little milestone. Then take that successful feeling and build on it with another baby step.
+11. Just get through the low points. But realize that while it may go away, it doesn’t do so permanently. It will come back.
+12. Get help. It’s hard to accomplish something alone.
+13. Chart your progress. This can be as simple as marking an X on your calendar or creating a simple spreadsheet, or logging your goal using online software. But it can be vastly rewarding to look back on your progress and to see how far you’ve come, and it can help you to keep going—you don’t want to have too many days without an X! Now, you will have some bad marks on your chart. That’s OK. Don’t let a few bad marks stop you from continuing. Strive instead to get the good marks next time.
+14. Reward yourself often. For every little step along the way, celebrate your success, and give yourself a reward. It helps to write down appropriate rewards for each step, so that you can look forward to those rewards. By appropriate, I mean 1) it’s proportionate to the size of the goal (don’t reward going on a one-mile run with a luxury cruise in the Bahamas); and 2) it doesn’t ruin your goal—if you are trying to lose weight, don’t reward a day of healthy eating with a dessert binge. It’s self-defeating.
+15. Go for mini-goals.
+16. Never skip two days in a row. This rule takes into account our natural tendency to miss days now and then. We are not perfect. So, you missed one day…now the second day is upon you and you are feeling lazy. Tell yourself, “No! You will not miss two days in a row!”
+17. Use visualization. Visualize your successful outcome in great detail. Close your eyes and think about exactly how your successful outcome will look, will feel, will smell and taste and sound.
+18. Be aware of your urges to quit, and overcome them.
+19. Find pleasure again. No one can stick to something for long if they find it unpleasant and are only rewarded after months of toil. There has to be fun, pleasure, joy in it, every day, or you won’t want to do it. Find those pleasurable things—the beauty of a morning run, for example, or the satisfaction in reporting to people that you finished another step along the way, or the deliciousness of a healthy meal.
 
-Hold yourself back.
+## References
 
-## Added on Sunday, October 13, 2019 10:17:21 AM
-
-I might think I can run three miles at first. But instead of letting myself do that, I start by only running one mile. When I’m running that mile, I’ll be telling myself that I can do more! But I don’t let myself. After that workout, I’ll be looking forward to the next workout, when I’ll let myself do a mile and a half. I keep that energy reined in, harness it, so that I can ride it even further.
-
-## Added on Sunday, October 13, 2019 10:18:38 AM
-
-Just start.
-
-## Added on Sunday, October 13, 2019 10:19:31 AM
-
-Well, instead of thinking about how hard it is, and how long it will take, tell yourself that you just have to start. I have a rule that I just have to put on my running shoes and close the door behind me. After that, it all flows naturally.
-
-## Added on Sunday, October 13, 2019 10:19:59 AM
-
-Once you start, it is never as hard as you thought it would be. This tip works for me every time.
-
-## Added on Sunday, October 13, 2019 10:20:21 AM
-
-Stay accountable. If you committed yourself publicly,
-
-## Added on Sunday, October 13, 2019 10:20:59 AM
-
-Squash negative thoughts and replace them with positive ones. This is one of the most important motivation skills, and I suggest you practice it daily. It’s important to start monitoring your thoughts, and to recognize negative self-talk. Just spend a few days becoming aware of every negative thought. Then, after a few days, try squashing those negative thoughts like a bug, and replacing them with a corresponding positive thought. Squash, “This is too hard!” and replace it with, “I can do this! If that wimp Leo can do it, so can I!” It sounds corny, but it works. Really.
-
-## Added on Sunday, October 13, 2019 10:21:49 AM
-
-Think about the benefits.
-
-## Added on Sunday, October 13, 2019 10:22:00 AM
-
-Get excited again! Think about why you lost your excitement…then think about why you were excited in the first place.
-
-## Added on Sunday, October 13, 2019 10:22:47 AM
-
-Read about it. When I lose motivation, I just read a book or blog about my goal. It inspires me and reinvigorates me.
-
-## Added on Sunday, October 13, 2019 10:23:18 AM
-
-Find like-minded friends. Staying motivated on your own is tough. But if you find someone with similar goals (running, dieting, finances, etc.), see if they’d like to partner with
-
-## Added on Sunday, October 13, 2019 10:23:44 AM
-
-Read inspiring stories.
-
-## Added on Sunday, October 13, 2019 10:24:27 AM
-
-Build on your successes. Every little step along the way is a success—celebrate the fact that you even started! And then did it for two days! Celebrate every little milestone. Then take that successful feeling and build on it with another baby step.
-
-## Added on Sunday, October 13, 2019 10:25:59 AM
-
-Just get through the low points.
-
-## Added on Sunday, October 13, 2019 10:26:11 AM
-
-But realize that while it may go away, it doesn’t do so permanently. It will come back.
-
-## Added on Sunday, October 13, 2019 10:26:24 AM
-
-Get help. It’s hard to accomplish something alone.
-
-## Added on Sunday, October 13, 2019 10:27:15 AM
-
-Chart your progress. This can be as simple as marking an X on your calendar or creating a simple spreadsheet, or logging your goal using online software. But it can be vastly rewarding to look back on your progress and to see how far you’ve come, and it can help you to keep going—you don’t want to have too many days without an X! Now, you will have some bad marks on your chart. That’s OK. Don’t let a few bad marks stop you from continuing. Strive instead to get the good marks next time.
-
-## Added on Sunday, October 13, 2019 10:28:13 AM
-
-Reward yourself often. For every little step along the way, celebrate your success, and give yourself a reward.
-
-## Added on Sunday, October 13, 2019 10:28:51 AM
-
-It helps to write down appropriate rewards for each step, so that you can look forward to those rewards. By appropriate, I mean 1) it’s proportionate to the size of the goal (don’t reward going on a one-mile run with a luxury cruise in the Bahamas); and 2) it doesn’t ruin your goal—if you are trying to lose weight, don’t reward a day of healthy eating with a dessert binge. It’s self-defeating.
-
-## Added on Sunday, October 13, 2019 10:29:04 AM
-
-Go for mini-goals.
-
-## Added on Sunday, October 13, 2019 10:30:04 AM
-
-Never skip two days in a row. This rule takes into account our natural tendency to miss days now and then. We are not perfect. So, you missed one day…now the second day is upon you and you are feeling lazy. Tell yourself, “No! You will not miss two days in a row!”
-
-## Added on Sunday, October 13, 2019 10:30:23 AM
-
-Use visualization. Visualize your successful outcome in great detail. Close your eyes and think about exactly how your successful outcome will look, will feel, will smell and taste and sound.
-
-## Added on Sunday, October 13, 2019 10:31:03 AM
-
-Be aware of your urges to quit, and overcome them.
-
-## Added on Sunday, October 13, 2019 10:31:40 AM
-
-Find pleasure again. No one can stick to something for long if they find it unpleasant and are only rewarded after months of toil. There has to be fun, pleasure, joy in it, every day, or you won’t want to do it. Find those pleasurable things—the beauty of a morning run, for example, or the satisfaction in reporting to people that you finished another step along the way, or the deliciousness of a healthy meal.
-
-
-Notas pessoais e conteúdo diretamente retirado do curso de mindfulness de Stephen Little [^fn1] da School of Life.
-
-<!-- [Áudio do exercício de respiração](https://www.dropbox.com/s/yd26ecltw9ut3gu/AplenaResp-2015-10.mp3?dl=0) -->
-[Áudio do exercício de respiração](../../../resources/AplenaResp-2015-10.mp3)
-
-> A atenção é a forma mais rara e pura de generosidade.
->
-> -- <cite>Simone Weil, filósofa francesa</cite>
-
-## Referências
-
-[^fn1]: [Centro de vivência](http://www.atencaoplena.com.br/NewSite/Welcome.html)
+[^fn1]: [The Power of Less](http://www.atencaoplena.com.br/NewSite/Welcome.html)
+[^fn2]: [Zen habits](https://zenhabits.net/)
