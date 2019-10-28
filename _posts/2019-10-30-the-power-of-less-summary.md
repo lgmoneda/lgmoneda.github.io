@@ -75,7 +75,7 @@ Take a few minutes to think about your life—what areas take up too much time, 
 - The number of projects you have on your plate
 - The number of blogs or other projects you subscribe to
 - The amount of time you spend reading on the Internet
-- The number of things on top of your desk These
+- The number of things on top of your desk
 
 **HOW TO SET LIMITS**
 
