@@ -16,6 +16,9 @@ As it might sound difficult to perform some of the activities here without kinda
 1. [Goals and values](#goals-and-values)
 2. [Identifying everything you're putting your life into](#identifying-everything-you-re-puting-your-life-into)
 3. [Planning](#planning)
+    1. [A New Habit](#a-new-habit)
+	2. [One goal system](#one-goal-system)
+	3. [Projects list](#projects-list)
 4. [Limiting](#limiting)
     1. [Goals](#goals)
 	2. [Projects](#projects)
@@ -98,7 +101,6 @@ Also, it may be included in your values helping other people under certain circu
 - Choose something easy to begin with
 - Choose something measurable
 - Be consistent, do at the same time everyday
--
 
 ### One goal system
 
