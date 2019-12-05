@@ -52,4 +52,6 @@ t:
       name: "curso de data science"
       url: "/data-science-course/index-pt.html"
 
-gems: [rouge]
+plugins:
+  - jekyll-seo-tag
+  - rouge
