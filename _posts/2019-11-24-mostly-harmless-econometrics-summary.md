@@ -6,13 +6,14 @@ lang: pt
 ref: mostly-harmless-econometrics-i
 comments: true
 description: Resumo dos capítulos I e II do livro "Mostly Harmless Econometrics"
+image: ../../../images/mostly_harmless_econometrics.jpg
 ---
 
 Depois de tantas vezes recomendado, finalmente tive a oportunidade de começar a ler o livro [Mostly Harmless Econometrics](). Decidi como apoio ao meu estudo buscar resumir os conceitos e eventualmente agregar exemplos contendo código. Evidentemente, aqui só estarão conceitos chave e exemplos mínimos para ilustrar. Considere que todos os termos são tradução livre e eu já não lembro ou nunca soube qual é a tradução mais usada para o Português de alguns deles. Antes de começar, faz sentido deixar o link do [_Mastering Econometrics_](https://mru.org/mastering-econometrics), curso que o autor do livro tem elaborado.
 
 <div align="center">
 <figure>
-	<a href="../../../images/elisp-cover.png">
+	<a href="../../../images/mostly_harmless_econometrics.jpg">
 		<img  style="width:250px;margin:10px" src="../../../images/mostly_harmless_econometrics.jpg"/>
 	</a>
 	<figcaption>A idéia é que o céu é o limite?</figcaption>
