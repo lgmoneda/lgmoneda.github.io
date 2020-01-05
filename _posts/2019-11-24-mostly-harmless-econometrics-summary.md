@@ -204,7 +204,7 @@ O capítulo possui um exemplo com dados de Krueger (1999), que podem ser encontr
 
 > The independence between class-size assignment and other variables is only valid within schools, because randomization was done within schools. Consequently, a separate dummy variable is included for each school to absorb the school effects, as $$\alpha_{i}$$.
 
-Aqui o autor diz que a independência entre a determinação da sala e as outras variáveis só é válida dentro de cada escola, pois a aleatoriazação foi feita escola por escola, ou seja, características da escola podem ser usadas para prever se o aluno foi alocado para uma sala menor, com monitoria ou normal, pois a probabilidade de cada uma dado as características das escolas é diferente. 
+Aqui o autor diz que a independência entre a determinação da sala e as outras variáveis só é válida dentro de cada escola, pois a aleatoriazação foi feita escola por escola, ou seja, características da escola podem ser usadas para prever se o aluno foi alocado para uma sala menor, com monitoria ou normal, pois a probabilidade de cada uma dado as características das escolas é diferente.
 
 Imagine que você pega um aluno aleatório do experimento, como as escolas possuem características que tornam diferentes as condições iniciais do estudo pela quantidade e distribuição dos alunos, a forma como eles são alocados em cada turma do experimento é diferente entre elas, e saber a escola de onde esse aluno veio faz com que a chance dele ter sido marcado para ir para um tipo de classe diferente seja mais ou menos provável, enquanto a informação da escola não deveria ser capaz de nos ajudar em nada nessa tarefa.
 
@@ -212,7 +212,7 @@ Para conseguir controlar pelo efeito que vem de características de cada escola,
 
 É interessante ainda passar pelo o que é apresentado no paper para reforçar como o experimento aleatório nos ajuda: ao tornar a variável de alocação no tamanho da sala aleatória, ela se torna não correlacionada com as variáveis presentes, mas *também com as variáveis omitidas*, o que faz com que não tenhamos problemas com o viés causado por variáveis omitidas em seu parâmetro $$\beta$$.
 
-Pesquisadores que buscaram reproduzir o estudo tentaram fazer uma inferência sobre quais alunos eram da mesma escola. 
+Pesquisadores que buscaram reproduzir o estudo tentaram fazer uma inferência sobre quais alunos eram da mesma escola.
 
 No meu caso, só fiz a transformação do target (média das notas) de acordo com a descrição no artigo (embora uma das três notas não esteja no dataset), rodei a regressão com as variáveis binárias para a presença em uma sala reduzida ou em uma sala com monitoria.
 
@@ -231,22 +231,22 @@ from scipy import stats
 # Lendo os dados
 data = pd.read_stata("webstar.dta")
 
-# Normalizando a nota das provas        
+# Normalizando a nota das provas
 class_types = ["small class", "regular + aide class", "regular class"]
 test_types = ["tmathss", "treadss"]
-        
+
 grade = "k"
 regular_data = data[data["cltype" + grade].isin(class_types[1:])]
 small_data = data[data["cltype" + grade].isin([class_types[0]])]
 for test_type in test_types:
     new_column = "regularized_" + test_type + grade
-    original_column = test_type + grade        
+    original_column = test_type + grade
     regular_data.loc[:, new_column] = regular_data[original_column].apply(lambda x: scoreperc(regular_data[original_column], x))
     small_data.loc[:, new_column] = small_data[original_column].apply(lambda x: scoreperc(regular_data[original_column], x))
     regularized_data = pd.concat([small_data, regular_data])
     data = data.merge(regularized_data[[new_column]], right_index=True, left_index=True, how="left")
 
-data["sat_score"] = data[["regularized_" + test_type + "k" for test_type in test_types]].mean(axis=1)			
+data["sat_score"] = data[["regularized_" + test_type + "k" for test_type in test_types]].mean(axis=1)
 data = data[~pd.isnull(data["sat_score"])]
 ```
 Não tenho certeza se consegui traduzir exatamente a transformação que o autor diz ter feito no target, aqui está a comparação para o _Kindergarden_:
@@ -279,7 +279,7 @@ def regression(data, regressors, dependent):
     X = add_constant(data[regressors])
     model = OLS(data[dependent], X, missing="drop", hasconst=True)
     results = model.fit()
-    
+
     return results
 
 ### Parâmetros que usaremos na função
@@ -287,7 +287,7 @@ regressors = ["small_class", "aide"]
 dependent = "sat_score"
 
 result = regression(data, regressors, dependent)
-result.summary()	
+result.summary()
 
 ```
 
@@ -314,3 +314,12 @@ Ou seja, esperaríamos um intercepto de **4.82**, porém, o resultado ficou um p
 
 E por esse capítulo é só!
 
+---
+
+Depois de publicar este post, perguntaram-me se o R2 baixo, 0.07 no caso, era um impeditivo para a interpretação causal.
+
+O meu entendimento é que sim. Se você olha o R^2 como a quantidade da variância da variável dependente explicada pelas independentes, é razoável esperar que pouco dela seria explicada apenas pelo tamanho da sala que o aluno está.
+
+Ao adicionar outras covariáveis, a idéia é que o beta do tamanho da sala não mude muito (no paper ele se altera um pouco), pois ele é totalmente não correlacionado com nenhuma outra covariável, mas o R^2 vai aumentando, pois mais da variância da variável dependente está sendo explicada.
+
+Considerando que o beta não mudaria, que é o efeito causal neste caso de experimento aleatório, então é indiferente que o Rˆ2 seja grande ou pequeno.

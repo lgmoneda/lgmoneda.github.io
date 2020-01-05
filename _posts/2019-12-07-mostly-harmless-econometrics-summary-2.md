@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "Resumo de livro: \"Mostly Harmless Econometrics\", cap 3"
+title: "Destrinchando a regressão, \"Mostly Harmless Econometrics\", cap 3"
 date: 2019-12-01
 lang: pt
 ref: mostly-harmless-econometrics-ii
 comments: true
-description: Resumo dos capítulos I e II do livro "Mostly Harmless Econometrics"
+description: Destrinchando a regressão - Resumo cap III do livro "Mostly Harmless Econometrics"
 image: ../../../images/mostly_harmless_econometrics.jpg
 ---
 
-Continuando com o resumo do livro [Mostly Harmless Econometrics](). A primeira parte pode ser lida [aqui](http://lgmoneda.github.io/2019/11/24/mostly-harmless-econometrics-summary.html).
+Continuando com o resumo do livro [Mostly Harmless Econometrics](https://www.amazon.com/Mostly-Harmless-Econometrics-Empiricists-Companion-ebook/dp/B003TSELA0). A primeira parte pode ser lida [aqui](http://lgmoneda.github.io/2019/11/24/mostly-harmless-econometrics-summary.html). 
+
+Escolhi o termo "destrinchando", pois neste capítulo são levantadas propriedades e criar uma intuição de como interpretar os resultados de uma regressão.
 
 <div align="center">
 <figure>
@@ -98,3 +100,6 @@ $$
 $$
 
 No meu entendimento a intuição é: a variância de $$Y$$ só poderia estar no que usamos para explicá-la (a CEF) ou no que representa a porção inexplicada, $$\epsilon$$).
+
+## asdas
+
