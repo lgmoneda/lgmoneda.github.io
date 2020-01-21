@@ -5,13 +5,9 @@ date: 2020-01-12
 lang: en
 ref: one-on-one-guide
 comments: true
-description: Compiling tips about one on one meetings.
+description: How to make the most of your time when talking to leadership.
 image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ---
-
-# The 1:1 guide
-
-How to make the most of your time when talking to leadership.
 
 ## Introduction
 
