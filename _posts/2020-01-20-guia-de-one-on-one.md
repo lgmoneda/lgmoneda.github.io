@@ -20,7 +20,7 @@ image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
    5. [Metade do clima está em suas mãos](#metade-do-clima-esta-em-suas-maos)
    6. [Desafie e seja desafiado](#desafie-e-seja-desafiado)
    7. [É a hora de levar novas idéias, traga todas!](#e-a-hora-de-levar-novas-ideas-traga-todas)
-3. [Mentoria  técnica](#mentoria-tecnica)
+3. [Mentoria técnica](#mentoria-tecnica)
    1. [Ponta pé](#ponta-pe)
    2. [Os 1:1s de mentoria](#os-1:1s-de-mentoria)
 4. [Depois desse papo todo, como que eu faço isso?](#depois-desse-papo-todo-como-que-eu-faço-isso)

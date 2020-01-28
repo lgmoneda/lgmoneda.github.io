@@ -9,6 +9,22 @@ description: How to make the most of your time when talking to leadership.
 image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ---
 
+## Index
+
+1. [Introduction](#introduction)
+2. [How to make the most when 1:1s to leadership](#how-to-make-the-most-when-1:1s-to-leadership)
+   1. [It's not about updates](#its-not-about-updates)
+   2. [It's the best time to be listened](#its-the-best-time-to-be-listened)
+   3. [It's all about you!](#its-all-about-you)
+   4. [Career, long-term and guidance are all connected](#career-long-term-and-guidance-are-all-connected)
+   5. [Half of the mood is up to you!](#half-of-the-mood-is-up-to-you)
+   6. [It's a time for new ideas, bring them all!](its-a-time-for-new-ideas-bring-them-all)
+   7. [Challenge and be challenged](#challenge-and-be-challenged)
+3. [Technical mentorship](#technical-mentorship)
+   1. [Kick-off](#kick-off)
+   2. [Catch ups](#catch-ups)
+4. [A lot of words, how to objectively do it?](#a-lot-of-words-how-to-objectively-do-it)
+
 ## Introduction
 
 The 1:1s put together two things Data Science people usually fear: meetings and personal interactions. But just as strongly as we fear investing our time in useless meetings, we all also wish to be productive and deliver great work. The price is fixed, you can't have 1:1s without meeting a person, but the benefit is unlimited and that's what we want to maximize here.
@@ -108,7 +124,7 @@ As it is expected to hear something like _"When that bug happened, I think you'v
 
 However, it's not the unique moment to get and provide feedback and challenge, they should be present seamlessly in your day-to-day.
 
-### Technical mentorship
+## Technical mentorship
 
 Mentorship happens in the day-to-day work, but formalizing it can help growing faster and focused on specific areas you care the most. However, it requires more effort and focus from you and the mentor.
 
@@ -123,7 +139,7 @@ If the person considers they can't help you on that, they can point someone else
 
 To establish the formal relationship, use the 1:1s to structure the mentorship. It can be used for a kick-off and then on for the catch-ups.
 
-#### Kick-off
+### Kick-off
 
 1. Share your background on the topics that need to be covered.
 2. Share where would you like to get and/or where the other person can get. Think of it as an exchange.
@@ -135,7 +151,7 @@ To establish the formal relationship, use the 1:1s to structure the mentorship. 
 8. Establish short-term wins. What is the first thing to get better at and what are milestones to identify success?
 9. Agree on progress evaluation. What's the criteria to assess if the mentorship is working?
 
-#### Catch ups
+### Catch ups
 
 In the 1:1s, bring the challenges, wins, subjects you want to have their opinion and so on. Use your agenda to take note of the top things you want to go through and ask for inputs. Again, the agenda is a doc you can drop subjects between the 1:1s so you remember everything that's valuable to you to discuss. By preparing beforehand, you show you value the other person's time. If you don't think it's necessary to prepare, ask yourself if it has being valuable to you and you really need the mentorship.
 
