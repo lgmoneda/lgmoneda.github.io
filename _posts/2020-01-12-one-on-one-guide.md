@@ -5,6 +5,7 @@ date: 2020-01-12
 lang: en
 ref: one-on-one-guide
 comments: true
+author: moneda
 description: How to make the most of your time when talking to leadership.
 image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ---
@@ -69,7 +70,7 @@ Your manager will be there to listen to you, primarily. You're the one with the 
 
 What are your expectations? What has been blocking you?
 
-> "But if I only bring problems to my manager, it's going to look like I'm not a problem solver, just a complainer!"
+> But if I only bring problems to my manager, it's going to look like I'm not a problem solver, just a complainer!
 
 Not at all! Your manager knows what is been accomplished - either they are already part of your squad, or they're in constant communication with people who are. Not bringing anything going bad is way more suspicious, since we all struggle when we aim for the best and it's natural to have a couple of issues to talk about.
 
@@ -168,7 +169,7 @@ You need to bring things to this conversation, it's yours. **Create a file you c
 
 It's hard to remember everything on top of your head, so prepare for it.
 
-> "I can't think about anything! My 1:1 starts in 10 minutes and my list is empty, please help me!"
+> I can't think about anything! My 1:1 starts in 10 minutes and my list is empty, please help me!
 
 Don't worry. Try to ask yourself these questions and soon you'll have something:
 

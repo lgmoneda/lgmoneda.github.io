@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Um guia para reuniõe \"one on one\" com lideranças"
+title: "Um guia para reuniões \"one on one\" com liderança"
 date: 2020-01-20
 lang: pt
 ref: one-on-one-guia
 comments: true
+author: moneda
 description: Como tirar o máximo proveito de reuniões com lideranças.
 image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ---
@@ -12,8 +13,8 @@ image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ## Índice
 
 1. [Introdução](#introdução)
-2. [Como aproveitar o máximo dos 1:1s com líderes](#como-aproveitar-o-maximo-dos-1:1s-com-lideres)
-   1. [Não é sobre atualizações](#nao-e-sobre-atualizaçoes)
+2. [Como aproveitar o máximo dos 1:1s com líderes](#como-aproveitar-o-máximo-dos-1:1s-com-líderes)
+   1. [Não é sobre atualizações](#não-é-sobre-atualizações)
    2. [É o melhor momento para ser ouvido](#e-o-melhor-momento-para-ser-ouvido)
    3. [A reunião é sobre você!](#a-reuniao-e-sobre-voce)
    4. [Carreira, longo prazo e direcionamento estão todos conectados](#carreira-longo-prazo-e-direcionamento-estao-todos-conectados)
