@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Um guia para reuniões \"one on one\" com liderança"
+title: "Um guia para reuniões \"one on one\" com lideranças"
 date: 2020-01-20
 lang: pt
 ref: one-on-one-guide
