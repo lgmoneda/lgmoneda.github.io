@@ -13,13 +13,13 @@ image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ## Index
 
 1. [Introduction](#introduction)
-2. [How to make the most when 1:1s to leadership](#how-to-make-the-most-when-1:1s-to-leadership)
+2. [How to make the most when 1:1s to leadership](#how-to-make-the-most-when-11s-to-leadership)
    1. [It's not about updates](#its-not-about-updates)
    2. [It's the best time to be listened](#its-the-best-time-to-be-listened)
    3. [It's all about you!](#its-all-about-you)
    4. [Career, long-term and guidance are all connected](#career-long-term-and-guidance-are-all-connected)
    5. [Half of the mood is up to you!](#half-of-the-mood-is-up-to-you)
-   6. [It's a time for new ideas, bring them all!](its-a-time-for-new-ideas-bring-them-all)
+   6. [It’s a time for new ideas, bring them all!](#its-a-time-for-new-ideas-bring-them-all)
    7. [Challenge and be challenged](#challenge-and-be-challenged)
 3. [Technical mentorship](#technical-mentorship)
    1. [Kick-off](#kick-off)
