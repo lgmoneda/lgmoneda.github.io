@@ -3,7 +3,7 @@ layout: post
 title: "Um guia para reuniões \"one on one\" com liderança"
 date: 2020-01-20
 lang: pt
-ref: one-on-one-guia
+ref: one-on-one-guide
 comments: true
 author: moneda
 description: Como tirar o máximo proveito de reuniões com lideranças.
@@ -13,17 +13,17 @@ image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 ## Índice
 
 1. [Introdução](#introdução)
-2. [Como aproveitar o máximo dos 1:1s com líderes](#como-aproveitar-o-máximo-dos-1:1s-com-líderes)
+2. [Como aproveitar o máximo dos 1:1s com líderes](#como-aproveitar-o-máximo-dos-11s-com-líderes)
    1. [Não é sobre atualizações](#não-é-sobre-atualizações)
-   2. [É o melhor momento para ser ouvido](#e-o-melhor-momento-para-ser-ouvido)
-   3. [A reunião é sobre você!](#a-reuniao-e-sobre-voce)
-   4. [Carreira, longo prazo e direcionamento estão todos conectados](#carreira-longo-prazo-e-direcionamento-estao-todos-conectados)
-   5. [Metade do clima está em suas mãos](#metade-do-clima-esta-em-suas-maos)
+   2. [É o melhor momento para ser ouvido](#é-o-melhor-momento-para-ser-ouvido)
+   3. [A reunião é sobre você!](#a-reunião-é-sobre-você)
+   4. [Carreira, longo prazo e direcionamento estão todos conectados](#carreira-longo-prazo-e-direcionamento-estão-todos-conectados)
+   5. [Metade do clima está em suas mãos](#metade-do-clima-está-em-suas-mãos)
    6. [Desafie e seja desafiado](#desafie-e-seja-desafiado)
-   7. [É a hora de levar novas idéias, traga todas!](#e-a-hora-de-levar-novas-ideas-traga-todas)
-3. [Mentoria técnica](#mentoria-tecnica)
-   1. [Ponta pé](#ponta-pe)
-   2. [Os 1:1s de mentoria](#os-1:1s-de-mentoria)
+   7. [É a hora de levar novas idéias, traga todas!](#é-a-hora-de-levar-novas-idéias-traga-todas)
+3. [Mentoria técnica](#mentoria-técnica)
+   1. [Ponta pé](#ponta-pé)
+   2. [Os 1:1s de mentoria](#os-11s-de-mentoria)
 4. [Depois desse papo todo, como que eu faço isso?](#depois-desse-papo-todo-como-que-eu-faço-isso)
 
 ## Introdução
