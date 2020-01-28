@@ -11,21 +11,19 @@ image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
 
 ## Índice
 
-1. [Introdução]()
-2. [Como aproveitar o máximo dos 1:1s com líderes]()
-   1. [Não é sobre atualizações]()
-   2. [É o melhor momento para ser ouvido]()
-   3. [A reunião é sobre você!]()
-   4. [Carreira, longo prazo e direcionamento estão todos conectados]()
-   5. [Metade do clima está em suas mãos]()
-   6. [Desafie e seja desafiado]()
-   7. [É a hora de levar novas idéias, traga todas!]()
-3. [Mentoria  técnica]()
-   1. [Ponta pé]()
-   2. [Os 1:1 de mentoria]()
-4. [Depois desse papo todo, como que eu faço isso?]()
-
-## A lot of words, how to objectively do it?
+1. [Introdução](#introdução)
+2. [Como aproveitar o máximo dos 1:1s com líderes](#como-aproveitar-o-maximo-dos-1:1s-com-lideres)
+   1. [Não é sobre atualizações](#nao-e-sobre-atualizaçoes)
+   2. [É o melhor momento para ser ouvido](#e-o-melhor-momento-para-ser-ouvido)
+   3. [A reunião é sobre você!](#a-reuniao-e-sobre-voce)
+   4. [Carreira, longo prazo e direcionamento estão todos conectados](#carreira-longo-prazo-e-direcionamento-estao-todos-conectados)
+   5. [Metade do clima está em suas mãos](#metade-do-clima-esta-em-suas-maos)
+   6. [Desafie e seja desafiado](#desafie-e-seja-desafiado)
+   7. [É a hora de levar novas idéias, traga todas!](#e-a-hora-de-levar-novas-ideas-traga-todas)
+3. [Mentoria  técnica](#mentoria-tecnica)
+   1. [Ponta pé](#ponta-pe)
+   2. [Os 1:1s de mentoria](#os-1:1s-de-mentoria)
+4. [Depois desse papo todo, como que eu faço isso?](#depois-desse-papo-todo-como-que-eu-faço-isso)
 
 ## Introdução
 
@@ -157,7 +155,7 @@ To establish the formal relationship, use the 1:1s to structure the mentorship. 
 9. Definam como será feita a avaliação do progresso. Qual é o critério para avaliar se a mentoria está funcionando?
 
 
-### Os 1:1 de mentoria
+### Os 1:1s de mentoria
 
 Durante os 1:1s, traga desafios, vitórias e assuntos que você gostaria de pedir uma opinião. Use a sua agenda para anotar os assuntos mais importantes que quer discutir. Novamente, a agenda é um documento em que você pode colocar lá todos os assuntos que vai lembrando no intervalo entre os 1:1s. 
 
