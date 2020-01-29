@@ -40,7 +40,7 @@ Elas colocam junto duas coisas que Cientistas de dados (ou pessoas de tecnologia
 
 Embora pode-se ter gestores focados em carreira e líderes técnicos na parte de desenvolvimento técnico, é difícil oferecer direcionamento em carreira sem falar sobre aspectos técnicos assim como seria falar sobre mentoria técnica sem conversar sobre planos de carreira, então as dicas do guia podem ser usadas quando conversando com esses dois tipos de liderança.
 
-Este guia é composto por conteúdo vindo do livro [Radical Candor](https://www.radicalcandor.com/the-book/), minha experiência no Nubank e um artigo do  [Pragmatic Engineer blog](https://blog.pragmaticengineer.com/developers-mentoring-other-developers/). Agradecimentos especiais para o Caique Lima e Paulo Rossi, ambos Nubankers, por sugerirem mudanças e revizarem o texto.
+Este guia é composto por conteúdo vindo do livro [Radical Candor](https://www.radicalcandor.com/the-book/), minha experiência no Nubank e um artigo do  [Pragmatic Engineer blog](https://blog.pragmaticengineer.com/developers-mentoring-other-developers/). Agradecimentos especiais para o Caique Lima e Paulo Rossi, ambos Nubankers, por sugerir mudanças e revisar o texto.
 
 ## Como aproveitar o máximo dos 1:1s com líderes
 
