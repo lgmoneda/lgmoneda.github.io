@@ -318,7 +318,7 @@ E por esse capítulo é só!
 
 Depois de publicar este post, perguntaram-me se o R2 baixo, 0.07 no caso, era um impeditivo para a interpretação causal.
 
-O meu entendimento é que sim. Se você olha o R^2 como a quantidade da variância da variável dependente explicada pelas independentes, é razoável esperar que pouco dela seria explicada apenas pelo tamanho da sala que o aluno está.
+O meu entendimento é que não. Se você olha o R^2 como a quantidade da variância da variável dependente explicada pelas independentes, é razoável esperar que pouco dela seria explicada apenas pelo tamanho da sala que o aluno está.
 
 Ao adicionar outras covariáveis, a idéia é que o beta do tamanho da sala não mude muito (no paper ele se altera um pouco), pois ele é totalmente não correlacionado com nenhuma outra covariável, mas o R^2 vai aumentando, pois mais da variância da variável dependente está sendo explicada.
 
