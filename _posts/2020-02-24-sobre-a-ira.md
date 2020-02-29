@@ -34,7 +34,7 @@ Portanto, a ira não é o primeiro impulso, mas o acatamento pela razão de que 
 
 Em contraponta com Aristóteles, Sêneca acredita que a ira, como um vício, não possui qualquer utilidade para uma pessoa virtuosa. Argumenta que nada que é ruim pode tornar-se bom em uma dosagem: se estamos bem com pouco daquele vício, melhor estaríamos sem nada dele.
 
-A confusão de que a ira seria útil para animar, gerar ímpeto e causa mudanças é
+A confusão de que a ira seria útil para animar, gerar ímpeto e causar mudanças vem da impressão deste efeito em pessoas sem as virtudes de vigor e coragem. Mas o custo de estar neste estado de ira é maior do que os acasos que podem parecer benefícios.
 
 Como vício, essa toma o lugar da razão e nenhuma pessoa virtuosa e sábia poderia-se tornar melhor na ausência de sua principal ferramenta. Portanto, **a ira é completamente dispensável**.
 
