@@ -63,9 +63,8 @@ It's unbelievably powerful how staring at this number can make me avoid unlockin
 
 Also, by a cheap one off purchase, the app provides you some reports, so it's easier to track progress:
 
-
-<div class="row justify-content-center align-items-center" style="display: flex">
-<div class="column" style="float: left">
+<div class="row" style="display: flex">
+<div class="column" style="float: left; width: 50%;align: center">
 <figure>
 	<a href="../../../images/sane-internet/yourhour-reportf.jpeg">
 		<img  style="width:250px;margin:10px" src="../../../images/sane-internet/yourhour-reportf.jpeg"/>
@@ -74,7 +73,7 @@ Also, by a cheap one off purchase, the app provides you some reports, so it's ea
 </figure>
 </div>
 
-<div class="column" style="float: right">
+<div class="column" style="float: left; width: 50%;align: center">
 <figure>
 	<a href="../../../images/sane-internet/yourhour-report.jpeg">
 		<img  style="width:250px;margin:10px" src="../../../images/sane-internet/yourhour-report.jpeg"/>
