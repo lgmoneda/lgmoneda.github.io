@@ -3,7 +3,7 @@ layout: post
 title: "Por uma experiência mais saudável do uso da internet"
 date: 2020-02-29
 lang: pt
-ref: sanebrowsing-br
+ref: sanebrowsing
 author: moneda
 description: Como tornar o uso da internet menos exaustivo
 image: ../../../images/sane-internet/youtube.png
