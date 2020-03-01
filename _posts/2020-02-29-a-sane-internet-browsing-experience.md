@@ -108,7 +108,9 @@ There's another tricky I've been using which I partially limit websites by block
 Internet browsing can be mentally exhausting due to the amount of information. The first obvious step is to install an Ad Blocker. But there are a few other things to help.
 
 **Starting by the browser**
-A cool hack I started using for Firefox helped me to make it clean and minimal. There's an entire community behind [customizing Firefox using css](https://www.reddit.com/r/FirefoxCSS/). Here's [my current style file]() and [this is how to apply it]().
+
+A cool hack I started using for Firefox helped me to make it clean and minimal. There's an entire community behind [customizing Firefox using css](https://www.reddit.com/r/FirefoxCSS/). Here's [my current style file](https://gist.github.com/lgmoneda/97fe07c83c2c615015649de3f466d87e) and [this is how to apply it](https://superuser.com/questions/1268732/how-to-hide-tab-bar-tabstrip-in-firefox-57-quantum).
+
 
 Using it I was able to **hide the address bar, tabs and favorites**, keeping only the page content. Here's how it looks like:
 
@@ -124,7 +126,6 @@ Using it I was able to **hide the address bar, tabs and favorites**, keeping onl
 **Shut up!**
 
 As said before, sometimes a certain aspect of a website is the source of procrastination. For me, I realized that I always scroll to the comments section in every news, youtube video and so on. So I've found this beautiful add-on called [Shut up](https://addons.mozilla.org/en-US/firefox/addon/shut-up-comment-blocker/) that just blocks the comments section from most sites. I can't say how many times I've scrolled to a Youtube comments section and faced the empty space there. 
-
 
 **Recommendations**
 
@@ -177,4 +178,4 @@ For example, I never interact with any element from **Stack overflow**, I just g
 
 ## Conclusion
 
-
+Though this guide might sound very specific to me, I wish the general idea of identifying and acting on it is clear. Also, most of the tools have versions for other browsers and mobile operational systems. 
