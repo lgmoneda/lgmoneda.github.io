@@ -29,7 +29,7 @@ To achieve it, this guide aims to:
 - limit your undesired behaviors
 - minimize the amount of information displayed
 
-I'm going to talk about desktop and mobile.
+I'm going to talk about desktop and mobile. 
 
 ## Identifying the undesired behaviors
 
@@ -59,7 +59,7 @@ For mobile, I'm using an app called [Your Hour](https://play.google.com/store/ap
 </figure>
 </div>
 
-It's unbelievably powerful how staring at this number can make me avoid unlocking the cellphone without a very good reason.
+It's unbelievably powerful how staring at this number can make me avoid unlocking the cellphone without a very good reason. 
 
 Also, by a cheap one off purchase, the app provides you some reports, so it's easier to track progress:
 
@@ -83,32 +83,34 @@ Also, by a cheap one off purchase, the app provides you some reports, so it's ea
 </div>
 </div>
 
-Keeping using these apps is important to make you mind your progress or spot if a new villain has come to take your time.
+Keeping using these apps is important to make you mind your progress or spot if a new villain has come to take your time. 
 
 ## Limiting
 
-Ok, so now you realize you have a problem, it's time to act. You know which websites and apps you spend most of your online time and which ones you'd like to reduce.
+Ok, so now you realize you have a problem, it's time to act. You know which websites and apps you spend most of your online time and which ones you'd like to reduce. 
 
 **Yourhour** can block apps after certain usage time, so I could set their time limit to 15 minutes daily. When needed, I just extend it. But most of the time, when the screen blocks, I think: "Well, I wasn't indeed taking any advantage of it".
 
-I do the same thing for Firefox using the add-on called [LeechBlock](https://addons.mozilla.org/en-US/firefox/addon/leechblock-ng/). It's extremely flexible and it lets you define groups to apply the same rules, so you can have Social Networks, Entertainment and so on. You can define a maximum time daily and also totally block during specific time ranges.
+I do the same thing for Firefox using the add-on called [LeechBlock](https://addons.mozilla.org/en-US/firefox/addon/leechblock-ng/). It's extremely flexible and it lets you define groups to apply the same rules, so you can have Social Networks, Entertainment and so on. You can define a maximum time daily and also totally block during specific time ranges. 
 
 **Uninstalling apps**
 
-In the most extreme cases, I just uninstall apps.
+In the most extreme cases, I just uninstall apps. 
 
-It's ridiculous effective and it's funny how you won't miss an app you used to expend 30 minutes daily before. One app I do it is `Instagram`. I really enjoy using it as a photography album, but I hate when I get myself scrolling through some bizarre hashtags. So I just reinstall it during weekends or events I intend to register.
+It's ridiculous effective and it's funny how you won't miss an app you used to expend 30 minutes daily before. One app I do it is `Instagram`. I really enjoy using it as a photography album, but I hate when I get myself scrolling through some bizarre hashtags. So I just reinstall it during weekends or events I intend to register. 
 
 The second example is Twitter: I use it as a professional / educational network. But it doesn't has this role when I'm scrolling in my cellphone. So I've decided to only access it via my desktop.
 
-There's another tricky I've been using which I partially limit websites by blocking the element that makes me waste my time. I'm going to talk about it in the next section, since it's also linked to cleaning.
+There's another tricky I've been using which I partially limit websites by blocking the element that makes me waste my time. I'm going to talk about it in the next section, since it's also linked to cleaning. 
 
 ## Cleaning
 
 Internet browsing can be mentally exhausting due to the amount of information. The first obvious step is to install an Ad Blocker. But there are a few other things to help.
 
 **Starting by the browser**
+
 A cool hack I started using for Firefox helped me to make it clean and minimal. There's an entire community behind [customizing Firefox using css](https://www.reddit.com/r/FirefoxCSS/). Here's [my current style file](https://gist.github.com/lgmoneda/97fe07c83c2c615015649de3f466d87e) and [this is how to apply it](https://superuser.com/questions/1268732/how-to-hide-tab-bar-tabstrip-in-firefox-57-quantum).
+
 
 Using it I was able to **hide the address bar, tabs and favorites**, keeping only the page content. Here's how it looks like:
 
@@ -123,8 +125,7 @@ Using it I was able to **hide the address bar, tabs and favorites**, keeping onl
 
 **Shut up!**
 
-As said before, sometimes a certain aspect of a website is the source of procrastination. For me, I realized that I always scroll to the comments section in every news, youtube video and so on. So I've found this beautiful add-on called [Shut up](https://addons.mozilla.org/en-US/firefox/addon/shut-up-comment-blocker/) that just blocks the comments section from most sites. I can't say how many times I've scrolled to a Youtube comments section and faced the empty space there.
-
+As said before, sometimes a certain aspect of a website is the source of procrastination. For me, I realized that I always scroll to the comments section in every news, youtube video and so on. So I've found this beautiful add-on called [Shut up](https://addons.mozilla.org/en-US/firefox/addon/shut-up-comment-blocker/) that just blocks the comments section from most sites. I can't say how many times I've scrolled to a Youtube comments section and faced the empty space there. 
 
 **Recommendations**
 
@@ -143,7 +144,7 @@ They are design to make you engage and it's probably benefiting most of the time
 
 Have you ever felt the relief of closing a hundred tabs after solving a problem or finding the information you were looking for?
 
-It turns out you can just avoid the problem. Limiting the max number of tabs I can open in my browser was annoying and relieving at the same time. This [Max Tabs (Web Extension)](https://addons.mozilla.org/en-US/firefox/addon/max-tabs-web-ext) add-on blocks my new tab trial a couple of times a day, but it always make me realize I'm multitasking and open unnecessary tabs.
+It turns out you can just avoid the problem. Limiting the max number of tabs I can open in my browser was annoying and relieving at the same time. This [Max Tabs (Web Extension)](https://addons.mozilla.org/en-US/firefox/addon/max-tabs-web-ext) add-on blocks my new tab trial a couple of times a day, but it always make me realize I'm multitasking and open unnecessary tabs. 
 
 <div align="center">
 <figure>
@@ -176,3 +177,5 @@ For example, I never interact with any element from **Stack overflow**, I just g
 </div>
 
 ## Conclusion
+
+Though this guide might sound very specific to me, I wish the general idea of identifying and acting on it is clear. Also, most of the tools have versions for other browsers and mobile operational systems. 
