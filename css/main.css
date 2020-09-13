@@ -2,7 +2,14 @@
 
 body {
     margin: 60px auto;
-    width: 50%;
+    width: 40%;
+	min-width: 1000px;
+}
+
+div.container {
+	width: 60%;
+	margin: auto;
+	min-width: 610px;
 }
 
 nav ul, footer ul {
@@ -25,7 +32,6 @@ nav ul li, footer ul li {
 a {
     text-decoration: none;
     color: #606fc0;
-    font-weight: bold;
 }
 a:hover {
     text-decoration: underline;
@@ -36,25 +42,43 @@ h3,
 h4,
 h5,
 h6 {
-    /* color: #286748; */
-    font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+	clear: both;
+	line-height: 1.1;
+	font-family: freight-text-pro,serif;
+	font-style: normal;
+	font-weight: 500;
 }
 h1 {
-    font-size: 48px;
-    font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 52px;
 }
 h1.blog-title {
-    font-size: 48px;
-    font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 58px;
     color: #286748;
 }
 .post-title {
     color: #286748;
-    font-weight: lighter;
+	font-size: 32px;;
+
+}
+.in-post-title {
+	text-align: center;
+	font-weight: 700;
+    margin-top: .50em;
+    margin-bottom: .50em;
+}
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 26px;
 }
 h2.post-title {
     color: #286748;
     margin-bottom: 5px;
+	font-size: 40px;
 }
 .post_date {
     line-height: 1em;
@@ -66,12 +90,13 @@ h2.post-title {
     color: #999;
 }
 p {
-    margin-bottom: 20px;
-    font-family: Lora, sans-serif;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6em;
+    line-height: 1.5em;
+	color: #262626;
+    font-family: freight-text-pro,serif;
+    font-style: normal;
     font-weight: 400;
+    font-size: 19px;
+    margin-bottom: 1.5em;
 }
 b, strong {
     font-weight: bold;
@@ -88,6 +113,10 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+li {
+	font-size: 20px;
 }
 
 img {
@@ -187,7 +216,7 @@ p {
     display:table;
 }
 .avatar-module {
-    display: table-cell; 
+    display: table-cell;
     vertical-align: middle;
 }
 .avatar-module img {
@@ -217,7 +246,7 @@ display:inherit;
 margin:0px;
 }
 .avatar-module {
-display:inherit; 
+display:inherit;
 vertical-align: none;
 }
 .avatar-module img {
@@ -270,3 +299,11 @@ blockquote span{
   font-weight: bold;
   margin-top:1em;
 }
+
+/* blockquote { */
+/*     margin: 1.2em 0 1.2em 2em; */
+/*     border-left: 4px solid #f2f2f2; */
+/*     font-family: freight-text-pro,serif; */
+/*     font-style: italic; */
+/*     padding-left: 1em; */
+/* } */
