@@ -13,7 +13,7 @@ layout: default
 {% endfor %}
 -->
 
-<h2 class="post-title" style="font-size:32px;">{{ page.title }}</h2>
+<h2 class="post-title in-post-title">{{ page.title }}</h2>
 {% if page.lang == "pt" %}
     {% assign m = page.date | date: "%-m" | minus: 1 %}
     <time class="meta post_date">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</time>
