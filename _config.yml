@@ -4,24 +4,24 @@ highlighter: rouge
 
 t:
   en:
-    home:
-      name: "home"
-      url: "/index-eng.html"
+    # home:
+    #   name: "home"
+    #   url: "/index-eng.html"
     blog:
       name: "blog"
       url: "/blog/"
     about:
       name: "about"
       url: "/about/"
-    cv:
-      name: "cv"
-      url: "/cv/"
+    # cv:
+    #   name: "cv"
+    #   url: "/cv/"
     projects:
       name: "projects"
       url: "/projects/"
-    ds-course:
-      name: "data science course"
-      url: "/data-science-course/index.html"     
+    # ds-course:
+    #   name: "data science course"
+    #   url: "/data-science-course/index.html"
   fr:
     home:
       name: "Accueil"
@@ -33,24 +33,24 @@ t:
       name: "cv"
       url:  "/cv/"
   pt:
-    home:
-      name: "início"
-      url: "/"
+    # home:
+    #   name: "início"
+    #   url: "/"
     blog:
       name: "blog"
       url: "/blog/index-pt.html"
     about:
       name: "sobre"
       url: "/about/index-pt.html"
-    cv:
-      name: "cv"
-      url: "/cv/index-pt.html"
+    # cv:
+    #   name: "cv"
+    #   url: "/cv/index-pt.html"
     projects:
       name: "projetos"
       url: "/projects/index-pt.html"
-    ds-course:
-      name: "curso de data science"
-      url: "/data-science-course/index-pt.html"
+    # ds-course:
+    #   name: "curso de data science"
+    #   url: "/data-science-course/index-pt.html"
 
 plugins:
   - jekyll-seo-tag

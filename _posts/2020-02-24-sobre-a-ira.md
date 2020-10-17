@@ -5,6 +5,7 @@ date: 2020-02-24
 lang: pt
 ref: sobre-a-ira
 comments: true
+author: moneda
 description: Reflexão sobre a percepção e combate da ira.
 image: ../../../images/anger-genevieve-chatelain.jpg
 ---

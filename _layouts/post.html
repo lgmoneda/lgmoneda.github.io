@@ -13,14 +13,17 @@ layout: default
 {% endfor %}
 -->
 
-<h2 class="post-title in-post-title">{{ page.title }}</h2>
+<div class="row" style="margin-bottom: 20px;">
 {% if page.lang == "pt" %}
     {% assign m = page.date | date: "%-m" | minus: 1 %}
-    <time class="meta post_date">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</time>
+    <time class="meta post_date full">{{page.date | date:"%d "}} {{site.data.dates.pt.months[m]}} {{page.date | date:" %Y"}}</time>
 {% else %}
-    <time class="meta post_date">{{ page.date | date_to_string }}</time>
+    <time class="meta post_date full">{{ page.date | date_to_string }}</time>
 {% endif %}
-
+	<h2 class="post-title in-post-title">{{ page.title }}</h2>
+<p class="small description">{{ page.description }}</p>
+<footer></footer>
+</div>
 <div class="post">
   {{ content }}
 </div>

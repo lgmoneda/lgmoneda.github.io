@@ -23,61 +23,44 @@
 			</script>
 		</head>
 		<body>
-		  <h1 class="blog-title" align="center">Machina Economicus</h1>
-			<nav align="center">
-				<ul>
-	  				{% for menu in site.t[page.lang] %}
-	    			<li><a class="menu_element" href="{{ menu[1].url }}">{{ menu[1].name }}</a></li>
-	  				{% endfor %}
-	  				<li><a class="menu_element" href="/"> / </a></li>
-	  				{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-					{% for page in pages %}
-  					<li>
-    					<a class="menu_element" href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
-  					</li>
-					{% endfor %}
-					<!-- Multi languages for posts too -->
+		  <div class="container">
+		  <div class="row" style="margin-bottom: 20px;">
+			<div class="grid twelve">
+			<span class="logo"><a href="/" style="text-decoration: none; color: inherit;">Moneda</a></span>
 
-					{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-					{% for post in posts %}
-  					<li>
-  						<span class="flag-icon flag-icon-gr flag-icon-squared"></span>
-    					<a class="menu_element" href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
-  					</li>
-					{% endfor %}
 
-				</ul>
-	    		<!--<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	        		<li><a href="/"> / </a></li>
-					{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-					{% for page in pages %}
-  					<li>
-    					<a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
-  					</li>
-					{% endfor %}
-	    		</ul> -->
-			</nav>
-			<div class="container">
+			<!-- Multi languages for posts too -->
+			{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+			{% for post in posts %}
+  			<span class="flag-icon flag-icon-gr flag-icon-squared">
+    		  <a class="menu_element" href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a></span>
+			{% endfor %}
+
+			{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+			{% for page in pages %}
+			<a class="menu_element" href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+			{% endfor %}
+			<a class="menu_element" href="/"> / </a>
+	  		{% for menu in site.t[page.lang] reversed %}
+			<a class="menu_element" href="{{ menu[1].url }}">{{ menu[1].name }}</a>
+	  		{% endfor %}
+
+
+			<br><br>
+			<footer class="post_meta"></footer>
+			</div>
+			</div>
 
 			{{ content }}
 
-			</div><!-- /.container -->
 			<footer>
 	    		<ul>
-	        		<li><a class="menu_element" href="mailto:lg.moneda@gmail.com"> <i class="fa fa-mail-reply fa-lg"> E-mail</i></a></li>
-	        		<li><a class="menu_element" href="https://github.com/lgmoneda"><i class="fa fa-github fa-lg"> Github</i></a></li>
-	        		<li><a class="menu_element" href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"> Twitter</i></a></li>
-	        		<!--
-	        		<li><a class="menu_element" href="https://facebook.com/lgmoneda"><i class="fa fa-facebook fa-lg"> Facebook</i></a></li>
-	        		<li><a class="menu_element"  href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"> Twitter</i></a></li>
-	        		 <li><a class="menu_element" href="https://instagram.com/lgmoneda"><i class="fa fa-instagram fa-lg"> Instagram</i></a></li>
-	        		 -->
-	        		<li><a class="menu_element" href="https://www.linkedin.com/in/luis-moneda-310b0010a"><i class="fa fa-linkedin fa-lg"> Linkedin</i></a></li>
+	        		<li><a class="footer_element" href="mailto:lg.moneda@gmail.com"> <i class="fa fa-envelope fa-lg"></i></a></li>
+	        		<li><a class="footer_element" href="https://github.com/lgmoneda"><i class="fa fa-github fa-lg"></i></a></li>
+	        		<li><a class="footer_element" href="https://twitter.com/lgmoneda"><i class="fa fa-twitter fa-lg"></i></a></li>
+	        		<li><a class="footer_element" href="https://www.linkedin.com/in/luis-moneda-310b0010a"><i class="fa fa-linkedin fa-lg"> </i></a></li>
 				</ul>
 			</footer>
+		  </div>
 		</body>
 	</html>
