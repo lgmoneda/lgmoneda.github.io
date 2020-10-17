@@ -4,16 +4,17 @@ body {
     margin: 60px auto;
     width: 40%;
 	min-width: 1000px;
+	font-family: Iowan Old Style, Seravek, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 div.container {
-	width: 60%;
+	width: 80%;
 	margin: auto;
 	min-width: 610px;
 }
 
 nav ul, footer ul {
-    font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif';
+    /* font-family:'Roboto', 'Helvetica', 'Arial', 'Sans-Serif'; */
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -44,7 +45,7 @@ h5,
 h6 {
 	clear: both;
 	line-height: 1.1;
-	font-family: freight-text-pro,serif;
+	/* font-family: freight-text-pro,serif; */
 	font-style: normal;
 	font-weight: 500;
 }
@@ -57,9 +58,19 @@ h1.blog-title {
 }
 .post-title {
     color: #286748;
-	font-size: 32px;;
+	font-size: 28px;;
 
 }
+.post-title.list {
+    color: #286748;
+	font-size: 18px;
+}
+
+.post-title.list:hover {
+ text-decoration:unset !important;
+ cursor:pointer
+}
+
 .in-post-title {
 	text-align: center;
 	font-weight: 700;
@@ -84,19 +95,48 @@ h2.post-title {
     line-height: 1em;
     font-size: 0.9em;
     color: #999;
+	font-family: courier;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.post_date.full {
+	display: block;
+	width: 100%;
 }
 .menu_element {
+    text-decoration: none;
+    /* color: #999; */
+	margin:0 0 0 20px;
+	float:right;
+	line-height:30px;
+	font-size:1.2em;
+	font-family:Menlo, monospace, sans-serif;
+	text-decoration:none;
+	color:#286748;
+}
+
+a.menu_element:hover {
+ text-decoration:unset !important;
+ cursor:pointer
+}
+
+.footer_element {
     text-decoration: none;
     color: #999;
 }
 p {
     line-height: 1.5em;
-	color: #262626;
-    font-family: freight-text-pro,serif;
+	/* color: #262626; */
+	color: #050512cc;
+    /* font-family: freight-text-pro,serif; */
     font-style: normal;
     font-weight: 400;
-    font-size: 19px;
+    /* font-size: 19px; */
     margin-bottom: 1.5em;
+    font-size: 1.5em;
 }
 b, strong {
     font-weight: bold;
@@ -314,3 +354,58 @@ blockquote span{
 /*     font-style: italic; */
 /*     padding-left: 1em; */
 /* } */
+
+/* Inspired by https://www.alexkehayias.com */
+
+.logo {
+ display:inline-block;
+ font-size:18px;
+ font-weight:bold;
+ background:#286748;
+ color:white;
+ font-family:menlo;
+ padding:4px;
+ padding-left:8px;
+ letter-spacing:4px
+}
+.logo:hover {
+ text-decoration:unset !important;
+ cursor:pointer
+}
+
+/* a.nav-item { */
+/*  margin:0 0 0 20px; */
+/*  float:right; */
+/*  line-height:30px; */
+/*  font-size:1.0em; */
+/*  font-family:Menlo, monospace, sans-serif; */
+/*  text-decoration:none */
+/*  color:#286748; */
+/* } */
+
+a.nav-item:hover {
+ text-decoration:unset !important;
+ cursor:pointer
+}
+
+.row .grid {
+ -webkit-box-sizing:border-box;
+ box-sizing:border-box
+}
+
+.grid.twelve {
+ min-width:100%
+}
+
+.row .grid.twelve {
+ -webkit-flex:0 0 100%;
+ flex:0 0 100%
+}
+
+
+.description {
+	font-style:italic;
+    text-align: center;
+	color: #999;
+
+}
