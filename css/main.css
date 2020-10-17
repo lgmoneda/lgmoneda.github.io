@@ -3,8 +3,8 @@
 body {
     margin: 60px auto;
     width: 40%;
-	min-width: 1000px;
-	font-family: Iowan Old Style, Seravek, Helvetica Neue, Helvetica, Arial, sans-serif;
+	  min-width: 1000px;
+	  font-family: Iowan Old Style, Seravek, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 div.container {
@@ -70,7 +70,6 @@ h1.blog-title {
  text-decoration:unset !important;
  cursor:pointer
 }
-
 .in-post-title {
 	text-align: center;
 	font-weight: 700;
