@@ -107,7 +107,6 @@ h2.post-title {
 }
 .menu_element {
     text-decoration: none;
-    /* color: #999; */
 	margin:0 0 0 20px;
 	float:right;
 	line-height:30px;
@@ -128,12 +127,9 @@ a.menu_element:hover {
 }
 p {
     line-height: 1.5em;
-	/* color: #262626; */
 	color: #050512cc;
-    /* font-family: freight-text-pro,serif; */
     font-style: normal;
     font-weight: 400;
-    /* font-size: 19px; */
     margin-bottom: 1.5em;
     font-size: 1.5em;
 }
@@ -238,19 +234,6 @@ figcaption {
     font-size: 0.9em;
     font-style: italic;
 }
-/* Other style
-body {
-  padding: 2%;
-}
-p {
-  padding: 2%;
-  background: #fff9c6;
-  color: #c7b27e;
-  border: 1px solid #fce29f;
-  border-radius: .25em;
-}
-*/
-
 /* author info */
 
 .full-article-footer {
