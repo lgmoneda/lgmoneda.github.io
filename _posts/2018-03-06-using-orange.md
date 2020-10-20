@@ -4,6 +4,7 @@ title: "Using Orange: a visual tool for Data Science!"
 date: 2018-03-06
 lang: en
 ref: using-orange
+author: moneda
 description: A basic example of how to use Orange, a visual tool for Data Science. 
 ---
 
