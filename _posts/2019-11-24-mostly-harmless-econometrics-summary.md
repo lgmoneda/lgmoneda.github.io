@@ -5,6 +5,7 @@ date: 2019-11-24
 lang: pt
 ref: mostly-harmless-econometrics-i
 comments: true
+author: moneda
 description: Resumo dos capítulos I e II do livro "Mostly Harmless Econometrics"
 image: ../../../images/mostly_harmless_econometrics.jpg
 ---
