@@ -5,6 +5,7 @@ date: 2017-02-19
 lang: pt
 ref: emacs-python-shell
 comments: true
+author: moneda
 description: Quando se executa mais de uma vez um programa em Python no Emacs, os módulos importados não são recarregados e mudança no código destes não é refletida na execução. Porém, podemos escrever uma função para mudar esse comportamento.
 ---
 
