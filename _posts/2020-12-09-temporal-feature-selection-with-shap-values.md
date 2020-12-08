@@ -7,7 +7,7 @@ ref: tempora-feat-selection
 comments: true
 author: moneda
 description: How to use the data acquisition time in addition to SHAP values to improve model generalization via feature selection.
-image: ../../../images/temporal-feature-selection/icon2.png
+image: ../../../images/temporal-feature-selection/icon3.png
 ---
 
 ## Index
