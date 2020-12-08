@@ -31,7 +31,7 @@ One common strategy to do feature selection is to order features by their averag
 	<a href="../../../images/temporal-feature-selection/model_degrade.jpg">
 		<img  style="width:600px;margin:10px" src="../../../images/temporal-feature-selection/model_degrade.jpg"/>
 	</a>
-	<figcaption>Data science practioners are used to see their models performance decreasing in time</figcaption>
+	<figcaption>Data science practitioners are used to see their models performance decreasing in time</figcaption>
 </figure>
 </div>
 
