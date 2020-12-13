@@ -12,12 +12,13 @@ image: ../../../images/three-acts/tijana-drndarski-yyo0voNbigI-unsplash.jpg
 
 ## Índice
 
-1. [A vida se dá ao longo dos dias](#a-vida-se-da-ao-longo-dos-dias)
-2. [Ato I: o mínimo cuidado do corpo e da mente](#ato-i-o-minimo-cuidado-do-corpo-e-da-mente)
-3. [Ato II: atividade física](#ato-ii-atividade-fisica)
-4. [Ato III: o que você mais ama vem primeiro](#ato-iii-o-que-voce-mais-ama-vem-primeiro)
-5. [Crie e acompanhe seus novos hábitos](#crie-e-acompanhe-seus-novos-habitos)
+1. [A vida se dá ao longo dos dias](#heading-1)
+2. [Ato I: o mínimo cuidado do corpo e da mente](#heading-2)
+3. [Ato II: atividade física](#heading-3)
+4. [Ato III: o que você mais ama vem primeiro](#heading-4)
+5. [Crie e acompanhe seus novos hábitos](#heading-5)
 
+<div id="heading-1"/>
 ## A vida se dá ao longo dos dias
 
 Como boa parte das pessoas, eu sinto ansiedade. A primeira grande fonte dessa sensação vem da desconexão entre a aparente infinidade dos caminhos a seguir e a finitude da vida.
@@ -48,6 +49,7 @@ Além disso, o importante não são os atos, mas como efetivamente colocá-los e
 
 São ainda chamados de atos por serem sequenciais. Aqui a idéia é que um ato só comece quando o outro estiver solidificado como hábito.
 
+<div id="heading-2"/>
 ## Ato I: o mínimo cuidado do corpo e da mente
 
 Dormir e comer. Mesmo sendo tão simples, eu não conseguia dormir mais de 7h por noite regularmente e fazer todas as refeições. Os efeitos disso são muitos: não colocar o corpo dentro de um ciclo constante de alimentação e descanso tira qualquer possibilidade de auto conhecimento sobre o seu nível de energia e quando você pode contar consigo mesmo.
@@ -78,7 +80,7 @@ Depois de um tempo, o cansaço vai bater próximo do horário que você acostumo
 
 Durante dois meses esse foi o meu desafio: dormir e comer com regularidade e na hora certa. Com isso, entrega-se a si mesmo uma pessoa funcional e com disposição premeditada.
 
-
+<div id="heading-3"/>
 ## Ato II: atividade física
 
 Embora seja argumentável que um pouco de atividade física ainda faz parte do mínimo cuidado com o corpo e a mente [^fn3], o tamanho do desafio torna sensata a divisão.
@@ -98,6 +100,7 @@ No fim, não precisei ir muito além disso. Hoje a minha rotina é de 30 minutos
 
 No total, até o momento, foram 248 sessões de exercícios em 2020. Eles estão aqui realmente pelos benefícios em disposição e saúde mental, mas mesmo essa porção pequena e frequente pode trazer mudanças na aparência.
 
+<div id="heading-4"/>
 ## Ato III: o que você mais ama vem primeiro
 
 Embora possa ser natural dizer que o que mais amamos fazer deveria ser prioridade, é cada vez mais rara a conexão entre a palavra prioridade e o que vem antes, de forma temporal: a primeira coisa a fazer-se.
@@ -138,6 +141,7 @@ Hoje, já com o hábito estabelecido, inverti com a atividade física e reservo 
 
 Há uma beleza em assumir este compromisso diário, que transforma o sentimento em ação e nos dá a convicção de chamar uma certa atividade de vocação. Se o que faz da paixão um amor é a constância, é neste hábito que encontro a resposta de como amar a vida, como vivê-la dada a certeza da morte. Resposta essa que seria impossível em qualquer definição mais complexa, visto que vivemos expostos a toda sorte de acontecimentos, sensações e experiências externas que são estéreis ao que não é tão simples quanto isso.
 
+<div id="heading-5"/>
 ## Crie e acompanhe seus novos hábitos
 
 A sugestão geral é começar com uma versão leve do hábito que quer criar e aumentar progressivamente em 1-3 meses. Apenas partir para novos hábitos quando já tiver tornado rotina os anteriores. Quando estiver criando um hábito, faça daquilo a tarefa mais importante do dia.
