@@ -68,7 +68,7 @@ Depois fica muito natural.
 
 ### Hora de dormir
 
-Além de ajudar a cumprir as horas encessárias de sono, este momento tem outra utilidade: relembra a finitude do tempo, coloca um limite no dia, faz com que larguemos qualquer atividade e
+Além de ajudar a cumprir as horas necessárias de sono, este momento tem outra utilidade: relembra a finitude do tempo, coloca um limite no dia, faz com que larguemos qualquer atividade e sigamos pra cama.
 
 Esse recado diário sobre a finitude do tempo vai de encontro a um dos males, segundo Sêneca, que dá a impressão às pessoas de que a vida é curta: vivem como se fossem imortais. Todo dia a vida acabará. E se por um acaso vamos consistentemente descontentes pro sono, é o que deveria motivar uma mudança no dia seguinte na forma como aproveitamos a vida.
 
