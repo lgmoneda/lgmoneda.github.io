@@ -201,7 +201,7 @@ Desta forma, novamente, quando temos um experimento aleatório este termo é exc
 
 O capítulo possui um exemplo com dados de Krueger (1999), que podem ser encontrados [aqui](https://economics.mit.edu/files/3827). [Este é o paper](http://piketty.pse.ens.fr/files/Krueger1999.pdf) de base. Como estava ansioso pra rodar algo do livro, tentei reproduzir o que foi feito, porém, os dados não estão exatamente da forma que o autor tinha ao dispor, sendo que uma delas é crítica para a reprodução, que é a escola a qual pertence o aluno.:
 
-> The independence between class-size assignment and other variables is only valid within schools, because randomization was done within schools. Consequently, a separate dummy variable is included for each school to absorb the school effects, as $$\alpha_{i}$$.
+> The independence between class-size assignment and other variables is only valid within schools, because randomization was done within schools. Consequently, a separate dummy variable is included for each school to absorb the school effects, as $\alpha_{i}$ .
 
 Aqui o autor diz que a independência entre a determinação da sala e as outras variáveis só é válida dentro de cada escola, pois a aleatoriazação foi feita escola por escola, ou seja, características da escola podem ser usadas para prever se o aluno foi alocado para uma sala menor, com monitoria ou normal, pois a probabilidade de cada uma dado as características das escolas é diferente.
 
