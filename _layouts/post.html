@@ -2,17 +2,6 @@
 layout: default
 ---
 
-<!--
-<ul>
-{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-{% for post in posts %}
-  <li>
-  	<span class="flag-icon flag-icon-gr flag-icon-squared"></span>
-    <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
-  </li>
-{% endfor %}
--->
-
 <div class="row" style="margin-bottom: 20px;">
 {% if page.lang == "pt" %}
     {% assign m = page.date | date: "%-m" | minus: 1 %}
