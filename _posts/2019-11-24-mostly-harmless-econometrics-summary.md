@@ -76,7 +76,6 @@ Percebe-se que a diferença entra a média do estado de saúde é 0.72 e que ela
 Para este estudo, definiremos como Resultado o estado de saúde da pessoa, colocarei como apenas saúde. O tratamento será $$D$$. Temos:
 
 $$
-
        \text{Resultado Potencial} =
 
        \begin{cases}
@@ -86,7 +85,6 @@ $$
              Y_{0i} \mbox{, se } D_{i} = 0 \\
 
        \end{cases}
-
 $$
 
 O Resultado Potencial é sobre o que teria sido observado para uma pessoa se ela tivesse recebido o tratamento ($$Y_{1i}$$), sem se importar se ela na realidade recebeu ou não. A idéia de potencial é que ela seria a quantidade observada caso o tratamento fosse ou não aplicado. Já o resultado é apenas sobre o que foi observado, o que aconteceu de fato:
