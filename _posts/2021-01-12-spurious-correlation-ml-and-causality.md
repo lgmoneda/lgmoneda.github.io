@@ -7,7 +7,7 @@ ref: spurious-correlation
 comments: true
 author: moneda
 description: Definitions and the many faces around the spurious correlation term.
-image: ../../../images/temporal-feature-selection/icon3.png
+image: ../../../images/spurious/x-mutant.jpg
 ---
 
 ## Index
