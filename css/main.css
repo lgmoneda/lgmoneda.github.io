@@ -168,7 +168,7 @@ p.meta {
     text-decoration: underline;
 }
 
-.MathJax_Display {
+.MJXc-display {
 	margin: 2px auto;
 	padding: 5px 5px 5px 5px;
 	border-left: 4px solid #f2f2f2;
@@ -394,4 +394,8 @@ a.nav-item:hover {
 
 .language-plaintext {
     background: #f0f0f0;
+}
+
+.footnotes p {
+    font-size: 1.0em;
 }
