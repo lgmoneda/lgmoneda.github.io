@@ -16,8 +16,8 @@ image: ../../../images/spurious/x-mutant.jpg
 2. [Pearson tying spurious correlation to causation](#pearson-tying-spurious-correlation-to-causation)
 3. [Spuriousness as a transient state, a nonsense relationship](#spuriousness-as-a-transient-state-a-nonsense-relationship)
 4. [Reichenbach’s common cause principle](#reichenbachs-common-cause-principle)
-5. [Pearl, a precise causal interpretation and a general framework to spot spuriousness](#pearl-a-precise-causal-interpretation-and-a-generalframework-to-spot-spuriousness)
-6. [How does it impact Machine Learning?](#how-does-it-impact-machine-learning?)
+5. [Pearl, a precise causal interpretation and a general framework to spot spuriousness](#pearl-a-precise-causal-interpretation-and-a-general-framework-to-spot-spuriousness)
+6. [How does it impact Machine Learning?](#how-does-it-impact-machine-learning)
 7. [Environments](#environments)
 8. [Causal relationships can still suffer from bias](#causal-relationships-can-still-suffer-from-bias)
 9. [How does concept drift fit?](#how-does-concept-drift-fit)
@@ -75,7 +75,7 @@ Let's go through previous discussions and definitions about spurious correlation
 
 For someone known for the "Pearson correlation", funnily, Pearson [^fn2] starts from a causation definition before he states the importance of this wider association type called correlation, which ranges from absolute independence to complete dependence.
 
-> If the unit A be always preceded, accompanied or followed by B, and without A, B does not take place, then we are accustomed to speak of a causal relationship between A and B 
+> If the unit A be always preceded, accompanied or followed by B, and without A, B does not take place, then we are accustomed to speak of a causal relationship between A and B
 >
 > -- <cite>Pearson [^fn8]</cite>
 
@@ -92,7 +92,7 @@ So from everything that's associated, when it's not via a causal relationship, i
 
 Yule (1926) [^fn4] presents the kind of relationship we consider funny and nonsense.
 
-> ... But what one feels about such a correlation is, not that it must be interpreted in terms of some very indirect catena of causation, but that is has no meaning at all; that in non-technical terms it is simply a fluke, and if we had or could have experience of the two variables over a much longer period of time we could not find any appreciable correlation between them 
+> ... But what one feels about such a correlation is, not that it must be interpreted in terms of some very indirect catena of causation, but that is has no meaning at all; that in non-technical terms it is simply a fluke, and if we had or could have experience of the two variables over a much longer period of time we could not find any appreciable correlation between them
 >
 > -- <cite>Yule [^fn4]</cite>
 
@@ -102,7 +102,7 @@ The Husky and club news examples don't seem to fit here. While the correlation b
 
 Yule (1926) characterizes this case as a result of small samples in a period which is shorter than the needed to give us the true correlation.
 
-Though the discussion in the article and the examples from Spurious Correlation website are about this exact case - time series in a reasonably short time - it's not that rare this kind of nonsense correlation happens in large tabular data. If we take the parallel of something that happens by chance and that we would probably not keep observing as time passes by, there are features which  correlate with the target in supervised learning even if shuffled. A fact that enabled feature selection procedures like Permutation Importance (Pimp) [^fn9]. 
+Though the discussion in the article and the examples from Spurious Correlation website are about this exact case - time series in a reasonably short time - it's not that rare this kind of nonsense correlation happens in large tabular data. If we take the parallel of something that happens by chance and that we would probably not keep observing as time passes by, there are features which  correlate with the target in supervised learning even if shuffled. A fact that enabled feature selection procedures like Permutation Importance (Pimp) [^fn9].
 
 
 ## Reichenbach's common cause principle
@@ -115,7 +115,7 @@ So this third variable $$Z$$, also known as confounder when not in the special c
 
 A classical example of the common cause is the observed correlation between ice cream consumption ($$X$$) and crime rate ($$Y$$), which is confounded by day temperature ($$Z$$). So in the summer, when it's hot, people consume more ice cream, but they are also occupying more public spaces and more prone to crimes.
 
-We represent it in the following causal directed acyclic graph (DAG), a graphical representation where causes are connected to effects by an arrow. 
+We represent it in the following causal directed acyclic graph (DAG), a graphical representation where causes are connected to effects by an arrow.
 
 <div align="center">
 <figure>
@@ -177,7 +177,7 @@ But this stability is not only in respect to the future. A dataset can be genera
 
 This breaks one of the most important assumptions for the Empirical Risk Minimization paradigm in supervised learning: train and test come from an i.i.d sample from the sample distribution.
 
-> the i.i.d. assumption is the great lie of machine learning. 
+> the i.i.d. assumption is the great lie of machine learning.
 >
 > -- <cite>Zoubin Ghahramani [^fn21]</cite>
 
@@ -209,7 +209,7 @@ We need to define intervention because it's needed to define environments.
 
 An intervention consists in replacing one or more of the equations presents in a Structure Equation Model (SEM). It's basically changing the causal relationship between the variables of our problem. A /valid intervention/ is one that does not destroy too much the causal relationship involving $$Y$$, the variable of interest we're trying to predict.
 
-Then the set of environments $$\epsilon_{all}$$ is composed by all the possible cases generated by all possible valid interventions in a SEM as long as the interventions keep the graph acyclic, it doesn't change $$\mathbb{E}[Y \mid Pa(Y)]$$ and the variance $$V[Y \mid Pa(A)]$$ if finite. 
+Then the set of environments $$\epsilon_{all}$$ is composed by all the possible cases generated by all possible valid interventions in a SEM as long as the interventions keep the graph acyclic, it doesn't change $$\mathbb{E}[Y \mid Pa(Y)]$$ and the variance $$V[Y \mid Pa(A)]$$ if finite.
 
 To exemplify, we use the same illustrative case from Arjovsky et at (2019) [^fn5]:
 
@@ -226,7 +226,7 @@ This is the causal graph that represents the following Structured Equation Model
 $$
 \begin{align}
 \begin{split}
-X_1 {}& \leftarrow \mathbb{N}(0, \sigma^2) \\ 
+X_1 {}& \leftarrow \mathbb{N}(0, \sigma^2) \\
 Y {}& \leftarrow X_1 + \mathbb{N}(0, \sigma^2)  \\
 X_2 {}& \leftarrow Y + \mathbb{N}(0, 1)  \\
 \end{split}
@@ -243,13 +243,13 @@ Then the authors show how the linear model built with this data can be different
 
 See how only the first case give us an invariant estimator, since the other two options depend on $$e$$. And that's how spurious correlations related to idiosyncrasies from the environments available in training will affect the true relationship and make this model likely bad for unseen environments, which we all expect to encounter when deploying a model in real life.
 
-Notice your model would do a pretty good job in a traditional validation schema. If you pool together all the data, shuffle, get a random sample to train and another to test, train and validate, you wouldn't be surprised by anything. Your model would be using the specific correlations present in the training environments to do good in other samples from these same training environments. However, this won't be the case in production. And it would be better to have learned the invariant estimator from case 1, even if it means a higher test set error, because it's the best model to face a real world scenario where the environment changes. 
+Notice your model would do a pretty good job in a traditional validation schema. If you pool together all the data, shuffle, get a random sample to train and another to test, train and validate, you wouldn't be surprised by anything. Your model would be using the specific correlations present in the training environments to do good in other samples from these same training environments. However, this won't be the case in production. And it would be better to have learned the invariant estimator from case 1, even if it means a higher test set error, because it's the best model to face a real world scenario where the environment changes.
 
 So here we can see how **the transient notion of spuriousness is contrasted with the invariance notion for causal**.
 
 ## Causal relationships can still suffer from bias
 
-Even if we rely on the mechanism $$P( Y \mid X_1)$$, there are ways causal relationship can be infected. Introducing causal relationships into ML makes us take advantage of them, but it also brings all of its challenges, like hidden confounding and lack of identifiability. 
+Even if we rely on the mechanism $$P( Y \mid X_1)$$, there are ways causal relationship can be infected. Introducing causal relationships into ML makes us take advantage of them, but it also brings all of its challenges, like hidden confounding and lack of identifiability.
 
 Let's use a slightly modified example from the previous causal graph and make the environment explicit as something that defines $$X_1$$ and $$X_2$$.
 
@@ -268,7 +268,7 @@ Someone or some process could filter examples based in the $$X_2$$ value, which 
 There are many things under the dataset shift or concept drift definition. Here we'll expose only two concepts, the virtual concept drift and the real concept drift.
 
 - Virtual concept drift: $$P(X)$$ changes;
-- Real concept drift: $$P(y \mid X)$$ changes;  
+- Real concept drift: $$P(y \mid X)$$ changes;
 
 Basically, in the virtual, the input distribution change. In the real, a mechanism, the way we map inputs to outputs, changes. These concepts are illustrated by Kadam (2019) [^fn22]:
 
@@ -282,13 +282,13 @@ Basically, in the virtual, the input distribution change. In the real, a mechani
 
 When the virtual concept drift happens, there's little to worry. You might want to review the policy you have built on top of the model, since the distribution of input cases has changed and the previous decision-making process can imply different things. Your model aggregated metric is different in a sample with such different mix of examples.
 
-There's nothing causal or anti-causal in the inputs' distribution. 
+There's nothing causal or anti-causal in the inputs' distribution.
 
-When we are estimating $$\hat{Y}$$, we're interested on its mechanism. In the examples above, we saw the mechanism of interest was $$P(Y \mid X_1)$$. So even if a real concept drift happens to $$P(X_2 \mid Y)$$, it shouldn't be a problem if we have learned the invariant predictor. So here's another downside of using spurious correlations: it exposes you to changes in components you shouldn't even been using. 
+When we are estimating $$\hat{Y}$$, we're interested on its mechanism. In the examples above, we saw the mechanism of interest was $$P(Y \mid X_1)$$. So even if a real concept drift happens to $$P(X_2 \mid Y)$$, it shouldn't be a problem if we have learned the invariant predictor. So here's another downside of using spurious correlations: it exposes you to changes in components you shouldn't even been using.
 
 As said, we don't let intervention to be made in the variable of interest ($$Y$$) to be considered a new environment. In this case, it's a sole concept drift problem and the model needs to be retrained to learn the new concept.
 
-After all the definitions, we can get back to the third example from the introduction, the one about players and clubs. It's the trickiest. It might be the case we shouldn't expect the term $$P( Club \mid \text{Specific Player})$$ to be invariant, because it's not a causal mechanism when we draw the DAG for this specific case. Even if it's the case, there's a chance a "social phenomena" suffers more of real concept drift and it's far from the invariance expected for physical laws. Here we might be obligated to do a trade-off between including more causal terms prone to real concept drift to have a better performance in the short term - as changes in the environment can be related, for example, the series of interventions that define the next environments might change first the relationship with player A and Club X, then of the player B, and so on. 
+After all the definitions, we can get back to the third example from the introduction, the one about players and clubs. It's the trickiest. It might be the case we shouldn't expect the term $$P( Club \mid \text{Specific Player})$$ to be invariant, because it's not a causal mechanism when we draw the DAG for this specific case. Even if it's the case, there's a chance a "social phenomena" suffers more of real concept drift and it's far from the invariance expected for physical laws. Here we might be obligated to do a trade-off between including more causal terms prone to real concept drift to have a better performance in the short term - as changes in the environment can be related, for example, the series of interventions that define the next environments might change first the relationship with player A and Club X, then of the player B, and so on.
 
 ## Conclusion
 
@@ -316,5 +316,5 @@ Since causality is tied to the spuriousness, part of Machine Learning developmen
 [^fn15]: Peters, J., Janzing, D., & Schlkopf, B., Elements of causal inference: foundations and learning algorithms (2017), : The MIT Press.
 [^fn20]: Ribeiro, M. T., Singh, S., & Guestrin, C., Why should i trust you?" explaining the predictions of any classifier, In , Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144) (2016).
 [^fn21]: [Panel of Workshop on Advances in Approximate Bayesian Inference (AABI) 2017](https://www.youtube.com/watch?v=x1UByHT60mQ&feature=youtu.be&t=37m34s)
-[^fn22]: Kadam, S., A survey on classification of concept drift with stream data, , (),  (2019). 
+[^fn22]: Kadam, S., A survey on classification of concept drift with stream data, , (),  (2019).
 [^fn24]: Beery, S., Horn, G. v., & Perona, P., Recognition in terra incognita (2018).
