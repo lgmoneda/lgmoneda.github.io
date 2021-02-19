@@ -7,7 +7,7 @@ ref: causal-invariance
 comments: true
 author: moneda
 description: The importance of invariance in Machine Learning
-image: ../../../images/causal-invariance/screen_20210218_100224.jpg
+image: ../../../images/causal-invariance/screen_20210218_100224_crop.png
 ---
 
 ## Index
