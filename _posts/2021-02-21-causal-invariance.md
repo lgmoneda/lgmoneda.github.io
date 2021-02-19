@@ -13,17 +13,12 @@ image: ../../../images/causal-invariance/screen_20210218_100224.jpg
 ## Index
 
 1. [Introduction](#introduction)
-2. [Pearson tying spurious correlation to causation](#pearson-tying-spurious-correlation-to-causation)
-3. [Spuriousness as a transient state, a nonsense relationship](#spuriousness-as-a-transient-state-a-nonsense-relationship)
-4. [Reichenbach’s common cause principle](#reichenbachs-common-cause-principle)
-5. [Pearl, a precise causal interpretation and a general framework to spot spuriousness](#pearl-a-precise-causal-interpretation-and-a-general-framework-to-spot-spuriousness)
-6. [How does it impact Machine Learning?](#how-does-it-impact-machine-learning)
-7. [Environments](#environments)
-8. [Causal relationships can still suffer from bias](#causal-relationships-can-still-suffer-from-bias)
-9. [How does concept drift fit?](#how-does-concept-drift-fit)
-10. [Conclusion](#conclusion)
-
-
+2. [The principle of independent mechanisms](#the-principle-of-independent-mechanisms)
+3. [Real data example](#real-data-example)
+4. [Environments and invariance](#environments-and-invariance)
+5. [Why is it important to get the causal relationship right if I'm not doing causal inference?](#why-is-it-important-to-get-the-causal-relationship-right-if-im-not-doing-causal-inference)
+6. [Conclusion](#conclusion)
+7. [References](#references)
 
 ## Introduction
 
