@@ -196,3 +196,5 @@ It was certainly an interesting reading! I couldn't stop thinking about how I'd 
 [^fn1]: Stanley, K. O., & Lehman, J., Why greatness cannot be planned: the myth of the objective (2015), : Springer.
 [^fn2]: Lehman, J., & Stanley, K. O., Abandoning objectives: evolution through the search for novelty alone, Evolutionary computation, 19(2), 189–223 (2011).
 [^fn3]: Wolpert, D. H., Macready, W. G., & others, , No free lunch theorems for search (1995).
+
+Preview image by [@yer_a_wizard](https://unsplash.com/@yer_a_wizard).
