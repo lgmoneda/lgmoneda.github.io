@@ -104,11 +104,11 @@ As highlighted by the authors, one of the main reasons we end up sticking to obj
 
 ## How much of innovation is expected from a company?
 
-For a company, innovation might mean revealing a nearly stepping stone no one realized it was there. But if it's a nearby thing, it's more likely other players will follow the same way at pretty much the same time.
+For Stanley and Lehman, in a company, innovation might mean revealing a nearly stepping stone no one realized it was there. But if it's a nearby thing, it's more likely other players will follow the same way at pretty much the same time.
 
 It's easy to see that companies can't keep collecting stepping stones indefinitely. In fact, it sounds like a cool definition for Startups. But by not collecting any at all, or not being able to communicating them from small groups to other groups inside the company, it's just waiting to a new player disrupt it and get pushed out of the market.
 
-But instead of proposing a balance between objectives and novelty, which is something the authors argue it's very natural, we can think about how to do the minimum necessary on short-term objectives to enable ambitious achievements.
+But instead of proposing a balance between objectives and novelty, which is something the authors argue it's very natural to try when resisting dropping the objectives, we can think about how to do the minimum necessary on short-term objectives to enable ambitious achievements.
 
 ## Creating an environment for innovation in a company
 
