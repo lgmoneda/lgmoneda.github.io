@@ -7,7 +7,7 @@ ref: invariant-causal-prediction
 comments: true
 author: moneda
 description: A learning paradigm that explores environments to penalize spuriousness 
-image: ../../../images/irm/irm/social.png
+image: ../../../images/irm/social.png
 ---
 
 ## Index
