@@ -1,9 +1,10 @@
 moneda:
     name: Luis Moneda
+    publish_name: Moneda, Luis
     email: robert@sorryapp.com
     web: http://twitter.com/lgmoneda
     bio:
       pt: Cientista de Dados
       eng: Data Scientist
     avatar: /about/profil.jpg
-    slug: 
+    slug:

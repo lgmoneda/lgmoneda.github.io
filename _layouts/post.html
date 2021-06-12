@@ -21,3 +21,8 @@ layout: default
 {% if author %}
 {% include author.html %}
 {% endif %}
+
+{% assign author = site.data.authors[page.author] %}
+{% if author %}
+{% include citation.html %}
+{% endif %}
