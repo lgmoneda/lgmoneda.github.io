@@ -1,0 +1,30 @@
+{% assign author = site.data.authors[page.author] %}
+{% assign lang = page.lang %}
+<div class="full-article-footer">
+  <div class="article-footer">
+    <!-- <p> -->
+      {% if lang == "pt" %}
+      <span class="post_date">Citação</span>
+	  <div class="footnotes">
+		{{ author.publish_name }}, "{{page.title}}", artigo de blog publicado em {{}}, acesso em {{page.date | date: "%d/%m/%Y"}}.
+	  </div>
+      {% else %}
+      <span class="post_date">Citation</span>
+	  <div class="footnotes">{{ author.publish_name }}, "{{page.title}}", Blogpost at lgmoneda.github.io, ({{page.date | date: "%Y"}}).</div>
+      {% endif %}
+      <br>
+	  <pre class="lang-tex hljs latex">
+		<code>
+		  @article{% raw %}{{% endraw %}moneda{{page.date | date: "%Y"}}{{page.ref}}-blogpost,
+		  author = {Moneda, Luis},
+		  title = {{page.title}},
+		  journal = {Blogpost at lgmoneda.github.io},
+		  year = {% raw %}{{% endraw %}{{page.date | date: "%Y"}}{% raw %}}{% endraw %},
+		  howpublished = {\url{lgmoneda.github.io}},
+		  }
+		</code>
+	  </pre>
+      <br>
+    <!-- </p> -->
+  </div>
+</div>
