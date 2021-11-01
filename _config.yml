@@ -55,3 +55,4 @@ t:
 plugins:
   - jekyll-seo-tag
   - rouge
+  - jekyll-feed
