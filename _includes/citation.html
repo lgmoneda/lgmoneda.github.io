@@ -6,7 +6,7 @@
       {% if lang == "pt" %}
       <span class="post_date">Citação</span>
 	  <div class="footnotes">
-		{{ author.publish_name }}, "{{page.title}}", artigo de blog publicado em {{}}, acesso em {{page.date | date: "%d/%m/%Y"}}.
+	    {{ author.publish_name }}, "{{page.title}}", artigo de blog publicado em {{page.date | date: "%d/%m/%Y"}}, acesso em {{site.time | date: "%d/%m/%Y"}}.
 	  </div>
       {% else %}
       <span class="post_date">Citation</span>
