@@ -7,7 +7,7 @@ ref: trt
 comments: true
 author: moneda
 description: Tree-based model with an inductive bias for non-spurious relationships
-image: ../../../images/irm/social.png
+image: ../../../images/trt/yaniv-knobel-2YWS62tLATA-unsplash.jpg
 ---
 
 ## Index
@@ -26,6 +26,15 @@ image: ../../../images/irm/social.png
 This is the third post of a mini-series exploring [invariance](https://lgmoneda.github.io/2021/02/19/causal-invariance.html) in Machine Learning. In the previous two, we presented the [Invariant Causal Prediction](http://lgmoneda.github.io/2021/02/21/invariant-causal-prediction.html) and the [Invariant Risk Minimization](http://lgmoneda.github.io/2021/05/27/invariant-risk-minimization.html). To understand the motivation behind these approaches, I recommend reading the posts about [spuriousness](https://lgmoneda.github.io/2021/01/12/spurious-correlation-ml-and-causality.html) and the [independent causal mechanism principle](https://lgmoneda.github.io/2021/02/19/causal-invariance.html).
 
 We will introduce the Time Robust Tree (TRT), a learning algorithm developed during my MSc, advised by [Denis Mauá](https://www.ime.usp.br/~ddm/). The algorithms focus on the temporal aspect of spurious relationships to identify correlations that survive the test of time, expecting they are more likely to keep this behavior in future environments and thus result in better generalization.
+
+<div align="center">
+<figure>
+	<a href="../../../images/trt/yaniv-knobel-2YWS62tLATA-unsplash.jpg" name="Time Tree">
+		<img  style="width:550px;margin:10px" src="../../../images/trt/yaniv-knobel-2YWS62tLATA-unsplash.jpg"/>
+	</a>
+		<figcaption>Source: Yaniv Knobel</figcaption>
+</figure>
+</div>
 
 ## Motivation
 
@@ -259,6 +268,8 @@ predictions = model.predict_proba(test_data[features])[:, 1]
 The TRT offers a simple way to inform environment details with a standard use case that explores time, an omnipresent characteristic of any dataset. Whenever additional domain-specific environment information is available, it can be easily integrated by concatenating the time with the new information. For example, year-hospital, month-country, month-branch, etc. 
 
 In a future post, we will apply the Time Robust Forest to real datasets and compare it to a benchmark that does not leverage the time information. 
+
+-- Social
 
 <!-- ## References -->
 
