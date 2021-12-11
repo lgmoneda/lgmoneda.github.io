@@ -23,16 +23,25 @@
 			  MathJax.Hub.Config({
 				  showProcessingMessages: false,
 				  messageStyle: 'none',
+				  tex2jax: {
+					  inlineMath: [['$','$'], ['\\(','\\)']],
+					  displayMath: [['$$','$$'], ['\\[','\\]']],
+					  processEscapes: true,
+					  processEnvironments: true,
+				  },
 				  // show equation numbers
 				  TeX: {
 					  equationNumbers: {
 						  autoNumber: "AMS"
-					  }
+					  },
 				  },
 				  'HTML-CSS': {
 					  imageFont: null
 				  }
 			  });
+			</script>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+			<script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js">
 			</script>
 		</head>
 		<body>
