@@ -198,18 +198,19 @@ The split learned changes if we apply this algorithm to the motivational example
 
 After a simple and illustrative example, we move to a synthetic data case to show a more realistic setting, including the hyper-parameter definition. Once again, we include a spurious feature in the data generating process: a variable that suffers a concept drift that makes it non-stable in the training set, $X_2$. The example is extreme, since $X_2$ mimics $Y$ in $t=1$, while it is random in $t=2$, both of them available for training. The $X_2$ keeps random in the following periods, which consist the holdout set. It emulates the hypothesis that unstable properties are less likely to persist.
 
+$$
 \begin{equation}
-\label{eq:synthetic-data-1}
 \begin{split}
  X_{1} \sim {}& \mathbb{N}(0, 1) \\
  Y \sim {}&  X_{1} + \mathbb{N}(0, 1) \\
  X_{2} \sim {}& f(e) \\
 \end{split}
-\end{equation}
+\end{equation} \label{eq:synthetic-data-1}
+$$
 
-\noindent
-where \(e\) is the time period variable, which is our environment. In the training, we have two training environments \(\epsilon_{train} = \{1, 2\}\). The \(f(e)\) defines \(X_2\) following:
+where $$e$$ is the time period variable, which is our environment. In the training, we have two training environments $$\epsilon_{train} = \{1, 2\}$$. The $$f(e)$$ defines $$X_2$$ following:
 
+$$
 \begin{equation}
   \label{eq:f-e-1}
   f(e) =
@@ -218,6 +219,7 @@ where \(e\) is the time period variable, which is our environment. In the traini
              \mathbb{N}(0, 1) \mbox{, if } e \neq 1 \\
        \end{cases}
      \end{equation}
+$$
 
 We make it a binary classification task by converting $y$ to a positive class when greater than $0.5$ and to the negative one otherwise. The holdout is composed of the following periods, starting at $t=3$.
 
