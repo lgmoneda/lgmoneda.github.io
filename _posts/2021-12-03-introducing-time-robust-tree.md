@@ -265,6 +265,29 @@ model.fit(training_data[features + [time_column]], training_data[target])
 predictions = model.predict_proba(test_data[features])[:, 1]
 
 ```
+
+To use the environment-wise optimization:
+
+```python 
+from time_robust_forest.hyper_opt import env_wise_hyper_opt
+
+params_grid = {"n_estimators": [30, 60, 120], 
+              "max_depth": [5, 10],
+              "min_impurity_decrease": [1e-1, 1e-3, 0],
+              "min_sample_periods": [5, 10, 30],
+              "period_criterion": ["max", "avg"]}
+			  
+model = TimeForestClassifier(time_column=TIME_COLUMN)
+										
+opt_param = env_wise_hyper_opt(train[features + [TIME_COLUMN]], 
+                               train[TARGET], 
+                               model, 
+                               TIME_COLUMN,
+                               params_grid,
+                               cv=5,
+                               score=roc_auc_score)
+
+```
 ## Conclusion
 
 The TRT offers a simple way to inform environment details with a standard use case that explores time, an omnipresent characteristic of any dataset. Whenever additional domain-specific environment information is available, it can be easily integrated by concatenating the time with the new information. For example, year-hospital, month-country, month-branch, etc. 
