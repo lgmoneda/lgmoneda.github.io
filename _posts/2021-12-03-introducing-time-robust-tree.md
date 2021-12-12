@@ -6,7 +6,7 @@ lang: en
 ref: trt
 comments: true
 author: moneda
-description: Tree-based model with an inductive bias for non-spurious relationships
+description: A tree-based model with an inductive bias for non-spurious relationships
 image: ../../../images/trt/yaniv-knobel-2YWS62tLATA-unsplash.jpg
 ---
 
