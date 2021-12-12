@@ -111,7 +111,7 @@ $$
 \end{equation}
 $$
 
-The process is summarized in Algorithm 1. It starts with a call to <span class="ps-funcname">LearnTimeRobustTree<span> with all the features in $X$.
+The process is summarized in Algorithm 1. It starts with a call to <span class="ps-funcname">LearnTimeRobustTree<span> with all the features in $$X$$.
 
 Before learning a rule to split the data, there is a condition to stop learning on the maximum depth and the minimum number of examples by period. In <span class="ps-funcname">CreateSplit<span>, the algorithm learns a split that generates two subsets of the original data, $X_{left}$ and $X_{right}$, for which we call the learning function again and keep splitting until the stop conditions are met. The search for the particular split happens on <span class="ps-funcname">FindBestSplit<span>, where we discard any split that does not keep the minimum number of examples in every period after applying it and evaluate the best as the one with the lowest score calculated by <span class="ps-funcname">PeriodWiseScore<span>, which represents the implementation of the Equation \ref{eq:best_split_average}. In case we have opted to use the worst-case score, the <span class="ps-funcname">PeriodWiseScore<span> would store the score calculated in every period and return the worst case to represent the split quality. Similarly, we calculate the impurity decrease using the <span class="ps-funcname">PeriodWiseImpurityDecrease<span>, which can use the average value for every period or the worst case.
 
@@ -268,8 +268,6 @@ predictions = model.predict_proba(test_data[features])[:, 1]
 The TRT offers a simple way to inform environment details with a standard use case that explores time, an omnipresent characteristic of any dataset. Whenever additional domain-specific environment information is available, it can be easily integrated by concatenating the time with the new information. For example, year-hospital, month-country, month-branch, etc. 
 
 In a future post, we will apply the Time Robust Forest to real datasets and compare it to a benchmark that does not leverage the time information. 
-
--- Social
 
 <!-- ## References -->
 
