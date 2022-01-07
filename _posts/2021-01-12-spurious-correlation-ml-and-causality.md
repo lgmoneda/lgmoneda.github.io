@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spurious correlation, machine learning and causality"
+title: "Spurious correlation, machine learning, and causality"
 date: 2021-01-12
 lang: en
 ref: spurious-correlation
@@ -67,9 +67,9 @@ In an NLP task to identify the club subject the author is talking about using th
 </figure>
 </div>
 
-Here the correlation is for sure not an accident, but it's transient. It's clear a specific club is not defined by a particular player: they come and go; we still recognize it as the same club.
+Here the correlation is certainly not an accident, but it's transient. It's clear a specific club is not defined by a particular player: they come and go; we still recognize it as the same club.
 
-Let's go through previous discussions and definitions about spurious correlation to get a better grasp on spuriousness and manage these cases.
+Let's go through previous discussions and definitions about spurious correlation to better grasp spuriousness and manage these cases.
 
 ## Pearson tying spurious correlation to causation
 
@@ -91,7 +91,7 @@ So from everything that's associated, it's a spurious association when it's not 
 
 Yule (1926) [^fn4] presents the kind of relationship we consider funny and nonsense.
 
-> ... But what one feels about such a correlation is, not that it must be interpreted in terms of some very indirect catena of causation, but that is has no meaning at all; that in non-technical terms it is simply a fluke, and if we had or could have experience of the two variables over a much longer period of time we could not find any appreciable correlation between them
+> ... But what one feels about such a correlation is, not that it must be interpreted in terms of some very indirect catena of causation, but that is has no meaning at all; that in non-technical terms it is simply a fluke, and if we had or could have experience of the two variables over a much longer period of time we could not find any appreciable correlation between them.
 >
 > -- <cite>Yule [^fn4]</cite>
 
@@ -99,9 +99,9 @@ The fact it's nonsense makes us associate it with a transient relationship - oth
 
 The Husky and club news examples don't seem to fit here. While the correlation between US spending on science and Suicides does fit.
 
-Yule (1926) characterizes this case as a result of small samples in a shorter period than needed to determine the actual correlation.
+Yule (1926) characterizes this case as a result of undersized samples in a shorter period than needed to determine the actual correlation.
 
-Though the discussion in the article and the examples from the Spurious Correlation website are about this exact case - time series in a reasonably short time - it's not that rare this kind of nonsense correlation happens in large tabular data. If we take the parallel of something that happens by chance and that we would probably not keep observing as time passes, there are features that correlate with the supervised learning target even if shuffled. This fact enables feature selection procedures like Permutation Importance (Pimp) [^fn9].
+Though the discussion in the article and the examples from the Spurious Correlation website are about this exact case - time series in a reasonably short time - it's not that rare this kind of nonsense correlation happens in extensive tabular data. If we take the parallel of something that happens by chance and would probably not keep observing as time passes, some features correlate with the supervised learning target even if shuffled. This enables feature selection procedures like Permutation Importance (Pimp) [^fn9].
 
 ## Reichenbach's common cause principle
 
@@ -109,7 +109,7 @@ Reichenbach (1956) [^fn11] introduces a third variable to define causality on hi
 
 _If two random variables_  $$X$$  _and_ $$Y$$ _are statistically dependent_ $$(Y \not \perp \!\!\! \not \perp X)$$ _then exists a third variable_ $$Z$$ _that causally influences both. (As a special case,_ $$Z$$ _may coincide with either_ $$X$$ _or_ $$Y$$_.) Furthermore, this variable_ $$Z$$ _screens_ $$X$$ _and_ $$Y$$ _from each other in the sense that given_ $$Z$$_, they become independent,_ $$X \perp \!\!\! \perp Y$$.
 
-This third variable $$Z$$, also known as a confounder when not in the special case, now becomes a source of a spurious correlation.
+This third variable $$Z$$, also known as a confounder when not in the particular case, now becomes a source of a spurious correlation.
 
 A classic example of the common cause is the observed correlation between ice cream consumption ($$X$$) and crime rate ($$Y$$), which is confounded by day temperature ($$Z$$). So in the summer, when it's hot, people consume more ice cream, but they also occupy more public spaces and are more prone to crimes.
 
@@ -124,7 +124,7 @@ We represent it in the following causal directed acyclic graph (DAG), a graphica
 </figure>
 </div>
 
-See how now it's part of the causal structure that defines the phenomena involving $$X$$, $$Y$$, and $$Z$$, which does not sound well with the *nonsense* view of spuriousness - we can come up with a little story to explain it. We are not talking about something we observe by chance, but $$Z$$ would cause this confusion about $$X$$ and $$Y$$ under every circumstance.
+See how now it's part of the causal structure that defines the phenomena involving $$X$$, $$Y$$, and $$Z$$, which does not sound well with the *nonsense* view of spuriousness - we can come up with a bit of story to explain it. We are not talking about something we observe by chance, but $$Z$$ would cause this confusion about $$X$$ and $$Y$$ under every circumstance.
 
 Notice this principle does not cover other sources of non-causal association between $$X$$ and $$Y$$ which is not related to a common cause, but by conditioning in a common effect, which creates selection bias.
 
@@ -151,11 +151,11 @@ $$
 \end{align}
 $$
 
-The context here means a set of variables at specific values - which includes the empty set.
+The context here means a set of variables at specific values, including the empty set.
 
 We can extend from this definition that every relationship leaking from a non-causal path, known as the Backdoor path, is a spurious association. A non-causal path is every path in a causal DAG one can connect two nodes (variables) while disrespecting the arrow directions. Just as we could do connecting ice cream and robbery in the previous example.
 
-Here it's a persistent problem arising from the same source, but the correlation itself would vary.
+Here it's a persistent problem arising from the same source, but the correlation would vary.
 
 ## How does it impact Machine Learning?
 
@@ -167,11 +167,11 @@ This behavior has numerous drawbacks, like the ones pointed in the Husky from th
 
 Arjovsky et al. (2019) [^fn25] discuss the implications in ML before offering a new framework to deal with it, which I'll cover in a future post.
 
-> Intuitively, a correlation is spurious when we do not expect it to hold in the future in the same manner as it held in the past.  In other words, spurious correlations do not appear to be stable properties.
+> Intuitively, a correlation is spurious when we do not expect it to hold in the future in the same manner as it held in the past. In other words, spurious correlations do not appear to be stable properties.
 >
 > -- <cite>Arjovsky et al. [^fn25]</cite>
 
-But this stability is not only in respect to the future. A dataset can be generated by different data generating processes, like the methodology of collection. Imagine a healthcare dataset collected from various hospitals or in different countries. Or a computer vision dataset with pictures taken from different cameras.
+But this stability is not only in respect to the future. A dataset can be generated by different data generating processes, like the collection methodology. Imagine a healthcare dataset collected from various hospitals or in different countries. Or a computer vision dataset with pictures taken from different cameras.
 
 This breaks one of the most critical assumptions for the Empirical Risk Minimization paradigm in supervised learning: train and test come from an i.i.d sample from the sample distribution.
 
@@ -190,23 +190,23 @@ In a past presentation about Validation, the process to verify if a particular m
 </figure>
 </div>
 
-In this same presentation, some methods to validate were presented, like splitting the data between training-past and testing-future, to assess how dependent on spurious relations from the specific contexts present in the past the machine learning model is.
+In this same presentation, some validation methods were presented, like splitting the data between training-past and testing-future, to assess how dependent the machine learning model is on spurious relations from the specific contexts present in the past.
 
 As Arjovsky et al. (2019) [^fn25] states: shuffling data is something that we do, not something Nature does.
 
-The authors bring yet another caveat of how ML is impacted: in over-parameterized models, like Neural Networks. The procedure that we are used to train it is going to prefer the solutions with the smallest capacity, a measure of the representational power of a model. This makes these models prefer simple rules instead of complex relationships. It might be the case this simple rule is spurious, like associating the green color to recognize cows instead of a complete profile of its shape.
+The authors bring yet another caveat of how ML is impacted: in over-parameterized models, like Neural Networks. The procedure that we are used to training it is going to prefer the solutions with the smallest capacity, a measure of the representational power of a model. This makes these models prefer simple rules instead of complex relationships. It might be the case this simple rule is spurious, like associating the green color to recognize cows instead of a complete profile of its shape.
 
-Notice this is one of the sources of overfitting, a situation our model has learned the idiosyncrasies of the training set and fails to generalize. It's not the only source since it's easy to show one can use a very complex model to learn sample by sample from a training set and fail to generalize in a test set which was indeed sampled from the same distribution from the train.
+Notice this is one of the sources of overfitting, a situation our model has learned the idiosyncrasies of the training set and fails to generalize. It's not the only source since it's easy to show one can use a very complex model to learn sample by sample from a training set and fail to generalize in a test set sampled from the same distribution from the train.
 
 ## Environments
 
 To make the discussion about the relationship between machine learning and spurious correlation more interesting, we bring two other concepts into play: intervention and environment (or context).
 
-We need to define intervention because it's required to define environments.
+We need to define intervention because it's required to determine environments.
 
-An intervention replaces one or more of the equations presented in a Structure Equation Model (SEM). It's basically changing the causal relationship between the variables of our problem. A _valid intervention_ does not destroy too much the causal relationship involving $$Y$$, the variable of interest we're trying to predict.
+An intervention replaces one or more equations presented in a Structure Equation Model (SEM). It's basically changing the causal relationship between the variables of our problem. A _valid intervention_ does not destroy too much the causal connection involving $$Y$$, the variable of interest we're trying to predict.
 
-Then the set of environments $$\epsilon_{all}$$ is composed by all the possible cases generated by all possible valid interventions in a SEM as long as the interventions keep the graph acyclic, it doesn't change $$\mathbb{E}[Y \mid Pa(Y)]$$, and the variance $$V[Y \mid Pa(A)]$$ if finite.
+Then the set of environments $$\epsilon_{all}$$ is composed by all the possible cases generated by all possible valid interventions in an SEM as long as the interventions keep the graph acyclic, it doesn't change $$\mathbb{E}[Y \mid Pa(Y)]$$, and the variance $$V[Y \mid Pa(A)]$$ if finite.
 
 To exemplify, we use the same illustrative case from Arjovsky et at (2019) [^fn25]:
 
@@ -238,9 +238,9 @@ Then the authors show how the linear model built with this data can be different
 - Regress using $$X_2^e$$ and obtain $$\hat{\alpha}_1 = 0$$ and $$\hat{\alpha}_2 = \sigma(e)/(\sigma(e) + \frac{1}{2})$$
 - Regress using $$X_1^e$$ and obtain $$\hat{\alpha}_1 = 1/(\sigma(e) + 1)$$ and $$\hat{\alpha}_2 = \sigma(e)/(\sigma(e) + 1)$$
 
-See how only the first case gives us an invariant estimator since the other two options depend on $$e$$. And that's how spurious correlations related to idiosyncrasies from the environments available in training will affect the true relationship and make this model likely low-performing for unseen environments, which we all expect to encounter when deploying a model in real life.
+See how only the first case gives us an invariant estimator since the other two options depend on $$e$$. And that's how spurious correlations related to idiosyncrasies from the environments available in training will affect the genuine relationship and make this model likely low-performing for unseen environments, which we all expect to encounter when deploying a model in real life.
 
-Notice your model would do a pretty good job in a traditional validation schema. If you pool together all the data, shuffle, get a random sample to train and another to test, train, and validate, you wouldn't be surprised by anything. Your model would be using the specific correlations present in the training environments to do good in other samples from these same training environments. However, this won't be the case in production. And it would be better to have learned the invariant estimator from case 1, even if it means a higher test set error, because it's the best model to face a real-world scenario where the environment changes.
+Notice your model would do a pretty good job in a traditional validation schema. If you pool together all the data, shuffle, get a random sample to train and another to test, train, and validate, you wouldn't be surprised by anything. Your model would be using the specific correlations present in the training environments to do good in other samples from these same training environments. However, this won't be the case in production. And it would be better to have learned the invariant estimator from case 1, even if it means a higher test set error because it's the best model to face a real-world scenario where the environment changes.
 
 Here we can see how **the transient notion of spuriousness is contrasted with the invariance notion for causal**.
 
@@ -248,7 +248,7 @@ Here we can see how **the transient notion of spuriousness is contrasted with th
 
 Even if we rely on the mechanism $$P( Y \mid X_1)$$, there are ways a causal relationship can be infected. Introducing causal relationships into ML makes us take advantage of them, but it also brings all of its challenges, like hidden confounding and lack of identifiability.
 
-Let's use a slightly modified example from the previous causal graph and make the environment explicit as something that defines $$X_1$$ and $$X_2$$.
+Let's use a slightly modified example from the previous causal graph and make the environment explicit as defining $$X_1$$ and $$X_2$$.
 
 <div align="center">
 <figure>
@@ -262,7 +262,7 @@ Someone or some process could filter examples based on the $$X_2$$ value, which 
 
 ## How does concept drift fit?
 
-There are many things under the dataset shift or concept drift definition. Here we'll expose only two concepts, the virtual concept drift, and the real concept drift.
+There are many things under the dataset shift or concept drift definition. Here we'll expose only two concepts, the virtual concept drift and the real concept drift.
 
 - Virtual concept drift: $$P(X)$$ changes;
 - Real concept drift: $$P(y \mid X)$$ changes;
@@ -277,7 +277,7 @@ Basically, in the virtual, the input distribution change. In the real, a mechani
 </figure>
 </div>
 
-When the virtual concept drift happens, there's little to worry about. You might want to review the policy you have built on top of the model since the distribution of input cases has changed, and the previous decision-making process can imply different things. Your model aggregated metric is different in a sample with such a different mix of examples.
+When the virtual concept drift happens, there's little to worry about. You might want to review the policy you have built on top of the model since the distribution of input cases has changed, and the previous decision-making process can imply different things. Your model aggregated metric is different in a sample with an eclectic mix of examples.
 
 There's nothing causal or anti-causal in the inputs' distribution.
 
@@ -304,15 +304,15 @@ Since causality is tied to spuriousness, part of Machine Learning development se
 [^fn3]: [Tyler Virgen, Spurious Correlations website](https://www.tylervigen.com/spurious-correlations)
 [^fn4]: Yule, G. U., Why do we sometimes get nonsense-correlations between time-series?--a study in sampling and the nature of time-series, Journal of the royal statistical society, 89(1), 1–63 (1926), page 4.
 [^fn5]: Pearl, J., Causality (2009), Cambridge, UK: Cambridge University Press.
-[^fn8]: Pearson, K., On a form of spurious correlation which may arise when indices are useed in the measurement of organs, In , Royal Soc., London, Proc. (pp. 489–502) (1897).
+[^fn8]: Pearson, K., On a form of spurious correlation which may arise when indices are used in the measurement of organs, In , Royal Soc., London, Proc. (pp. 489–502) (1897).
 [^fn9]: Altmann, André, Tolocsi, Laura, Sander, O., & Lengauer, T., Permutation importance: a corrected feature importance measure, Bioinformatics, 26(10), 1340–1347 (2010)
 [^fn10]: Simon, H. A., Spurious correlation: a causal interpretation, Journal of the American Statistical Association, 49(267), 467–479 (1954).
 [^fn11]: Reichenbach, H., & Reichenbach, M., The direction of time, ed (1956)
 [^fn12]: Alcorn, M. A., Li, Q., Gong, Z., Wang, C., Mai, L., Ku, W., & Nguyen, A., Strike (with) a pose: neural networks are easily fooled by strange poses of familiar objects, In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 4845–4854) (2019).
 [^fn13]: Eykholt, K., Evtimov, I., Fernandes, E., Li, B., Rahmati, A., Xiao, C., Prakash, A., …, Robust physical-world attacks on deep learning visual classification, In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 1625–1634) (2018).
 [^fn15]: Peters, J., Janzing, D., & Schlkopf, B., Elements of causal inference: foundations and learning algorithms (2017), : The MIT Press.
-[^fn20]: Ribeiro, M. T., Singh, S., & Guestrin, C., Why should i trust you?" explaining the predictions of any classifier, In , Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144) (2016).
+[^fn20]: Ribeiro, M. T., Singh, S., & Guestrin, C., Why should I trust you?" explaining the predictions of any classifier, In , Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining (pp. 1135–1144) (2016).
 [^fn21]: [Panel of Workshop on Advances in Approximate Bayesian Inference (AABI) 2017](https://www.youtube.com/watch?v=x1UByHT60mQ&feature=youtu.be&t=37m34s)
-[^fn22]: Kadam, S., A survey on classification of concept drift with stream data, , (),  (2019).
+[^fn22]: Kadam, S., A survey on classification of concept drift with stream data, (2019).
 [^fn24]: Beery, S., Horn, G. v., & Perona, P., Recognition in terra incognita (2018).
 [^fn25]: Arjovsky, M., Bottou, L., Gulrajani, I., & Lopez-Paz, D., Invariant Risk Minimization (2019).
