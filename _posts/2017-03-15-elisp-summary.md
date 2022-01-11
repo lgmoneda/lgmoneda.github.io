@@ -4,10 +4,10 @@ title: "A brief introduction to Emacs Lisp for people with programming backgroun
 date: 2017-03-15
 lang: en
 ref: elisp-intro
-description: Sharing my summary of the "An Introduction to Programming in Emacs Lisp" book.
+description: My summary of the "An Introduction to Programming in Emacs Lisp" book.
 ---
 
-It's been now 45 days i am an Emacs user, which implies going through some Elisp, the Lisp family language for Emacs. After modifying some modes and writing my own functions, it was time to get some conscious about how Elisp works, its special forms and syntax. 
+It has been 45 days since I am an Emacs user, which implies going through some Elisp, the Lisp family language for Emacs. After modifying some modes and writing my own functions, it was time to become conscious about how Elisp works, its special forms, and syntax. 
 
 <div align="center">
 <figure>
@@ -18,7 +18,7 @@ It's been now 45 days i am an Emacs user, which implies going through some Elisp
 </figure>
 </div>
 
-After reading ["An Introduction to Programming in Emacs Lisp"](https://www.gnu.org/software/emacs/manual/eintr.html) almost entirely, i have decided to write a summary for myself and share it, since it could help others in the same situation: people with some programming background who wants a brief introduction to Elisp. Some references are from the <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/">Elisp Manual</a>.
+After reading ["An Introduction to Programming in Emacs Lisp"](https://www.gnu.org/software/emacs/manual/eintr.html) almost entirely, I have decided to write a summary for myself and share it, since it could help others in the same situation: people with some programming background who wants a brief introduction to Elisp. Some references are from the <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/">Elisp Manual</a>.
 
 The structure follows:
 
@@ -37,7 +37,7 @@ The structure follows:
 
 ##  1. List Processing <a name="#lisp"> </a>
 
-LISP stands for List Processing. And that's a really meaningful name! Lists are the base of LISP and it basically passes by lists, a structure bounded by "()", and process/evaluate them. Indentation doesn't matter, just embrace the lists by "()" and keep white spaces between its members.  
+LISP stands for List Processing. And that's a really meaningful name! Lists are the base of LISP, and it basically passes by lists, a structure bounded by "()", and process/evaluate them. Indentation doesn't matter. Just embrace the lists by "()" and keep white spaces between its members.  
 
 ```elisp
 ;; List of numbers
@@ -52,17 +52,17 @@ LISP stands for List Processing. And that's a really meaningful name! Lists are 
 ("John" 1 (2 3 "Paul") ("Ringo" george))
 ```
 
-<div  style="display: none;"> A list in Lisp—any list—is a program ready to run. If you run it (for which the Lisp jargon is evaluate), the computer will do one of three things: do nothing except return to you the list itself; send you an error message; or, treat the first symbol in the list as a command to do something. (Usually, of course, it is the last of these three things that you really want!)
+<div  style="display: none;"> A list in Lisp—any list—is a program ready to run. If you run it (for which the Lisp jargon is "evaluate"), the computer will do one of three things: do nothing except return to you the list itself; send you an error message or treat the first symbol in the list as a command to do something. (Usually, of course, it is the last of these three things that you really want!)
 
-The single apostrophe, ', that I put in front of some of the example lists in preceding sections is called a quote; when it precedes a list, it tells Lisp to do nothing with the list, other than take it as it is written. But if there is no quote preceding a list, the first item of the list is special: it is a command for the computer to obey. (In Lisp, these commands are called functions.) The list (+ 2 2) shown above did not have a quote in front of it, so Lisp understands that the + is an instruction to do something with the rest of the list: add the numbers that follow. </div>
+The single apostrophe, ', that I put in front of some of the example lists in preceding sections is called a quote; when it precedes a list, it tells Lisp to do nothing with the list, other than take it as it is written. But if there is no quote preceding a list, the first item is special: it is a command for the computer to obey. (In Lisp, these commands are called functions.) The list (+ 2 2) shown above did not have a quote in front of it, so Lisp understands the + as an instruction to do something with the rest of the list: add the numbers that follow. </div>
 
 ##  2. Atoms, symbols, symbol expression and variables <a name="#symbols"></a>
 
-In Elisp we call anything we can't divide as an **atom**. The atoms are: **numbers** (1, 2, 3...), "symbols" (+, -, john, ringo...) and strings ("John", "Ringo"...). Usually, we care about **symbols** and **numbers**. 
+In Elisp, we call anything we can't divide as an **atom**. The atoms are: **numbers** (1, 2, 3...), "symbols" (+, -, john, ringo...), and strings ("John", "Ringo"...). Usually, we care about **symbols** and **numbers**. 
 
-The representation of symbols and lists are called **symbolic expressions**, **s-expressions** or, even shorter, **sexp**. The word **expressions** refers both for printable or internally representation of atoms and lists.
+The representation of symbols and lists are called **symbolic expressions**, **s-expressions** or, even shorter, **sexp**. The word **expressions** refers to the printable or the internal representation of atoms and lists.
 
-You can use **setq** and **defvar** to define a variable. **defvar** differs from **setq** because it only sets a value if the variable doesn't exist yet, and it contains a documentation string too.
+You can use **setq** and **defvar** to define a variable. **defvar** differs from **setq** because it only sets a value if the variable doesn't exist yet and contains a documentation string.
 
 ```elisp
 ;; Syntax
@@ -77,9 +77,9 @@ You can use **setq** and **defvar** to define a variable. **defvar** differs fro
 ##  3. Evaluating<a name="evaluating"></a>
 
 
-From my point of view, the beauty in Elisp comes from this general list processing: everything is evaluated and the default behavior is to treat a list as a function call, unless you explicitly advise with a quote that it should be seen as "plain". So a list ``` (function_name arg1 arg2)``` is seen as a call to a function named as the first argument,the other elements are passed as arguments to that function. You can **evaluate** symbols expressions with the bind ```C-x C-e``` with the cursor at the end of the s-exp.
+From my point of view, the beauty in Elisp comes from this general list processing. Everything is evaluated, and the default behavior is to treat a list as a function call unless you explicitly advise with a quote that it should be seen as "plain". Elisp interprets the list ``` (function_name arg1 arg2)``` as a call to a function named ```function_name```, while the other elements are the arguments to that function. You can **evaluate** symbols expressions with the bind ```C-x C-e``` with the cursor at the end of the s-exp.
 
-The evaluation itself happens too in a very general form and only differs for the _special forms_, like **defun** and others that will be seen below.
+The evaluation itself happens too in a general form and only differs for the _special forms_, like **defun** and others we will present.
 ```
 ("John" "Ringo" "Paul" "George")
 => Invalid function "John"
@@ -89,12 +89,12 @@ The evaluation itself happens too in a very general form and only differs for th
 => ("John" "Yoko")
 ```
 
-This approach is part of the Functional Programming paradigm. Though Elisp isn't a purely functional language, many aspects of the paradigm are present in there. You can see further information about it <a href="https://www.emacswiki.org/emacs/FunctionalProgramming">in its wiki.</a>
+This approach is part of the Functional Programming paradigm. Though Elisp isn't a purely functional language, many paradigm aspects are present. You can see further information about it <a href="https://www.emacswiki.org/emacs/FunctionalProgramming">in its wiki.</a>
 
 
 ## 4. Defining functions (defun)
 
-We have seen that lists are evaluated as a function, it makes a call and returns a value. To define a function we use the special form **defun**. It's followed by the function name and its arguments. The arguments are private, so it does not change anything outside the function. Any other symbol called inside a function will bring its value from outside, since Elisp has global scope. Then, write a documentation string explaining the function behavior. The last evaluation inside defun is the value it'll return when called.
+We have seen that lists are evaluated as a function; they call and return a value. To define a function, we use the special form **defun**. It's followed by the function name and its arguments. The arguments are private, so it does not change anything outside the function. Any other symbol called inside a function will bring its value from outside since Elisp has global scope. Then, we write a documentation string explaining the function behavior. The last evaluation inside ```defun``` is the value it'll return when called.
 
 ```elisp
 (defun number-plus-five (number)
@@ -105,30 +105,30 @@ We have seen that lists are evaluated as a function, it makes a call and returns
 => 15
 ```
 
-Though a function always returns a value, sometimes we're more interested in its side-effects, that is, everything that is done while the function is evaluated but is not reflect in its returned value. A lot of things can be done as side-effects, like changing buffers, displaying a message and so on. 
+Though a function always returns a value, sometimes we're more interested in its side-effects, that is, everything that is done while the function is evaluated but is not reflected in its returned value. Many things can be done as side-effects, like changing buffers, displaying a message, and so on. 
 
-## 5. Local Scope - the "let" special form
+## 5. Local scope - the "let" special form
 
-Since scope in elisp is global, we need to inform when we want it to be local. It's achieved by the special form **let**, which follows the structure:
+Since the scope in Elisp is global, we need to inform when we want it to be local. It's achieved by the special form **let**, which follows the structure:
 
 
 ```elisp
 (let varlist body)
 ```
 
-**Varlist** is a list of variables that will be bounded to informed values, or **nil** if anything is passed.
+**Varlist** is a list of variables bounded to informed values, or **nil** if anything is passed.
 
 ```elisp
 (let ((name "John") (income 3000) address)
 	body...)
 ```
-In such a case, the variables name, income and address will be bounded to "John", 3000 and nil, respectively. It doesn't matter if variables with such names appear in any other place, we guarantee its values inside the **let** and we don't propagate it to the outside. 
+In such a case, the variables name, income, and address will be bounded to "John", 3000, and nil, respectively. It doesn't matter if variables with such names appear in any other place, we guarantee its values inside the **let**, and we don't propagate it to the outside. 
 
 The **let** form returns the last evaluated expression in its body.
 
-Where and why it should be used: inside functions then the global scope won't be messed and you guarantee the variables attend what you want just where you want it. The other variables that work in a local score are the ones passed as function arguments. Anything called inside **let** (like functions) is evaluated at its scope. If you have a **setq** inside a function (defun's body), you should isolate it inside this function scope using **let**.
+Where and why it should be used: inside functions, then the global scope won't be messed, and you guarantee the variables attend what you want just where you want it. The other variables that work in a local scope are those passed as function arguments. Anything called inside **let** (like functions) is evaluated at its scope. If you have a **setq** inside a function (defun's body), you should isolate it inside this function scope using **let**.
 
-There's yet another way to set a variable in a local scope. In fact, it's just the function arguments, but passed in a interactive way:
+There's yet another way to set a variable in a local scope. In fact, it's just the function arguments but passed interactively:
 
 ```elisp
 (defun myfunc ()
@@ -136,7 +136,7 @@ There's yet another way to set a variable in a local scope. In fact, it's just t
 	body...)
 ```
 
-The "p" here stands for "prefix". We can pass an argument like  ```C-u [argument] M-x [myfunc]```. The "p" makes emacs pass the prefix argument (from C-u) as the function argument. We can even build the arguments list, you can prompt the user for some of them, like in append-to-buffer built-in function:
+The "p" here stands for "prefix". We can pass an argument like  ```C-u [argument] M-x [myfunc]```. The "p" makes Emacs pass the prefix argument (from C-u) as the function argument. We can even build the arguments list. You can prompt the user for some of them, like in append-to-buffer built-in function:
 
 ```elisp
 (interactive 
@@ -147,11 +147,11 @@ The "p" here stands for "prefix". We can pass an argument like  ```C-u [argument
 		(region-end)))
 ```
 
-The **let*** special form is just like the **let**, except that the varlist is set in a sequence then you can use earlier variables in the var list to set values of the latter ones.
+The **let*** special form is just like the **let**, except that the varlist is set in a sequence, so you can use earlier variables in the var list to set values of the following ones.
 
 ## 6. Conditionals: if, when, unless and cond <a name="conditional"></a>
 
-Special forms to evaluate predicates and execute a function depending on the evaluation. The syntax is enough to understand it.
+These are the special forms to evaluate predicates and execute a function depending on the evaluation. The syntax is enough to understand it.
 
 ```elisp
 (if (predicate) ; if-part
@@ -173,7 +173,7 @@ Special forms to evaluate predicates and execute a function depending on the eva
 	(sleep-for 0.5)
 	(message "What were you expecting?"))
 
-;; Like if, but without the then-part. Skip only when predicate is true
+;; Like if, but without the then-part. Skip only when the predicate is true
 (unless (predicate) (action1) ...)
 
 ; The cond form supports an arbitrary number of predicates and actions
@@ -187,7 +187,7 @@ Special forms to evaluate predicates and execute a function depending on the eva
 
 ## 7. Manipulating lists: car, cdr and cons <a name="lists"></a>
 
-The **car**, **cdr** and **cons** are fundamental functions to work with lists. Car returns the head of a list, its first element. **Cdr** points to the second term of a list and that will return the part from list that follows the head (if you're not used to linked lists, read ["How lists are implemented"](https://www.gnu.org/software/emacs/manual/eintr.html#List-Implementation) chapter).
+The **car**, **cdr** and **cons** are fundamental functions to work with lists. Car returns the head of a list, its first element. **Cdr** points to the second term of a list, and that will return the part from the list that follows the head (if you're not used to linked lists, read ["How lists are implemented"](https://www.gnu.org/software/emacs/manual/eintr.html#List-Implementation) chapter).
 
 **Car** is an acronym from the phrase "Content of the address part of the register" and **cdr** comes from "Contests of the decremented part of the register".
 
@@ -222,14 +222,14 @@ To find lists length:
 => 2
 ```
 
-Instead of using **cdr** repeatedly, we can use **nthcdr** and pass the repeat number of times as argument:
+Instead of using **cdr** repeatedly, we can use **nthcdr** and pass the repeat number of times as an argument:
 
 ```elisp
 (car (nthcdr 2 '(john ringo paul george)))
 => paul
 ```
 
-And instead of calling a car after a nthcdr, we can just use **nth**:
+And instead of calling a car after an nthcdr, we can just use **nth**:
 
 
 ```elisp
@@ -249,12 +249,9 @@ If we want to set values from a list, we need to use **setcar** and **setcdr**. 
 => (john yoko)
 ```
 
-
-
-
 ## 9. Loops: while, dolist and dotimes <a name="loops"></a>
 
-Since it's a very common structure from any programming language, it's a brief syntax summary. A classical thing to do is loop through a list:
+Since it's a widespread structure from any programming language, it's a brief syntax summary. A classical thing to do is loop through a list:
 
 ```elisp
 (while test-whether-list-is-empty
@@ -269,7 +266,7 @@ Since it's a very common structure from any programming language, it's a brief s
   (setq beatles (cdr beatles)))
 ```  
 
-The "test-whether-list-is-empty" test can be the list itself, since it returns **nil** if empty. Another common task is to do something a certain number of times:
+The "test-whether-list-is-empty" test can be the list itself since it returns **nil** if empty. Another common task is to do something a certain number of times:
 
 
 ```elisp
@@ -280,7 +277,7 @@ The "test-whether-list-is-empty" test can be the list itself, since it returns *
 
 The **1+** is like the "++" shortcut from some languages, an easy way to write ```(+ variable 1)```.   
 
-The other two forms, **dolist** and **dotimes** are macros. Macros are one step ahead special forms, a syntax sugar for some common tasks. **Dolist** automatically shorten the list, binds the *8car** of each shortened version of the list to the first of its arguments.
+The other two forms, **dolist** and **dotimes** are macros. Macros are one step ahead of special forms, a syntax sugar for some common tasks. **Dolist** automatically shorten the list, binds the *8car** of each shortened version of the list to the first of its arguments.
 
 ```elisp
 (dolist (element list ...)
@@ -303,11 +300,11 @@ The other two forms, **dolist** and **dotimes** are macros. Macros are one step 
 => (2 1 0)
 ```
 
-It returns value, no matter if it's an atom or list.
+It returns `value`, whether an atom or a list.
 
 ## 10. Progn, lambda and condition case <a name="other"></a>
 
-The **progn** evaluates each of its arguments and returns the value of the last one. Where and why: since progn is a single expression and can produce side effects and return a single value, it can be used as argument to other functions, or wherever we can have only one expression but we want to do more than one thing.
+The **progn** evaluates each of its arguments and returns the value of the last one. Where and why: since progn is a single expression and can produce side effects and return a single value, it can be used as an argument to other functions, or wherever we can have only one expression, but we want to do more than one thing.
 
 ```elisp
 ;; Syntax
@@ -329,9 +326,9 @@ Goes backward if ARG is negative; error if CHAR not found."
 
 ```
 
-In the ```(kill-region ...)``` call we need to pass two points. At the second argument we want to make more tbefore passing it, so we use **progn**, make a search-foward and then use ```(point)```.
+We need to pass two points in the ```(kill-region ...)``` call. At the second argument, we want to make more before passing it, so we use **progn**, make a search-forward, and then use ```(point)```.
 
-The **lambda** define a **lambda expression**, it is used as in other languages, to write anonymous functions, you can just write a function on the fly without having to name it using the **defun** form. It's useful to use with **mapcar**, since one of its arguments is a function, you can just write it inside mapcar using lambda.
+The **lambda** define a **lambda expression**. It is used as in other languages: to write anonymous functions. You can just write a function on the fly without naming it using the **defun** form. It's helpful to use with **mapcar**, since one of its arguments is a function. You can just write it inside mapcar using lambda.
 
 ```elisp
 ;; Syntax
@@ -376,9 +373,9 @@ There's nothing different about recursion in Elisp as you may be used to.
 
 Being ```next-step-expression``` something like ```(cdr list)``` or a regressive counter ```(1- number)``` and so on.
 
-The ```cond``` special form fits nicely to a recursive function body.  
+The special form ```cond``` fits a recursive function body nicely.  
 
-There are some patterns to recursion over lists: every, accumulate and keep. With every we iterate over all elements and act, building (usually) another list with the result, like:
+There are some patterns to recursion over lists: every, accumulate and keep. With "every" we iterate over all elements and act, building (usually) another list with the result, like:
 
 ```elisp
 (cons act-on-car (recursive-function (cdr list)))
@@ -390,7 +387,7 @@ In accumulative, the result is a combination of every call result:
 (+ (car list) (recursive-function (cdr list)))
 ```
 
-With keep we act only on elements of interest, do a test to check it.
+With "keep", we act only on elements of interest, do a test to check them.
 
 The book's recursion chapter is short but way more informative than this little summary: <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html#Recursion">book.</a>.
 
@@ -398,7 +395,7 @@ The book's recursion chapter is short but way more informative than this little 
 
 Emacs has two debuggers: **debug** (internal) and **edebug** (requires instrument a function). ```M-x debug-on-entry RET my_function RET```. Then evaluate ```(my_func)```. Type d to evaluate next expression. To cancel: ```M-x cancel-debug-on-entry RET my_function RET```. The ```debug-on-quit``` triggers with ```C-g``` (cancel), so it's useful to use when you're entering infinite loops.
 
-To use **edebug** call ```M-x edebug-defun RET``` with the cursor whithin or just after a function definition. Then use ```SPC``` to pass evaluation.
+To use **edebug** call ```M-x edebug-defun RET``` with the cursor within or just after a function definition. Then use ```SPC``` to pass the evaluation.
 
 ```elisp
 (defun my-func (x)
@@ -411,9 +408,9 @@ To use **edebug** call ```M-x edebug-defun RET``` with the cursor whithin or jus
 
 > "You don't have to like Emacs to like it."
 
-Emacs is easily customized and Elisp has forms to help with it. The customization of Emacs via the ```.emacs``` is not the purpose here.
+Emacs is easily customized, and Elisp has forms to help with it. The customization of Emacs via the ```.emacs``` is not the purpose here.
 
-The **defcustom** let the user specify a variable value. Though you can use setq, this special form offers help to customization, since you can define:
+The **defcustom** let the user specify a variable value. Though you can use setq, this special form offers help to customization since you can define:
 
 - :type kind of data that variable should be set;
 - :options suggest a list of values to that variable, not exclusive, only convenient;
@@ -422,7 +419,7 @@ The **defcustom** let the user specify a variable value. Though you can use setq
 ```M-x customize``` let you search for groups.
 
 <div  style="display: none;">
-**Advising Functions** is a feature to add code to existing functions without having to redefining that function. Then, if you want to add a behavior to a emacs-mode function, you can use these features:
+**Advising Functions** is a feature to add code to existing functions without redefining that function. Then, if you want to add a behavior to an emacs-mode function, you can use these features:
 
 ```elisp
 (defun original-function (x)
