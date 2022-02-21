@@ -2,9 +2,7 @@
       <header class="post_header">
         <h2 class="post-title"><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a> <ul class="tag" style="display:inline">
   {% for tag in post.tags %}
-    <li class="tag green">
-      #{{tag}}
-    </li>
+    <li class="tag green">#{{tag}}</li>
   {% endfor %}
 </ul></h2>
         <!-- <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time> -->
