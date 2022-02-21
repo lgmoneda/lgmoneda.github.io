@@ -10,7 +10,15 @@ layout: default
     <time class="meta post_date full">{{ page.date | date_to_string }}</time>
 {% endif %}
 	<h2 class="post-title in-post-title">{{ page.title }}</h2>
-<p class="small description">{{ page.description }}</p>
+<p class="small description" style="margin-bottom: 18px;">{{ page.description }}</p>
+<ul style="text-align:center">
+  {% for tag in page.tags %}
+    <li class="tag green">
+      #{{tag}}
+    </li>
+  {% endfor %}
+</ul>
+
 <footer></footer>
 </div>
 <div class="post">

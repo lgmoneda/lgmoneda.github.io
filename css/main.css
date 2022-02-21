@@ -399,3 +399,34 @@ a.nav-item:hover {
 .footnotes p {
     font-size: 1.0em;
 }
+
+.tag {
+margin: 0 2px;
+padding: 2px;
+color: #fff;
+font-size: 12px;
+font-family:menlo;
+text-decoration: none;
+display:inline;
+
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.yellow {
+    background-color: goldenrod;
+}
+
+.blue {
+    background-color: royalblue;
+}
+
+.green {
+    background-color: #286748;
+}
+
+.red {
+    background-color: #df2d4f;
+}

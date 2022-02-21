@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: A tree-based model with an inductive bias for non-spurious relationships
 image: ../../../images/trt/yaniv-knobel-2YWS62tLATA-unsplash.jpg
+tags: research machine-learning
 ---
 
 ## Index
@@ -226,7 +227,7 @@ We make it a binary classification task by converting $y$ to a positive class wh
 At first, we apply the TRT and the DT using similar hyper-parameters: 30 as maximum depth, 0.01 as minimum impurity decrease, 10 as a minimum sample by period for the TRT, and 20 as a minimum sample to split for the DT since we have two periods. In this case, the TRT presents an AUC of 0.83 in train and 0.81 in the holdout, while the DT performs around 0.92 AUC in training and 0.64 in the holdout. It shows how the TRT avoids learning from the spurious variable $X_2$, which lowers its training performance but makes it succeed in the holdout, while the DT goes in the opposite direction.
 However, we need to define the hyper-parameters following a process and objective criteria in a real-world case. In the following subsection, we show how to execute this step when using the TRT.
 
-### Hyper-parameter optimization 
+### Hyper-parameter optimization
 
 We will apply the traditional K-fold to the example as the benchmark. However, this design pools the data from the periods during the hyper-parameter selection and then select the parameters with the highest performance. This process does not favor the period-wise design from TRT.
 We use a K-fold that generates folds containing just one environment, used as test folds to overcome it. We identify this approach as Environment K-Folds (Env K-Folds). Similar to what we use to learn the best split in the TRT, Besides taking the average performance in the folds to decide the hyper-parameters, we evaluate a second strategy when using the Env K-Folds. First, we average the performance in all folds consisting of the same environment and hyper-parameter set. We group by only hyper-parameters sets and select the minimum performance, the worst environment case. Finally, we take the set with the highest performance among the worst cases to determine the model using the best worst case. We identify this approach as Env K-folds Min-Max.
@@ -242,13 +243,13 @@ We bootstrap the data and repeat the process ten times to evaluate these differe
 </figure>
 </div>
 
-## The period-wise performance aggregation 
+## The period-wise performance aggregation
 
 The examples presented use the worst case from the periods to decide the best split in Equation \ref{eq:best_split}. The worst case is summarizing many periods using one, which can be undesirable under a possible problematic segment. However, one can use any aggregation function to combine the multiple periods' performance, like the average. In this subsection, we briefly discuss this choice.
 
 Applying the average case to the first example, the TRT and the DT would do the same split. It happens because the spurious period's performance is so strong that it is not enough to average it with a random-performing to avoid exploiting the spurious variable. As the number of time segments increases, individual periods will have less importance in the decision. Nevertheless, the same thing happens to the DT as the volume of data increases. The difference is that the TRT is biased to care more about the persistence of the relationship than the volume of data generated under it.
 
-## The package 
+## The package
 
 The TRT is available as a particular case of its ensemble form in the time-robust-forest package. To install it, simply use `pip install time-robust-forest`. Below there is an example of how to use it.
 
@@ -268,20 +269,20 @@ predictions = model.predict_proba(test_data[features])[:, 1]
 
 To use the environment-wise optimization:
 
-```python 
+```python
 from time_robust_forest.hyper_opt import env_wise_hyper_opt
 
-params_grid = {"n_estimators": [30, 60, 120], 
+params_grid = {"n_estimators": [30, 60, 120],
               "max_depth": [5, 10],
               "min_impurity_decrease": [1e-1, 1e-3, 0],
               "min_sample_periods": [5, 10, 30],
               "period_criterion": ["max", "avg"]}
-			  
+
 model = TimeForestClassifier(time_column=time_column)
-										
-opt_param = env_wise_hyper_opt(training_data[features + [time_column]], 
-                               training_data[TARGET], 
-                               model, 
+
+opt_param = env_wise_hyper_opt(training_data[features + [time_column]],
+                               training_data[TARGET],
+                               model,
                                time_column,
                                params_grid,
                                cv=5,
@@ -290,9 +291,9 @@ opt_param = env_wise_hyper_opt(training_data[features + [time_column]],
 ```
 ## Conclusion
 
-The TRT offers a simple way to inform environment details with a standard use case that explores time, an omnipresent characteristic of any dataset. Whenever additional domain-specific environment information is available, it can be easily integrated by concatenating the time with the new information. For example, year-hospital, month-country, month-branch, etc. 
+The TRT offers a simple way to inform environment details with a standard use case that explores time, an omnipresent characteristic of any dataset. Whenever additional domain-specific environment information is available, it can be easily integrated by concatenating the time with the new information. For example, year-hospital, month-country, month-branch, etc.
 
-In a future post, we will apply the Time Robust Forest to real datasets and compare it to a benchmark that does not leverage the time information. 
+In a future post, we will apply the Time Robust Forest to real datasets and compare it to a benchmark that does not leverage the time information.
 
 <!-- ## References -->
 
