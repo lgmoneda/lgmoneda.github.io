@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: A learning paradigm that explores environments to penalize spuriousness
 image: ../../../images/irm/social.png
+tags: causality machine-learning
 ---
 
 ## Index
