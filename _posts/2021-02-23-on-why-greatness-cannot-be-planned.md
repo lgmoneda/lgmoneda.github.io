@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: The core concepts from the book and an analysis on how they could be applied in a company using Data Science
 image: ../../../images/greatness/fleur-SE2zTdS1MNo-unsplash.png
+tags: management research
 ---
 
 ## Index

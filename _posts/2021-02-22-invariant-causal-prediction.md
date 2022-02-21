@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: An algorithm to find causal predictors
 image: ../../../images/icp/icp-confounding-example.png
+tags: causality machine-learning
 ---
 
 ## Index
