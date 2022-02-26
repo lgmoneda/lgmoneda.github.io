@@ -16,8 +16,8 @@ tags: management machine-learning
 1. [Introduction](#introduction)
 2. [The requirements of a good starter project](#the-requirements-of-a-good-starter-project)
 3. [How to make it perfect](#how-to-make-it-perfect)
-4. [Relaxing the perfect conditions](#relaxing-the-perfect-conditions)
-5. [The checklist](#the-checklist)
+4. [Relaxing the conditions](#relaxing-the-conditions)
+5. [The checklists](#the-checklists)
 6. [Examples](#examples)
 7. [Conclusion](#conclusion)
 
@@ -39,7 +39,7 @@ The principles in this article are general, but the examples focus on Data Scien
 </figure>
 </div>
 
-## The requirements of a starter project
+## The requirements of a good starter project
 
 ### Not time sensitive
 
@@ -124,6 +124,22 @@ As recommended, in a starter project, it is good to offer the new members a supp
 It is useful when there isn't a starter project that follows all the requirements, but you can see 2-3 that follow some of them but disjoint. A 1-2 weeks project can be called a warm-up. If you need two warm-ups to teach two important parts of the stack, go for it. For Data Scientists, it is usually doing "offline" analysis. The kind that tells us which direction we should move in the future: include a new feature or not in an existing model, include or stop using a rule-based solution, do a presentation about the data acquired in a recent experiment, etc. For a Machine Learning Engineer, deploying a toy model, or doing an update like excluding a broken feature in an existing non-important model can teach the end-to-end in a light task before going for more challenge.
 
 Still, the warm-up projects need to follow most requirements and prepare for the next projects since we use them to ramp up the new person. They need to expose the new member to the company's tools, flows, processes, and business. If the warm-up dit not stretch the person at all, reconsider the next steps in the ramp-up to adjust them.
+
+## Relaxing the conditions
+
+### I just hired this DS / MLE because we have this very important and time-sensitive project
+It will happen frequently. In these cases, the warm-up project with the ramp-up is a good strategy.
+
+The warm-up project can be related to the ambitious one. It can be a slice of it. Examples I've seen working: the research phase of a new model version or understanding the underlying data. In these cases, it is essential to mark it as a stage with a specific delivery. So when the person delivers it, they feel they have accomplished something meaningful and created momentum for the challenging project.
+
+### It is a new team; we have no idea about what a Data Scientist could do and anyone to be a buddy
+There are alternatives. First, to avoid being demotivated by ambiguous projects no one in the company knows how to execute, consider asking another team to onboard and provide a starter project for this person. Second, there is a chance that applying data science to that particular use-case is not new for a company member whose not in the new team. Look to someone to help you specify the project following the characteristics we highlighted earlier.
+
+However, this whole situation is tricky despite the starter project. The more junior the member, the higher the risk of allocating in a new team. Before finding out the starter project, think if it makes sense to have that member assuming that position.
+
+### The team has no project with low ambiguity
+
+If it happens, use one or two warm-up projects to mostly teach tooling. If the starter project is ambiguous, let the new member know. And make sure you have enough people around to support you. It is challenging in two ways. First, you will guide a new member in an initiative that would be hard even for an onboard one. Second, it becomes trickier to distinguish if an eventual poor performance is due to the initiative or the new member is not ramping-up as expected.
 
 ## The checklists
 Let's create two checklists. The first is to guarantee we're setting the new hire for success. Think about the Starter Project you have in mind and ask yourself if you have or can offer what is described. You should tick all the boxes.
