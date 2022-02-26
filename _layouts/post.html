@@ -13,7 +13,7 @@ layout: default
 <p class="small description" style="margin-bottom: 18px;">{{ page.description }}</p>
 <ul style="text-align:center">
   {% for tag in page.tags %}
-    <li class="tag green">#{{tag}}</li>
+    <a href="{{ group.absolute_url }}/blog/{{tag}}"><li class="tag green">#{{tag}}</li></a>
   {% endfor %}
 </ul>
 
