@@ -5,6 +5,7 @@ date: 2017-06-12
 lang: pt
 ref: ds-guide
 description: Minha avaliação dos recursos que utilizei e os que indicaria para iniciantes em Data Science e Machine Learning.
+tags: machine-learning
 ---
 
 Em Junho de 2014 eu completava o meu primeiro curso de Machine Learning,  Andrew Ng no Coursera. Desde então foram muitos outros, competições, projetos pessoais e o começo da minha carreira em data science. Por esse tempo nessa jornada, já me pediram algumas vezes por indicações de como iniciar-se nessa área, então resolvi escrever esse guia com os recursos que indicaria. Alguns deles eu fiz parcialmente, outros completamente, mas toda indicação aqui é muito bem vista pelos colegas da área. Em cada tópico vou tentar adicionar qual seria o primeiro recurso que usaria, assim fica mais fácil para um iniciante decidir.
@@ -68,7 +69,7 @@ Isso é o suficiente para começar!
 ### Recursos para praticar
 Existem cursos que as atividades são mais próximas da prática em Machine Learning, como é o caso do da UW. Então, para exercitar, eu indicaria:
 
-1. [Machine Learning Specialization UW, Coursera](https://pt.coursera.org/specializations/python): Possui Assignments para todas as semanas, praticamente. Após o primeiro curso essas atividades passam a aparecer em dobro, em uma delas usa-se a biblioteca GraphLab e na outra apenas Numpy, uma dá idéia do projeto em alto nível, a outra você implementa algoritmos. 
+1. [Machine Learning Specialization UW, Coursera](https://pt.coursera.org/specializations/python): Possui Assignments para todas as semanas, praticamente. Após o primeiro curso essas atividades passam a aparecer em dobro, em uma delas usa-se a biblioteca GraphLab e na outra apenas Numpy, uma dá idéia do projeto em alto nível, a outra você implementa algoritmos.
 2. [Kaggle](www.kaggle.com.): Plataforma de competições de Data Science. Existe algumas que são de tutorial, é um ótimo passo inicial. Depois é só entrar em uma competição real e acompanhar a discussão do problema no fórum e os códigos que o pessoal compartilha.
 
 ## Resolução de Problemas

@@ -6,9 +6,10 @@ lang: pt
 ref: tweet-proust
 comments: true
 description: Utilização de um modelo estatístico simples alimentado com a obra "Em busca do tempo perdido" para gerar Tweets com o estilo de Marcel Proust.
+tags: machine-learning
 ---
 
-Há uns dias vi um notebook do <a href="https://twitter.com/yoavgo">@yaovgo</a> sobre como um modelo linguístico usando apenas a probabilidade da ocorrência do próximo caractere pode gerar textos relativamente bons. 
+Há uns dias vi um notebook do <a href="https://twitter.com/yoavgo">@yaovgo</a> sobre como um modelo linguístico usando apenas a probabilidade da ocorrência do próximo caractere pode gerar textos relativamente bons.
 
 O nome dessa abordagem é "unsmoothed maximum-liklihood character level language models". Ou seja, modelos linguísticos com granularidade de caractere (frases são montadas caractere por caractere), utilizando máxima-verossimilhança (o próximo caractere é aquele com a maior probabilidade, que foi calculada com o texto de treino) e não-suavizado, pois se determinada letra nunca aparece após determinada cadeia de caracteres a probabilidade que associamos à ela será zero.
 
@@ -23,7 +24,7 @@ def train_char_lm(fname, order=4):
     pad = "~" * order
     data = pad + data
     for i in xrange(len(data)-order):
-        history, char = data[i:i+order], data[i+order] 
+        history, char = data[i:i+order], data[i+order]
         lm[history][char]+=1
     def normalize(counter):
         s = float(sum(counter.values()))
@@ -54,7 +55,7 @@ print generate_text(lm, 4, nletters=300, history="Gord")
 
 ---
 
-> "Gordomo, de dogarto dia às que monóculos Verdurin passas imaginar a no uma japontava poder acabava-se que as se ela no prema essa," 
+> "Gordomo, de dogarto dia às que monóculos Verdurin passas imaginar a no uma japontava poder acabava-se que as se ela no prema essa,"
 
 ---
 
@@ -65,31 +66,31 @@ A solução é aumentar a janela. Mas até quanto? Quando vamos aumentando a jan
 ---
 
 > "Gordo; porém raspara os bigodes e bastara isso para fazer-me ir a alguma parte — continuou em voz baixa —, embora tenha eu pleno direito
-> à minha liberdade. É certo que abdiquei dela por outra forma - acrescentou, testemunhando-lhe os seus sentimentos. Mas é uma criatura 
+> à minha liberdade. É certo que abdiquei dela por outra forma - acrescentou, testemunhando-lhe os seus sentimentos. Mas é uma criatura
 > deliciosa, uma mulher sustentada, e por um velho tão orgulhoso com os aristocratas, afeiçoa-se a eles, que se mostram logo uns ingratos."
 
 ---
 
-E como essa saída se compara ao livro em si? Novamente, não queremos simplesmente reproduzir o texto, mas reorganizar de maneira lógica e que lembre o estilo do autor. 
+E como essa saída se compara ao livro em si? Novamente, não queremos simplesmente reproduzir o texto, mas reorganizar de maneira lógica e que lembre o estilo do autor.
 
 No texto original aparece:
 
 ---
 
-> "No entanto, era ele mesmo, apenas embranquecido e **gordo; porém raspara os bigodes e bastara isso para** fazê-lo 
+> "No entanto, era ele mesmo, apenas embranquecido e **gordo; porém raspara os bigodes e bastara isso para** fazê-lo
 > perder sua personalidade."
 
-> "— Naturalmente, quando me perseguem vinte vezes seguidas **para fazer-me ir a alguma parte — continuou em voz baixa —, embora tenha eu 
+> "— Naturalmente, quando me perseguem vinte vezes seguidas **para fazer-me ir a alguma parte — continuou em voz baixa —, embora tenha eu
 > pleno direito à minha liberdade**, não posso em todo caso agir como um grosseirão."
 
-> "E, não aceitando outro que eu lhe propusera, o senhor, sem querer, prestou-me um imenso serviço, deu-me a **minha liberdade. É certo que 
+> "E, não aceitando outro que eu lhe propusera, o senhor, sem querer, prestou-me um imenso serviço, deu-me a **minha liberdade. É certo que
 > abdiquei dela por outra forma - acrescentou** num tom melancólico onde transparecia o desejo de fazer confidências -;"
 
 ---
 
 Esse resultado parece conseguir misturar suficientemente bem cadeias do texto, mantém um contexto razoável e gera trecho razoável.
 
-Agora precisamos fazer Proust caber em um tweet, o que talvez seria a parte que mais o desagradasse. Mais fácil seria imaginar uma rede social chamada "N'allez pas trop vite", na qual os usuários tem no **mínimo** 5 mil caracteres para expressarem uma idéia. 
+Agora precisamos fazer Proust caber em um tweet, o que talvez seria a parte que mais o desagradasse. Mais fácil seria imaginar uma rede social chamada "N'allez pas trop vite", na qual os usuários tem no **mínimo** 5 mil caracteres para expressarem uma idéia.
 
 {% highlight python %}
 def gen_tweet(lm, order, theme, max_iter=20):
@@ -131,8 +132,8 @@ E outros um pouco mais psicodélicos:
 <script>
 
 var disqus_config = function () {
-    this.page.url = "http://lgmoneda.github.io/";  
-    this.page.identifier = "/2016/04/02/tweetando-como-proust.html"; 
+    this.page.url = "http://lgmoneda.github.io/";
+    this.page.identifier = "/2016/04/02/tweetando-como-proust.html";
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -143,5 +144,5 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                
+
 {% endif %}
