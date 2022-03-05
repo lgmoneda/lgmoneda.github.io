@@ -6,6 +6,7 @@ lang: pt
 ref: twitter
 author: moneda
 description: Uma lista de usuários interessantes para seguir para quem deseja manter-se próximo ao que é feito em Machine Learning.
+tags: machine-learning
 ---
 
 Uns anos atrás eu certamente não apostaria no **Twitter** como ferramenta para me manter atualizado em um campo técnico. Porém, aos poucos fui seguindo pessoas envolvidas com Machine Learning e no final tornou-se uma das mais interessantes formas de acompanhar os avanços e conteúdo interessante na área e ter um contato com pesquisadores, líderes e outros profissionais.
