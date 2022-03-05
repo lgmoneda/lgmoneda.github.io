@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: Como tirar o máximo proveito de reuniões com lideranças.
 image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
+tags: management
 ---
 
 ## Índice
@@ -158,7 +159,7 @@ To establish the formal relationship, use the 1:1s to structure the mentorship. 
 
 ### Os 1:1s de mentoria
 
-Durante os 1:1s, traga desafios, vitórias e assuntos que você gostaria de pedir uma opinião. Use a sua agenda para anotar os assuntos mais importantes que quer discutir. Novamente, a agenda é um documento em que você pode colocar lá todos os assuntos que vai lembrando no intervalo entre os 1:1s. 
+Durante os 1:1s, traga desafios, vitórias e assuntos que você gostaria de pedir uma opinião. Use a sua agenda para anotar os assuntos mais importantes que quer discutir. Novamente, a agenda é um documento em que você pode colocar lá todos os assuntos que vai lembrando no intervalo entre os 1:1s.
 
 Ao preparar-se bem antes, você demonstra que dá valor ao tempo da outra pessoa. Se você acha que não é necessário preparar-se, pergunte-se se a mentoria tem sido valiosa para você e se precisa dela realmente.
 
@@ -173,7 +174,7 @@ Uma forma de preparar o que levar para o 1:1 é:
 
 É preciso trazer assuntos para a conversa, é um benefício seu. Então crie um arquivo que você possa compartilhar com o seu manager, tech lead ou mentor - como um doc no Google Drive, ou qualquer outra ferramenta que vocês usem.
 
-Essa forma de controlar os assuntos é uma sugestão, converse com a outra pessoa para saber o que acham o melhor. Pessoalmente, mesmo quando não compartilho, eu mantenho um arquivo com os assuntos que levarei no próximo 1:1 ou anoto as perguntas em um caderno com antecedência. 
+Essa forma de controlar os assuntos é uma sugestão, converse com a outra pessoa para saber o que acham o melhor. Pessoalmente, mesmo quando não compartilho, eu mantenho um arquivo com os assuntos que levarei no próximo 1:1 ou anoto as perguntas em um caderno com antecedência.
 
 Pode parecer um trabalho a mais, mas é preciso aceitar: É difícil lembrar de tudo que é relevante de cabeça. Então prepara-se.
 
@@ -195,7 +196,6 @@ Não se preocupe. Pergunte-se estas questões abaixo e rapidamente você terá a
 - Estou me aproximando dos meus objetivos de longo prazo?
 - O meu trabalho está alinhado com as habilidades que gostaria de desenvolver?
 
-Todas essas questões são capazes de trazer algum desconforto, dúvidas e ansiedade. Leve tudo isso para o seu 1:1. Fale sobre essas questões e como elas te fizeram sentir. 
+Todas essas questões são capazes de trazer algum desconforto, dúvidas e ansiedade. Leve tudo isso para o seu 1:1. Fale sobre essas questões e como elas te fizeram sentir.
 
 Leva um tempo até que as coisas comecem a rolar mais suaves e naturalmente, então esteja pronto pra enfrentar a estranheza do começo e foque nos benefícios!
-
