@@ -7,6 +7,7 @@ ref: book-why
 author: moneda
 comments: true
 description: If not curve fitting, what should I care about?
+tags: machine-learning causality
 ---
 
 After reading the already [famous interview] with Judea Pearl in which he claims that Deep Learning consists basically in "curve fitting", I became even more curious about his work and specially about how he would communicate it in a non-technical book.

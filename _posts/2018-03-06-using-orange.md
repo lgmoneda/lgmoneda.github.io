@@ -5,10 +5,11 @@ date: 2018-03-06
 lang: en
 ref: using-orange
 author: moneda
-description: A basic example of how to use Orange, a visual tool for Data Science. 
+description: A basic example of how to use Orange, a visual tool for Data Science.
+tags: machine-learning
 ---
 
-I've attended a short course with Professor [Janez Demsar](https://fri.uni-lj.si/en/employees/janez-demsar) about how to use [Orange](https://orange.biolab.si/). Orange is a visual tool (though it can be used as a standard Python library) to explore data and build predictive models. The intention was to make it easier to perform data-related activities for people without programming background, specially in academia. 
+I've attended a short course with Professor [Janez Demsar](https://fri.uni-lj.si/en/employees/janez-demsar) about how to use [Orange](https://orange.biolab.si/). Orange is a visual tool (though it can be used as a standard Python library) to explore data and build predictive models. The intention was to make it easier to perform data-related activities for people without programming background, specially in academia.
 
 However, it's a pretty nice tool for general use and I'll show how to do some basic exploratory data analysis and how to build some predictive models. The data I'm going to use is from a Kaggle competition about loan and it can be downloaded in the [competition's page](https://www.kaggle.com/c/GiveMeSomeCredit/data). The idea is to be able to generate an output compatible with the expected by Kaggle.
 
@@ -48,7 +49,7 @@ Now we're going to explore it briefly, because we are more interested in the pre
 </figure>
 </div>
 
-It's easy to observe that many features in this dataset suffer with outliers. As a first example, look at the `MonthlyIncome`: 
+It's easy to observe that many features in this dataset suffer with outliers. As a first example, look at the `MonthlyIncome`:
 
 <div align="center">
 <figure>
@@ -110,7 +111,7 @@ And now the distribution looks better:
 </figure>
 </div>
 
-Now it's time to missing data imputation. The average is going to be used to replace the missing values (without the outliers, it's not a problem to use it), but the median would be a good alternative. 
+Now it's time to missing data imputation. The average is going to be used to replace the missing values (without the outliers, it's not a problem to use it), but the median would be a good alternative.
 
 
 <div align="center">
@@ -154,7 +155,7 @@ It's possible to test a nice range of models. Here the models used are Decision 
 </figure>
 </div>
 
-The widgets allow to control the model complexity. In the Logistic Regression you can use both Lasso (L1) and Ridge (L2) and choose the parameter magnitude. 
+The widgets allow to control the model complexity. In the Logistic Regression you can use both Lasso (L1) and Ridge (L2) and choose the parameter magnitude.
 
 <div align="center">
 <figure>
@@ -237,7 +238,3 @@ sub.to_csv("sub.csv", index = False)
 ## Wrap Up
 
 Using Orange it was possible to easily perform exploratory data analysis, outliers treatment, data cleaning, feature engineering, feature selection, validation, model selection, model interpretation and predicting for unseen data. An entire predictive model building made really simple.
-
-
-
-

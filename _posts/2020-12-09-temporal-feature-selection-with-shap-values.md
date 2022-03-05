@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: How to use the data acquisition time in addition to SHAP values to improve model generalization via feature selection.
 image: ../../../images/temporal-feature-selection/icon3.png
+tags: machine-learning
 ---
 
 ## Index
@@ -39,7 +40,7 @@ One common strategy to select features is to use their average contribution and 
 
 We're going to use the [GE soccer clubs news dataset](https://www.kaggle.com/lgmoneda/ge-soccer-clubs-news), which I have extracted from the GE website and organized. In short, it's a set of sports articles about soccer clubs. Since it was extracted from every club section, it can be used as a label in a task of identifying based on the text which club the article is about. You can find an explanation about it on the dataset Kaggle page. We will make it a binary classification problem by picking `Flamengo` as the positive case. All code for our experiment can be seen [here](https://www.kaggle.com/lgmoneda/temporal-feature-selection-with-shap-values).
 
-If it is interesting for you, please upvote it on Kaggle to give it visibility. 
+If it is interesting for you, please upvote it on Kaggle to give it visibility.
 
 The dataset choice was based on the fact that it has a time range so we can observe model performance being challenged by the proof of time.
 

@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: How to make the most of your time when talking to leadership.
 image: https://media.giphy.com/media/13Oks2K0UCvxp6/giphy.gif
+tags: management
 ---
 
 ## Index
@@ -154,7 +155,7 @@ To establish the formal relationship, use the 1:1s to structure the mentorship. 
 
 ### Catch ups
 
-In the 1:1s, bring the challenges, wins, subjects you want to have their opinion, etc. Use your agenda to take note of the top things you want to go through and ask for inputs. Again, the agenda is a doc you can drop subjects between the 1:1s, so you remember everything valuable to discuss. By preparing beforehand, you show you value the other person's time. If you don't think it's necessary to prepare, the chances are you do not appreciate it as much as it is needed to make it effective. 
+In the 1:1s, bring the challenges, wins, subjects you want to have their opinion, etc. Use your agenda to take note of the top things you want to go through and ask for inputs. Again, the agenda is a doc you can drop subjects between the 1:1s, so you remember everything valuable to discuss. By preparing beforehand, you show you value the other person's time. If you don't think it's necessary to prepare, the chances are you do not appreciate it as much as it is needed to make it effective.
 
 A good way to think about what to bring to it is:
 

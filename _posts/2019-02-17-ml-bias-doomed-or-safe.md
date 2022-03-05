@@ -6,6 +6,7 @@ lang: en
 ref: doomed-bias
 author: moneda
 description: On how different bias in ML has been perceived
+tags: machine-learning
 ---
 
 

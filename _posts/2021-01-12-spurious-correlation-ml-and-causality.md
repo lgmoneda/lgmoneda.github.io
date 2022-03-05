@@ -8,6 +8,7 @@ comments: true
 author: moneda
 description: Definitions and the many faces around the spurious correlation term.
 image: ../../../images/spurious/x-mutant.jpg
+tags: causality machine-learning
 ---
 
 ## Index
