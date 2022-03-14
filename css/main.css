@@ -462,3 +462,20 @@ a:hover {
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #286748;
 }
+
+/* Source: https://kovart.github.io/dashed-border-generator/ */
+.dashed-text-block {
+	/* border-style: dashed; */
+	margin: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 90%;
+	align: center;
+background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23286748FF' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='15' stroke-linecap='square'/%3e%3c/svg%3e");
+border-radius: 15px;
+}
+
+.mermaid-language {
+	display: flex !important;
+	justify-content: center
+}
