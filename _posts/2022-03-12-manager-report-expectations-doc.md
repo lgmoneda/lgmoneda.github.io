@@ -20,7 +20,7 @@ tags: management
     3. [What the report expects from their manager](#what-the-report-expects-from-their-manager)
 	4. [A flexible living document](#a-flexible-living-document)
 	5. [A two-way tool for feedback](#a-two-way-tool-for-feedback)
-	6. [Clarify how expectations relate to the performance grade](#clarify-how-expectations-relate-to-the-performance-grade)
+	6. [Clarity on how expectations relate to the performance grade](#clarity-on-how-expectations-relate-to-the-performance-grade)
 	7. [Managers can expose the expectations about their work](#managers-can-expose-the-expectations-about-their-work)
 3. [Building the document](#building-the-document)
     1. [Who starts it?](#who-starts-it)
@@ -119,7 +119,7 @@ They notice how the work deviates from the non-abstract doc. None is supposed to
 
 A *bonus* is that the document can serve many clients of that person. If other people beyond the direct manager have expectations about that person, share the document.
 
-### Clarify how expectations relate to the performance grade
+### Clarity on how expectations relate to the performance grade
 
 Commonly, companies have a Performance Review associated with a Performance grade. The grade makes the expectations doc trickier. The best thing is to state the core job and clarify how it will relate to a performance grade.
 
