@@ -7,7 +7,7 @@ ref: expecsdoc
 comments: true
 author: moneda
 description: Se manager e report tem expectativas sobre o trabalho um do outro, por que não expô-las da forma mais clara possível?
-image: ../../../images/manager-report-doc/jon-tyson-MQm1JPi0kVA-unsplash.jpg
+image: ../../../images/manager-report-doc/expectations-doc-flow.png
 tags: management
 ---
 
