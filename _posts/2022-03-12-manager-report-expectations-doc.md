@@ -7,7 +7,7 @@ ref: expecsdoc
 comments: true
 author: moneda
 description: If a manager and a report expect things from each other, why don't they just state it as clearly as possible?
-image: ../../../images/manager-report-doc/jon-tyson-MQm1JPi0kVA-unsplash.jpg
+image: ../../../images/manager-report-doc/expectations-doc-flow.png
 tags: management
 ---
 
