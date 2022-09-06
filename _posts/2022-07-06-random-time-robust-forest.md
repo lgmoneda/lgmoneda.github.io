@@ -170,7 +170,7 @@ The results are interesting in this minimal experimental setting. The GE News an
 
 ## References
 
-[^fn1]: Moneda, L., Mauá, D. (2022). Time Robust Trees: Using Temporal Invariance to Improve Generalization
+[^fn1]: Moneda, L., & Mauá, D. (2022). [Time Robust Trees: Using Temporal Invariance to Improve Generalization](/resources/papers/Time_Robust_Tree.pdf). BRACIS 2022. 
 [^fn5]: Moneda, L.: Globo esporte news dataset (2020), version 19. Retrieved July 11, 2022, from https://www.kaggle.com/lgmoneda/ge-soccer-clubs-news
 <!-- [^fn3]: Chicago, C.: Chicagocrime-bigquerydataset(2021), version 1. Retrieved March 13, 2021 from https://www.kaggle.com/chicago/chicago-crime -->
 <!-- [^fn4]: Daoud, J.: Animal shelter dataset (2021), version 1. Retrieved March 13, 2021, from https://www.kaggle.com/jackdaoud/animal-shelter-analytics -->
