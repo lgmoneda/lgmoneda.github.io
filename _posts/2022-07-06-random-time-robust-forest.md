@@ -7,7 +7,7 @@ ref: randomtrt
 comments: true
 author: moneda
 description: Designing a random version of the Time Robust Forest learning algorithm
-image: ../../../images/trtexp/genews_performance_overtime.png
+image: ../../../images/randomtrt/all_models.png
 tags: machine-learning research
 ---
 
