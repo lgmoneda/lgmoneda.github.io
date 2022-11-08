@@ -56,3 +56,13 @@ plugins:
   - jekyll-seo-tag
   - rouge
   - jekyll-feed
+  - jekyll-toc
+
+# TOC Settings
+toc:
+ min_level: 1
+ max_level: 3
+ ordered_list: true
+ list_class: toc
+ list_class: toc__list
+ sublist_class: toc__sublist
