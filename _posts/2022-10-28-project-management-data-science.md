@@ -8,7 +8,7 @@ comments: true
 toc: false
 author: moneda
 description: An end-to-end approach to manage projects with a Machine Learning component
-image: ../../../images/starter-project/kelly-sikkema-O5XJoxrYbQo-unsplash.jpg
+image: ../../../images/primer-proj-m/intro-hands.svg
 tags: management machine-learning
 ---
 
