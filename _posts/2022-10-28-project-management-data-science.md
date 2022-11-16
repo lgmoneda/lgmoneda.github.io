@@ -29,7 +29,7 @@ The Product Manager set a meeting with everybody, so we could write a PRD (Produ
 
 After a confusing hour, I approached an Agilist to get some help. He recommended to me Jeff Patton's User Story Mapping book [^fn1]. The book is excellent. As I applied it to Data Science projects, I could identify the key parts of it for the field and develop others with the team.
 
-I primarly thought about writing it as a blog post, but as it required more and more structured, I've decided to have it in a new section called [Data Science Management](https://lgmoneda.github.io/data-science-management/project-management/) since that enables continuous improvement on it and keep adding content relevant to Data Science Management in general. 
+I primarly thought about writing it as a blog post, but as it required more and more structure, I've decided to have it in a new section called [Data Science Management](https://lgmoneda.github.io/data-science-management/project-management/) since that enables continuous improvement by adding content relevant to Data Science Management in general.
 
 
 ## References
