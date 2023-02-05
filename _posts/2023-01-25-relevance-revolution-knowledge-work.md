@@ -124,9 +124,9 @@ However, Engelbert predicts that radical changes in important parameters of this
 
 Engelbert recognizes speech recognition as a possible transformative technology in this context [^fn7]. It would contribute to the flexibility of contributing and integrating knowledge. Nonetheless, I don't think speech recognition delivered it in the collaborative knowledge-work context. It might be great to document knowledge. However, alone it does not boost its application, which could only increase the creation-application gap.
 
-The chances are we will see Large Language Models (e.g., Generative Pre-training, GPT-3) generating this radical change. First, by transforming textual data into knowledge creation in a very flexible way (including what comes from speech recognition). Second, manipulating knowledge to increase its application in a way that is not qualitatively complex for humans but quantitative impossible: in thousands of people organizations. LLM will tighten the knowledge creation-application gap.
+The chances are we will see Large Language Models (LLM, e.g., Generative Pre-training, GPT-3) generating this radical change. First, by transforming textual data into knowledge creation in a very flexible way (including what comes from speech recognition). Second, manipulating knowledge to increase its application in a way that is not qualitatively complex for humans but quantitative impossible: in thousands of people organizations. LLM will tighten the knowledge creation-application gap.
 
-Still, I don't see [ChatGPT](https://chat.openai.com/) as a central savior system, but a series of specialized tools for knowledge workers who need to collaborate originated from expert knowledge fine-tuned applications of GPT-3. Further, the capability to point sources will be crucial to keep humans in the loop. It is a Knowledge Platform. We want to reduce the friction of applications to close the creation-application gap.
+Still, I don't see [ChatGPT](https://chat.openai.com/) as a central savior system. The examples are mere illustrations. I believe in a series of specialized tools for knowledge workers who need to collaborate originated from applications of LLMs fine-tuned with expert knowledge. Further, the capability to point sources will be crucial to keep humans in the loop. It is a Knowledge Platform. We want to reduce the friction of applications to close the creation-application gap.
 
 The fact academia needs to explicitly build on top of knowledge made an early signal of this kind of system for academic research in the form of [Elicit](https://elicit.org/), an AI Research Assistant, or even the [Explain Paper](https://www.explainpaper.com/).
 
@@ -212,7 +212,7 @@ For coding, it can iteratively read what someone is writing and pop up to tell t
 	<a href="../../../images/rel-rev/reuse-3.jpg" name="Reuse code 3">
 		<img  style="width:550px;margin:10px" src="../../../images/rel-rev/reuse-3.jpg"/>
 	</a>
-	<figcaption> I've tried to do the same with an open source library </figcaption>
+	<figcaption> I've tried to do the same with an open source library which is not as large as TensorFlow and PyTorch, but the result was not good. However, I believe there is way more internal data about this library than external.</figcaption>
 </figure>
 
 </div>
