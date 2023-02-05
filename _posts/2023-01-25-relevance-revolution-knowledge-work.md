@@ -179,7 +179,7 @@ The common goal for these applications is to entitle the system to make the appl
 
 What if LLM are just fancy parrots?
 
-It doesn't matter. The fact we are increasing data ingestion and quality of information retrieval by orders of magnitude are likely enough. Cost reduction is likely more important at this point than improving its skills. In the end, it is augmenting collective intelligence and not replacing it. It doesn't need to have any or all the traits of what we'd call intelligence [^fn15]. We are not envisioning a central intelligent entity telling an organization what to do. It is closer to what computers and networks of information systems did.
+It doesn't matter. The fact we are increasing data ingestion and quality of information retrieval by orders of magnitude are likely enough. Cost reduction is likely more important at this point than improving its skills. In the end, it is augmenting collective intelligence and not replacing it. It doesn't need to have any or all the traits of what we'd call intelligence [^fn15] [^fn16]. We are not envisioning a central intelligent entity telling an organization what to do. It is closer to what computers and networks of information systems did.
 
 ## Sub-systems and applications
 
@@ -368,4 +368,5 @@ Human systems will be important in this process. Using language to represent kno
 [^fn12]: Stanley, K. O., & Lehman, J. (2015). Why greatness cannot be planned: the myth of the objective.
 [^fn13]: Burkus, D. (2013). The myths of creativity: the truth about how innovative companies and people generate great ideas. John Wiley & Sons.
 [^fn14]: Fu, Y. P., & Khot, T. (2022). How does gpt obtain its ability? tracing emergent abilities of language models to their sources. Yao Fu's Notion.
-[^fn15]: Wong, Matteo. (2023) The Difference Between Speaking and Thinking.[Link](https://www.theatlantic.com/technology/archive/2023/01/chatgpt-ai-language-human-computer-grammar-logic/672902/) - there is a pay wall, but the first two paragraphs are enough.
+[^fn15]: Wong, Matteo. (2023) The Difference Between Speaking and Thinking. [Link](https://www.theatlantic.com/technology/archive/2023/01/chatgpt-ai-language-human-computer-grammar-logic/672902/) - there is a pay wall, but the first two paragraphs are enough.
+[^fn16]: LeCun, Y. Browning, J. (2022) AI And The Limits Of Language. [Link](https://www.noemamag.com/ai-and-the-limits-of-language/).
