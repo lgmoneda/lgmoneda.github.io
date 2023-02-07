@@ -149,7 +149,7 @@ First, on the "personal" aspect of the notes: It is similar to looking at the pi
 
 Now, the puzzle: how to make me look at a specific note at a convenient time?
 
-A good search makes a lot of difference. I have indexed all my notes using open-source LLMs to close the creation-application gap. I can relax when creating a new note since I'm confident about finding it when it is convenient. When I write, I create a "thinking box" in which I keep querying my notes, grab some, link to the thinking box, explore the notes graph, query more, and keep this process until I feel I could refresh my references on the subject accordingly.
+A good search makes a lot of difference. I have indexed all my notes using open-source LLMs to close the creation-application gap. I can relax when creating a new note since I'm confident about finding it when it is convenient. When I write, I create a "thinking arena" in which I keep querying my notes, grab some, link to the thinking box, explore the notes graph, query more, and keep this process until I feel I could refresh my references on the subject accordingly.
 
 
 <div align="center">
