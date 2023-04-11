@@ -8,7 +8,7 @@ comments: true
 toc: true
 author: moneda
 description: Creating a Semantic Search functionality to improve search, thinking, and writing with Org roam.
-image: ../../../images/ssorgroam/magic-org-roam.png
+image: ../../../images/ssorgroam/magic-org-roam-social.png
 tags: emacs org-roam machine-learning
 ---
 
@@ -27,7 +27,7 @@ We all dive into Zettelkasten Method looking for a structure to empower our crea
 </figure>
 </div>
 
-In [December 2022](https://org-roam.discourse.group/t/a-demo-of-ai-for-linking-writing-and-thinking-with-org-roam-should-we-build-org-roam-ai/2891), I experimented semantic search for my nodes and the results have been satisfactory. The three main usages are:
+In [December 2022](https://org-roam.discourse.group/t/a-demo-of-ai-for-linking-writing-and-thinking-with-org-roam-should-we-build-org-roam-ai/2891), I experimented semantic search for my [Org roam](https://www.orgroam.com/) nodes and the results have been satisfactory. The three main usages are:
 
 1. Searching a node when I don't remember its title and there is no strong key-word to find it;
 2. Read my knowledge base when I'm thinking about a subject for work, research, or dialogue;
@@ -392,6 +392,15 @@ To use it from Emacs, we will create a function to make the request to our serve
 I map the `org-roam-semantic-search-api` together with other org-roam commands as `C-c n a` so it becomes part of my usual flow.
 
 Now, you should be able to M-x while selecting a portion of text or entering an input for it, and see the screen we have shown in the intro with related org-roam nodes!
+
+<div align="center">
+<figure>
+	<a href="../../../images/ssorgroam/maigc-org-roam.png" name="tsne">
+		<img  style="width:550px;margin:2px" src="../../../images/ssorgroam/magic-org-roam.png"/>
+	</a>
+		<figcaption>A magic Org roam!</figcaption>
+</figure>
+</div>
 
 ## Directions to make different design choices
 
