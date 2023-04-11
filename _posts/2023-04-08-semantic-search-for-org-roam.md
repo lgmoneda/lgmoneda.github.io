@@ -58,7 +58,7 @@ Since I did the post in Org-roam discourse, I wondered if I should find people t
 <div align="center">
 <figure>
 	<a href="../../../images/ssorgroam/diagram.svg" name="diagram">
-		<img  style="width:700px;margin:10px" src="../../../images/ssorgroam/diagram.svg"/>
+		<img  style="width:700px;margin:10px" src="../../../images/ssorgroam/diagram.png"/>
 	</a>
 		<figcaption> A simple representation of the procress. Though we don't learn from data and fit curves, I still like to split into a "learning stage". </figcaption>
 </figure>
