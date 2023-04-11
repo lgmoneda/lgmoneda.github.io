@@ -16,9 +16,14 @@ layout: default
     <a href="{{ group.absolute_url }}/blog/{{tag}}"><li class="tag green">#{{tag}}</li></a>
   {% endfor %}
 </ul>
-
 <footer></footer>
 </div>
+
+{% if page.toc == true %}
+<h2> Index </h2>
+{% toc %}
+{% endif %}
+
 <div class="post">
   {{ content }}
 </div>
