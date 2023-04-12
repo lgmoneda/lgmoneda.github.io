@@ -12,7 +12,7 @@ image: ../../../images/ssorgroam/magic-org-roam-social.png
 tags: emacs org-roam machine-learning
 ---
 
-## The Struggle when the Zettelkasten method
+## The Struggle with the Zettelkasten method
 
 We all dive into Zettelkasten Method looking for a structure to empower our creativity. However, our cognition gets in the way at some point. From a previous post [^fn1]:
 
