@@ -64,6 +64,8 @@ Since I did the post in Org-roam discourse, I wondered if I should find people t
 </figure>
 </div>
 
+You can find the code together in this [repository](https://github.com/lgmoneda/ssor), gently assembled by @wandersoncferreira.
+
 The library versions:
 
 ```
@@ -431,7 +433,7 @@ for index, row in data.iterrows():
     title = row["node_title"]
     file_name = row["file_name"]
     node_hierarchy = row["node_hierarchy"]
-    texts = text_splitter.split_text(row["node_text_recursive"])
+    texts = text_splitter.split_text(row["node_text_nested_exclusive"])
     texts = ["[" + node_hierarchy + "] " + text for text in texts]
     metadatas = [
         {
