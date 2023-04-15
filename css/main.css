@@ -430,6 +430,10 @@ a:hover {
 .red {
     background-color: #df2d4f;
 }
+.hljs {
+    background-color: #fbfbfb !important;
+
+}
 /* Source: https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l */
 .styled-table {
     border-collapse: collapse;
