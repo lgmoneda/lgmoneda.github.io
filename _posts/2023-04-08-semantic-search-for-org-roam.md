@@ -292,9 +292,11 @@ You can test it in a jupyter notebook:
 
 ```python
 input_prompt = "A machine learning model is degrading. Its performance has been dropping since it was released. What are the possible reasons for it?"
-search_results = vectordb.similarity_search_with_score(input_prompt, k=10)
-search_results
+retrieved_docs = vectordb.similarity_search_with_score(input_prompt, k=10)
+retrieved_docs
 ```
+
+The score is the distance between the query and the retrieved document. The lower, the more similar they are.
 
 ## The local server
 
@@ -320,8 +322,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         print(request_str)
 
         # Retrieve docs
-        search_results = vectordb.similarity_search_with_score(request_str, k=15)
-        retrieved_docs = sorted(search_results, key=lambda x: x[1], reverse=True)
+        retrieved_docs = vectordb.similarity_search_with_score(request_str, k=15)
         org_link_format = "[%.2f]: [[id:%s][%s]] \n %s"
         docs = [org_link_format % (score, doc.metadata["ID"],
 		                           doc.metadata["title"].strip(),
