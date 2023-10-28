@@ -44,7 +44,7 @@ Temperature can be an ally in identifying hallucinations instead of an enemy. Wh
 
 ## Toy experiment
 
-The data and code can be found in a [gist]() and a [collab]() notebook.
+The data and code can be found in a [gist](https://gist.github.com/lgmoneda/e5f0510a2340c92efc80b9b7308f163b) and a [collab](https://colab.research.google.com/drive/1eebl8BYsaf4g5n55cDbcFJFQvNjmGyry?usp=sharing) notebook.
 
 We will use two datasets. One is "synthetic", and the other uses actual outputs from GPT-3.5 for two questions. They are both anecdotal, and I can expand on it if I find a good dataset.
 
