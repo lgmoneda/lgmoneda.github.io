@@ -31,7 +31,7 @@ OpenAI has been clearly improving on it, and one can see GPT-4 refrains from ans
 </figure>
 </div>
 
-__Edit: after publishing this post, I end up finding a work called "SelfCheckGPT" [^fn1], which uses the same assumption that hallucination will generate different answers for the same question, but then use a different approach to verify it by using an LLM to evaluate it.__
+_Edit: after publishing this post, I end up finding a work called "SelfCheckGPT" [^fn1], which uses the same assumption that hallucination will generate different answers for the same question, but then use a different approach to verify it by using an LLM to evaluate it._
 
 ## Temperature and hallucinations
 
