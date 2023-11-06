@@ -31,6 +31,7 @@ OpenAI has been clearly improving on it, and one can see GPT-4 refrains from ans
 </figure>
 </div>
 
+__Edit: after publishing this post, I end up finding a work called "SelfCheckGPT" [^fn1], which uses the same assumption that hallucination will generate different answers for the same question, but then use a different approach to verify it by using an LLM to evaluate it.__
 
 ## Temperature and hallucinations
 
@@ -135,3 +136,7 @@ The question about myself is the dashed line assigned to "hallucination," and th
 Notice that an answer that says "I don't know" in different ways will also have a low variance on the similarity score.
 
 With a proper dataset with Q&A labeled with a hallucination tag, one can generate further answers using higher temperatures, apply a filter on variance, pick the best answer, and then perform manual labeling to verify if we would have spotted the hallucination cases or even have selected valid answers.
+
+## References 
+
+[^fn1]: - Manakul, P., Liusie, A., & Gales, M. J. F. (2023). Selfcheckgpt: zero-resource black-box hallucination detection for generative large language models.
