@@ -16,20 +16,20 @@ tags: research machine-learning
 1. [Introduction](#introduction)
 2. [Invariant Random Forest](#invariant-random-forest)
 3. [Synthetic data example](#synthetic-data-example)
-4. [Comparison on real data](#comparison-on-real-data)
+4. [Real-world data experiments](#real-world-data-experiments)
 7. [Conclusion](#conclusion)
 
 ## Introduction
 
-This is the fourth post of a series exploring [invariance](https://lgmoneda.github.io/2021/02/19/causal-invariance.html) in Machine Learning. In the previous three, I presented the [Invariant Causal Prediction](http://lgmoneda.github.io/2021/02/21/invariant-causal-prediction.html), the [Invariant Risk Minimization](http://lgmoneda.github.io/2021/05/27/invariant-risk-minimization.html), and the [Time Robust Forest](https://lgmoneda.github.io/2021/12/03/introducing-time-robust-tree.html). To understand the motivation behind these approaches, I recommend reading the posts about [spuriousness](https://lgmoneda.github.io/2021/01/12/spurious-correlation-ml-and-causality.html) and the [independent causal mechanism principle](https://lgmoneda.github.io/2021/02/19/causal-invariance.html).
+This post is the fourth exploring [invariance](https://lgmoneda.github.io/2021/02/19/causal-invariance.html) in Machine Learning. In the previous three, I presented the [Invariant Causal Prediction](http://lgmoneda.github.io/2021/02/21/invariant-causal-prediction.html), the [Invariant Risk Minimization](http://lgmoneda.github.io/2021/05/27/invariant-risk-minimization.html), and the [Time Robust Forest](https://lgmoneda.github.io/2021/12/03/introducing-time-robust-tree.html). To understand the motivation behind these approaches, I recommend reading the posts about [spuriousness](https://lgmoneda.github.io/2021/01/12/spurious-correlation-ml-and-causality.html) and the [independent causal mechanism principle](https://lgmoneda.github.io/2021/02/19/causal-invariance.html).
 
-The Time Robust Tree and Forest (TRF) [^fn1] work was cited in the bibliographic review of the Invariant Random Forest (IRF) [^fn2], which has the same goal but uses a more principled way to explore invariance.
+The Time Robust Tree and Forest (TRF) [^fn1] work was cited in the bibliographic review of the Invariant Random Forest (IRF) [^fn2], which has the same goal but uses a more principled approach to explore invariance.
 
 I will present the IRF algorithm, [provide code](https://colab.research.google.com/drive/1sEhz7BlSq1zXPvqFzsOuT78IP94i3NBH#scrollTo=KkafPZ0jSYlN) to reproduce the paper results and run comparisons with a Random Forest (RF) and the TRF.
 
 ## Invariant Random Forest
 
-Liao, Y. et al (2024) [^fn2] model the prediction problem with two kinds of features: environmental and stable. Both relate to a target variable over different environments.
+Liao, Y. et al. (2024) [^fn2] model the prediction problem with two kinds of features: environmental and stable. Both relate to a target variable over different environments.
 
 The stable features have the same relationship with the target in every environment, but the environmental features are a function of parameters that vary by environment. The idea is to learn only stable features.
 
@@ -38,15 +38,15 @@ The stable features have the same relationship with the target in every environm
 	<a href="../../../images/inv-ml-4/liao_motivational_example.jpg" name="Motivational example for IRF">
 		<img  style="width:700px;margin:10px" src="../../../images/inv-ml-4/liao_motivational_example.jpg"/>
 	</a>
-		<figcaption>Source: Liao, Y. et al (2024)</figcaption>
+		<figcaption>Source: Liao, Y. et al. (2024)</figcaption>
 </figure>
 </div>
 
-On the image, we see their motivational example. The relationship between $$Y$$ and $$X_2$$ changes in every environment, while splitting $$X_1$$ using the rules $$X_1 = 0$$ and $$X_1 = 1$$ always provide us the same $$\mathbb{E}[Y \mid X_1]$$. This means $$X_1$$ is stable, and $$X_2$$ is environmental.
+In the image, we see their motivational example. The relationship between $$Y$$ and $$X_2$$ changes in every environment, while splitting $$X_1$$ using the rules $$X_1 = 0$$ and $$X_1 = 1$$ always provide us the same $$\mathbb{E}[Y \mid X_1]$$. It means $$X_1$$ is stable, and $$X_2$$ is environmental.
 
-The authors introduce as a principle that the ratio of the positive and negative class for a split should be the same in different environments because this is what we expect from the data-generating process of stable features.
+The authors introduce the principle that the ratio of the positive and negative classes for a split should be the same in different environments because this is what we expect from the data-generating process of stable features.
 
-Be the stable variables $$S = (S_1, S_2, ...., S_r)$$, and environmental variables $$Z = (Z_1, Z_2, ..., Z_t)$$. Their generation process according to $$Y$$ is:
+Be the stable variables $$S = (S_1, S_2, ...., S_r)$$, and environmental variables $$Z = (Z_1, Z_2, ..., Z_t)$$. Their generation process, according to $$Y$$, is:
 
 $$
 S \sim P_0(s_1, s_2, ..., s_r), Z \sim Q^e_0(z_1, z_2, ..., z_t), \text{ if } Y=0
@@ -63,17 +63,17 @@ $$
 CR^{1}_{S_i \leq c} = \frac{P(Y = 1 \mid S_i \leq c, X \in D)}{P(Y=1 \mid X \in D)}
 $$
 
-and the changing rate of negative label as
+and the changing rate of negative labels as
 
 $$
 CR^{0}_{S_i \leq c} = \frac{P(Y = 0 \mid S_i \leq c, X \in D)}{P(Y=0 \mid X \in D)}
 $$
 
-<i>These changing rates can be calculated in any environment. Then, using any stable variable as the splitting variable, the ratio between the changing rates of positive label and negative label is invariant across different environments. That is to say, for some $$k$$, $$CR^{1}_{S_{i}≤c} / CR^{0}_{S_{i}≤c} = k$$ stands for every environment $$e$$.</i>
+<i>These changing rates can be calculated in any environment. Then, using any stable variable as the splitting variable, the ratio between the changing rates of positive and negative labels is invariant across different environments. That is to say, for some $$k$$, $$CR^{1}_{S_{i}≤c} / CR^{0}_{S_{i}≤c} = k$$ stands for every environment $$e$$.</i>
 
 ---
 
-To have the invariance, they propose a restriction on the split. The $$Q_{m}^{e}$$ is the set in the node $$m$$ that belongs to the environment $$e$$. When the splitting variable $$X_j$$ is stable, an invariant across the environment should be:
+To achieve invariance, they propose a restriction on the split. The $$Q_{m}^{e}$$ is the set in the node $$m$$ that belongs to the environment $$e$$. When the splitting variable $$X_j$$ is stable, an invariant across the environment should be:
 
 $$
 I(Q^e_m, \theta) = CR^1_{X_j} = CR^1_{X_j \leq c}(Q^e_m)/CR^0_{X_j \leq c}(Q^e_m)
@@ -88,13 +88,13 @@ $$
 \end{aligned}
 $$
 
-However, having this ratio being exact in every environment for a certain split is a hard condition that's unrealistic. So a loss function $$L$$ related to it is created, in which we add a penalty term. The loss is the ratio between the highest and the lowest $$I(Q_m^e, \theta)$$ minus 1:
+However, exacting this ratio in every environment for a particular split is a hard, unrealistic condition. So, the authors propose a loss function $$L$$ related to it, in which we add a penalty term. The loss is the ratio between the highest and the lowest $$I(Q_m^e, \theta)$$ minus 1:
 
 $$
 L(Q^1_m, ..., Q^E_m, \theta) = \text{max}_{e,f}I(Q^e_m, \theta)/I(Q^f_m, \theta) - 1
 $$
 
-Notice $$e$$ is a certain environment, $$f$$ represents all the environments available.
+Notice that $$e$$ is a specific environment, and $$f$$ represents all available environments.
 
 To smooth it:
 
@@ -104,7 +104,7 @@ $$
 
 They also provide one for regression, but I won't explore it in this post.
 
-Here's the part of the code that performs these operations, which hopefully makes it easier to grasp what is going on.
+Here's the part of the code that performs these operations, making it easier to grasp what is happening.
 
 ```python
 def gini_invariance_penalty_score(right_dict, left_dict,
@@ -164,9 +164,9 @@ $$
 \end{align}
 $$
 
-It utilizes a $d$-dimensional Bernoulli distribution where each dimension operates independently. The vector $\mathbf{1}_d$ consists entirely of ones and matches the dimensionality $d$. Additionally, $I_d$ represents the identity matrix of size $d \times d$. For the experiments, the parameters are set as $U_1 = 0.1$, $U_2 = 0.4$, and $U_3 = 0.7$. The training datasets are derived from two distinct environments ($e = 1$ and $e = 2$), whereas the testing dataset comes from a third environment ($e = 3$).
+It utilizes a $d$-dimensional Bernoulli distribution where each dimension operates independently. The vector $\mathbf{1}_d$ consists entirely of ones and matches the dimensionality $d$. Additionally, $I_d$ represents the identity matrix of size $d \times d$. For the experiments, I set the parameters as the authors as $U_1 = 0.1$, $U_2 = 0.4$, and $U_3 = 0.7$. The training datasets come from two distinct environments ($e = 1$ and $e = 2$), whereas the testing dataset comes from a third environment ($e = 3$).
 
-Let's try to reproduce the results displayed in the paper that use $$\lambda={1, 5, 10}$$ for the invariance penalty. I use 50 estimators and 10 as the maximum depth. The $$d=5$$, and there are 5k examples for every environment. I bootstrap the data five times. The standard deviation is in parenthesis.
+Let's try to reproduce the results displayed in the paper that use $$\lambda={1, 5, 10}$$ for the invariance penalty. I use 50 estimators and 10 as the maximum depth. The $$d=5$$, and there are 5k examples for every environment. I bootstrap the data five times. The standard deviation is in parentheses.
 
 <table class="styled-table" style="margin-left:auto;margin-right:auto;width:650px">
     <thead>
@@ -205,32 +205,28 @@ Let's try to reproduce the results displayed in the paper that use $$\lambda={1,
 
 This reproduction is not explicit in the [code](https://colab.research.google.com/drive/1sEhz7BlSq1zXPvqFzsOuT78IP94i3NBH?authuser=1#scrollTo=MVEH3bDzSgPa) provided, but it is trivial to insert these parameters on it.
 
-The results are consistent with the expectation that the higher the penalty, the lower the performance in training and the higher in the holdout. The magnitude differs from the paper, but not very meaningfully and I expect the following comparisons to be interesting since the code base will be the same for the other models.
+The results are consistent with the expectation that the higher the penalty, the lower the training performance and the higher the holdout. The magnitude differs from the paper but is not very meaningful. The following comparisons will be interesting since the code base will be the same for the other models.
 
 ### Profiling the IRF behavior as we change the invariance penalty
 
-To characterize the model behavior regarding the invariance penalty term, I run it for different values for $$\lambda$$. I will use 10 as the max_depth, 10 n_estimators, and run it 5 times. Regarding the data, I use $$d=20$$ and $$n=10k$$.
+To characterize the model behavior regarding the invariance penalty term, I run it for different values for $$\lambda$$. I will use 10 as the max_depth and 10 n_estimators and run it 5 times. Regarding the data, I use $$d=20$$ and $$n=10k$$.
 
 <div align="center">
 <figure>
 	<a href="../../../images/inv-ml-4/auc_penalty_curve_irf_d20_10k.png" name="Motivational example for IRF">
 		<img  style="width:700px;margin:10px" src="../../../images/inv-ml-4/auc_penalty_curve_irf_d20_10k.png"/>
 	</a>
-		<figcaption>Source: Liao, Y. et al (2024)</figcaption>
+		<figcaption>Source: Liao, Y. et al. (2024)</figcaption>
 </figure>
 </div>
 
-This is a quite interesting plot. Given everything is fixed, the penalty is taking the holdout performance to a higher value until it saturates. At this point, it is mostly looking for variables that satisfy the invariance condition. For regularization terms, we usually expect a quadradic relation we try to get closer to the maximum and exceeding it starts harming the holdout performance. This data is idealized, so I will also run a similar experiment in a real dataset later in this post.
+The above plot is quite interesting. Considering all the other parameters fixed, the penalty parameter increases the holdout performance until it saturates. At this point, it mostly looks for variables that satisfy the invariance condition. For regularization terms, we usually expect a quadradic relation. We try to get closer to the maximum, and exceeding it harms the holdout performance. This data is idealized, so I will also run a similar experiment in a real dataset later in this post.
 
 ### IRF, TRF, and RF on the synthetic example
 
-In this experiment, we want to compare the Invariant Random Forest (IRF), Time Robust Forest (TRF), and Random Forest (RF). We let these models optimize using a random sample of the training environments - this choice is important. A common alternative approach when the environment information is explicit is to keep one or more out of the training data and use it as the validation set to optimize the hyper-parameters.
+In this experiment, we want to compare the Invariant Random Forest (IRF), Time Robust Forest (TRF), and Random Forest (RF). We let these models optimize using a random sample of the training environments - this choice is essential. A common alternative approach when the environment information is explicit is to keep one or more out of the training data and use it as the validation set to optimize the hyper-parameters.
 
-<!-- I will also run it for $$d={1, 5, 10, 20}$$, but only for classification. -->
-
-<!-- ...table with the results showing mine and the paper... -->
-
-For the hyper-parameter optimization, I will fix the number of estimators at 50, while using the following search space for the others:
+For the hyper-parameter optimization, I will fix the number of estimators at 50 while using the following search space for the others:
 
 ```python
 params_grid = {"n_estimators": [50],
@@ -331,24 +327,24 @@ The optimal parameters were:
 </figure>
 </div>
 
-The results show how the RF suffers from the trap both TRF and IRF idealize to solve, while the IRF had a meaningful advantage margin over the TRF, from 0.61 to 0.72. Now it is time for some real data!
+The results show how the RF suffers from the trap both TRF and IRF idealize to solve, while the IRF had a meaningful advantage margin over the TRF, from 0.61 to 0.72. Now, it is time for some real-world data!
 
-## Comparison on real data
+## Real-world data experiments
 
 I will use the [Financial dataset](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018) example from IRF's paper [^fn2].
 
-The dataset contains 5 years of data. The first three years are the training period, the remaining two are the holdout set, which we wouldn't have access to at the modeling stage. It differs from the IRF paper since the authors used any three years as training and the remaining as the holdout.
+The dataset contains 5 years of data. The first three years are the training period, and the remaining two are the holdout set, which we wouldn't have access to at the modeling stage. It differs from the IRF paper since the authors used any three years as training and the remaining as the holdout.
 
 <div align="center">
 <figure>
 	<a href="../../../images/inv-ml-4/real_data_target_proportion.png" name="Target distribution in the real dataset">
 		<img  style="width:700px;margin:10px" src="../../../images/inv-ml-4/real_data_target_proportion.png"/>
 	</a>
-		<figcaption>AUC curves commonly follow target proportion so we should expect this shape for the holdout period.</figcaption>
+		<figcaption>AUC curves commonly follow target proportion, so we should expect this shape for the holdout period.</figcaption>
 </figure>
 </div>
 
-Looking into the target distribution, we see we have a weird 2017 as one of the holdout periods.
+Looking at the target distribution, we see that 2017, one of the holdout periods, behaved weirdly.
 
 
 <div align="center">
@@ -360,20 +356,20 @@ Looking into the target distribution, we see we have a weird 2017 as one of the 
 </figure>
 </div>
 
-Looking into S&P 500 behavior for this period, we can see a large drop at the end of 2018, which influences the target for 2017 data points and fits the idea that a lower proportion of the stocks in the dataset have a positive label. Since my intention is not to understand this dataset in particular, I won't investigate further.
+Looking at the S&P 500's behavior for this period, we can see a significant drop at the end of 2018, which influences the target for 2017 data points and fits the idea that a lower proportion of the stocks in the dataset have a positive label. Since I intend not to understand this dataset in particular, I won't investigate further.
 
-Perfectly, I'd follow the same optimization design from the synthetic data case. But due to the cost of running it in a real dataset, I will replicate the same hyper-parameters from the synthetic case to the real dataset and bootstrap the data.
+Ideally, I'd follow the same optimization design from the synthetic data case. However, due to the cost of running it in a real dataset, I will replicate the same hyper-parameters from the synthetic case and bootstrap the data.
 
 <div align="center">
 <figure>
 	<a href="../../../images/inv-ml-4/real_data_same_hyperp.png" name="Target distribution in the real dataset">
 		<img  style="width:700px;margin:10px" src="../../../images/inv-ml-4/real_data_same_hyperp.png"/>
 	</a>
-		<figcaption>An equally bad performance in 2017 for all models while in 2018 the TRF shows a better performance in this particular parametrization setting</figcaption>
+		<figcaption>An equally bad performance in 2017 for all models, while in 2018, the TRF shows a better performance in this particular parametrization setting</figcaption>
 </figure>
 </div>
 
-The results show a random performance during 2017 for all models, with a slight advantage for the IRF, while in the 2018 we had the TRF with a 0.741 AUC in a good advantage over the RF (0.726) and the IRF (0.715).
+The results show random performance during 2017 for all models, with a slight advantage for the IRF. In 2018, the TRF had a 0.741 AUC, which was a good advantage over the RF (0.726) and the IRF (0.715).
 
 As a second approach, I will optimize the RF using sklearn for speed, replicate the parameters for the IRF and TRF, and use the heuristics I know about them to define the remaining parameters.
 
@@ -386,7 +382,7 @@ As a second approach, I will optimize the RF using sklearn for speed, replicate 
 </figure>
 </div>
 
-In this case, the RF has a higher performance, which is more or less expected since we optimized for it. The small tweaks using heuristics for the TRF and IRF were not sufficient to make them better than the RF. So I guess I need to improve my manual optimization skills.
+In this case, the RF has a higher performance, which is unsurprising since we optimized for it. The minor tweaks using heuristics for the TRF and IRF were insufficient to make them better than the RF. So, I guess I need to improve my manual optimization skills.
 
 As a last experiment, I will change the invariance penalty in the real dataset to see if it behaves similarly to what we have seen in the synthetic data.
 
@@ -395,17 +391,17 @@ As a last experiment, I will change the invariance penalty in the real dataset t
 	<a href="../../../images/inv-ml-4/auc_penalty_curve_irf_real_data.png" name="Target distribution in the real dataset">
 		<img  style="width:700px;margin:10px" src="../../../images/inv-ml-4/auc_penalty_curve_irf_real_data.png"/>
 	</a>
-		<figcaption>We don't see the same behavior as i nthe synthetic data, but stocks datasets are hard and it has a particular holdout set.</figcaption>
+		<figcaption>We don't see the same behavior as in the synthetic data, but stock datasets are hard, and it has a particular holdout set.</figcaption>
 </figure>
 </div>
 
-This plot doesn't show the same clear pattern we have seen in the synthetic case. In fact, it tell us that with these hyper parameters, the penalty is only harming the holdout performance. This is only a single dataset and more investigation is needed for conclusions.
+This plot behaves differently than the pattern in the synthetic case. In fact, it tells us that with these hyperparameters, the penalty only harms the holdout performance. However, this is only a single dataset, and more investigation is needed to reach conclusions.
 
 ## Conclusion
 
-The IRF offers a simple and principle model to explore invariance in tree-based models, which are a very conveniente class of predictors - you can see by how simple it is preparing the data for it.
+The IRF offers a simple and principle model to explore invariance in tree-based models, which are a very convenient class of predictors. You can see how simple it is to prepare the data for it.
 
-The performance in the synthetic data shows it can do better than the TRF. For real data, I need more use cases for conclusions. I might give it a try using the same datasets I used for the TRF work, or simply keep applying the IRF as I work on new projects and report how it goes.
+The synthetic data's performance shows that it can do better than the TRF. For real data, I need more use cases for conclusions. I might give it a try using the same datasets I used for the TRF work or simply keep applying the IRF as I work on new projects and report how it goes.
 
 
 ## References
