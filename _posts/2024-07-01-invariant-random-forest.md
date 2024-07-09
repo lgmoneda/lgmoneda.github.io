@@ -7,7 +7,7 @@ ref: trt
 comments: true
 author: moneda
 description: Experiments and comparisons between the Invariant Random Forest and the Time Robust Forest
-image: ../../../images/trt/yaniv-knobel-2YWS62tLATA-unsplash.jpg
+image: ../../../images/inv-ml-4/auc_penalty_curve_irf_d20_10k.png
 tags: research machine-learning
 ---
 
