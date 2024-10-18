@@ -126,23 +126,3 @@ E outros um pouco mais psicodélicos:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="pt" dir="ltr">Armário rústico de um velho solar transformado num Charlus mil vezes mais inteligente que o resto da pupila reagia segregando ondas de azul.</p>&mdash; Luis Moneda (@lgmoneda) <a href="https://twitter.com/lgmoneda/status/772775829554200577">September 5, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-
-{% if page.comments %}
-<div id="disqus_thread"></div>
-<script>
-
-var disqus_config = function () {
-    this.page.url = "http://lgmoneda.github.io/";
-    this.page.identifier = "/2016/04/02/tweetando-como-proust.html";
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//lgmoneda.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-{% endif %}
