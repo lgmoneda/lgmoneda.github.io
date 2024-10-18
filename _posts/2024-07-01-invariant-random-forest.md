@@ -3,7 +3,7 @@ layout: post
 title: "Invariance in Machine Learning #4: Invariant Random Forest"
 date: 2024-07-06
 lang: en
-ref: trt
+ref: irt
 comments: true
 author: moneda
 description: Experiments and comparisons between the Invariant Random Forest and the Time Robust Forest
