@@ -303,7 +303,7 @@ The markdown format also varies greatly. Sometimes, it is very structured; other
 I expected it to recall our previous conversations or my actions and bring them up when convenient. In the beginning, I had a small talk about my musical taste, and I'd restart the session and get back to that topic without issues. However, after a couple of months, it acted as if we never talked about music.
 
 <p style="background-color: #ededed;">
-Catalyst> Hey, considering our interactions, what do you know about my music taste?
+Catalyst> Hey, considering our interactions, what do you know about my music taste?<br><br>
 
 I don't have specific details about your music taste from our interactions or your knowledge base. If you share more about your preferences, like favorite genres or artists, I can help explore connections or insights related to that!
 </p>
