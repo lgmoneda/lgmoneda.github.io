@@ -1,0 +1,17 @@
+---
+layout: default
+title: blog - #org-roam
+lang: en
+ref: blog-org-roam
+---
+
+<!--<h1>{{ page.title }}</h1>-->
+<ul style="text-align:center">
+    <li class="tag green">#org-roam</li>
+</ul>
+{% assign posts=site.tags.org-roam | where:"lang", page.lang %}
+<ul class="posts">
+  {% for post in posts %}
+  <li><span>{{ post.date | date_to_string }}</span> » <a class="post-title list" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
