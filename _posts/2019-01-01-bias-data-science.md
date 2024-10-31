@@ -83,7 +83,7 @@ Novamente, quer-se um estimador que não seja viesado, que seu valor esperado se
 </figure>
 </div>
 
-Segundo o *Gauss=Markov theorem** [^fn2], se os erros $$\epsilon$$ do modelo de regressão linear:
+Segundo o *Gauss-Markov theorem* [^fn2], se os erros $$\epsilon$$ do modelo de regressão linear:
 
 - Possuem média zero: $$ \mathbb{E}[\epsilon] = 0 $$
 - São Homocedásticos, ou seja, todos possuem a mesma variância e ela é finita: $$Var(\epsilon_{i}) = \sigma^{2} < \inf$$
@@ -275,9 +275,9 @@ No final, a abertura no tema indica uma opotunidade enorme para pesquisa e debat
 <!-- https://en.wikipedia.org/wiki/Ecological_fallacy -->
 ### Extra: Podcast
 
-Este texto foi feito a partir da pesquisa para participar do Podcast [Hipsters.tech](https://hipsters.tech/desafios-em-machine-learning-hipsters-137/) sobre desafios na aplicação de Machine Learning. Você pode ouvir o episódio aqui:
+Este texto foi feito a partir da pesquisa para participar do Podcast [Hipsters.tech - Desafios em Machine Learning #137](https://hipsters.tech/desafios-em-machine-learning-hipsters-137/). Você pode ouvir o episódio aqui:
 
-<iframe width="320" height="30" src="https://hipsters.tech/?powerpress_embed=2171-podcast&amp;powerpress_player=mediaelement-audio" frameborder="0" scrolling="no"></iframe>
+<iframe width="320" height="30" src="https://www.hipsters.tech/?powerpress_embed=2171-podcast&amp;powerpress_player=mediaelement-audio" title="Blubrry Podcast Player" frameborder="0" scrolling="no"></iframe>
 
 ### Bibliografia
 
