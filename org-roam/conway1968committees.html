@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-12-19 Thu 10:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How do committees invent, Conway, M. E.</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">How do committees invent, Conway, M. E.</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga56531c">1. Stages of design</a></li>
+<li><a href="#org890cfb0">2. System</a>
+<ul>
+<li><a href="#org3ef8e28">2.1. System design</a>
+<ul>
+<li><a href="#org202d1b2">2.1.1. The definition of the design team already means design decisions for the system or product</a></li>
+<li><a href="#org7c3109b">2.1.2. Flexibility of organization is important to effective design</a></li>
+<li><a href="#org7ddd4f0">2.1.3. Systems tend to disintegrate</a></li>
+<li><a href="#org1fc2f84">2.1.4. Systems as a graph</a></li>
+<li><a href="#org26081a3">2.1.5. The efficiency of communication can increase system design quality</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfe4d4c9">3. Parkison's law</a></li>
+<li><a href="#org105e8c4">4. Conway's law</a></li>
+</ul>
+</div>
+</div>
+<p>
+<a href="https://www.youtube.com/watch?v=5IUj1EZwpJY">Article Link</a>
+</p>
+
+<div id="outline-container-orga56531c" class="outline-2">
+<h2 id="orga56531c"><span class="section-number-2">1.</span> Stages of design</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+[BROKEN LINK: D6A847B4-216E-4443-8AD9-D8B79E29650D] happens in two stages.
+</p>
+
+<ol class="org-ol">
+<li>Define the [BROKEN LINK: B45921E8-B389-4050-AB4C-5FC6B4ADCCBB],</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org890cfb0" class="outline-2">
+<h2 id="org890cfb0"><span class="section-number-2">2.</span> System</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+A whole composed by parts for a common [BROKEN LINK: EC627AE4-6699-43FD-A0C0-68B60E8D9670].
+</p>
+</div>
+
+<div id="outline-container-org3ef8e28" class="outline-3">
+<h3 id="org3ef8e28"><span class="section-number-3">2.1.</span> System design</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The intellectual activity of creating a useful whole from diverse parts.
+</p>
+
+<p>
+It follows, in general, the steps:
+</p>
+
+<ol class="org-ol">
+<li>Drawing [BROKEN LINK: B45921E8-B389-4050-AB4C-5FC6B4ADCCBB] according the the real world and other rules</li>
+<li>Choice of a preliminary design</li>
+<li>Organization of the design activity and delegation of tasks</li>
+<li>Coordination among delegated tasks</li>
+<li>Consolidation of subdesign into a single design</li>
+</ol>
+</div>
+
+<div id="outline-container-org202d1b2" class="outline-4">
+<h4 id="org202d1b2"><span class="section-number-4">2.1.1.</span> The definition of the design team already means design decisions for the system or product</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+The team definition is going to define the [BROKEN LINK: 05061761-FAC2-4343-93ED-929ECC1796E3] paths, which means boundaries to what it can accomplish. So just a class of possible designs are available for it. If two pieces of a system are developed by two different teams, there is an assumption they do not need to have a high bandwidth communication between these two teams, the two things they will build cannot be a single piece.
+</p>
+
+<p>
+So a design team can't be organized and unbiased at the same time.
+</p>
+
+<p>
+[BROKEN LINK: 407BBDC8-CB81-4EF4-B9A9-A91741233C16] should take it into consideration.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org400c9a6"></a>A org structure is based on communication paths<br />
+<div class="outline-text-5" id="text-2-1-1-1">
+<p>
+[BROKEN LINK: D01145B2-1E19-41FD-8890-57EA83CCE75D] are defined by the communication paths it elicits. What the team can achieve depends on it.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org6650678"></a>There is an homomorphism between the design team and the system design<br />
+<div class="outline-text-6" id="text-2-1-1-1-1">
+<p>
+There is an homomorphism between the design team and the system design. In many cases, if one group design every subsystem, it becomes 1:1.
+</p>
+
+<p>
+Example: the Fortran and COBOL compilers. 8 people for both projects. They split 5 for Fortran and 3 for Cobol. The first end-up as a 5 phases compiler, the second as a three phases one.
+</p>
+</div>
+
+
+<ol class="org-ol">
+<li><a id="org1f37e15"></a>Design the communication path in the design team to influence system design<br />
+<div class="outline-text-7" id="text-2-1-1-1-1-1">
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org7c3109b" class="outline-4">
+<h4 id="org7c3109b"><span class="section-number-4">2.1.2.</span> Flexibility of organization is important to effective design</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Systems will never start as optimal, because of <a href="#org6650678">Conway's law: systems image their design group</a>, flexibility of designers organization is needed.
+</p>
+
+<p>
+When we start a system, we need to decide the design group structure. However, it is likely they will know a better way to do the system, and consequently need to reorg the design team (the communication paths) to enable it. It is needs [BROKEN LINK: EBA8BA81-81C2-4BB4-846B-E92850A18792] to do so.
+</p>
+</div>
+
+
+
+<ol class="org-ol">
+<li><a id="orga462b88"></a>We need to reward managers for keeping their org lean and flexible<br />
+<div class="outline-text-5" id="text-2-1-2-1">
+<p>
+A philosophy that goes against <a href="#orgfe4d4c9">Parkison's law</a>. Do not assume that adding manpower will increase [BROKEN LINK: 7D8D5754-3A9D-4E87-838F-0AC0CA9D5918].
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org7ddd4f0" class="outline-4">
+<h4 id="org7ddd4f0"><span class="section-number-4">2.1.3.</span> Systems tend to disintegrate</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+It happens in three steps, the first two are controllable, and the last is the consequence of <a href="#org6650678">Conway's law: systems image their design group</a>.
+</p>
+
+<ol class="org-ol">
+<li>The realization by the first designers that the system will be large, and the pressure to involve more people, will make the allocation of too many people in the design effort</li>
+<li>A large design group will cause their communication to disintegrate</li>
+<li>The Conway's Law</li>
+</ol>
+</div>
+
+<ol class="org-ol">
+<li><a id="org0f8cd7b"></a>The arrangement of the design effort will disintegrate systems<br />
+<div class="outline-text-5" id="text-2-1-3-1">
+<p>
+It means combining [BROKEN LINK: 5E25C303-22BA-406C-B5A6-434491EBD1D2] with the bad incentive of <a href="#orgfe4d4c9">Parkison's law</a>. It happens when the [BROKEN LINK: 8F091FD5-E6C9-4CEE-A61B-EA81FE50819F] of the system reaches the limit of the initial designer.
+</p>
+
+<p>
+In industry, there will be a survival reason to do it due to [BROKEN LINK: BAB90DD0-7609-4957-BDB2-FA43964BB79E] strategies: failing on it without delegation is an easy "fault" to spot in a [BROKEN LINK: AD3529F2-BDE4-44F6-81DD-76A9827CBFD3], it means not applying all his resources.
+</p>
+</div>
+</li>
+
+<li><a id="org178cd93"></a>Communication limits fragments teams which fragments systems<br />
+<div class="outline-text-5" id="text-2-1-3-2">
+<p>
+The system architecture will follow from the team structure that will happen due to communication limits.
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org1fc2f84" class="outline-4">
+<h4 id="org1fc2f84"><span class="section-number-4">2.1.4.</span> Systems as a graph</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+Nodes as subsystems. Interfaces to communicate to other systems. [BROKEN LINK: 28093D1E-A1E3-42F9-BB02-36C55E3010E4] representation.
+</p>
+
+
+<div id="org7d2f601" class="figure">
+<p><img src="resources/screen_20220403_175729.jpg" alt="screen_20220403_175729.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org26081a3" class="outline-4">
+<h4 id="org26081a3"><span class="section-number-4">2.1.5.</span> The efficiency of communication can increase system design quality</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<p>
+Efficient [BROKEN LINK: 05061761-FAC2-4343-93ED-929ECC1796E3] between [BROKEN LINK: 340CF93B-C691-43D4-800B-456E05B3B27C] is crucial to enable better <a href="#org3ef8e28">System design</a>.
+</p>
+
+<p>
+&gt; Research which leads to techniques permitting more efficient communication among designers will play an extremely important role in the technology of system management.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgd3f00af"></a>System management<br />
+<div class="outline-text-5" id="text-2-1-5-1">
+<p>
+Managing systems development and their design teams. It emerged because of the natural movement of <a href="#org7ddd4f0">Systems tend to disintegrate</a>.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfe4d4c9" class="outline-2">
+<h2 id="orgfe4d4c9"><span class="section-number-2">3.</span> Parkison's law</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+As long as the prestige of a [BROKEN LINK: AD3529F2-BDE4-44F6-81DD-76A9827CBFD3] is tied to its [BROKEN LINK: D564F75B-339E-4692-A947-762B0D471B60], they will be motivated to expand the organization.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org105e8c4" class="outline-2">
+<h2 id="org105e8c4"><span class="section-number-2">4.</span> Conway's law</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="#org3ef8e28">System design</a> reflects the [BROKEN LINK: 05061761-FAC2-4343-93ED-929ECC1796E3] structure of the group who builds it.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2024-12-19 Thu 10:16</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
