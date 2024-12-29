@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-12-29 Sun 11:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guia Danielzin de Poços de Caldas</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Guia Danielzin de Poços de Caldas</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org88a8f4d">1. Guide</a>
+<ul>
+<li><a href="#org9573ff0">1.1. Cafés</a>
+<ul>
+<li><a href="#org626bee9">1.1.1. Lascaux</a></li>
+<li><a href="#orgd390632">1.1.2. Âncora Coffee House</a></li>
+<li><a href="#org75204ec">1.1.3. Maturare Queijaria e Cafeteria</a></li>
+<li><a href="#org8071324">1.1.4. Officina 8 BIKE COFFEE</a></li>
+<li><a href="#org20b2929">1.1.5. Nita padaria artesanal</a></li>
+</ul>
+</li>
+<li><a href="#org176083e">1.2. Lojas de queijo</a></li>
+<li><a href="#org107c7c8">1.3. Mercadão</a>
+<ul>
+<li><a href="#org289bafa">1.3.1. Banca 15</a></li>
+<li><a href="#orgdec5bd6">1.3.2. Rota de magalhães</a></li>
+<li><a href="#orgbdae781">1.3.3. Tradicafé</a></li>
+</ul>
+</li>
+<li><a href="#org019d3ff">1.4. Restaurantes</a>
+<ul>
+<li><a href="#org6d35645">1.4.1. Furto pizzaria</a></li>
+<li><a href="#orgbf33246">1.4.2. Ollivia</a></li>
+</ul>
+</li>
+<li><a href="#org339c238">1.5. Parque do Cristo</a>
+<ul>
+<li><a href="#org3ecf80a">1.5.1. Teleférico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org88a8f4d" class="outline-2">
+<h2 id="org88a8f4d"><span class="section-number-2">1.</span> Guide</h2>
+<div class="outline-text-2" id="text-1">
+
+<div id="orgd7e2435" class="figure">
+<p><img src="resources/Logo/2024-12-29_10-29-04_danielzin-guide-text.svg" alt="2024-12-29_10-29-04_danielzin-guide-text.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Preparamos esse guia turístico de <a href="20240323133755-pocos_de_caldas.html#ID-616AC79A-AC4D-4B28-86DE-A56377BE1FDC">Poços de Caldas</a> para todos que vem visitar o bebê Daniel!
+</p>
+</div>
+
+<div id="outline-container-org9573ff0" class="outline-3">
+<h3 id="org9573ff0"><span class="section-number-3">1.1.</span> Cafés</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org626bee9" class="outline-4">
+<h4 id="org626bee9"><span class="section-number-4">1.1.1.</span> Lascaux</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+<a href="https://www.instagram.com/lascaux.chocolateria/">Instagram</a>
+<a href="https://maps.app.goo.gl/qKdXr3XZLt9Za1yMA">Google Maps</a>
+</p>
+
+<p>
+Gostamos muito do chocolate quente (tanto o tradicional quanto o "Mexicano") e do pão de queijo. O café coado é bom. Comemos o sorvete de pistache com chocolate branco uma vez e estava ótimo.
+</p>
+
+<p>
+Eles fazem chocolates inspirados em rochas, já comemos diversos sabores.
+</p>
+
+<p>
+O que mais gostamos são os
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd390632" class="outline-4">
+<h4 id="orgd390632"><span class="section-number-4">1.1.2.</span> Âncora Coffee House</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+<a href="https://www.instagram.com/ancoracoffeehouse/?hl=en">https://www.instagram.com/ancoracoffeehouse/?hl=en</a>
+<a href="https://maps.app.goo.gl/aTH425xUSAnU9HzB9">https://maps.app.goo.gl/aTH425xUSAnU9HzB9</a>
+</p>
+
+<p>
+Nós nos apaixonamos pelo queijo quente deles e comemos diversas vezes. Servem com chutney de tomate. Faz um tempo que não comemos, pois um certo dia que pedimos a receita estava diferente (a mistura dos queijos não era a mesma, tinham retirado o queijo canastra). Não sabemos como está atualmente.
+</p>
+
+<p>
+No mais, é um café muito bom (usam grãos da região e também vendem), as bebidas são ótimas, fazem drinks com café (experimentei o Mad men e gostei), ambiente legal, e atendimento bom.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org75204ec" class="outline-4">
+<h4 id="org75204ec"><span class="section-number-4">1.1.3.</span> Maturare Queijaria e Cafeteria</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+<a href="https://maps.app.goo.gl/8NYxs6jTAyEysHj87">https://maps.app.goo.gl/8NYxs6jTAyEysHj87</a>
+</p>
+
+<p>
+Apenas levamos queijo de lá pra comer em casa, mas as pessoas falam muito bem do pão de queijo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8071324" class="outline-4">
+<h4 id="org8071324"><span class="section-number-4">1.1.4.</span> Officina 8 BIKE COFFEE</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+<a href="https://maps.app.goo.gl/eEENg1m6py1wePqt6">https://maps.app.goo.gl/eEENg1m6py1wePqt6</a>
+</p>
+
+<p>
+Pra tomar café em uma oficina/loja de bicicleta. Fomos uma vez apenas, o ambiente é legal, o café estava bom.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20b2929" class="outline-4">
+<h4 id="org20b2929"><span class="section-number-4">1.1.5.</span> Nita padaria artesanal</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+<a href="https://maps.app.goo.gl/o4ei73wHyFZML8L69">https://maps.app.goo.gl/o4ei73wHyFZML8L69</a>
+</p>
+
+<p>
+É nossa padaria preferida, compramos o pão branco e homus deles com frequência. Pão de queijo na capa é muito bom.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org176083e" class="outline-3">
+<h3 id="org176083e"><span class="section-number-3">1.2.</span> Lojas de queijo</h3>
+</div>
+<div id="outline-container-org107c7c8" class="outline-3">
+<h3 id="org107c7c8"><span class="section-number-3">1.3.</span> Mercadão</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org289bafa" class="outline-4">
+<h4 id="org289bafa"><span class="section-number-4">1.3.1.</span> Banca 15</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Compramos queijo meia cura do que vendem no balcão, estava bom todas as vezes. Eles também vendem o queijo de pedra. É onde compramos queijos regularmente.
+</p>
+
+<p>
+Aceita Alelo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdec5bd6" class="outline-4">
+<h4 id="orgdec5bd6"><span class="section-number-4">1.3.2.</span> Rota de magalhães</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Fomos lá para comprar queijos de cabra. Eles vendem da caprivita, que é mineira (<a href="https://caprivita.com.br/#produtos">https://caprivita.com.br/#produtos</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbdae781" class="outline-4">
+<h4 id="orgbdae781"><span class="section-number-4">1.3.3.</span> Tradicafé</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+<a href="https://www.tradicafe.com/">https://www.tradicafe.com/</a>
+<a href="https://www.instagram.com/tradicafe">https://www.instagram.com/tradicafe</a>
+</p>
+
+<p>
+É onde compro os cafés pra casa. Vendem em grão ou moído. Também servem bebidas lá.
+O que eu mais gostei foi o "flor de laranjeira".
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org019d3ff" class="outline-3">
+<h3 id="org019d3ff"><span class="section-number-3">1.4.</span> Restaurantes</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org6d35645" class="outline-4">
+<h4 id="org6d35645"><span class="section-number-4">1.4.1.</span> Furto pizzaria</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+<a href="https://www.instagram.com/furtopizza/">https://www.instagram.com/furtopizza/</a>
+<a href="https://maps.app.goo.gl/HQWMserQpk1xwPTA6">https://maps.app.goo.gl/HQWMserQpk1xwPTA6</a>
+</p>
+
+<p>
+É nossa pizzaria predileta de Poços. E diria que um top 3 da vida!
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbf33246" class="outline-4">
+<h4 id="orgbf33246"><span class="section-number-4">1.4.2.</span> Ollivia</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Costumava ser o nosso restaurante predileto, mas a qualidade caiu depois da mudança de donos. Fica ao lado de casa. Ainda tem alguns pratos bons, como o bacalhau na nata. Caro.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org339c238" class="outline-3">
+<h3 id="org339c238"><span class="section-number-3">1.5.</span> Parque do Cristo</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+A vista é bonita. Tem um "café do cristo" na base do cristo e uma galeria com lojas de produtos locais e versão mini de restaurantes da cidade (Nita, Napoletana, Gonçalves)
+<a href="https://www.instagram.com/parquedocristo.br/">https://www.instagram.com/parquedocristo.br/</a>
+</p>
+</div>
+
+<div id="outline-container-org3ecf80a" class="outline-4">
+<h4 id="org3ecf80a"><span class="section-number-4">1.5.1.</span> Teleférico</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+(Ainda não fomos)
+<a href="https://maps.app.goo.gl/PhTMEsgAMbwhxZbd7">https://maps.app.goo.gl/PhTMEsgAMbwhxZbd7</a>
+</p>
+
+<p>
+R$68 inteira, R$34 meia.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2024-12-29 Sun 11:34</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
