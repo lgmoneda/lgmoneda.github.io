@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Published Org Roam files
+lang: en
+ref: org-roam-index
 ---
 
 # Published org-roam files
