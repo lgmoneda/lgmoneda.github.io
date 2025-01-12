@@ -88,7 +88,7 @@ def my_python():
 
 -   Org markdown
 
-    ![img](../images/org-roam/2024-12-29_14-55-08_danielzin-guide-full-body-text.svg "Figure 1: Logo of the 2024 event")  
+    ![img](../../../images/org-roam/2024-12-29_14-55-08_danielzin-guide-full-body-text.svg "Logo of the 2024 event")  
 
 
 # References
