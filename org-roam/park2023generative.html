@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-19 Sun 20:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Generative agents: interactive simulacra of human behavior, Park, J. S. et al.</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../org-roam/org.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Generative agents: interactive simulacra of human behavior, Park, J. S. et al.</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3ad2c06">1. Generative Agent Behavior and Interaction</a>
+<ul>
+<li><a href="#orgc3af719">1.1. Avatar and communication</a>
+<ul>
+<li><a href="#org692dd37">1.1.1. A paragraph to describe their identity</a></li>
+<li><a href="#orgdb1f37e">1.1.2. Inter-agent communication</a></li>
+<li><a href="#org256f4c6">1.1.3. User controls</a></li>
+</ul>
+</li>
+<li><a href="#orga4d4c06">1.2. Environment</a></li>
+<li><a href="#org040e9a6">1.3. Emergent social behaviors</a>
+<ul>
+<li><a href="#org67576e4">1.3.1. Information diffusion</a></li>
+<li><a href="#orgc4c958f">1.3.2. Relationship memory</a></li>
+<li><a href="#org0c7effb">1.3.3. Coordination</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2817b8a">2. Generative Agent Architecture</a>
+<ul>
+<li><a href="#org82e6f9e">2.1. A generative architecture for a human-simulation agent</a>
+<ul>
+<li><a href="#orgeebf691">2.1.1. Memory stream for generative agents</a></li>
+<li><a href="#org89bac8e">2.1.2. Reflection as a higher-level type of memory</a></li>
+<li><a href="#org96f5691">2.1.3. Planning and reacting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="https://arxiv.org/pdf/2304.03442.pdf">Paper link</a>.
+</p>
+
+<p>
+To create generative Agents, it uses an architecture that extends a <a href="20220814185819-pre_trained_model.html#ID-07991435-A9F3-4943-8692-BD86F55023CF">Large Language Model (LLM)</a> to store a complete record of the Agent's experiences using natural language, summarize them over time into higher-level reflections, and retrieve them to plan behavior.
+</p>
+
+<p>
+It focus on the human-AI interaction and the goal to make the AI behavior believable to humans.
+</p>
+
+<div id="outline-container-org3ad2c06" class="outline-2">
+<h2 id="org3ad2c06"><span class="section-number-2">1.</span> Generative Agent Behavior and Interaction</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgc3af719" class="outline-3">
+<h3 id="orgc3af719"><span class="section-number-3">1.1.</span> Avatar and communication</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org692dd37" class="outline-4">
+<h4 id="org692dd37"><span class="section-number-4">1.1.1.</span> A paragraph to describe their identity</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+An example of paragraph for a character:
+</p>
+
+<p>
+&gt; John Lin is a pharmacy shopkeeper at the Willow
+Market and Pharmacy who loves to help people. He
+is always looking for ways to make the process
+of getting medication easier for his customers;
+John Lin is living with his wife, Mei Lin, who
+is a college professor, and son, Eddy Lin, who is
+a student studying music theory; John Lin loves
+his family very much; John Lin has known the old
+couple next-door, Sam Moore and Jennifer Moore,
+for a few years; John Lin thinks Sam Moore is a
+kind and nice man; John Lin knows his neighbor,
+Yuriko Yamamoto, well; John Lin knows of his
+neighbors, Tamara Taylor and Carmen Ortiz, but
+has not met them before; John Lin and Tom Moreno
+are colleagues at The Willows Market and Pharmacy;
+John Lin and Tom Moreno are friends and like to
+discuss local politics together; John Lin knows
+the Moreno family somewhat well — the husband Tom
+Moreno and the wife Jane Moreno.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdb1f37e" class="outline-4">
+<h4 id="orgdb1f37e"><span class="section-number-4">1.1.2.</span> Inter-agent communication</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="org734a690"></a>An agent action is described internally in Natural Language<br />
+<div class="outline-text-5" id="text-1-1-2-1">
+<p>
+In every turn of the simulated world, an agent will generate a description of their action like:
+</p>
+
+<p>
+&gt; "Isabella Rodriguez is writing in her journal", "Isabella Rodriguez is checking her emails", "Isabella Rodriguez is talking with her family on the phone", or "Isabella Rodriguez is getting ready for bed"
+</p>
+</div>
+
+
+<ol class="org-ol">
+<li><a id="org02b625e"></a>Agent actions are translated to the outside world with an abstract representation<br />
+<div class="outline-text-6" id="text-1-1-2-1-1">
+<p>
+The abstract representation agents "show" to the world are translated from the natural language description to a series of emojis. An LLM is used for this translation.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org0f1141c"></a>Agents communicate in natural language<br />
+<div class="outline-text-5" id="text-1-1-2-2">
+<p>
+They might walk by or engage in conversation. Example of a conversation:
+</p>
+
+<p>
+&gt; Isabella: I’m still weighing my options, but I’ve been discussing the election with Sam Moore. What are your thoughts on him?
+&gt; Tom: To be honest, I don’t like Sam Moore. I think he’s out of touch with the community and doesn’t have our best interests at heart.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org256f4c6" class="outline-4">
+<h4 id="org256f4c6"><span class="section-number-4">1.1.3.</span> User controls</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+A user can control the agents using natural language in the form of an "inner voice" and influence their behavior. E.g., saying to John:
+</p>
+
+<p>
+&gt; “You are going to run against Sam in the upcoming election”
+</p>
+
+<p>
+It will make John run for it.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga4d4c06" class="outline-3">
+<h3 id="orga4d4c06"><span class="section-number-3">1.2.</span> Environment</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+An action is defined by the Agent and if it implies moving, a path is calculated to go from A to B.
+Agents can influence the state of the objects, like occupying the bed or consuming from the fridge.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org040e9a6" class="outline-3">
+<h3 id="org040e9a6"><span class="section-number-3">1.3.</span> Emergent social behaviors</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org67576e4" class="outline-4">
+<h4 id="org67576e4"><span class="section-number-4">1.3.1.</span> Information diffusion</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Agents providing new information to others will make it spread.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4c958f" class="outline-4">
+<h4 id="orgc4c958f"><span class="section-number-4">1.3.2.</span> Relationship memory</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+An Agent will bring back information provided in their previous interaction.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0c7effb" class="outline-4">
+<h4 id="org0c7effb"><span class="section-number-4">1.3.3.</span> Coordination</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+A single Agent with the intent of organizing a part will end up getting help of others and getting other agents coming to its party. It shows the emergence of coordination from an order to a single agent.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2817b8a" class="outline-2">
+<h2 id="org2817b8a"><span class="section-number-2">2.</span> Generative Agent Architecture</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org82e6f9e" class="outline-3">
+<h3 id="org82e6f9e"><span class="section-number-3">2.1.</span> A generative architecture for a human-simulation agent</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The challenge is that simulating human behavior requires reasoning over a set of experiences that is way larger than what a <a href="20220814185819-pre_trained_model.html#ID-07991435-A9F3-4943-8692-BD86F55023CF">Large Language Model (LLM)</a> can handle (as a <a href="20210712132210-working_memory.html#ID-C43ECA98-E7D9-47B1-BC37-2326A4A5486B">Working memory</a>). The approach is to use a memory stream to maintain a record of the agent's experience and retrieve it at the convenient time.
+</p>
+
+<p>
+<a href="20210502202705-agencement_agenciamento_agency.html#ID-87B5077A-D4F8-444B-BC49-5E6EFE017A6F">Agencement / agenciamento / agency</a> architecture in terms of: Perception, <a href="20200926131742-planning.html#ID-A5E27AD7-1612-4980-8938-591DA3CD2172">Planning</a>, <a href="20200809102921-memory.html#ID-81E2BADC-9BDC-471C-A5D5-FB777BB9F03A">Memory</a> stream, information retrieval, <a href="20200919182555-reflection.html#ID-33408563-6439-4F7E-975E-35D7AD607536">Reflection</a>, action.
+</p>
+
+<p>
+Everything is recorded as natural language to enable a LLM reason on top of it.
+</p>
+
+
+<div id="org4157a29" class="figure">
+<p><img src="../images/org-roam/screen_20230415_172346.jpg" alt="screen_20230415_172346.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgeebf691" class="outline-4">
+<h4 id="orgeebf691"><span class="section-number-4">2.1.1.</span> Memory stream for generative agents</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<div id="org7e4d60b" class="figure">
+<p><img src="../images/org-roam/screen_20230415_180348.jpg" alt="screen_20230415_180348.jpg" />
+</p>
+</div>
+
+<p>
+<a href="&amp;park2023generative">&amp;park2023generative</a> uses a database that keeps a list of the agents experiences.
+</p>
+
+<p>
+Every memory has a natural language description, a creation timestamp and a timestamp of last access. It is made of observations.
+</p>
+
+<p>
+The architecture implements a memory stream retrieval function that uses as input the current situation and returns a subset from the memory stream. The image shows the score from this function, the ordering of the three top memories that will be used for the agent action. These memories are added to the prompt.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org4a5a99f"></a>Memory stream retrieval function<br />
+<div class="outline-text-5" id="text-2-1-1-1">
+<p>
+The retrieval function that uses current situation as input and retrieve memories to support the agent action is based on three factors in <a href="&amp;park2023generative">&amp;park2023generative</a>: recency, importance, and relevance.
+</p>
+
+<p>
+All the three scores are normalized to [0, 1] and a final weighted score is assigned for every memory using:
+</p>
+
+<p>
+\[
+\text{score} = \alpha_{recency} * \text{recency} + \alpha_{importance} * \text{importance} + \alpha_{relevance} * \text{relevance}
+\]
+</p>
+
+
+<p>
+The authors use 1 for all the alphas.
+</p>
+</div>
+
+
+<ol class="org-ol">
+<li><a id="org74a13eb"></a>Recency<br />
+<div class="outline-text-6" id="text-2-1-1-1-1">
+<p>
+The more recent, the higher the score. An exponential decay function over the number of hours the simulation is running. The authors use a decay factor of 0.99.
+</p>
+</div>
+</li>
+
+<li><a id="orgd091b06"></a>Importance<br />
+<div class="outline-text-6" id="text-2-1-1-1-2">
+<p>
+To distinguish mundane from core memories, e.g. eating breakfast and breaking up with a partner are very different.
+</p>
+
+<p>
+The authors implement by calling a <a href="20220814185819-pre_trained_model.html#ID-07991435-A9F3-4943-8692-BD86F55023CF">Large Language Model (LLM)</a> and asking for an integer in a scale from 1 to 10.
+</p>
+
+<p>
+&gt; On the scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following piece of memory.
+Memory: buying groceries at The Willows Market and Pharmacy
+Rating: &lt;fill in&gt;
+</p>
+
+<p>
+The importance score is generated at the time the memory is generated.
+</p>
+</div>
+</li>
+
+<li><a id="orgca9b59c"></a>Relevance<br />
+<div class="outline-text-6" id="text-2-1-1-1-3">
+<p>
+A score that relates the memory to the current situation. The authors use a LLM to embed memories text to use <a href="20230416132549-vector_space_retrieval_model.html#ID-08B9E098-005B-438D-818D-421BB9AD8DB4">Vector retrieval</a> using the embedding for the query with cosine similarity.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org8eb31f8"></a>Observation as the simplest element from the memory stream<br />
+<div class="outline-text-5" id="text-2-1-1-2">
+<p>
+An action the agent did or it has perceived from another agent. Example:
+</p>
+
+<p>
+&gt; Isabella Rodriguez and Maria Lopez are conversing about planning a Valentine’s day party at Hobbs Cafe,
+&gt; The refrigerator is empty.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org89bac8e" class="outline-4">
+<h4 id="org89bac8e"><span class="section-number-4">2.1.2.</span> Reflection as a higher-level type of memory</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+The challenge on <a href="20200919182555-reflection.html#ID-33408563-6439-4F7E-975E-35D7AD607536">Reflection</a> is that raw memories are hard to generate a <a href="20201209114837-generalization.html#ID-B28C6952-185F-47DB-AA56-9FC75FF48A50">Generalization</a> that creates an action which is meaningful. E.g., asking an agent which person they would like to interact and they might chose the agent they have interacted the most in the past not the one they have the deeper connection or potential to meaningful interactions.
+</p>
+
+<p>
+The approach from <a href="&amp;park2023generative">&amp;park2023generative</a> is introducing a second type of memory other than <a href="#orgeebf691">Memory stream for generative agents</a>, which is observational, which they call reflection. The reflections are more abstract and high level, and generated by the agent.
+</p>
+
+
+<div id="org7d4a040" class="figure">
+<p><img src="../images/org-roam/screen_20230415_180538.jpg" alt="screen_20230415_180538.jpg" />
+</p>
+</div>
+
+
+<p>
+They are retrieved together with other types of memory when retrieval occurs.
+</p>
+
+<p>
+The authors run reflection when the sum of the importance score of the latest memories exceed a certain threshold.
+</p>
+
+<p>
+The first step in reflection is to decide on what to reflect on. The authors give the 100 msot recent experiences from the agent and use a LLM to ask:
+</p>
+
+<p>
+&gt; “Given only the information above, what are 3 most salient high-level questions we can answer about the subjects in the statements?”
+</p>
+
+<p>
+This will generate questions like:
+</p>
+
+<p>
+&gt; What topic is Klaus Mueller passionate about?
+&gt; What is the relationship between Klaus Mueller and Maria Lopez?
+</p>
+
+<p>
+The second step is to use every questions for memory retrieval (that includes gathering past reflections). Then ask the LLM to extract insights and cite the particular records used as evidence for it.
+</p>
+
+<p>
+Statements about Klaus Mueller
+</p>
+<ol class="org-ol">
+<li>Klaus Mueller is writing a research paper</li>
+<li>Klaus Mueller enjoys reading a book on gentrification</li>
+<li>Klaus Mueller is conversing with Ayesha Khan about exercising [&#x2026;]</li>
+</ol>
+<p>
+What 5 high-level insights can you infer from the above statements? (example format: insight
+(because of 1, 5, 3))
+</p>
+
+<p>
+They parse it and store it as a reflection in the memory stream and link it to the other memories that were cited (see image above).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org96f5691" class="outline-4">
+<h4 id="org96f5691"><span class="section-number-4">2.1.3.</span> Planning and reacting</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+<a href="20200926131742-planning.html#ID-A5E27AD7-1612-4980-8938-591DA3CD2172">Planning</a> will define a sequence of actions for the agent. They are stored in the memory stream and they are included in the retrieval process. Agents might change their plans when deciding how to behave again.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org222106c"></a>Planning is important for agents to have consistency overtime<br />
+<div class="outline-text-5" id="text-2-1-3-1">
+<p>
+If you ask a LLM which action an agent should take next based on the agent background and time, it will suggest eating lunch at 12:30 pm, 1 pm, 1:30 pm. Optimizing for believability in the moment sacrifices it over time.
+</p>
+
+<p>
+To overcome this challenge, plans describe a sequence of actions for the agent. A plan includes a location, starting time, and a duration.
+</p>
+</div>
+</li>
+
+<li><a id="org5f11c03"></a>Top-down planning for the agent<br />
+<div class="outline-text-5" id="text-2-1-3-2">
+<p>
+A LLM is asked to plan a high-level agenda for the day given the agent's summary description (name, traits, and summary of recent experiences) and a summary of their previous day. The prompt:
+</p>
+
+<p>
+&gt; Name: Eddy Lin (age: 19)
+Innate traits: friendly, outgoing, hospitable
+Eddy Lin is a student at Oak Hill College studying
+music theory and composition. He loves to explore
+different musical styles and is always looking
+for ways to expand his knowledge. Eddy Lin is
+working on a composition project for his college
+class. He is also taking classes to learn more
+about music
+theory. Eddy Lin is excited about the new composition
+he is working on but he wants to dedicate more
+hours in the day to work on it in the coming days
+On Tuesday February 12, Eddy 1) woke up and
+completed the morning routine at 7:00 am, [. . . ]
+</p>
+<ol class="org-ol">
+<li>got ready to sleep around 10 pm.</li>
+</ol>
+<p>
+Today is Wednesday February 13. Here is Eddy’s
+plan today in broad strokes: 1)
+</p>
+
+<p>
+It will provide a few chunks of high-level plan. They save it to the memory and recursively decomposes it to create a finer-grained action, first into hour-long chunks of actions:
+</p>
+
+<p>
+&gt; Eddy’s plan to work on his new music composition from 1:00 pm to 5:00 pm
+becomes
+&gt; 1:00 pm: start by brainstorming some ideas for his music composition [&#x2026;] 4:00 pm: take a quick break and recharge his creative energy before reviewing and polishing his composition.
+</p>
+
+<p>
+Then recursively request to make 5-15 minutes chink plans:
+</p>
+
+<p>
+&gt; 4:00 pm: grab a light snack, such as a piece of fruit, a granola bar, or some nuts. 4:05 pm: take a short walk around his workspace [&#x2026;] 4:50 pm: take a few minutes to clean up his workspace.
+</p>
+</div>
+</li>
+
+<li><a id="orgba8f64b"></a>Reacting and updating plan<br />
+<div class="outline-text-5" id="text-2-1-3-3">
+<p>
+Agents operate in an action loop. At each time step, they perceived the world around and register it in their memory stream.
+</p>
+
+<p>
+The authors prompt an LLM with these observations to decide if the agent should react or continue with the current plan. The prompt:
+</p>
+
+<p>
+&gt; [Agent’s Summary Description]
+It is February 13, 2023, 4:56 pm. John Lin’s status: John is back home early from
+work.
+Observation: John saw Eddy taking a short walk around his workplace.
+Summary of relevant context from John’s memory: Eddy Lin is John’s Lin’s son. Eddy Lin has been working on a music composition for his class. Eddy Lin likes to walk around the garden when he is thinking about or listening to music. Should John react to the observation, and if so,
+what would be an appropriate reaction?
+</p>
+
+<p>
+The context summary is generated from two prompts that retrieve memories via:
+</p>
+
+<p>
+&gt; “What is [observer]’s relationship with the [observed entity]?”
+</p>
+
+<p>
+and
+</p>
+
+<p>
+&gt; “[Observed entity] is [action status of the observed entity]”
+</p>
+
+<p>
+And their answers summarized together. The output will trigger a replanning starting at the reaction time. If the action indicate an interaction between the agents, a dialogue is generated.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgc6f6bef"></a>Dialogue between generative agents<br />
+<div class="outline-text-6" id="text-2-1-3-3-1">
+<p>
+Agents dialogue. <a href="20210405213007-dialectic.html#ID-58CD3D6D-8876-4A99-914D-B74A8DD55F06">Dialectic</a>. To generate the conversation, agents are conditioned on their memories about the other agent and the intention they had to start the interaction. The first line from an agent is generated by:
+</p>
+
+<p>
+&gt; [Agent’s Summary Description]
+It is February 13, 2023, 4:56 pm.
+John Lin’s status: John is back home early from work.
+Observation: John saw Eddy taking a short walk around his workplace.
+Summary of relevant context from John’s memory: Eddy Lin is John’s Lin’s son. Eddy Lin has been working on a music composition for his class. Eddy Lin likes to walk around the garden when he is thinking about or listening to music. John is asking Eddy about his music composition project. What would he say to Eddy?
+</p>
+
+
+<p>
+The result is: “Hey Eddy, how’s the music composition project for your class coming along?”
+</p>
+
+<p>
+The second Agent, Eddy, will do the same: summarize his relationship with John from his memory, as also the memories related to John's first sentence. If he decides to interact, Eddy's first saying is generated by:
+</p>
+
+<p>
+&gt; [Agent’s Summary Description]
+It is February 13, 2023, 4:56 pm.
+Eddy Lin’s status: Eddy is taking a short walk around his workplace.
+Observation: John is initiating a conversation with Eddy.
+Summary of relevant context from Eddy’s memory: Jonn Lin is Eddy Lin’s father. John Lin is caring and is interested to learn more about Eddy Lin’s school work. John Lin knows that Eddy Lin is working on a music composition.
+Here is the dialogue history:
+John: Hey Eddy, how’s the music composition project for your class coming along?
+How would Eddy respond to John?
+</p>
+
+<p>
+The answer generated is: : “Hey Dad, it’s going well. I’ve been taking walks around the garden to clear my head and get some inspiration.”
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2025-01-19 Sun 20:21</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
