@@ -8,7 +8,7 @@ comments: true
 author: moneda
 tags: emacs org-roam
 description: Four ways I share my notes from Org Roam
-image: ../../../images/org-roam-share/social-share-org-roam-share.png
+image: ../../../images/org-roam-share/social-share-org-roam-share.jpg
 ---
 
 <h2 id="index">Index</h2>
