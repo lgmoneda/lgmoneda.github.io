@@ -123,7 +123,8 @@ pdf</a> looks fine for a quick share.</p>
 career conversations, I have the questions written in the Org roam file
 about that person. Still, since I want them to reflect on it a couple of
 days before, I would export as ASCII using 'org-ascii-export-as-ascii'
-and copy and paste in a direct message to them.</p>
+and copy and paste in a direct message to them. Alternatively, I use
+plain text with 'org-pandoc-export-as-plain'.</p>
 <h2 id="sharing-open-content">Sharing open content</h2>
 <p>When I want to share notes on bibliographical references, like a book
 or article in which I don't make any connection to information that
