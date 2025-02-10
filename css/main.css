@@ -239,6 +239,7 @@ figcaption {
 
 .full-article-footer {
     border-top: 1px solid #E0DFDB;
+    border-bottom: 1px solid #E0DFDB;
 }
 .article-footer {
     padding: 20px 10px 10px 10px;
@@ -270,6 +271,19 @@ a.author-link:hover {
     color:#000000;
     text-decoration:none;
 }
+
+.bibtex-entry {
+  font-family: "Courier New", Courier, monospace; /* Use a monospaced font */
+  background-color: #f8f8f8; /* Light gray background for contrast */
+  border-left: 4px solid #617a3a; /* Highlight the left edge */
+  padding: 8px 12px;
+  margin: 10px 0;
+  white-space: pre-wrap; /* Ensures text wraps */
+  word-break: break-word; /* Prevents overflow */
+  overflow-x: auto; /* Allows scrolling if needed */
+  display: block;
+}
+
 @media (max-width:750px) {
 .article-footer {
 display:inherit;

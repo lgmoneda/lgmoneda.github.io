@@ -1,30 +1,24 @@
 {% assign author = site.data.authors[page.author] %}
 {% assign lang = page.lang %}
-<div class="full-article-footer">
-  <div class="article-footer">
-    <!-- <p> -->
+    <div>
       {% if lang == "pt" %}
       <span class="post_date">Citação</span>
 	  <div class="footnotes">
-	    {{ author.publish_name }}, "{{page.title}}", artigo de blog publicado em {{page.date | date: "%d/%m/%Y"}}, acesso em {{site.time | date: "%d/%m/%Y"}}.
+	    {{ author.publish_name }} ({{page.date | date: "%Y"}}). "{{page.title}}". Publicado em lgmoneda.github.io, acesso em {{site.time | date: "%d/%m/%Y"}}.
 	  </div>
       {% else %}
       <span class="post_date">Citation</span>
-	  <div class="footnotes">{{ author.publish_name }}, "{{page.title}}", Blogpost at lgmoneda.github.io, ({{page.date | date: "%Y"}}).</div>
+	  <div class="footnotes">{{ author.publish_name }} ({{page.date | date: "%Y"}}). "{{page.title}}". Retrieved {{site.time | date: "%B %d, %Y"}}, from lgmoneda.github.io.</div>
       {% endif %}
-      <br>
-	  <pre class="lang-tex hljs latex">
-		<code>
-		  @article{% raw %}{{% endraw %}moneda{{page.date | date: "%Y"}}{{page.ref}}-blogpost,
+	  <br>
+	  <div class="bibtex-entry">
+		  @misc{% raw %}{{% endraw %}moneda{{page.date | date: "%Y"}}{{page.ref}}-blogpost,
 		  author = {Moneda, Luis},
-		  title = {{page.title}},
-		  journal = {Blogpost at lgmoneda.github.io},
+		  title = {% raw %}{{% endraw %}{{page.title}}{% raw %}}{% endraw %},
 		  year = {% raw %}{{% endraw %}{{page.date | date: "%Y"}}{% raw %}}{% endraw %},
-		  howpublished = {\url{lgmoneda.github.io}},
+		  url = {% raw %}{{% endraw %}{{page.url | absolute_url}}{% raw %}}{% endraw %},
+		  note = {Accessed: {{ "now" | date: "%Y-%m-%d" }}}
 		  }
-		</code>
-	  </pre>
+	  </div>
       <br>
-    <!-- </p> -->
   </div>
-</div>

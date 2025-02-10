@@ -30,12 +30,10 @@ layout: default
 
 {% assign author = site.data.authors[page.author] %}
 {% if author %}
+<div class="full-article-footer">
 {% include author.html %}
-{% endif %}
-
-{% assign author = site.data.authors[page.author] %}
-{% if author %}
 {% include citation.html %}
+</div>
 {% endif %}
 
-{% if page.comments == true %} {% include disqus.html %} {% endif %}
+<!-- {% if page.comments == true %} {% include disqus.html %} {% endif %} -->
