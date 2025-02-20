@@ -241,6 +241,7 @@ figcaption {
 .full-article-footer {
     border-top: 1px solid #E0DFDB;
     border-bottom: 1px solid #E0DFDB;
+    margin-top: 10px; 
 }
 .article-footer {
     padding: 20px 10px 10px 10px;
