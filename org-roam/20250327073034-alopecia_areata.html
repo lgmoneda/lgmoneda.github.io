@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-01 Tue 05:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alopecia Areata</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../org-roam/org.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Alopecia Areata</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgfa3a3fe">1. Social aspects of Alopecia Areata</a></li>
+<li><a href="#orgaa23e85">2. Treatment</a>
+<ul>
+<li><a href="#orgb12e25d">2.1. Corticosteroids</a>
+<ul>
+<li><a href="#orgb160252">2.1.1. Topical corticosteroids</a></li>
+<li><a href="#org33cbd56">2.1.2. Intralesional corticosteroids</a></li>
+<li><a href="#org1e8a1a7">2.1.3. Systemic corticosteroids</a></li>
+</ul>
+</li>
+<li><a href="#orga20a2d1">2.2. Contact immunotherapy</a></li>
+<li><a href="#orgeaf4e00">2.3. Janus Kinase (JAK) Inhibitors</a>
+<ul>
+<li><a href="#orgd546dda">2.3.1. Baricitinib (Olumiant)</a></li>
+<li><a href="#org377450d">2.3.2. Ritlecitinib (Litfulo)</a></li>
+<li><a href="#org327a533">2.3.3. Tofacitinib</a></li>
+<li><a href="#org6b90e83">2.3.4. Factors influnce response</a></li>
+<li><a href="#org4226c19">2.3.5. Topical JAK inhibitors</a></li>
+<li><a href="#orgf779641">2.3.6. Kids under 12</a></li>
+<li><a href="#org84c8e1e">2.3.7. What to expect</a></li>
+<li><a href="#org7ac1df1">2.3.8. <b>Treatment is likely necessary for maintenance of hair regrowth</b></a></li>
+<li><a href="#org5742bc2">2.3.9. Decreasing the dose after complete hair regrowth will make it likely to losing the hair again</a></li>
+<li><a href="#orge19546f">2.3.10. Failing in one JAK inhibitor does not mean the others won't work</a></li>
+<li><a href="#orge27ef6e">2.3.11. Side effects</a></li>
+</ul>
+</li>
+<li><a href="#orgdf86034">2.4. Minoxidil</a></li>
+<li><a href="#org5c9aa6c">2.5. Dupilumab (Dupixent)</a></li>
+</ul>
+</li>
+<li><a href="#org9dc874d">3. Comorbidities</a></li>
+<li><a href="#org21c7cc2">4. Causes</a></li>
+<li><a href="#org070157b">5. Second order complications</a></li>
+<li><a href="#orgcb954ff">6. Regrowth</a></li>
+<li><a href="#org47f776c">7. Symptoms</a>
+<ul>
+<li><a href="#org0478460">7.1. SALT</a></li>
+</ul>
+</li>
+<li><a href="#org6fd8ff7">8. Clouston syndrome</a></li>
+</ul>
+</div>
+</div>
+<p>
+About Alopecia Areata (AA) and Alopecia Universalis (AU). These terms are only used to describe the severity, but it is the same disease.
+</p>
+
+<p>
+Immune cells around the hair follicle causes hairs to stop growing.
+</p>
+
+<p>
+(LaRow, Jo Anne and Mysliborski, Judith and Rappaport, I. Paul and Rouleau, Guy A. and Carlson, J. Andrew, 2001) studies a single case. They highlight that the diagnostic needs to exclude the case of <a href="#org6fd8ff7">Clouston syndrome</a>.
+</p>
+
+<p>
+Pediatric alopecia areata affects 1 in every 1000 (<a href="https://www.naaf.org/alopecia-areata-in-children/">source</a>, (McKenzie, Paige L. and Maltenfort, Mitchell and Bruckner, Anna L. and Gupta, Deepti and Harfmann, Katya L. and Hyde, Patrice and Forrest, Christopher B. and Castelo-Soccio, Leslie, 2022)).
+</p>
+
+<p>
+(McKenzie, Paige L. and Maltenfort, Mitchell and Bruckner, Anna L. and Gupta, Deepti and Harfmann, Katya L. and Hyde, Patrice and Forrest, Christopher B. and Castelo-Soccio, Leslie, 2022) suggests that it affects more asian and hispanic.
+</p>
+
+<div id="outline-container-orgfa3a3fe" class="outline-2">
+<h2 id="orgfa3a3fe"><span class="section-number-2">1.</span> Social aspects of Alopecia Areata</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://www.naaf.org/alopecia-areata-in-children/">Source</a> says that up to 5 years there isn't much social impact as children don't pay attention to their physical aspect and the other are not likely to notice it.
+</p>
+
+<p>
+THe issues start later ((Theresa Christensen and Jessica S. Yang and Leslie Castelo-Soccio, 2017)):
+</p>
+
+<blockquote>
+<p>
+48% of teens are embarrassed about their hair loss.
+7% said that their hair loss affected their friendships.
+59% said that they have been stared at or people have talked about them.
+52% said that their hair loss made them limit their activities.
+</p>
+
+<p>
+&#x2026;13% of children aged 12 to 14 years and 40% of teens from 15 to 19 have been bullied because of their hair loss.
+</p>
+</blockquote>
+
+<p>
+<a href="https://www.naaf.org/alopecia-areata-in-children/">Source</a> provides tips on how to deal with bullying and what parents can do to help their children.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaa23e85" class="outline-2">
+<h2 id="orgaa23e85"><span class="section-number-2">2.</span> Treatment</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+There is no cure to <a href="20250327073034-alopecia_areata.html#ID-AEE61F0D-8EEB-4535-A2C3-AB60FE3A48B7">Alopecia Areata</a>, but treatment can help on hair regrowth.
+</p>
+
+<p>
+According to (Khan Mohammad Beigi, Pooya, 2018), less than 10% of the patients with <a href="20250327073034-alopecia_areata.html#ID-AEE61F0D-8EEB-4535-A2C3-AB60FE3A48B7">Alopecia Areata</a> Universalis recover.
+</p>
+
+<p>
+(Yashpal Manchanda and Ramkumar Ramamoorthy, 2021) reviews a couple of different treatments, show their response rate, effectiviness, and side effects (<a href="https://journals.lww.com/ijpd/fulltext/2021/22040/revisiting_pediatric_alopecia_areata__newer.2.aspx">link</a>).
+</p>
+
+
+<p>
+Systemic steroids might not be a good idea for AU ((C. Stefanaki and G. Kontochristopoulos and E. Hatzidimitraki and A. Stergiopoulou and A. Katsarou and V. Vosynioti and E. Remountaki and D. Rigopoulos, 2021)):
+</p>
+
+<blockquote>
+<p>
+Apart from systemic steroids for a short period of time (6 weeks), no other systemic agents were tried in our study and those were reserved for severe cases. However, 2/5 of the children treated with systemic steroids did not have a cosmetically acceptable hair regrowth in a 3-month follow-up. Both had alopecia totalis. Patients with AA have been found to respond better to systemic steroids than patients with alopecia totalis, and a 60% response rate has been reported [9, 24, 25, 26] but most fail to maintain a sustainable result.
+</p>
+</blockquote>
+
+<p>
+Patientsd younger than 4 have poor prognosis, but better treatment response (to topical corticosteroids) (Lim, Ji-Hoon and Kwon, Soon-Hyo and Sim, Woo-Young and Lew, Bark-Lynn, 2024). The <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/exd.14991">article</a> has many results for the treatment in young patients.
+</p>
+</div>
+
+<div id="outline-container-orgb12e25d" class="outline-3">
+<h3 id="orgb12e25d"><span class="section-number-3">2.1.</span> Corticosteroids</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+According to (Rastaghi, F. and Kaveh, R. and Yazdanpanah, N. and Sahaf, A. S. and Ahramyanpour, N., 2023), there is no difference in outcomes and side effects between intravenous and oral therapy. Positive prognostic for recent onset (&lt;6 months), a younger age (&lt;10 years), and the multifocal type of AA. Negative pronostic for:
+</p>
+
+<blockquote>
+<p>
+Patients with a past medical history of atopy, nail pitting, or thyroid disease and those with severe forms of AA like alopecia totalis and alopecia universalis had the least improvement
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-orgb160252" class="outline-4">
+<h4 id="orgb160252"><span class="section-number-4">2.1.1.</span> Topical corticosteroids</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Advantan (aceponato de metilprednisolona / methylprednisolone aceponate). It should exceed 4 weeks of treatment.
+</p>
+
+<p>
+A short application period typicall goes from 2-4 weeks. There are risks of applying it, like making the skin thinner and getting corticosteroids into the blood stream. There are side effects like compromising the cortisol or delaying growth (for children).
+</p>
+
+<p>
+Efficacy, from (Friedli, A. and Labarthe, M. P. and Engelhardt, E. and Feldmann, R. and Salomon, D. and Saurat, J. H., 1998):
+</p>
+
+<blockquote>
+<p>
+In patients with universalis and totalis AA (n = 15), no total regrowth was observed initially; 8 patients had no response, and 3 showed 50% to 90% regrowth at I month, with subsequent improvement at 3 and 6 months. In 4 patients who did not show an initial response, a significant (90% to 100%) delayed regrowth was observed between 9 and 16 months after the pulse therapy.
+</p>
+</blockquote>
+
+<p>
+From (Assouly, P. and Reygagne, P. and Jouanique, C. and Matard, B. and Marechal, E. and Reynert, P. and Bachelez, H. and Dubertret, L., 2003):
+</p>
+
+<blockquote>
+<p>
+Results: Ophiasic alopecia areata did not respond to treatment. A quarter of patients presenting universal alopecia had a good response (higher than 80 p. 100) followed by a relapse in half the cases. Half of the patients presenting alopecia totalis had a good response, which was maintained three times out of four. Multifocal alopecia areata seems the best indication since the patients under study presented a good response in 63.8 p. 100 of cases (78 p. 100 when it was a first episode and 90.5 p. 100 if the treatment had been started in less than 3 months before). The repetition of the pulses did not appear to increase the number of responders.
+</p>
+</blockquote>
+
+<p>
+From (Nakajima, T. and Inui, S. and Itami, S., 2007):
+</p>
+
+<blockquote>
+<p>
+Method: A total of 139 severe AA patients aged &gt;15 years were included in this study. The duration from the onset of active hair loss was within 12 months for 125 (89.9%) of those patients.
+</p>
+
+<p>
+Results: Of the patients, 72.7% had hair loss on &gt; 50% of their scalp area. Among the recent-onset group (duration of AA &lt; or = 6 months), 59.4% were good responders (&gt; 75% regrowth of alopecia lesions), while 15.8% with &gt; 6 months duration showed a good response. Recent-onset AA patients with less severe disease (&lt; or = 50% hair loss) responded at a rate of 88.0%, but only 21.4% of recent-onset patients with 100% hair loss responded. No serious adverse effects were observed.
+</p>
+</blockquote>
+
+<p>
+(Im, M. and Lee, S. S. and Lee, Y. and Kim, C. D. and Seo, Y. J. and Lee, J. H. and Park, J. K., 2011) shows the same factors affecting the efficiency: the less severe the case, the better the chances; the shorter the time between the onset, the better the chance.
+</p>
+
+<blockquote>
+<p>
+The prognostic factors that influenced successful outcome were the disease duration before treatment and the type of alopecia areata. Based on these two factors, a good response was obtained for all types of alopecia areata with a duration of 3months or less before treatment and for the plurifocal type of alopecia areata with a duration of 4-6months. Methylprednisolone pulse therapy is indicated for those alopecia areata patients who fall within our good response group.
+</p>
+</blockquote>
+</div>
+</div>
+
+
+
+<div id="outline-container-org33cbd56" class="outline-4">
+<h4 id="org33cbd56"><span class="section-number-4">2.1.2.</span> Intralesional corticosteroids</h4>
+</div>
+<div id="outline-container-org1e8a1a7" class="outline-4">
+<h4 id="org1e8a1a7"><span class="section-number-4">2.1.3.</span> Systemic corticosteroids</h4>
+<div class="outline-text-4" id="text-2-1-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgf528e83"></a>Oral corticosteroids<br />
+<div class="outline-text-5" id="text-2-1-3-1">
+<p>
+Systemic steroids might not be a good idea for AU ((C. Stefanaki and G. Kontochristopoulos and E. Hatzidimitraki and A. Stergiopoulou and A. Katsarou and V. Vosynioti and E. Remountaki and D. Rigopoulos, 2021)):
+</p>
+
+<blockquote>
+<p>
+Apart from systemic steroids for a short period of time (6 weeks), no other systemic agents were tried in our study and those were reserved for severe cases. However, 2/5 of the children treated with systemic steroids did not have a cosmetically acceptable hair regrowth in a 3-month follow-up. Both had alopecia totalis. Patients with AA have been found to respond better to systemic steroids than patients with alopecia totalis, and a 60% response rate has been reported [9, 24, 25, 26] but most fail to maintain a sustainable result.
+</p>
+</blockquote>
+
+
+<p>
+According to (S{\'a}nchez-D{\'i}az, M and Montero-Vilchez, T and Bueno-Rodriguez, A and Molina-Leyva, A and Arias-Santiago, S, 2022), the early onset and hypothyroidism comorbidity decreases the chances of oral corticosteroids pulses (dexamethasone) to be effective:
+</p>
+
+<blockquote>
+<p>
+An overall significant and progressive decrease of the SALT score was found during treatment: SALT-50 response was achieved after 9 months in 51.8% of the patients. Hypothyroidism and early age of onset were predictors of the lack of response to treatment. The treatment combination with oral minoxidil showed no effect on the SALT score reduction. Dexamethasone daily and cumulative dose were associated with a higher percentage of side effects. To conclude, the mini-pulse oral corticosteroids treatment is an effective treatment for AA, although patients with an early onset of the disease and hypothyroidism may not benefit
+</p>
+</blockquote>
+
+
+
+<div id="org895a024" class="figure">
+<p><img src="../images/org-roam/screen_20250401_045804.jpg" alt="screen_20250401_045804.jpg" />
+</p>
+</div>
+
+
+<p>
+Shorter time from onset to treatment also appears here as a positive factor for response:
+</p>
+
+
+<div id="orged4b322" class="figure">
+<p><img src="../images/org-roam/screen_20250401_050008.jpg" alt="screen_20250401_050008.jpg" />
+</p>
+</div>
+
+
+
+<div id="orgad23ece" class="figure">
+<p><img src="../images/org-roam/screen_20250401_050855.jpg" alt="screen_20250401_050855.jpg" />
+</p>
+</div>
+
+
+<p>
+(Rastaghi, F. and Kaveh, R. and Yazdanpanah, N. and Sahaf, A. S. and Ahramyanpour, N., 2023) brings many results from different systemic treatments.
+</p>
+</div>
+</li>
+
+<li><a id="org21a5e8c"></a>Intravenous corticosteroids<br />
+<div class="outline-text-5" id="text-2-1-3-2">
+<p>
+From (Senila, S. C. and Danescu, S. A. and Ungureanu, L. and Candrea, E. and Cosgarea, R. M., 2015):
+</p>
+
+<blockquote>
+<p>
+Results: Of 32 patients, 26 (81.3%) reported a clinical response. Four patients (12.5%) showed complete hair regrowth, 6 patients (18.8%) showed &gt;50% hair regrowth, ten (31.3%) had &lt;50% hair regrowth, 6 (18.75%) were non responders, and another 6 patients (18.8%) had relapse after an initial regrowth. Multivariate analysis revealed that patients reporting at the first episode and those with multifocal disease had the best results.
+</p>
+</blockquote>
+
+<p>
+Three positive prognostic factors identified in (Friedland, R. and Tal, R. and Lapidoth, M. and Zvulunov, A. and Ben Amitai, D., 2013):
+</p>
+
+<blockquote>
+<p>
+short disease duration (≤6 months), younger age at disease onset (&lt;10 years) and multifocal disease (as opposed to severe, diffuse variants).
+</p>
+</blockquote>
+
+<p>
+Their results:
+</p>
+
+<blockquote>
+<p>
+Results: The sample included 24 children (16 female, 8 male) with a mean age of 8.5 ± 4.6 years at diagnosis; 8 (33%) had multifocal disease,10 (42%) multifocal disease with ophiasis, 4 (17%) alopecia totalis and 2 (8%) alopecia universalis. Nail involvement was noted in 9 patients (38%). Mean duration of disease was 22 ± 27 months. Patients were treated with 8 mg/kg body weight intravenous methylprednisolone on 3 consecutive days at 1-month intervals. After a mean of 5.65 ± 1.95 courses, 9 patients (38%) had a complete response, 7 (29%) a partial response and 8 (33%) no response. Of the 16 responders, 13 (81%) relapsed at 9.5 ± 12 months after the last course; 3 patients had side effects, none of which were severe.
+</p>
+</blockquote>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga20a2d1" class="outline-3">
+<h3 id="orga20a2d1"><span class="section-number-3">2.2.</span> Contact immunotherapy</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Topical irritants, topical immunotherapy
+</p>
+
+<blockquote>
+<p>
+<b><b>Contact immunotherapy</b></b> is a medical treatment that involves the application of an irritant substance (often a chemical) to the skin to stimulate the immune system. It is typically used to treat certain skin conditions, particularly <b><b>alopecia areata</b></b>, a form of hair loss where the immune system attacks hair follicles.
+</p>
+
+<p>
+In the context of <b><b>alopecia areata</b></b>, <b><b>contact immunotherapy</b></b> works by provoking a mild allergic reaction on the skin, which in turn triggers an immune response that can alter the activity of the immune system. This immune response may help to stop the immune system from attacking the hair follicles, allowing for hair regrowth.
+</p>
+
+<p>
+### How it Works:
+</p>
+<ul class="org-ul">
+<li>A chemical agent, such as <b><b>diphenylcyclopropenone (DPCP)</b></b> or <b><b>squaric acid dibutylester (SADBE)</b></b>, is applied to the affected area of the skin.</li>
+<li>The chemical causes a controlled allergic reaction (contact dermatitis), which is a mild inflammatory response.</li>
+<li>The idea is that the immune system, in responding to this reaction, will shift its focus away from attacking the hair follicles, potentially allowing hair to grow back.</li>
+</ul>
+
+<p>
+### Effectiveness:
+</p>
+<ul class="org-ul">
+<li>Contact immunotherapy has been shown to be effective in some patients with <b><b>alopecia areata</b></b>, leading to regrowth of hair. However, the treatment doesn’t work for everyone, and it may take several months to see results.</li>
+<li>It is not a permanent cure, and hair may fall out again once the treatment is stopped.</li>
+</ul>
+
+<p>
+### Risks and Side Effects:
+</p>
+<ul class="org-ul">
+<li>The treatment can cause side effects like itching, redness, and swelling in the area where the chemical was applied.</li>
+<li>There is a risk of more severe allergic reactions, but these are rare when the procedure is done under medical supervision.</li>
+</ul>
+
+<p>
+In summary, contact immunotherapy is a treatment aimed at stimulating the immune system in a controlled way to encourage hair regrowth, particularly for conditions like alopecia areata. However, it is important to note that the effectiveness and safety of the treatment should be assessed by a healthcare provider.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgeaf4e00" class="outline-3">
+<h3 id="orgeaf4e00"><span class="section-number-3">2.3.</span> Janus Kinase (JAK) Inhibitors</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Is it safe for children? (Hamilton, Claire E. and others, 2021):
+</p>
+
+<blockquote>
+<p>
+Phase 1 studies of JAK inhibitors for the treatment of malignancy and inflammatory conditions in children have supported the potential safety of these medications and have provided dosing guidance. Randomized controlled trials in children with AA are ultimately needed to fully establish the efficacy and safety of this drug class for this patient population.
+</p>
+</blockquote>
+
+<p>
+More <a href="https://www.naaf.org/available-treatments-2/">resources</a>.
+</p>
+
+<p>
+They target the immune pathway that is responsible for hair loss in AA.
+Don't cause hair grow, but go after the immune cells preventint it.
+</p>
+
+<p>
+The JAK are proteins that send messages. So when the immune cells blocking the hair follicle need to be replaced, their message to send more immune cells there won't be received and it won't block it anymore.
+</p>
+
+<p>
+We need to block first the inflammation, then a hair needs to grow, that's why it takes a couple of months.
+</p>
+
+
+<div id="orga018b3f" class="figure">
+<p><img src="../images/org-roam/screen_20250328_060151.jpg" alt="screen_20250328_060151.jpg" />
+</p>
+</div>
+
+<p>
+Baricitinib (Olumiant): FDA-approved for paitnets 18 and older with severe AA.
+Ritlecitinib (Litfulo): FDA-approved summer 2023 for patients 12 and older with severe AA
+</p>
+
+<p>
+Others, not approved for AA, so they are still "off-label": Xeljanz, Jakafi, Rinvoq, Cibinqo (regardless of the age of patient).
+</p>
+
+<p>
+Tofacitinib (?)
+</p>
+</div>
+
+<div id="outline-container-orgd546dda" class="outline-4">
+<h4 id="orgd546dda"><span class="section-number-4">2.3.1.</span> Baricitinib (Olumiant)</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+FDA-Approved for severe AA in patients 18+ in 2022. Two doses: 2 mg or 4 mg daily. Clinical trials still going in children (2024).
+</p>
+
+<p>
+Trial result from (Brett King and Manabu Ohyama and Ohsang Kwon and Abraham Zlotogorski and Justin Ko and Natasha A. Mesinkovska and Maria Hordinsky and Yves Dutronc and Wen-Shuo Wu and Jill McCollam and Chiara Chiasserini and Guanglei Yu and Sarah Stanley and Katrin Holzwarth and Amy M. DeLozier and Rodney Sinclair , 2022), it is for severe AA:
+</p>
+
+
+<div id="orgd0ebe57" class="figure">
+<p><img src="../images/org-roam/screen_20250328_045041.jpg" alt="screen_20250328_045041.jpg" />
+</p>
+</div>
+
+<p>
+It means that 38% of the patients using 4 mg doses achieved a <a href="#org0478460">SALT</a> score of at least 20 in 36 weeks (~9 months).
+</p>
+
+<p>
+These other chart (Ohsang Kwon and Maryanne M. Senna and Rodney Sinclair and Taisuke Ito and Yves Dutronc and Chen-Yen Lin and Guanglei Yu and Chiara Chiasserini and Jill McCollam and Wen-Shuo Wu and Brett King, 2023) from  show it for 52 weeks period (severe AA):
+</p>
+
+
+<div id="org6776ba6" class="figure">
+<p><img src="../images/org-roam/screen_20250328_045559.jpg" alt="screen_20250328_045559.jpg" />
+</p>
+</div>
+
+
+<p>
+Not everyone responds and it takes a <b>long time</b>.
+</p>
+
+<p>
+Examples from clinical trial:
+</p>
+
+
+<div id="orge365fa0" class="figure">
+<p><img src="../images/org-roam/screen_20250328_050123.jpg" alt="screen_20250328_050123.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org377450d" class="outline-4">
+<h4 id="org377450d"><span class="section-number-4">2.3.2.</span> Ritlecitinib (Litfulo)</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+FDA-approved for severe AA in patients 12+ in 2023.
+One dose: 50mg daily.
+JAK3/TEC inhibitor.
+</p>
+
+<p>
+(Brett King and Xingqi Zhang and Walter Gubelin Harcha and Jacek C. Szepietowski and Jerry Shapiro and Charles Lynde and Natasha A. Mesinkovska and Samuel H. Zwillich and Lynne Napatalung and Dalia Wajsbrot and Rana Fayyad and Amy Freyman and Debanjali Mitra and Vivek Purohit and Rodney Sinclair and Robert Wolk, 2023) results:
+</p>
+
+
+<div id="org7eeeddb" class="figure">
+<p><img src="../images/org-roam/screen_20250328_050710.jpg" alt="screen_20250328_050710.jpg" />
+</p>
+</div>
+
+<p>
+Which means that the percentage of patients getting at least a <a href="#org0478460">SALT</a> of 20 in 24 weeks is 23% and in 48 weeks is 43%.
+</p>
+
+<p>
+From (Maria Hordinsky and Adelaide A. Hebert and Melinda Gooderham and Ohsang Kwon and Nikolay Murashkin and Hong Fang and Kazumi Harada and Eric Law and Dalia Wajsbrot and Lillian Takiya and Samuel H. Zwillich and Robert Wolk and Hien Tran, 2023) (notice 50mg is the dose recommended):
+</p>
+
+
+
+<div id="orge54381b" class="figure">
+<p><img src="../images/org-roam/2025-03-28_05-19-14_screenshot.png" alt="2025-03-28_05-19-14_screenshot.png" />
+</p>
+</div>
+
+<p>
+24 weeks: 25%, 48 weeks: 50%.
+</p>
+
+<p>
+From King AAD 2022 annual meeting:
+</p>
+
+
+<div id="orgcb4e07f" class="figure">
+<p><img src="../images/org-roam/screen_20250328_060756.jpg" alt="screen_20250328_060756.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org327a533" class="outline-4">
+<h4 id="org327a533"><span class="section-number-4">2.3.3.</span> Tofacitinib</h4>
+<div class="outline-text-4" id="text-2-3-3">
+
+<div id="org920d0ec" class="figure">
+<p><img src="../images/org-roam/screen_20250328_060457.jpg" alt="screen_20250328_060457.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6b90e83" class="outline-4">
+<h4 id="org6b90e83"><span class="section-number-4">2.3.4.</span> Factors influnce response</h4>
+<div class="outline-text-4" id="text-2-3-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgf262bde"></a>Baseline severity<br />
+<div class="outline-text-5" id="text-2-3-4-1">
+<p>
+Baseline severity: Severe AA as 50-94 <a href="#org0478460">SALT</a> and Very severe AA as 95-100 <a href="#org0478460">SALT</a> (Taylor et al. AAD Meeting 2022):
+</p>
+
+
+<div id="org62dd580" class="figure">
+<p><img src="../images/org-roam/screen_20250328_052430.jpg" alt="screen_20250328_052430.jpg" />
+</p>
+</div>
+
+<p>
+It is harder to recover from a more severe case.
+</p>
+</div>
+</li>
+
+<li><a id="org88b5b96"></a>Duration of current episode<br />
+<div class="outline-text-5" id="text-2-3-4-2">
+<p>
+Duration of current episode. It is the length of time since the hair loss. Example: 20 year old. First pach: age 10, lost all hair: age 15. Duration of disease is 10 years, duration of current episode is 5 years.
+</p>
+
+<p>
+(Brett King and Xingqi Zhang and Walter Gubelin Harcha and Jacek C. Szepietowski and Jerry Shapiro and Charles Lynde and Natasha A. Mesinkovska and Samuel H. Zwillich and Lynne Napatalung and Dalia Wajsbrot and Rana Fayyad and Amy Freyman and Debanjali Mitra and Vivek Purohit and Rodney Sinclair and Robert Wolk, 2023) (King et al AAD 2023):
+</p>
+
+
+<div id="org290a38e" class="figure">
+<p><img src="../images/org-roam/screen_20250328_054307.jpg" alt="screen_20250328_054307.jpg" />
+</p>
+</div>
+
+<p>
+Patients with current episodes of less than 4 years respond better.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org4226c19" class="outline-4">
+<h4 id="org4226c19"><span class="section-number-4">2.3.5.</span> Topical JAK inhibitors</h4>
+<div class="outline-text-4" id="text-2-3-5">
+<p>
+The clinical trials have not shown significant benefits over placebo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf779641" class="outline-4">
+<h4 id="orgf779641"><span class="section-number-4">2.3.6.</span> Kids under 12</h4>
+<div class="outline-text-4" id="text-2-3-6">
+<p>
+Xeljanz is approved for arthritis ages 2+.
+Olumiant approved in Europe for juvenile arthritis ages 2+.
+</p>
+
+<p>
+If used for AA, it is considered off-label. FDA approvals are subject to a specific disease and age.
+</p>
+
+<p>
+You can find trials in clinicaltrials.gov
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84c8e1e" class="outline-4">
+<h4 id="org84c8e1e"><span class="section-number-4">2.3.7.</span> What to expect</h4>
+<div class="outline-text-4" id="text-2-3-7">
+<p>
+Regrowth should start by ~3-4 months
+Complete scalp hair regrowth over 9-12 months.
+Scalps responds better/earlier than eyebrowns and eyelashes.
+</p>
+
+<p>
+There isn't even a decision to make before 6 months, you need to take it and wait.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7ac1df1" class="outline-4">
+<h4 id="org7ac1df1"><span class="section-number-4">2.3.8.</span> <b>Treatment is likely necessary for maintenance of hair regrowth</b></h4>
+<div class="outline-text-4" id="text-2-3-8">
+<p>
+Only 20% of people who achived regrowth could keep it after 2 years when hey stopped treatment. From (King, Brett and Ko, Justin and Kwon, Ohsang and Vañó-Galván, Sergio and Piraccini, Bianca Maria and Dutronc, Yves and Yu, Guanglei and Liu, Chunyuan and Somani, Najwa and Ball, Susan and Mesinkovska, Natasha A., 2024):
+</p>
+
+
+<div id="org37e0779" class="figure">
+<p><img src="../images/org-roam/screen_20250328_061612.jpg" alt="screen_20250328_061612.jpg" />
+</p>
+</div>
+
+
+<p>
+Even if you keep it, you will have a little bit of activity and spots.
+</p>
+
+<p>
+Hair loss happens weeks/months after stopping it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5742bc2" class="outline-4">
+<h4 id="org5742bc2"><span class="section-number-4">2.3.9.</span> Decreasing the dose after complete hair regrowth will make it likely to losing the hair again</h4>
+<div class="outline-text-4" id="text-2-3-9">
+<p>
+Take people from the clinical trial that achieved regrowth.
+</p>
+
+
+<div id="org3415372" class="figure">
+<p><img src="../images/org-roam/screen_20250328_062309.jpg" alt="screen_20250328_062309.jpg" />
+</p>
+</div>
+
+<p>
+Big dose changes are bad.
+</p>
+
+<p>
+10-20% maintained the hair after a 1 after stopping the treatment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge19546f" class="outline-4">
+<h4 id="orge19546f"><span class="section-number-4">2.3.10.</span> Failing in one JAK inhibitor does not mean the others won't work</h4>
+<div class="outline-text-4" id="text-2-3-10">
+<p>
+No research, but observations from a Brett King (<a href="https://www.youtube.com/watch?v=4FHljJ2hMEQ">source</a>).
+</p>
+
+<p>
+After the long period of observation, one can increase the dose. Or add minoxidil.
+</p>
+
+
+<div id="org9d80e5c" class="figure">
+<p><img src="../images/org-roam/screen_20250328_063111.jpg" alt="screen_20250328_063111.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge27ef6e" class="outline-4">
+<h4 id="orge27ef6e"><span class="section-number-4">2.3.11.</span> Side effects</h4>
+<div class="outline-text-4" id="text-2-3-11">
+<p>
+Around 27 min in this <a href="https://www.youtube.com/watch?v=fCunJYJJ8hM&amp;t=3s">video</a> there is data about side effects.
+When there isn't risk factors, it seems safe.
+</p>
+
+<p>
+From <a href="https://www.bad.org.uk/pils/alopecia-areata/">BAD</a>:
+</p>
+
+<blockquote>
+<p>
+JAK inhibitors carry a risk of infection as a side effect. Tofacitinib can be used to treat patients for other conditions beyond alopecia areata. When tofacitinib has been used in some of these contexts (for example, to treat people with rheumatoid arthritis), it has been linked with higher rates of heart-related events, cancers, blood clots and serious infections. Although it is very unclear whether people treated with tofacitinib or other JAK inhibitors for AA will also be at elevated risk of these conditions, the regulatory authorities have nevertheless issued a ‘box warning’ for doctors and patients to be cautious when using JAK inhibitors for any condition.
+</p>
+</blockquote>
+
+
+<p>
+About safety of JAK inhibitors, see (Maria Hordinsky and Adelaide A. Hebert and Melinda Gooderham and Ohsang Kwon and Nikolay Murashkin and Hong Fang and Kazumi Harada and Eric Law and Dalia Wajsbrot and Lillian Takiya and Samuel H. Zwillich and Robert Wolk and Hien Tran, 2023).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf86034" class="outline-3">
+<h3 id="orgdf86034"><span class="section-number-3">2.4.</span> Minoxidil</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Topical available. Oral by prescription.
+More beneficial as an add-on to a treatment.
+</p>
+
+<p>
+Pulsed prednisone plus oral minoxidil:
+</p>
+
+
+<div id="org682aba1" class="figure">
+<p><img src="../images/org-roam/screen_20250328_061202.jpg" alt="screen_20250328_061202.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5c9aa6c" class="outline-3">
+<h3 id="org5c9aa6c"><span class="section-number-3">2.5.</span> Dupilumab (Dupixent)</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Injectable. FDA-approved for eczema, asthma, and other diseases. Not immunosupressant, favorable for safety profile.
+</p>
+
+<p>
+Reports of improvements, but also for worsening AA.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9dc874d" class="outline-2">
+<h2 id="org9dc874d"><span class="section-number-2">3.</span> Comorbidities</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="20250327083021-atopic_dermatitis.html#ID-076C1845-85FF-45E6-B48D-82492EF42F2C">Atopic dermatitis</a> is more common in children up to 10 yeas old.
+</p>
+
+<p>
+(Vidya Yadav and Vibhu Mendiratta and Shalini Malik and Soumya Tiwari and Kavita Gaur, 2024):
+</p>
+
+<blockquote>
+<p>
+Commonly reported association of AU includes autoimmune diseases such as vitiligo, atopic dermatitis, and hypothyroidism;
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org21c7cc2" class="outline-2">
+<h2 id="org21c7cc2"><span class="section-number-2">4.</span> Causes</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Causes are not well understood (<a href="https://www.youtube.com/watch?v=07NdGOthJf8&amp;t=469s">source</a>). It has genetic predisposition and environment factors. You have identical twins with different severities of AA.
+</p>
+
+<p>
+An inflammation of the follicle makes the immune system to attack it. There is no connection to food and diet (<a href="https://www.bad.org.uk/pils/alopecia-areata/">source</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org070157b" class="outline-2">
+<h2 id="org070157b"><span class="section-number-2">5.</span> Second order complications</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+If it affects the eyebrowns, it can generate dry eyes. Some people develop small pits in their nails.
+</p>
+
+<p>
+One needs to protect the scalp from the sunlight.  It also protects it from scratches.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb954ff" class="outline-2">
+<h2 id="orgcb954ff"><span class="section-number-2">6.</span> Regrowth</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+AU has only a 10% chance of full regrowth.
+</p>
+
+<p>
+<a href="https://www.bad.org.uk/pils/alopecia-areata/">Source</a>:
+</p>
+
+<blockquote>
+<p>
+Regrowth usually starts at the centre of the bald patch with fine white hairs that thicken with time and usually regain their natural colour.
+</p>
+
+<p>
+&#x2026;
+</p>
+
+<p>
+Depending on the extent of hair loss there is a good chance that, for 4 out of 5 affected people, complete regrowth will occur within 1 year without treatment. There may, however, be further episodes of hair loss in the future. If there is very extensive hair loss from the start, the chances of it regrowing are not as high. Those with more than half the hair lost at the beginning, or with complete hair loss at any stage, have only about a 1 in 10 chance of full recovery. The chances of regrowth are lower in the following:
+</p>
+
+<ul class="org-ul">
+<li>young children,</li>
+<li>people with family history of alopecia areata or other autoimmune conditions,</li>
+<li>those with hair loss affecting the hairline at the back of the scalp,</li>
+<li>those with nail disease.</li>
+</ul>
+</blockquote>
+
+<p>
+Also, from the same source, AA affects only pigmented follicles, so white hair isn't affected.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org47f776c" class="outline-2">
+<h2 id="org47f776c"><span class="section-number-2">7.</span> Symptoms</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org0478460" class="outline-3">
+<h3 id="org0478460"><span class="section-number-3">7.1.</span> SALT</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Severity Alopecia Tool (SALT) score. To describe the severity of <a href="20250327073034-alopecia_areata.html#ID-AEE61F0D-8EEB-4535-A2C3-AB60FE3A48B7">AA</a>. A 100 is completely without hair.
+</p>
+
+
+<div id="org4cfb4aa" class="figure">
+<p><img src="../images/org-roam/2025-03-28_04-48-45_screenshot.png" alt="2025-03-28_04-48-45_screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6fd8ff7" class="outline-2">
+<h2 id="org6fd8ff7"><span class="section-number-2">8.</span> Clouston syndrome</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Aka hidrotic ectodermal dysplasia 2 (HED2).
+</p>
+
+<p>
+Characterized by partial or total <a href="20250327073034-alopecia_areata.html#ID-AEE61F0D-8EEB-4535-A2C3-AB60FE3A48B7">Alopecia Areata</a>, dystrophy of the nails, hyperpigmentation of the skin (specially in the joints), and clubbing of the fingers
+</p>
+
+<blockquote>
+<p>
+Nail Dystrophy: Nails may appear milky white in early childhood and become thick, misshapen, and separated from the nail bed.
+</p>
+
+<p>
+Alopecia: Hair may be sparse, brittle, and patchy, potentially leading to total hair loss (alopecia) by puberty.
+</p>
+
+<p>
+Palmoplantar Hyperkeratosis: Thickening of the skin on the palms and soles can develop during childhood and worsen with age.
+</p>
+
+<p>
+Other features: Hyperpigmentation of the skin, especially over the joints, and clubbing of the fingers can also occur.
+</p>
+</blockquote>
+
+<p>
+It is genetic. Most people with it has an affected parent (source, <a href="https://en.wikipedia.org/wiki/Clouston%27s_hidrotic_ectodermal_dysplasia#:~:text=Hidrotic%20ectodermal%20dysplasia%202%2C%20or,are%20seen%20early%20in%20life.">Wikipedia</a>). It is caused by GJB6 gene.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2025-04-01 Tue 05:57</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
