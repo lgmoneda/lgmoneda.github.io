@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-19 Sat 18:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Graph-based performance review (GPR)</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../org-roam/org.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Graph-based performance review (GPR)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org516a904">1. The problem</a></li>
+<li><a href="#org9f8bdf0">2. Graph-based Performance Review</a></li>
+<li><a href="#orga03cc5f">3. Information Ingestion</a></li>
+<li><a href="#org090f7dd">4. Tools for ingesting meaningful information</a></li>
+<li><a href="#org441e69c">5. Make it easy to identify someone's contribution to an initiative</a></li>
+<li><a href="#org6852a17">6. Maintenance work is easier to visualiza</a></li>
+<li><a href="#org79654c3">7. The test of the time</a></li>
+<li><a href="#org61824e0">8. Investigating high-leverage cases</a></li>
+<li><a href="#orga7fc588">9. Automated performance reports</a></li>
+<li><a href="#org62757b7">10. Peer review everything</a></li>
+<li><a href="#orga05d492">11. Automated feedback &amp; many other career supporting AI assistance features</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org516a904" class="outline-2">
+<h2 id="org516a904"><span class="section-number-2">1.</span> The problem</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The <a href="20201003153823-performance_review.html#ID-BC41A7D6-F94F-4260-9B1A-08251D32B8B1">performance review</a> is the process of evaluating people's contribution to a group's shared goal. Typically, it happens in companies where a team needs to evaluate employees' work, which is used to reward them with monetary bonuses, to promote them to another position, or to demand performance inprovements.
+</p>
+
+<p>
+There is an extensive pain points list related to them, but I will reference just a few.
+</p>
+
+<p>
+\Citet{fournier2017manager} points how we overemphasize things that happened recently (<a href="20201003154528-recency_bias.html#ID-6C177C2A-1098-49CD-8A92-FA553ED85DC2">Recency bias</a>), we don'prioritize time to prepare for it, and that we all suffer from many different biases when analyzing it. For example, contrasting people to us and using ourselves as the scale of excellence.
+</p>
+
+<p>
+According to \Citet{luu2015normdeviance}, a dysfunctional <a href="20201003153823-performance_review.html#ID-BC41A7D6-F94F-4260-9B1A-08251D32B8B1">Performance Review</a> would disproportionally reward heroism and new features while overlooking people doing critical maitenance and bug fixing, especially for <a href="20201003160753-promotion.html#ID-2556CF9A-22DC-493C-95F7-CCBF593541DD">Promotion</a>.
+</p>
+
+<p>
+\Citet{youtube:Evrg8kSnVuM} argues that the current impact isn't a function of people who were working recently in the team, or actions did in-period, but the work done way before it. <a href="20250104223538-managing_product_managers.html#ID-12853348-B2A5-4251-9CB4-3A34BF2A37F1">Current quarter results were fully baked a couple of years ago</a>. You can either recognize work from others in the impact report of someone, or not recognize how their efforts will impact in the future.
+</p>
+
+<p>
+Jeff Bezos on <a href="20250105112649-long_term_thinking.html#ID-7E843942-7833-474F-8668-B7C016CC3372">Long-term thinking</a> and <a href="20200822141434-impact.html#ID-3B412FFF-45AB-4223-82DD-2A78C4D77D96">Impact</a>:
+</p>
+
+<blockquote>
+<p>
+“When somebody… congratulates Amazon on a good quarter… I say thank you. But what I’m thinking to myself is… those quarterly results were actually pretty much fully baked about 3 years ago. Today I’m working on a quarter that is going to happen in 2020. Not next quarter. Next quarter for all practical purposes is done already and it has probably been done for a couple of years.”
+</p>
+
+<p>
+“It’s not natural for humans. So it’s a discipline you have to build. The get rich slowly schemes are not big sellers on infomercials. That’s something that you have to… teach over time,”
+</p>
+
+<ul class="org-ul">
+<li>Jeff Bezos</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+
+<div id="outline-container-org9f8bdf0" class="outline-2">
+<h2 id="org9f8bdf0"><span class="section-number-2">2.</span> Graph-based Performance Review</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I idealized a Graph-based Performance Review (GPR). A system that we represent projects, people, documents, feedback, and impact statements as a graph, offering a convenient set of tools to insert and retrieve information from it. It generates performance reports automatically and cumulatively. It enables peer review of more granular activity, and makes it convenient to assess one's performance without depending on a person's manager.
+</p>
+
+
+<div id="org1022810" class="figure">
+<p><img src="../images/org-roam/screen_20250419_135427.jpg" alt="screen_20250419_135427.jpg" style="text-align: center; margin: auto; display: block; width: 70%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 1: </span>A graph shows the relations between people, projects, and documents.</p>
+</div>
+
+<p>
+As everything these days, it has many GenAI features in potential, like automatically generating performance reports, letting people querying about a project, document, or person, and much more.
+</p>
+
+
+<div id="orga20a8e9" class="figure">
+<p><img src="../images/org-roam/screen_20250419_135241.jpg" alt="screen_20250419_135241.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Asking questions in a graph item and let the AI agent navigate it to answer.</p>
+</div>
+
+<p>
+I did a <a href="https://9000-idx-studio-1744944030159.cluster-kc2r6y3mtba5mswcmol45orivs.cloudworkstations.dev">prototype</a> to make it easier to visualize it, and I will go through the main characteristics in the following sections - though it doesn't work exactly as intended and some are not well represented in the prototype since I hit my patience budget for vibe coding.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga03cc5f" class="outline-2">
+<h2 id="orga03cc5f"><span class="section-number-2">3.</span> Information Ingestion</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+For such system to work, the information should flow to it as a natural step of accomplishing work. Thus, integrations with systems like Jira, Github, Google Drive, etc, are a must have.
+</p>
+
+<p>
+For example, either documents following a certain pattern (a tag, an identifier in the title) should go automatically to it, or pasting its link should make it be integrated with ease with auto completing for its description and linked documents.
+</p>
+
+
+<div id="orgb50d7ef" class="figure">
+<p><img src="../images/org-roam/screen_20250419_135547.jpg" alt="screen_20250419_135547.jpg" />
+</p>
+</div>
+
+<p>
+One can imagine the project granularity as a Jira epic, or being able to easily attach assets to a project elements in the form of Jira epics or GIthub repositories, which can automatically create the connections between internal projects referenced in the code.
+</p>
+
+
+<div id="org39067fe" class="figure">
+<p><img src="../images/org-roam/screen_20250419_135807.jpg" alt="screen_20250419_135807.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Projects should have a very rich representation to make their consequences clear.</p>
+</div>
+
+<p>
+The person representation also should automatically be fed by other systems that keep their information updated: team, career level, position changes, contributions, feedbacks, etc.
+</p>
+
+
+<div id="org6bde333" class="figure">
+<p><img src="../images/org-roam/screen_20250419_135913.jpg" alt="screen_20250419_135913.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Many filters could be applied in a person's view, but their profile should be cumulative to enable a more accurate picture of their contribution to the long-term success of a company.</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org090f7dd" class="outline-2">
+<h2 id="org090f7dd"><span class="section-number-2">4.</span> Tools for ingesting meaningful information</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+A big issue with feedback is that they are hard to write, so most <a href="20200810201535-feedback.html#ID-35186E93-2AD2-43DA-99F0-E4EA6F93BE1C">feedback</a> is unhelpful: they lack context, facts, effect, or what they expected instead. AI assistants can help on extracting the most of feedbacks. The same goes for "Impact statements". We can often challenge claims, request facts, evidence, and help cover the most obvious challenges people would do when assessing that claim.
+</p>
+
+
+<div id="orgbd79f2e" class="figure">
+<p><img src="../images/org-roam/screen_20250419_183431.jpg" alt="screen_20250419_183431.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Pushing people to write better feedback using AI.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org441e69c" class="outline-2">
+<h2 id="org441e69c"><span class="section-number-2">5.</span> Make it easy to identify someone's contribution to an initiative</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Even if someone creates a great impact statement for their performance report, it might lack how their involvement was important to it. Detailing it is hard because a project contains multiple people, and describing what they did is what useful to understand the scope of a certain individual.
+</p>
+
+<p>
+For example, two Data Scientists worked in a project that generated a $10M savings. Both of them will report this number in their performance review. But how should we attribute their contribution to it?
+</p>
+
+<p>
+To solve it, we need to know what the person did, and how their peers see their contribution.
+</p>
+
+
+<div id="orgfaa8c89" class="figure">
+<p><img src="../images/org-roam/screen_20250419_143241.jpg" alt="screen_20250419_143241.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 6: </span>A better naming and accessibility can help the peer review feature to provide the right weight to people's contributions</p>
+</div>
+
+<p>
+It is likely that we can automatically aggregate this information to make each person's involvement clear in a timeline of a project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6852a17" class="outline-2">
+<h2 id="org6852a17"><span class="section-number-2">6.</span> Maintenance work is easier to visualiza</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Maintaining an important project means associating yourself to a node that has many connections. One does not need major release in the period to make their work visible. Their activity to maintain an important node will be captured by the system.
+</p>
+
+
+<div id="org4982a36" class="figure">
+<p><img src="../images/org-roam/screen_20250419_143504.jpg" alt="screen_20250419_143504.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 7: </span>The ability to connect one project to another helps with the proper attribution of projects that are foundational and usually get lower visibility. Or projects that take a while until they support important initiatives and show their real value.</p>
+</div>
+
+<p>
+It can be extremely useful to internal platforms, too. Because we can link internal tools to the projects they support, showing more pratically the importance of that tool in the day to day as different people navigate the graph.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org79654c3" class="outline-2">
+<h2 id="org79654c3"><span class="section-number-2">7.</span> The test of the time</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+It is common to see rewards for leading indicators that fail short. A good system for performance evaluation should make it easy to evaluate how previous contributions evolved. It will make it easier to recognize things that take longer to deliver value, while it can also hold cases where people over sell projects in initial stages, but are unable to carry it through.
+</p>
+
+<p>
+Moreover, a performance report is generated including statements about influence and impact of documents and projects even though the person's activity that generated them happened in a previous period.
+</p>
+
+
+<p>
+&lt;IMG&gt;
+</p>
+
+<p>
+This sort of evaluation should incentivize ownership, moving people to work on importanting and lasting components. Also, helping them to see the patterns of what fails in the mid and long-term, helping individuals to improve their skills. I expect it to get people closer to the signal and exclude the noise. This is extremely important to truth seekers, people who are
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61824e0" class="outline-2">
+<h2 id="org61824e0"><span class="section-number-2">8.</span> Investigating high-leverage cases</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Promotions, especially for very senior levels, are extremely important to get right. In general, promotions are the only public reward signal a company shares about doing things right. When someone is promoted, they shape others behaviors. Thus, wrong promotions are a catastrophe.
+</p>
+
+<p>
+However, preparing promo packs is also very time-consuming, and one might not be able to make everything needed by the promo committee, or whatever process a company uses for promotion.
+</p>
+
+<p>
+We can facilitate investigation using the AI Agent and let people ask questions about a person's work.
+</p>
+
+
+<div id="org74aa0b5" class="figure">
+<p><img src="../images/org-roam/screen_20250419_180751.jpg" alt="screen_20250419_180751.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 8: </span>One can do deep dives about someone's performance and achievements for high-leverage decisions like a promotion, without generating questions to their manager.</p>
+</div>
+
+<p>
+&lt;IMG&gt;
+</p>
+
+<p>
+Filters can also help to see people doing the same kind of work in the proposed new level of an employee, making the next scope more tangible and comparable.
+</p>
+
+
+<div id="org538d15c" class="figure">
+<p><img src="../images/org-roam/screen_20250419_171232.jpg" alt="screen_20250419_171232.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Filter people by their expertise, career level, team, and find good examples of operating in different scopes.</p>
+</div>
+
+<p>
+Finally, the system itself could challenge or support a promotion nomination based on information it could extract from the graph. The AI Agent could have access to the career ladder, peer feedback, contributions, etc, and preapre it.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga7fc588" class="outline-2">
+<h2 id="orga7fc588"><span class="section-number-2">9.</span> Automated performance reports</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+After a couple of years managing people, I created an algorithm to write their performance review that I would execute manually. In general lines, I would place together all the input from different sources (activities, impact statements, peer feedback, self-assessment, my feedbacks and assessment), and find the patterns, collect the evidence, and go after some clarification.
+</p>
+
+<p>
+I think all of it can be automated and completely ease a people manager from it. A performance report generator should be available at all times, so people can also summarize their periods for checking their opportunities continuously.
+</p>
+
+
+<div id="orgb9f72f9" class="figure">
+<p><img src="../images/org-roam/screen_20250419_172255.jpg" alt="screen_20250419_172255.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 10: </span>Generate reports by choosing a period. Automatically compiles, mixes, and contrast all sources. It could also challenge what is unclear and suggesting the person or the manager going after specific information.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org62757b7" class="outline-2">
+<h2 id="org62757b7"><span class="section-number-2">10.</span> Peer review everything</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+To ensure things are grounded on reality, people can upvote or challenge many different items, like the contributions, the association of a project with a document/project, or the performance statements. We could either make everything public or think of an accessibility policy.
+</p>
+
+<p>
+This should appear in the performance review report to provide the confidence on that information, or at least to make people go investigate and demand clarification.
+</p>
+
+
+<div id="org39cd433" class="figure">
+<p><img src="../images/org-roam/screen_20250419_143834.jpg" alt="screen_20250419_143834.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Peers and other people must have a say on others contributions to ensure they are grounded on value generated to the business and to others working together. In the image, a contribution is highlighted in red because it had a challenge rate higher than 50% - a very arbitrary way of doing it.</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga05d492" class="outline-2">
+<h2 id="orga05d492"><span class="section-number-2">11.</span> Automated feedback &amp; many other career supporting AI assistance features</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+If one's work is well represented in the graph, and an AI Agent has access to it, why couldn't it feedback the person using it? It can contrast the expectations about that person work with their contributions and deliver feedback as soon as it can see a pattern.
+</p>
+
+<p>
+It can also suggest people one can talk to after it identifies someone is contributing to a particular type of project. Or projects, materials, and other resources one should look into to succeed on it.
+</p>
+
+\bibliographystyle{kluwer}
+\bibliography{/Users/luis.moneda/Dropbox/Research/library}
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2025-04-19 Sat 18:37</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
