@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-19 Sat 19:57 -->
+<!-- 2025-04-19 Sat 19:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graph-based performance review (GPR)</title>
@@ -202,24 +202,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgaa548aa">1. The problem</a></li>
-<li><a href="#orgeaf2b39">2. Graph-based Performance Review</a></li>
-<li><a href="#org5407dcf">3. Information Ingestion</a></li>
-<li><a href="#orga67927e">4. Tools for ingesting meaningful information</a></li>
-<li><a href="#org0f2b18f">5. Make it easy to identify someone's contribution to an initiative</a></li>
-<li><a href="#orgebf8efc">6. Maintenance work is easier to visualiza</a></li>
-<li><a href="#org02bbadb">7. The test of the time</a></li>
-<li><a href="#org6e93e1a">8. Investigating high-leverage cases</a></li>
-<li><a href="#org00c71b9">9. Automated performance reports</a></li>
-<li><a href="#org08a8453">10. Peer review everything</a></li>
-<li><a href="#orga0b43e2">11. Automated feedback &amp; many other career supporting AI assistance features</a></li>
-<li><a href="#org04857c0">12. References</a></li>
+<li><a href="#org0f15710">1. The problem</a></li>
+<li><a href="#orgae9f0eb">2. Graph-based Performance Review</a></li>
+<li><a href="#org944bcf6">3. Information Ingestion</a></li>
+<li><a href="#org76ea8be">4. Tools for ingesting meaningful information</a></li>
+<li><a href="#org837e07f">5. Make it easy to identify someone's contribution to an initiative</a></li>
+<li><a href="#org63beac3">6. Maintenance work is easier to visualiza</a></li>
+<li><a href="#orga3dc968">7. The test of the time</a></li>
+<li><a href="#org552f706">8. Investigating high-leverage cases</a></li>
+<li><a href="#orgee77d7a">9. Automated performance reports</a></li>
+<li><a href="#org360aae8">10. Peer review everything</a></li>
+<li><a href="#org88e4c73">11. Automated feedback &amp; many other career supporting AI assistance features</a></li>
+<li><a href="#org2955687">12. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaa548aa" class="outline-2">
-<h2 id="orgaa548aa"><span class="section-number-2">1.</span> The problem</h2>
+<div id="outline-container-org0f15710" class="outline-2">
+<h2 id="org0f15710"><span class="section-number-2">1.</span> The problem</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The <a href="20201003153823-performance_review.html#ID-BC41A7D6-F94F-4260-9B1A-08251D32B8B1">performance review</a> is the process of evaluating people's contribution to a group's shared goal. Typically, it happens in companies where a team needs to evaluate employees' work, which is used to reward them with monetary bonuses, to promote them to another position, or to demand performance inprovements.
@@ -230,21 +230,48 @@ There is an extensive pain points list related to them, but I will reference jus
 </p>
 
 <p>
-Fournier (<a href="#citeproc_bib_item_1">2017</a>) points how we overemphasize things that happened recently (<a href="20201003154528-recency_bias.html#ID-6C177C2A-1098-49CD-8A92-FA553ED85DC2">Recency bias</a>), we don'prioritize time to prepare for it, and that we all suffer from many different biases when analyzing it. For example, contrasting people to us and using ourselves as the scale of excellence.
+Fournier (<a href="#citeproc_bib_item_2">2017</a>) points how we overemphasize things that happened recently (<a href="20201003154528-recency_bias.html#ID-6C177C2A-1098-49CD-8A92-FA553ED85DC2">Recency bias</a>), we don'prioritize time to prepare for it, and that we all suffer from many different biases when analyzing it. For example, contrasting people to us and using ourselves as the scale of excellence.
 </p>
+
+<p>
+According to Luu (<a href="#citeproc_bib_item_3">2015</a>), a dysfunctional <a href="20201003153823-performance_review.html#ID-BC41A7D6-F94F-4260-9B1A-08251D32B8B1">Performance Review</a> would disproportionally reward heroism and new features while overlooking people doing critical maitenance and bug fixing, especially for <a href="20201003160753-promotion.html#ID-2556CF9A-22DC-493C-95F7-CCBF593541DD">Promotion</a>.
+</p>
+
+<p>
+Doshi (<a href="#citeproc_bib_item_1">2023</a>) argues that the current impact isn't a function of people who were working recently in the team, or actions did in-period, but the work done way before it. <a href="20250104223538-managing_product_managers.html#ID-12853348-B2A5-4251-9CB4-3A34BF2A37F1">Current quarter results were fully baked a couple of years ago</a>. You can either recognize work from others in the impact report of someone, or not recognize how their efforts will impact in the future.
+</p>
+
+<p>
+Jeff Bezos on <a href="20250105112649-long_term_thinking.html#ID-7E843942-7833-474F-8668-B7C016CC3372">Long-term thinking</a> and <a href="20200822141434-impact.html#ID-3B412FFF-45AB-4223-82DD-2A78C4D77D96">Impact</a>:
+</p>
+
+<blockquote>
+<p>
+“When somebody… congratulates Amazon on a good quarter… I say thank you. But what I’m thinking to myself is… those quarterly results were actually pretty much fully baked about 3 years ago. Today I’m working on a quarter that is going to happen in 2020. Not next quarter. Next quarter for all practical purposes is done already and it has probably been done for a couple of years.”
+</p>
+
+<p>
+“It’s not natural for humans. So it’s a discipline you have to build. The get rich slowly schemes are not big sellers on infomercials. That’s something that you have to… teach over time,”
+</p>
+
+<ul class="org-ul">
+<li>Jeff Bezos</li>
+</ul>
+</blockquote>
 </div>
 </div>
 
 
-<div id="outline-container-orgeaf2b39" class="outline-2">
-<h2 id="orgeaf2b39"><span class="section-number-2">2.</span> Graph-based Performance Review</h2>
+
+<div id="outline-container-orgae9f0eb" class="outline-2">
+<h2 id="orgae9f0eb"><span class="section-number-2">2.</span> Graph-based Performance Review</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I idealized a Graph-based Performance Review (GPR). A system that we represent projects, people, documents, feedback, and impact statements as a graph, offering a convenient set of tools to insert and retrieve information from it. It generates performance reports automatically and cumulatively. It enables peer review of more granular activity, and makes it convenient to assess one's performance without depending on a person's manager.
 </p>
 
 
-<div id="orgf80138e" class="figure">
+<div id="org509b58e" class="figure">
 <p><img src="../images/org-roam/screen_20250419_135427.jpg" alt="screen_20250419_135427.jpg" style="text-align: center; margin: auto; display: block; width: 70%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 1: </span>A graph shows the relations between people, projects, and documents.</p>
@@ -255,7 +282,7 @@ As everything these days, it has many GenAI features in potential, like automati
 </p>
 
 
-<div id="org3942a88" class="figure">
+<div id="org8246914" class="figure">
 <p><img src="../images/org-roam/screen_20250419_135241.jpg" alt="screen_20250419_135241.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Asking questions in a graph item and let the AI agent navigate it to answer.</p>
@@ -267,8 +294,8 @@ I did a <a href="https://9000-idx-studio-1744944030159.cluster-kc2r6y3mtba5mswcm
 </div>
 </div>
 
-<div id="outline-container-org5407dcf" class="outline-2">
-<h2 id="org5407dcf"><span class="section-number-2">3.</span> Information Ingestion</h2>
+<div id="outline-container-org944bcf6" class="outline-2">
+<h2 id="org944bcf6"><span class="section-number-2">3.</span> Information Ingestion</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 For such system to work, the information should flow to it as a natural step of accomplishing work. Thus, integrations with systems like Jira, Github, Google Drive, etc, are a must have.
@@ -279,7 +306,7 @@ For example, either documents following a certain pattern (a tag, an identifier 
 </p>
 
 
-<div id="org52cedd5" class="figure">
+<div id="orgf0c079d" class="figure">
 <p><img src="../images/org-roam/screen_20250419_135547.jpg" alt="screen_20250419_135547.jpg" />
 </p>
 </div>
@@ -289,7 +316,7 @@ One can imagine the project granularity as a Jira epic, or being able to easily 
 </p>
 
 
-<div id="org36618bb" class="figure">
+<div id="org18e5e7b" class="figure">
 <p><img src="../images/org-roam/screen_20250419_135807.jpg" alt="screen_20250419_135807.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Projects should have a very rich representation to make their consequences clear.</p>
@@ -300,7 +327,7 @@ The person representation also should automatically be fed by other systems that
 </p>
 
 
-<div id="org5fd5ea5" class="figure">
+<div id="org3d85d6b" class="figure">
 <p><img src="../images/org-roam/screen_20250419_135913.jpg" alt="screen_20250419_135913.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Many filters could be applied in a person's view, but their profile should be cumulative to enable a more accurate picture of their contribution to the long-term success of a company.</p>
@@ -311,15 +338,15 @@ The person representation also should automatically be fed by other systems that
 
 
 
-<div id="outline-container-orga67927e" class="outline-2">
-<h2 id="orga67927e"><span class="section-number-2">4.</span> Tools for ingesting meaningful information</h2>
+<div id="outline-container-org76ea8be" class="outline-2">
+<h2 id="org76ea8be"><span class="section-number-2">4.</span> Tools for ingesting meaningful information</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 A big issue with feedback is that they are hard to write, so most <a href="20200810201535-feedback.html#ID-35186E93-2AD2-43DA-99F0-E4EA6F93BE1C">feedback</a> is unhelpful: they lack context, facts, effect, or what they expected instead. AI assistants can help on extracting the most of feedbacks. The same goes for "Impact statements". We can often challenge claims, request facts, evidence, and help cover the most obvious challenges people would do when assessing that claim.
 </p>
 
 
-<div id="org51e0650" class="figure">
+<div id="orgbcbe8b2" class="figure">
 <p><img src="../images/org-roam/screen_20250419_183431.jpg" alt="screen_20250419_183431.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Pushing people to write better feedback using AI.</p>
@@ -327,8 +354,8 @@ A big issue with feedback is that they are hard to write, so most <a href="20200
 </div>
 </div>
 
-<div id="outline-container-org0f2b18f" class="outline-2">
-<h2 id="org0f2b18f"><span class="section-number-2">5.</span> Make it easy to identify someone's contribution to an initiative</h2>
+<div id="outline-container-org837e07f" class="outline-2">
+<h2 id="org837e07f"><span class="section-number-2">5.</span> Make it easy to identify someone's contribution to an initiative</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Even if someone creates a great impact statement for their performance report, it might lack how their involvement was important to it. Detailing it is hard because a project contains multiple people, and describing what they did is what useful to understand the scope of a certain individual.
@@ -343,7 +370,7 @@ To solve it, we need to know what the person did, and how their peers see their 
 </p>
 
 
-<div id="org4ca66e4" class="figure">
+<div id="orgd359b7c" class="figure">
 <p><img src="../images/org-roam/screen_20250419_143241.jpg" alt="screen_20250419_143241.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 6: </span>A better naming and accessibility can help the peer review feature to provide the right weight to people's contributions</p>
@@ -355,15 +382,15 @@ It is likely that we can automatically aggregate this information to make each p
 </div>
 </div>
 
-<div id="outline-container-orgebf8efc" class="outline-2">
-<h2 id="orgebf8efc"><span class="section-number-2">6.</span> Maintenance work is easier to visualiza</h2>
+<div id="outline-container-org63beac3" class="outline-2">
+<h2 id="org63beac3"><span class="section-number-2">6.</span> Maintenance work is easier to visualiza</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Maintaining an important project means associating yourself to a node that has many connections. One does not need major release in the period to make their work visible. Their activity to maintain an important node will be captured by the system.
 </p>
 
 
-<div id="orga2765e7" class="figure">
+<div id="org007b8a5" class="figure">
 <p><img src="../images/org-roam/screen_20250419_143504.jpg" alt="screen_20250419_143504.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 7: </span>The ability to connect one project to another helps with the proper attribution of projects that are foundational and usually get lower visibility. Or projects that take a while until they support important initiatives and show their real value.</p>
@@ -375,8 +402,8 @@ It can be extremely useful to internal platforms, too. Because we can link inter
 </div>
 </div>
 
-<div id="outline-container-org02bbadb" class="outline-2">
-<h2 id="org02bbadb"><span class="section-number-2">7.</span> The test of the time</h2>
+<div id="outline-container-orga3dc968" class="outline-2">
+<h2 id="orga3dc968"><span class="section-number-2">7.</span> The test of the time</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 It is common to see rewards for leading indicators that fail short. A good system for performance evaluation should make it easy to evaluate how previous contributions evolved. It will make it easier to recognize things that take longer to deliver value, while it can also hold cases where people over sell projects in initial stages, but are unable to carry it through.
@@ -392,8 +419,8 @@ This sort of evaluation should incentivize ownership, moving people to work on i
 </div>
 </div>
 
-<div id="outline-container-org6e93e1a" class="outline-2">
-<h2 id="org6e93e1a"><span class="section-number-2">8.</span> Investigating high-leverage cases</h2>
+<div id="outline-container-org552f706" class="outline-2">
+<h2 id="org552f706"><span class="section-number-2">8.</span> Investigating high-leverage cases</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 Promotions, especially for very senior levels, are extremely important to get right. In general, promotions are the only public reward signal a company shares about doing things right. When someone is promoted, they shape others behaviors. Thus, wrong promotions are a catastrophe.
@@ -408,7 +435,7 @@ We can facilitate investigation using the AI Agent and let people ask questions 
 </p>
 
 
-<div id="org1e07ff6" class="figure">
+<div id="orgeb05106" class="figure">
 <p><img src="../images/org-roam/screen_20250419_180751.jpg" alt="screen_20250419_180751.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 8: </span>One can do deep dives about someone's performance and achievements for high-leverage decisions like a promotion, without generating questions to their manager.</p>
@@ -419,7 +446,7 @@ Filters can also help to see people doing the same kind of work in the proposed 
 </p>
 
 
-<div id="orgac07ef3" class="figure">
+<div id="org833ac66" class="figure">
 <p><img src="../images/org-roam/screen_20250419_171232.jpg" alt="screen_20250419_171232.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 9: </span>Filter people by their expertise, career level, team, and find good examples of operating in different scopes.</p>
@@ -432,8 +459,8 @@ Finally, the system itself could challenge or support a promotion nomination bas
 </div>
 
 
-<div id="outline-container-org00c71b9" class="outline-2">
-<h2 id="org00c71b9"><span class="section-number-2">9.</span> Automated performance reports</h2>
+<div id="outline-container-orgee77d7a" class="outline-2">
+<h2 id="orgee77d7a"><span class="section-number-2">9.</span> Automated performance reports</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 After a couple of years managing people, I created an algorithm to write their performance review that I would execute manually. In general lines, I would place together all the input from different sources (activities, impact statements, peer feedback, self-assessment, my feedbacks and assessment), and find the patterns, collect the evidence, and go after some clarification.
@@ -444,7 +471,7 @@ I think all of it can be automated and completely ease a people manager from it.
 </p>
 
 
-<div id="org66df309" class="figure">
+<div id="orga23d7a2" class="figure">
 <p><img src="../images/org-roam/screen_20250419_172255.jpg" alt="screen_20250419_172255.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 10: </span>Generate reports by choosing a period. Automatically compiles, mixes, and contrast all sources. It could also challenge what is unclear and suggesting the person or the manager going after specific information.</p>
@@ -452,8 +479,8 @@ I think all of it can be automated and completely ease a people manager from it.
 </div>
 </div>
 
-<div id="outline-container-org08a8453" class="outline-2">
-<h2 id="org08a8453"><span class="section-number-2">10.</span> Peer review everything</h2>
+<div id="outline-container-org360aae8" class="outline-2">
+<h2 id="org360aae8"><span class="section-number-2">10.</span> Peer review everything</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 To ensure things are grounded on reality, people can upvote or challenge many different items, like the contributions, the association of a project with a document/project, or the performance statements. We could either make everything public or think of an accessibility policy.
@@ -464,7 +491,7 @@ This should appear in the performance review report to provide the confidence on
 </p>
 
 
-<div id="orgb4d3966" class="figure">
+<div id="org3aef5b0" class="figure">
 <p><img src="../images/org-roam/screen_20250419_143834.jpg" alt="screen_20250419_143834.jpg" style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" />
 </p>
 <p><span class="figure-number">Figure 11: </span>Peers and other people must have a say on others contributions to ensure they are grounded on value generated to the business and to others working together. In the image, a contribution is highlighted in red because it had a challenge rate higher than 50% - a very arbitrary way of doing it.</p>
@@ -473,8 +500,8 @@ This should appear in the performance review report to provide the confidence on
 </div>
 
 
-<div id="outline-container-orga0b43e2" class="outline-2">
-<h2 id="orga0b43e2"><span class="section-number-2">11.</span> Automated feedback &amp; many other career supporting AI assistance features</h2>
+<div id="outline-container-org88e4c73" class="outline-2">
+<h2 id="org88e4c73"><span class="section-number-2">11.</span> Automated feedback &amp; many other career supporting AI assistance features</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 If one's work is well represented in the graph, and an AI Agent has access to it, why couldn't it feedback the person using it? It can contrast the expectations about that person work with their contributions and deliver feedback as soon as it can see a pattern.
@@ -486,18 +513,20 @@ It can also suggest people one can talk to after it identifies someone is contri
 </div>
 </div>
 
-<div id="outline-container-org04857c0" class="outline-2">
-<h2 id="org04857c0"><span class="section-number-2">12.</span> References</h2>
+<div id="outline-container-org2955687" class="outline-2">
+<h2 id="org2955687"><span class="section-number-2">12.</span> References</h2>
 <div class="outline-text-2" id="text-12">
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Fournier, Camille. 2017. <i>The Manager’s Path: A Guide for Tech Leaders Navigating Growth and Change</i>. O’Reilly Media, Inc.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Doshi, Shreyas. 2023. “Problems with Pm Promotion Philosophies.” https://www.youtube.com/watch?v=Evrg8kSnVuM&#38;list=PLzfYJRxoAGo7sYKz5s8pTuIu0eHmNqVbm&#38;index=4.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Fournier, Camille. 2017. <i>The Manager’s Path: A Guide for Tech Leaders Navigating Growth and Change</i>. O’Reilly Media, Inc.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Luu, Dan. 2015. “Normalization of Deviance.” https://danluu.com/wat/.</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Luis Moneda</p>
-<p class="date">Created: 2025-04-19 Sat 19:57</p>
+<p class="date">Created: 2025-04-19 Sat 19:58</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
