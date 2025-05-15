@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-15 Thu 11:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Experimenting aider in a org file</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../org-roam/org.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Experimenting aider in a org file</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6a54367">1. Math functions</a>
+<ul>
+<li><a href="#org320c22d">1.1. Power</a></li>
+</ul>
+</li>
+<li><a href="#org0348c6a">2. Diagrams</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org3c905d4">2.0.1. Testing power</a></li>
+</ul>
+</li>
+<li><a href="#org9ec78f1">2.1. hello</a>
+<ul>
+<li><a href="#orgf47b60d">2.1.1. Testing hello</a></li>
+</ul>
+</li>
+<li><a href="#org20f5da9">2.2. hello<sub>power</sub></a>
+<ul>
+<li><a href="#orgde5dd50">2.2.1. Testing hello<sub>power</sub></a></li>
+</ul>
+</li>
+<li><a href="#org1b20711">2.3. Making a fancy thing</a></li>
+<li><a href="#org3794dd7">2.4. Implementation of the L2 norm.</a>
+<ul>
+<li><a href="#org1e0a723">2.4.1. Testing L2 norm</a></li>
+</ul>
+</li>
+<li><a href="#org241fbb6">2.5. Vector Operations</a>
+<ul>
+<li><a href="#orgf963628">2.5.1. Testing dot product</a></li>
+</ul>
+</li>
+<li><a href="#org41b9e30">2.6. Vector Normalization</a>
+<ul>
+<li><a href="#org3c5eabf">2.6.1. Testing vector normalization</a></li>
+</ul>
+</li>
+<li><a href="#org3c53ad3">2.7. Distance Calculation</a>
+<ul>
+<li><a href="#org0cb0a38">2.7.1. Testing distance calculation</a></li>
+</ul>
+</li>
+<li><a href="#orgd8f6fbc">2.8. Goodbye</a>
+<ul>
+<li><a href="#org21bfbbb">2.8.1. Testing goodbye</a></li>
+</ul>
+</li>
+<li><a href="#orgd5e6987">2.9. Preparing the data</a>
+<ul>
+<li><a href="#org2f3204d">2.9.1. Load the 20newsgroup dataset from scikit learn datasets</a></li>
+<li><a href="#org4acfca8">2.9.2. Splits the dataset into test and train</a></li>
+<li><a href="#orgb89044a">2.9.3. Apply TF-IDF to it</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+This is a test file.
+</p>
+
+<div id="outline-container-org6a54367" class="outline-2">
+<h2 id="org6a54367"><span class="section-number-2">1.</span> Math functions</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org320c22d" class="outline-3">
+<h3 id="org320c22d"><span class="section-number-3">1.1.</span> Power</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+This function is useful for <a href="20210619161002-mathematics.html#ID-086E0C1C-8069-4C02-8822-9325752D9F48">Mathematics</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> power(a, b):
+    <span style="color: #5c3e99;">return</span> a ** b
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0348c6a" class="outline-2">
+<h2 id="org0348c6a"><span class="section-number-2">2.</span> Diagrams</h2>
+<div class="outline-text-2" id="text-2">
+
+<div id="org8b5f3b3" class="figure">
+<p><img src="../images/org-roam/functions_diagram.png" alt="../images/org-roam/functions_diagram.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3c905d4" class="outline-4">
+<h4 id="org3c905d4"><span class="section-number-4">2.0.1.</span> Testing power</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<p>
+\[x = 1\]
+</p>
+
+<p>
+<a href="20210621114614-dive_into_deep_learning.html#ID-01F7F9EC-917B-4D6B-9D06-852D9CC8367F">L2 norm</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">assert</span> power(2, 2) == 4
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ec78f1" class="outline-3">
+<h3 id="org9ec78f1"><span class="section-number-3">2.1.</span> hello</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> hello(name):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Returns a greeting message with the provided name.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    name : str</span>
+<span style="color: #585c60;">        The name to include in the greeting</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    str</span>
+<span style="color: #585c60;">        A greeting string in the format "Hello, {name}"</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"Hello, "</span> + name
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf47b60d" class="outline-4">
+<h4 id="orgf47b60d"><span class="section-number-4">2.1.1.</span> Testing hello</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python">hello(<span style="color: #54433a;">"Luis"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Hello, Luis
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org20f5da9" class="outline-3">
+<h3 id="org20f5da9"><span class="section-number-3">2.2.</span> hello<sub>power</sub></h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> hello_power(name):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Returns a greeting message with the provided name and the power of 2 of the name length.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    name : str</span>
+<span style="color: #585c60;">        The name to include in the greeting</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    str</span>
+<span style="color: #585c60;">        A greeting string that includes the name and the power of 2 of the name length</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #2e3338;">greeting</span> = hello(name)
+    <span style="color: #2e3338;">name_length</span> = <span style="color: #5c3e99;">len</span>(name)
+    <span style="color: #2e3338;">name_length_squared</span> = power(name_length, 2)
+    <span style="color: #5c3e99;">return</span> f<span style="color: #54433a;">"</span>{greeting}<span style="color: #54433a;">! The square of your name length (</span>{name_length}<span style="color: #54433a;">) is </span>{name_length_squared}<span style="color: #54433a;">."</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgde5dd50" class="outline-4">
+<h4 id="orgde5dd50"><span class="section-number-4">2.2.1.</span> Testing hello<sub>power</sub></h4>
+<div class="outline-text-4" id="text-2-2-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python">hello_power(<span style="color: #54433a;">"Luis"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Hello, Luis! The square of your name length (4) is 16.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b20711" class="outline-3">
+<h3 id="org1b20711"><span class="section-number-3">2.3.</span> Making a fancy thing</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+I will try to make a fancy thing here!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> add_numbers(a, b):
+    <span style="color: #585c60;"># </span><span style="color: #585c60;">This function is supposed to return the sum of a and b</span>
+    <span style="color: #2e3338;">result</span> = a + b  <span style="color: #585c60;"># </span><span style="color: #585c60;">Fixed: now using addition as intended</span>
+    <span style="color: #5c3e99;">return</span> result
+
+
+<span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"The sum of 5 and 4 is: </span>{add_numbers(5, 4)}<span style="color: #54433a;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+The sum of 5 and 4 is: 9
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3794dd7" class="outline-3">
+<h3 id="org3794dd7"><span class="section-number-3">2.4.</span> Implementation of the L2 norm.</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Implementing the <a href="20210621114614-dive_into_deep_learning.html#ID-01F7F9EC-917B-4D6B-9D06-852D9CC8367F">L2 norm</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> l2_norm(vector):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Calculates the L2 norm (Euclidean norm) of a vector.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    vector : list or array-like</span>
+<span style="color: #585c60;">        The input vector whose L2 norm is to be calculated</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    float</span>
+<span style="color: #585c60;">        The L2 norm of the input vector</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #585c60;"># </span><span style="color: #585c60;">Calculate sum of squares</span>
+    <span style="color: #2e3338;">sum_of_squares</span> = <span style="color: #5c3e99;">sum</span>(x**2 <span style="color: #5c3e99;">for</span> x <span style="color: #5c3e99;">in</span> vector)
+
+    <span style="color: #585c60;"># </span><span style="color: #585c60;">Return square root of the sum</span>
+    <span style="color: #5c3e99;">return</span> power(sum_of_squares, 0.5)  <span style="color: #585c60;"># </span><span style="color: #585c60;">Using our power function with exponent 0.5 for square root</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1e0a723" class="outline-4">
+<h4 id="org1e0a723"><span class="section-number-4">2.4.1.</span> Testing L2 norm</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #585c60;"># </span><span style="color: #585c60;">Test the L2 norm function</span>
+<span style="color: #2e3338;">test_vector</span> = [3, 4]  <span style="color: #585c60;"># </span><span style="color: #585c60;">This should give us 5 (the Pythagorean theorem)</span>
+l2_norm(test_vector)
+</pre>
+</div>
+
+<pre class="example">
+5.0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org241fbb6" class="outline-3">
+<h3 id="org241fbb6"><span class="section-number-3">2.5.</span> Vector Operations</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> dot_product(vector1, vector2):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Calculates the dot product of two vectors.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    vector1 : list or array-like</span>
+<span style="color: #585c60;">        The first input vector</span>
+<span style="color: #585c60;">    vector2 : list or array-like</span>
+<span style="color: #585c60;">        The second input vector</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    float or int</span>
+<span style="color: #585c60;">        The dot product of the two vectors</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(vector1) != <span style="color: #5c3e99;">len</span>(vector2):
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">ValueError</span>(<span style="color: #54433a;">"Vectors must have the same length"</span>)
+
+    <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">sum</span>(a * b <span style="color: #5c3e99;">for</span> a, b <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">zip</span>(vector1, vector2))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf963628" class="outline-4">
+<h4 id="orgf963628"><span class="section-number-4">2.5.1.</span> Testing dot product</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #585c60;"># </span><span style="color: #585c60;">Test the dot product function</span>
+<span style="color: #2e3338;">v1</span> = [1, 2, 3]
+<span style="color: #2e3338;">v2</span> = [4, 5, 6]
+<span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"The dot product of </span>{v1}<span style="color: #54433a;"> and </span>{v2}<span style="color: #54433a;"> is: </span>{dot_product(v1, v2)}<span style="color: #54433a;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+The dot product of [1, 2, 3] and [4, 5, 6] is: 32
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org41b9e30" class="outline-3">
+<h3 id="org41b9e30"><span class="section-number-3">2.6.</span> Vector Normalization</h3>
+<div class="outline-text-3" id="text-2-6">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> normalize_vector(vector):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Normalizes a vector to unit length using the L2 norm.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    vector : list or array-like</span>
+<span style="color: #585c60;">        The input vector to be normalized</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    list</span>
+<span style="color: #585c60;">        The normalized vector</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #2e3338;">norm</span> = l2_norm(vector)
+    <span style="color: #5c3e99;">if</span> norm == 0:
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">ValueError</span>(<span style="color: #54433a;">"Cannot normalize a zero vector"</span>)
+
+    <span style="color: #5c3e99;">return</span> [x / norm <span style="color: #5c3e99;">for</span> x <span style="color: #5c3e99;">in</span> vector]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3c5eabf" class="outline-4">
+<h4 id="org3c5eabf"><span class="section-number-4">2.6.1.</span> Testing vector normalization</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #585c60;"># </span><span style="color: #585c60;">Test the normalize_vector function</span>
+<span style="color: #2e3338;">test_vector</span> = [3, 4]
+<span style="color: #2e3338;">normalized</span> = normalize_vector(test_vector)
+<span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"Normalized vector: </span>{normalized}<span style="color: #54433a;">"</span>)
+<span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"Verification - L2 norm of normalized vector: </span>{l2_norm(normalized)}<span style="color: #54433a;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Normalized vector: [0.6, 0.8]
+Verification - L2 norm of normalized vector: 1.0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c53ad3" class="outline-3">
+<h3 id="org3c53ad3"><span class="section-number-3">2.7.</span> Distance Calculation</h3>
+<div class="outline-text-3" id="text-2-7">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> euclidean_distance(point1, point2):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Calculates the Euclidean distance between two points.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    point1 : list or array-like</span>
+<span style="color: #585c60;">        The first point coordinates</span>
+<span style="color: #585c60;">    point2 : list or array-like</span>
+<span style="color: #585c60;">        The second point coordinates</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    float</span>
+<span style="color: #585c60;">        The Euclidean distance between the points</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(point1) != <span style="color: #5c3e99;">len</span>(point2):
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">ValueError</span>(<span style="color: #54433a;">"Points must have the same dimensions"</span>)
+
+    <span style="color: #585c60;"># </span><span style="color: #585c60;">Create a vector of differences</span>
+    <span style="color: #2e3338;">diff_vector</span> = [a - b <span style="color: #5c3e99;">for</span> a, b <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">zip</span>(point1, point2)]
+
+    <span style="color: #585c60;"># </span><span style="color: #585c60;">Return the L2 norm of the difference vector</span>
+    <span style="color: #5c3e99;">return</span> l2_norm(diff_vector)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0cb0a38" class="outline-4">
+<h4 id="org0cb0a38"><span class="section-number-4">2.7.1.</span> Testing distance calculation</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #585c60;"># </span><span style="color: #585c60;">Test the euclidean_distance function</span>
+<span style="color: #2e3338;">point_a</span> = [1, 2, 3]
+<span style="color: #2e3338;">point_b</span> = [4, 5, 6]
+<span style="color: #2e3338;">distance</span> = euclidean_distance(point_a, point_b)
+<span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"The distance between </span>{point_a}<span style="color: #54433a;"> and </span>{point_b}<span style="color: #54433a;"> is: </span>{distance}<span style="color: #54433a;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+The distance between [1, 2, 3] and [4, 5, 6] is: 5.196152422706632
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd8f6fbc" class="outline-3">
+<h3 id="orgd8f6fbc"><span class="section-number-3">2.8.</span> Goodbye</h3>
+<div class="outline-text-3" id="text-2-8">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">def</span> goodbye(name):
+    <span style="color: #585c60;">"""</span>
+<span style="color: #585c60;">    Returns a farewell message with the provided name.</span>
+
+<span style="color: #585c60;">    Parameters:</span>
+<span style="color: #585c60;">    -----------</span>
+<span style="color: #585c60;">    name : str</span>
+<span style="color: #585c60;">        The name to include in the farewell</span>
+
+<span style="color: #585c60;">    Returns:</span>
+<span style="color: #585c60;">    --------</span>
+<span style="color: #585c60;">    str</span>
+<span style="color: #585c60;">        A farewell string in the format "Goodbye, {name}"</span>
+<span style="color: #585c60;">    """</span>
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"Goodbye, "</span> + name
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org21bfbbb" class="outline-4">
+<h4 id="org21bfbbb"><span class="section-number-4">2.8.1.</span> Testing goodbye</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python">goodbye(<span style="color: #54433a;">"Luis"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Goodbye, Luis
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5e6987" class="outline-3">
+<h3 id="orgd5e6987"><span class="section-number-3">2.9.</span> Preparing the data</h3>
+<div class="outline-text-3" id="text-2-9">
+</div>
+<div id="outline-container-org2f3204d" class="outline-4">
+<h4 id="org2f3204d"><span class="section-number-4">2.9.1.</span> Load the 20newsgroup dataset from scikit learn datasets</h4>
+<div class="outline-text-4" id="text-2-9-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> sklearn.datasets <span style="color: #5c3e99;">import</span> fetch_20newsgroups
+
+<span style="color: #585c60;"># </span><span style="color: #585c60;">Load the dataset</span>
+<span style="color: #2e3338;">newsgroups</span> = fetch_20newsgroups(subset=<span style="color: #54433a;">'all'</span>, remove=(<span style="color: #54433a;">'headers'</span>, <span style="color: #54433a;">'footers'</span>, <span style="color: #54433a;">'quotes'</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4acfca8" class="outline-4">
+<h4 id="org4acfca8"><span class="section-number-4">2.9.2.</span> Splits the dataset into test and train</h4>
+<div class="outline-text-4" id="text-2-9-2">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> sklearn.model_selection <span style="color: #5c3e99;">import</span> train_test_split
+
+<span style="color: #585c60;"># </span><span style="color: #585c60;">Split the dataset</span>
+<span style="color: #2e3338;">X_train</span>, <span style="color: #2e3338;">X_test</span>, <span style="color: #2e3338;">y_train</span>, <span style="color: #2e3338;">y_test</span> = train_test_split(newsgroups.data, newsgroups.target, test_size=0.2, random_state=42)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb89044a" class="outline-4">
+<h4 id="orgb89044a"><span class="section-number-4">2.9.3.</span> Apply TF-IDF to it</h4>
+<div class="outline-text-4" id="text-2-9-3">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> sklearn.feature_extraction.text <span style="color: #5c3e99;">import</span> TfidfVectorizer
+
+<span style="color: #585c60;"># </span><span style="color: #585c60;">Initialize the TF-IDF vectorizer</span>
+<span style="color: #2e3338;">vectorizer</span> = TfidfVectorizer()
+
+<span style="color: #585c60;"># </span><span style="color: #585c60;">Fit and transform the training data, transform the test data</span>
+<span style="color: #2e3338;">X_train_tfidf</span> = vectorizer.fit_transform(X_train)
+<span style="color: #2e3338;">X_test_tfidf</span> = vectorizer.transform(X_test)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2025-05-15 Thu 11:46</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
