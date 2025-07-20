@@ -21,27 +21,13 @@ ref: the-attic-index
 
       {% comment %} Look up title in data file {% endcomment %}
       {% assign title = nil %}
-      {% assign debug_found = false %}
 
-      <!-- DEBUG: Looking for filename: "{{ filename }}" -->
-      <!-- DEBUG: Filename length: {{ filename | size }} -->
-      <!-- DEBUG: Available entries: -->
       {% for entry in site.data.attic.entries %}
-        <!-- DEBUG: Entry filename: "{{ entry.filename }}" (length: {{ entry.filename | size }}) -->
         {% if entry.filename == filename %}
-          <!-- DEBUG: Are they equal? YES -->
-          <!-- DEBUG: Entry title: "{{ entry.title }}" -->
           {% assign title = entry.title %}
-          {% assign debug_found = true %}
-          <!-- DEBUG: MATCH FOUND! -->
           {% break %}
-        {% else %}
-          <!-- DEBUG: Are they equal? NO -->
-          <!-- DEBUG: Entry title: "{{ entry.title }}" -->
         {% endif %}
       {% endfor %}
-
-      <!-- DEBUG: Final result - Found: {{ debug_found }}, Title: "{{ title }}" -->
 
       {% comment %} Fallback to filename-based title if not found in data {% endcomment %}
       {% unless title %}
