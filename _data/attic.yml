@@ -1,0 +1,8 @@
+# Map attic filenames to their actual titles
+# Format: filename (without .html) -> title
+entries:
+  - filename: "2025-02-09-example-post"
+    title: "Example Post Title"
+  - filename: "2025-01-15-another-post"
+    title: "Another Post Title"
+  # Add more entries as needed
