@@ -246,7 +246,6 @@ content using
 <code>#+transclude: [[file:20241224080942-chunkfy_semantic_search.org::*Problem statement][Chunkify Problem Statement]] :level 2 :only-contents</code>.
 It engaged me in improving the text to make it modular enough to be
 transcluded, which is another thing I classify as cognitive joy.</p>
-<h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-alexander1979timeless" class="csl-entry" role="listitem">
 Alexander, C. (1979) <em>The timeless way of building</em>. Oxford
