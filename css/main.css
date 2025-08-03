@@ -544,3 +544,49 @@ border-radius: 15px;
 .attic-post-title:hover {
     text-decoration: underline;
 }
+
+/* === References Styling === */
+
+.references {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #d5d5d5;
+}
+
+.references::before {
+    content: "References";
+    display: block;
+    font-size: 26px;
+    font-weight: 600;
+    color: #286748;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.csl-entry {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin-bottom: 1em;
+    color: #050512cc;
+}
+
+.csl-entry em {
+    font-style: italic;
+    color: #444;
+}
+
+.csl-entry span {
+    font-style: normal;
+    font-weight: 500;
+    color: #222;
+}
+
+.csl-entry a.uri {
+    color: #606fc0;
+    font-size: 0.95em;
+    word-break: break-all;
+}
+
+.csl-entry a.uri:hover {
+    text-decoration: underline;
+}
