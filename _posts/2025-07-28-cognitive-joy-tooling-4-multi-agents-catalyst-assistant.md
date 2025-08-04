@@ -246,7 +246,7 @@ capital letters in the prompts. Retrieving the links to my notes in the
 semantic search tool, Q&amp;A tool, or the org-roam node link
 recommender system was extremely helpful in displaying them correctly.
 The Arxiv search tool does the trick for the research papers.</p>
-<p>I had to work a little bit on the <code>shop assistant</code> use
+<p>I had to work a little bit on the <code>shopping assistant</code> use
 case to enable it to search the web, extract product links, and then
 extract specific product information from two websites I usually buy
 from, so it provides something that really saves me time. The tools
