@@ -113,7 +113,7 @@ to-do file, my agenda view (based on the to-do file), and each edition I
 do to almost any of the 5.4k Org Roam nodes I have become context to be
 reviewed. The passive agent will look at that event without a user query
 and summarize what the user is doing. I will provide more details about
-how insights are generated in the following section.</p>
+how insights are generated in one of the following sections.</p>
 <h2 id="user-profile">User profile</h2>
 <p>A new feature I'm playing with is creating a minimal user profile
 that the assistant has access to in every session, regardless of the
@@ -137,13 +137,14 @@ books on Amazon.</figcaption>
 </figure>
 <p>I recall adding "juggling" as a skill to check how much the assistant
 would leverage it. It made every answer a pun about it, so it was
-forcing it too much. Lately, I'm unsure why it isn't forcing it in every
-interaction. The example below is interesting, though I know it is a bit
-cherry-picking. It knows where I live, so the answer considers my city's
-attractions; it also relates to items in my to-do list (the
-nutricionist, physical evaluation, and the "banana chocolate recipe"),
-and it leverages the family relationship when suggesting a spa day for
-my wife so I can have some time together with my son.</p>
+forcing it too much. Lately, I'm unsure why it isn't forcing the current
+profile values in every interaction. The example below is interesting,
+though I know it is a bit cherry-picking. It knows where I live, so the
+answer considers my city's attractions; it also relates to items in my
+to-do list (the nutricionist, physical evaluation, and the "banana
+chocolate recipe"), and it leverages the family relationship when
+suggesting a spa day for my wife so I can have some time together with
+my son.</p>
 <p><img src="/images/cjt4/screen_20250729_121545.jpg"
 style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" /></p>
 <p>I will explore memory in ways beyond its current scope. I want it to
@@ -159,17 +160,13 @@ I need to follow up with a message to get specific recommendations.</p>
 <p><img src="/images/cjt4/screen_20250729_131855.jpg"
 style="text-align: center; margin: auto; display: block; width: 80%; height: auto;" /></p>
 <p>When producing the above example, I noticed I didn't equip the main
-agent with web navigation, only web search. I had to work a little bit
-as a shop assistant to enable it to search the web, extract product
-links, and then extract specific product information from two websites I
-usually buy from, so it provides something that really saves me time.
-For the generic agent, I just added <code>playwright</code> web
-navigation as a tool, and below you see it could extract the needed
-information to generate specific information. At the same time, it
-hallucinated beautifully by recommending "Claude Flow Experience" based
-on a to-do item I have for this week about experimenting with Claude
-Flow, an AI programming tool. The link it uses is the reference link
-from my to-do item.</p>
+agent with web navigation, only web search. Then, I just added
+<code>playwright</code> web navigation as a tool, and below you see it
+could extract the needed information to generate specific information.
+At the same time, it hallucinated beautifully by recommending "Claude
+Flow Experience" based on a to-do item I have for this week about
+experimenting with Claude Flow, an AI programming tool. The link it uses
+is the reference link from my to-do item.</p>
 <p><img src="/images/cjt4/screen_20250730_070427.jpg"
 style="text-align: center; margin: auto; display: block; width: 90%; height: auto;" /></p>
 <p>Demanding more details about the event retrieved the expected result.
@@ -192,8 +189,8 @@ textual changes that I can accept and replace text.</p>
 <h3 id="what-is-an-insight">What is an insight?</h3>
 <p>Insights are proactive interactions that are produced by an insight
 agent, which accesses analysis of all the proactive interactions and the
-logs coming from the passive agent (that analyzes my behavior even when
-I don't interact with the assistant). Insights are delivered by an
+logs coming from the passive agent, that analyzes my behavior even when
+I don't interact with the assistant. Insights are delivered by an
 insights manager who looks into a list of insights and decides which to
 deliver, postpone, or ignore.</p>
 <p>Let's review some insights:</p>
@@ -202,11 +199,14 @@ deliver, postpone, or ignore.</p>
 a deadline for a task. It is cool to have my attention drawn to it - I
 think I wasn't scheduling time for the replacement before seeing it, but
 it is also very operational, so I'd prefer to have it as part of my
-current routines.</p>
+current routines. I mean, if I always want to be warned about deadlines
+that are not connected with tasks to make the activity happen, I can't
+rely on the insights but rather have a specific routine that checks for
+it.</p>
 <p><img src="/images/cjt4/screen_20250728_150322.jpg" /></p>
 <p>This insight was particularly interesting because it drew from a
 conversation I had with my assistant about organizing family vacations,
-and so many items I have about personal work and finding out activities
+the many items I have about personal work, and finding out activities
 for my son. It highlighted that work-life balance was a delicate balance
 and encouraged me to pay closer attention to it.</p>
 <p>Now, let's examine the reasoning behind the insights manager's
@@ -246,8 +246,11 @@ capital letters in the prompts. Retrieving the links to my notes in the
 semantic search tool, Q&amp;A tool, or the org-roam node link
 recommender system was extremely helpful in displaying them correctly.
 The Arxiv search tool does the trick for the research papers.</p>
-<p>I also created a "shopping assistant" to extend my system, and the
-tools proved amazingly helpful in generating high-quality answers.</p>
+<p>I had to work a little bit on the <code>shop assistant</code> use
+case to enable it to search the web, extract product links, and then
+extract specific product information from two websites I usually buy
+from, so it provides something that really saves me time. The tools
+proved amazingly helpful in generating high-quality answers.</p>
 <blockquote>
 <p>You have access to these tools:</p>
 <ul>
@@ -281,10 +284,11 @@ are generated from analyses of many different sessions, I'm unsure so
 far if providing the session used by the insights manager will be enough
 to generate a good follow-up interaction.</p>
 <h2 id="development">Development</h2>
-<p>For this version, I started using LangSmith for tracing and Aider for developing
-it. The combination of observability to spot what is not working as
-intended and AI programming tools was generally positive, but with some
-caveats.</p>
+<p>For this version, I started using <a
+href="https://www.langchain.com/langsmith">LangSmith</a> for tracing and
+<a href="https://aider.chat/">Aider</a> for developing it. The
+combination of observability to spot what is not working as intended and
+AI programming tools was generally positive, but with some caveats.</p>
 <p>Tracing was fundamental to spot silent failures: tools or sub-agents
 not working properly, and the LLM circumventing their error messages to
 send something ok, or using only the other available tools. It was also
@@ -310,12 +314,13 @@ straightforward.</figcaption>
 <p>To complete the observability part, I also logged every step on the
 agents since it is difficult to spot where they are hanging when it
 happens. It was also very useful to copy and paste it to Aider.</p>
-<p>For the AI programming part, I won't be able to refactor it as
-quickly as I did. I also wouldn't have created a Web UI for it, which
-means I could skip a lot of tedious work and debugging. However, it had
-many bad moments since in many parts I wasn't following the changes made
-by the AI completely. After approximately 15 days of development
-(~2h/day), I reached a point where I could no longer add new
+<p>For the AI programming part, I wouldn't have been able to refactor my
+assistant from LLM chains to an agentic version as quickly as I did. I
+also wouldn't have created a Web UI for it, which means I could skip a
+lot of tedious work and debugging. However, it had many bad moments
+since in many parts I wasn't following the changes made by the AI
+completely - I was vibe coding. After approximately 15 days of
+development (~2h/day), I reached a point where I could no longer add new
 functionality, and worse, including the non-working feature would break
 other things. At this point, I had to go through most of the generated
 code to acquire a deeper understanding. I requested regular AI tools
@@ -334,22 +339,24 @@ consequences.</p>
 <h3 id="actions-and-high-quality-use-cases">Actions and high-quality use
 cases</h3>
 <p>Currently, my assistant only has read-only actions, but I'm
-interested in letting it add items to my to-do list, or help me break
-them down, describe them, code tasks, etc.</p>
+interested in letting it add items to my to-do list, help me break them
+down, describe them, code tasks, etc.</p>
 <p>However, I will likely only add actions as a consequence of
 high-quality use cases. The next use cases I want to tackle are related
 to supporting me when studying or executing a personal project. In
-essence, my previous posts represent the kind of thing I'd like to enjoy
-more when I work with my assistant. If it can't help in those cases, I'm
-unsure it is worth investing further.</p>
+essence, the kind of work I do that generate posts for this blog
+represent the things I'd like to enjoy more when I work with my
+assistant. If it can't help in those cases, I'm unsure it is worth
+investing further.</p>
 <p>I'm very inspired by <a id="cite-engelbart1962augmenting-1"></a><span
 class="citation" data-cites="engelbart1962augmenting">Engelbart (<a
 href="#ref-engelbart1962augmenting"
-role="doc-biblioref">1962</a>)</span> and thinking of it as this Problem solving tool.
-Thus, it needs to bring clarity about the problem, have the same context
-I do about it, nudge me, bring the perspective of other specialists,
-support execution, create artifacts that facilitate the reuse by me and
-others, and more.</p>
+role="doc-biblioref">1962</a>)</span> and thinking of my assistant as
+this Problem
+solving tool. Thus, it needs to bring clarity about the problem,
+have the same context I do about it, nudge me, bring the perspective of
+other specialists, support execution, create artifacts that facilitate
+the reuse by me and others, and more.</p>
 <h3 id="referencing-docs-people-workspaces-and-projects">Referencing
 docs, people, workspaces, and projects</h3>
 <p>One thing I like about Dia is its ability to reference elements using
