@@ -27,7 +27,55 @@ studying, and writing with the colorful segments</a></li>
 </ol>
 <h2 id="the-knowledge-creation-application-gap-problem">The Knowledge
 creation-application gap problem</h2>
-
+<p>When describing the The
+collaboration-information problem, I cited that I see an issue in
+collaboration because of the following gap:</p>
+<blockquote>
+<p>I see a gap between knowledge creation and application. We fail to
+make knowledge relevant.</p>
+</blockquote>
+<p>However, the same gap applies to individuals, and I cite it in the
+same article as a "Knowledge creation-application gap", which I started
+addressing using a Semantic Node Search for
+Org-roam.</p>
+<p>It is the gap between how much information one gathers (what is
+information for you might be knowledge for others) and how much one
+applies it. I objectively feel this gap when I study something or
+formalize a concept I created or learned from others in Org roam, but
+I'm unable to apply it again in a new situation, which would configure
+the transition from information to knowledge or knowledge
+application.</p>
+<p>Since the definition of information and knowledge depends on its
+usage, the two terms here can describe slightly different problems. The
+information-knowledge gap might refer to information that has never been
+transformed into knowledge by anyone, so we have a collective definition
+of information and knowledge. Or we can add the case in which it is
+knowledge for others who apply it, but it is still only information for
+certain individuals.</p>
+<p>Like in the Semantic Node Search for
+Org-roam, I want to find ways that bring to usage my notes in the
+day-to-day.</p>
+<p>I want to bring on more references because I feel good when I can
+(re)use concepts to solve new problems. It is how I see information
+becoming Knowledge. Even if
+unrelated to problem-solving, visualizing the connection between two
+things that might differ on the surface but share some underlying
+aspects, like a passage from a book I'm reading and a painting I saw in
+person when traveling a couple of years ago, is an end-goal
+sensation.</p>
+<p>The semantic search demands me to proactively select a passage and
+check my references on it. Inspired by this post that plays with <a
+href="https://wattenberger.com/thoughts/yay-embeddings-math">embeddings
+and colors</a>, I had the idea to automatically break a file or region
+into chunks and then run the semantic search for every chunk. This
+segmentation problem is known as Discourse
+Segmentation.</p>
+<p>Discourse segmentation is a field in Natural Language
+Processing (NLP) that involves breaking a text into logical elements
+of interest. It involves identifying the boundaries of the segments,
+which are marked by ponctuation, topic change, conjunctions, themes,
+etc. It is a subtask used for question answering, summarization, and
+sentiment analysis, for example.</p>
 <h2
 id="segmenting-a-text-based-on-the-diversity-of-the-retrieved-documents-from-a-knowledge-base">Segmenting
 a text based on the diversity of the retrieved documents from a
@@ -252,6 +300,6 @@ Alexander, C. (1979) <em>The timeless way of building</em>. Oxford
 University Press (Center for environmental structure series, v. 8).
 Available at: <a
 href="https://books.google.com.br/books?id=H6CE9hlbO8sC">https://books.google.com.br/books?id=H6CE9hlbO8sC</a>.
-<a href="#cite-alexander1979timeless-1" class="backlink" title="Back to citation 1">↩︎<sup>1</sup></a>
+<a href="#cite-alexander1979timeless-1" class="reversefootnote" title="Back to citation 1">↩︎<sup>1</sup></a>
 </div>
 </div>
