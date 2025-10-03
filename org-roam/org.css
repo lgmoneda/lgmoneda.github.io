@@ -5,6 +5,21 @@ h1, h2, h3, h4, h5, h6 {
     color: #5c3e99; /* mindre-keyword */
 }
 body {
-    background-color: #F5F5F5; /* Updated background color */
+    background-color: #f8f4ed; /* Updated background color */
     font-family: Iosevka;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.gallery img:hover {
+  transform: scale(1.03);
 }
