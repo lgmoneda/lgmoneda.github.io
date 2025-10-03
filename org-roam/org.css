@@ -12,14 +12,27 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 12px;
+  justify-items: center;   /* center images inside each grid cell */
+  align-items: center;
+}
+.gallery .figure {
+  margin: 0;               /* kill Org’s default margins */
+  width: 100%;             /* let them size according to grid */
+}
+.gallery .figure p {
+  margin: 0;
 }
 .gallery img {
   width: 100%;
-  height: auto;
+  height: 300px;           /* pick your tile height */
+  object-fit: cover;       /* crop instead of squish */
   border-radius: 8px;
   cursor: pointer;
   transition: transform .2s;
 }
 .gallery img:hover {
   transform: scale(1.03);
+}
+.gallery .figure br {
+  display: none;           /* remove the pesky <br> under each image */
 }
