@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-11-16 Sun 17:41 -->
+<!-- 2025-11-16 Sun 17:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mimicking a binary deterministic agent</title>
@@ -234,53 +234,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga2f3bd0">1. Abstract</a></li>
-<li><a href="#orgfd3d330">2. Introduction</a></li>
-<li><a href="#org68b3340">3. Related Work</a></li>
-<li><a href="#org17b5cbc">4. Problem Setup</a></li>
-<li><a href="#org767cb33">5. Methodology</a></li>
-<li><a href="#org21e3892">6. Experimental Setup</a>
+<li><a href="#orgf8bd67b">1. Abstract</a></li>
+<li><a href="#orgf21f8a4">2. Introduction</a></li>
+<li><a href="#org790ef99">3. Related Work</a></li>
+<li><a href="#org5281344">4. Problem Setup</a></li>
+<li><a href="#org3b0a7ec">5. Methodology</a></li>
+<li><a href="#orgf25ff00">6. Experimental Setup</a>
 <ul>
-<li><a href="#org556b28e">6.1. Configuration</a></li>
-<li><a href="#orgc63db41">6.2. Creating the input text</a></li>
-<li><a href="#orgbd6f2ce">6.3. Creating the tiny agent</a>
+<li><a href="#orgfcd2023">6.1. Configuration</a></li>
+<li><a href="#orgeb6947c">6.2. Creating the input text</a></li>
+<li><a href="#org322d283">6.3. Creating the tiny agent</a>
 <ul>
-<li><a href="#org44aa1c7">6.3.1. Scoring all the input text using the tiny agent</a></li>
+<li><a href="#orge15ad32">6.3.1. Scoring all the input text using the tiny agent</a></li>
 </ul>
 </li>
-<li><a href="#org76c9231">6.4. The mimic agent</a></li>
-<li><a href="#org8a6b83e">6.5. The learning algorithm</a>
+<li><a href="#org305fd97">6.4. The mimic agent</a></li>
+<li><a href="#org4306e38">6.5. The learning algorithm</a>
 <ul>
-<li><a href="#orgabc2403">6.5.1. The evaluator</a></li>
-<li><a href="#org8e1c7e6">6.5.2. The coach agent</a></li>
-<li><a href="#orgdc5bd2e">6.5.3. The learning algorithm</a></li>
+<li><a href="#orgcea9774">6.5.1. The evaluator</a></li>
+<li><a href="#orga971485">6.5.2. The coach agent</a></li>
+<li><a href="#orga0b6d03">6.5.3. The learning algorithm</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf26b1fb">7. Learnings</a>
+<li><a href="#orgb1df1d3">7. Learnings</a>
 <ul>
-<li><a href="#orgfcb9792">7.1. Cosine similarity enables the model to learn a generic behavior</a></li>
+<li><a href="#org3cb3522">7.1. Cosine similarity enables the model to learn a generic behavior</a></li>
 </ul>
 </li>
-<li><a href="#org5895019">8. Results</a></li>
-<li><a href="#org43fc7e2">9. Conclusion</a></li>
-<li><a href="#org4dd90c5">10. Open Questions</a></li>
-<li><a href="#orga0b5413">11. Future Work</a>
+<li><a href="#orgf2f9e87">8. Results</a></li>
+<li><a href="#orgeac5759">9. Conclusion</a></li>
+<li><a href="#org55d766e">10. Open Questions</a></li>
+<li><a href="#org276d9a2">11. Future Work</a>
 <ul>
-<li><a href="#org9bcab0c">11.1. 1. Allow/enforce the coach to edit SOP blocks (enforce block selection, add validation).</a></li>
-<li><a href="#org81d8ef3">11.2. 2. Explore prototype discovery or clustering to generalize beyond known topics.</a></li>
-<li><a href="#org6536bf2">11.3. 3. Add dynamic regression tests that lock in the final prompt and guard against regressions.</a></li>
-<li><a href="#orgba12ee3">11.4. 4. Investigate harder policies (more than two responses) or noisy targets.</a></li>
-<li><a href="#org735bbbc">11.5. 5. Add other success metrics beyond cosine similarity.</a></li>
+<li><a href="#orgface6ab">11.1. 1. Allow/enforce the coach to edit SOP blocks (enforce block selection, add validation).</a></li>
+<li><a href="#org5ef6896">11.2. 2. Explore prototype discovery or clustering to generalize beyond known topics.</a></li>
+<li><a href="#org43623e0">11.3. 3. Add dynamic regression tests that lock in the final prompt and guard against regressions.</a></li>
+<li><a href="#org2ae02f1">11.4. 4. Investigate harder policies (more than two responses) or noisy targets.</a></li>
+<li><a href="#org516843a">11.5. 5. Add other success metrics beyond cosine similarity.</a></li>
 </ul>
 </li>
-<li><a href="#org599822d">12. References</a></li>
+<li><a href="#orgdfb4836">12. References</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga2f3bd0" class="outline-2">
-<h2 id="orga2f3bd0"><span class="section-number-2">1.</span> Abstract</h2>
+<div id="outline-container-orgf8bd67b" class="outline-2">
+<h2 id="orgf8bd67b"><span class="section-number-2">1.</span> Abstract</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I investigate whether a structured prompt plus LLM-based coaching can fully imitate a deterministic binary policy without exposing its
@@ -294,8 +294,8 @@ adaptation plus targeted feedback can recover the latent rule even when SOP bloc
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd3d330" class="outline-2">
-<h2 id="orgfd3d330"><span class="section-number-2">2.</span> Introduction</h2>
+<div id="outline-container-orgf21f8a4" class="outline-2">
+<h2 id="orgf21f8a4"><span class="section-number-2">2.</span> Introduction</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 I want to set the task of crafting an <a href="20230906113725-ai_agent.html#ID-639C8AE8-731F-4990-A9C4-27CBDBE904F5">AI Agent</a> as a <a href="20210405220508-learning_from_data_machine_learning.html#ID-75A6E1F4-E710-424D-802A-DDF32AE9BC66">learning from data</a> task based on mimicking a target behavior. This setting ease all use cases where copying an existing behavior has advantages.
@@ -306,11 +306,11 @@ I will create a "tiny agent", in a sense it will have two behaviors, and try to 
 </p>
 </div>
 </div>
-<div id="outline-container-org68b3340" class="outline-2">
-<h2 id="org68b3340"><span class="section-number-2">3.</span> Related Work</h2>
+<div id="outline-container-org790ef99" class="outline-2">
+<h2 id="org790ef99"><span class="section-number-2">3.</span> Related Work</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-This work is inspired by optimization frameworks like (Lakshya A Agrawal AND Shangyin Tan AND Dilara Soylu AND Noah Ziems AND Rishi Khare AND Krista Opsahl-Ong AND Arnav Singhvi AND Herumb Shandilya AND Michael J Ryan AND Meng Jiang AND Christopher Potts AND Koushik Sen AND Alexandros G. Dimakis AND Ion Stoica AND Dan Klein AND Matei Zaharia AND Omar Khattab, 2025) and (Zhang, Qizheng and Hu, Changran and Upasani, Shubhangi and Ma, Boyuan and Hong, Fenglu and Kamanuru, Vamsidhar and Rainton, Jay and Wu, Chen and Ji, Mengmeng and Li, Hanchen and Thakker, Urmish and Zou, James and Olukotun, Kunle, 2025).
+This work is inspired by optimization frameworks like Lakshya A Agrawal And Shangyin Tan And Dilara Soylu And Noah Ziems And Rishi Khare And Krista Opsahl-Ong And Arnav Singhvi And Herumb Shandilya And Michael J Ryan And Meng Jiang And Christopher Potts And Koushik Sen And Alexandros G. Dimakis And Ion Stoica And Dan Klein And Matei Zaharia And Omar Khattab (2025) and Zhang, Qizheng And Hu, Changran And Upasani, Shubhangi And Ma, Boyuan And Hong, Fenglu And Kamanuru, Vamsidhar And Rainton, Jay And Wu, Chen And Ji, Mengmeng And Li, Hanchen And Thakker, Urmish And Zou, James And Olukotun, Kunle (2025).
 </p>
 
 <p>
@@ -326,11 +326,11 @@ The take here is to simplify it as mimicking the output of a target agent at the
 </p>
 </div>
 </div>
-<div id="outline-container-org17b5cbc" class="outline-2">
-<h2 id="org17b5cbc"><span class="section-number-2">4.</span> Problem Setup</h2>
+<div id="outline-container-org5281344" class="outline-2">
+<h2 id="org5281344"><span class="section-number-2">4.</span> Problem Setup</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-There is an Agent, in a the broader sense as defined in (Sutton, Richard S. and Barto, Andrew G., 2018):
+There is an Agent, in a the broader sense as defined in Sutton, Richard S. And Barto, Andrew G. (2018):
 </p>
 
 <blockquote>
@@ -348,8 +348,8 @@ I succeed if I can build another agent that when seen behaving under the same en
 </p>
 </div>
 </div>
-<div id="outline-container-org767cb33" class="outline-2">
-<h2 id="org767cb33"><span class="section-number-2">5.</span> Methodology</h2>
+<div id="outline-container-org3b0a7ec" class="outline-2">
+<h2 id="org3b0a7ec"><span class="section-number-2">5.</span> Methodology</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 I use a target &amp; learning agent framework.
@@ -380,18 +380,18 @@ Assumptions: topics are balanced; the mimic never sees explicit policy rules; co
 </p>
 
 
-<div id="org58b5049" class="figure">
+<div id="org816df56" class="figure">
 <p><img src="../images/org-roam/methodology_learning_a_binary_Deterministic_agent.png" alt="../images/org-roam/methodology_learning_a_binary_Deterministic_agent.png" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org21e3892" class="outline-2">
-<h2 id="org21e3892"><span class="section-number-2">6.</span> Experimental Setup</h2>
+<div id="outline-container-orgf25ff00" class="outline-2">
+<h2 id="orgf25ff00"><span class="section-number-2">6.</span> Experimental Setup</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org556b28e" class="outline-3">
-<h3 id="org556b28e"><span class="section-number-3">6.1.</span> Configuration</h3>
+<div id="outline-container-orgfcd2023" class="outline-3">
+<h3 id="orgfcd2023"><span class="section-number-3">6.1.</span> Configuration</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-jupyter-python">%load_ext autoreload
@@ -400,8 +400,8 @@ Assumptions: topics are balanced; the mimic never sees explicit policy rules; co
 </div>
 </div>
 </div>
-<div id="outline-container-orgc63db41" class="outline-3">
-<h3 id="orgc63db41"><span class="section-number-3">6.2.</span> Creating the input text</h3>
+<div id="outline-container-orgeb6947c" class="outline-3">
+<h3 id="orgeb6947c"><span class="section-number-3">6.2.</span> Creating the input text</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 I use GPT-3.5 to generate 200 examples. In 100 examples, we will talk about coffee. In the other 100, we will talk about sports.
@@ -511,8 +511,8 @@ Loaded 200 examples; coffee=100 | sports=100.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgbd6f2ce" class="outline-3">
-<h3 id="orgbd6f2ce"><span class="section-number-3">6.3.</span> Creating the tiny agent</h3>
+<div id="outline-container-org322d283" class="outline-3">
+<h3 id="org322d283"><span class="section-number-3">6.3.</span> Creating the tiny agent</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 We create a function that's able to generate an answer following:
@@ -559,8 +559,8 @@ I see you are a person of taste! I like coffee, too.
 Well, I don't like sports.
 </pre>
 </div>
-<div id="outline-container-org44aa1c7" class="outline-4">
-<h4 id="org44aa1c7"><span class="section-number-4">6.3.1.</span> Scoring all the input text using the tiny agent</h4>
+<div id="outline-container-orge15ad32" class="outline-4">
+<h4 id="orge15ad32"><span class="section-number-4">6.3.1.</span> Scoring all the input text using the tiny agent</h4>
 <div class="outline-text-4" id="text-6-3-1">
 <div class="org-src-container">
 <pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> collections.abc <span style="color: #5c3e99;">import</span> Sequence
@@ -586,7 +586,7 @@ pprint(scored_examples[:3])
 </pre>
 </div>
 
-<pre class="example" id="org1a81a64">
+<pre class="example" id="org3d109e2">
 Scored 200 examples with the deterministic agent.
 [{'model': 'gpt-3.5-turbo',
   'text': 'The first sip of my morning espresso awakens my senses and sets a '
@@ -610,8 +610,8 @@ Scored 200 examples with the deterministic agent.
 </div>
 </div>
 </div>
-<div id="outline-container-org76c9231" class="outline-3">
-<h3 id="org76c9231"><span class="section-number-3">6.4.</span> The mimic agent</h3>
+<div id="outline-container-org305fd97" class="outline-3">
+<h3 id="org305fd97"><span class="section-number-3">6.4.</span> The mimic agent</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 We use DSPy to create a program that just has a generic prompt.
@@ -789,12 +789,12 @@ demo_reply
 </table>
 </div>
 </div>
-<div id="outline-container-org8a6b83e" class="outline-3">
-<h3 id="org8a6b83e"><span class="section-number-3">6.5.</span> The learning algorithm</h3>
+<div id="outline-container-org4306e38" class="outline-3">
+<h3 id="org4306e38"><span class="section-number-3">6.5.</span> The learning algorithm</h3>
 <div class="outline-text-3" id="text-6-5">
 </div>
-<div id="outline-container-orgabc2403" class="outline-4">
-<h4 id="orgabc2403"><span class="section-number-4">6.5.1.</span> The evaluator</h4>
+<div id="outline-container-orgcea9774" class="outline-4">
+<h4 id="orgcea9774"><span class="section-number-4">6.5.1.</span> The evaluator</h4>
 <div class="outline-text-4" id="text-6-5-1">
 <p>
 The evaluator input: the user input, the tiny agent output, and the mimic agent output.
@@ -1124,8 +1124,8 @@ evaluator.evaluate(
 </table>
 </div>
 </div>
-<div id="outline-container-org8e1c7e6" class="outline-4">
-<h4 id="org8e1c7e6"><span class="section-number-4">6.5.2.</span> The coach agent</h4>
+<div id="outline-container-orga971485" class="outline-4">
+<h4 id="orga971485"><span class="section-number-4">6.5.2.</span> The coach agent</h4>
 <div class="outline-text-4" id="text-6-5-2">
 <p>
 The coach agent input: the evaluator output, and the current mimic agent's prompt.
@@ -1302,12 +1302,12 @@ coach.forward(
 </table>
 </div>
 </div>
-<div id="outline-container-orgdc5bd2e" class="outline-4">
-<h4 id="orgdc5bd2e"><span class="section-number-4">6.5.3.</span> The learning algorithm</h4>
+<div id="outline-container-orga0b6d03" class="outline-4">
+<h4 id="orga0b6d03"><span class="section-number-4">6.5.3.</span> The learning algorithm</h4>
 <div class="outline-text-4" id="text-6-5-3">
 </div>
 <ol class="org-ol">
-<li><a id="orgc4d213b"></a>Splitting the training data<br />
+<li><a id="org043c2fa"></a>Splitting the training data<br />
 <div class="outline-text-5" id="text-6-5-3-1">
 <p>
 We split the data between training, test, and holdout. 60%/20%/20%.
@@ -1354,7 +1354,7 @@ train=120 | test=40 | holdout=40
 </pre>
 </div>
 </li>
-<li><a id="org011f6d5"></a>The learning loop<br />
+<li><a id="org39c9750"></a>The learning loop<br />
 <div class="outline-text-5" id="text-6-5-3-2">
 <div class="org-src-container">
 <pre class="src src-jupyter-python"><span style="color: #5c3e99;">import</span> matplotlib.pyplot <span style="color: #5c3e99;">as</span> plt
@@ -1616,7 +1616,7 @@ fig
 </pre>
 </div>
 
-<pre class="example" id="org4b54cf5">
+<pre class="example" id="org5d1afbf">
 Epoch 1/12: 4 batches of size &lt;= 32.
   Batch 1/4
   Batch 2/4
@@ -1774,13 +1774,13 @@ Epoch 12/12: 4 batches of size &lt;= 32.
   Epoch complete.
 </pre>
 
-<div id="org4c9244b" class="figure">
+<div id="orgb15ae11" class="figure">
 <p><img src="./../images/org-roam/2817978186c39ee8bbc8c5256027f0e7eee2afce.png" alt="2817978186c39ee8bbc8c5256027f0e7eee2afce.png" />
 </p>
 </div>
 </div>
 </li>
-<li><a id="org037d26d"></a>Printing the full learned prompt<br />
+<li><a id="orgc7ea410"></a>Printing the full learned prompt<br />
 <div class="outline-text-5" id="text-6-5-3-3">
 <div class="org-src-container">
 <pre class="src src-jupyter-python"><span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"Final learned prompt:</span>\n<span style="color: #54433a;">"</span>)
@@ -1800,7 +1800,7 @@ This is a placeholder standard operating procedure.
 </pre>
 </div>
 </li>
-<li><a id="org97bf0ca"></a>Evaluating the learned mimic agent in the holdout dataset<br />
+<li><a id="org0fdc338"></a>Evaluating the learned mimic agent in the holdout dataset<br />
 <div class="outline-text-5" id="text-6-5-3-4">
 <div class="org-src-container">
 <pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> pprint <span style="color: #5c3e99;">import</span> pprint
@@ -1849,7 +1849,7 @@ pprint(holdout_report[<span style="color: #54433a;">"rows"</span>][:5])
 </pre>
 </div>
 
-<pre class="example" id="org3f2fc36">
+<pre class="example" id="org23342d3">
 Holdout embedding_cosine similarity: 0.981
 [{'mimic_output': 'I see you are a person of taste! I like coffee, too.',
   'similarity': 1.0,
@@ -1884,12 +1884,12 @@ Holdout embedding_cosine similarity: 0.981
 </div>
 </div>
 </div>
-<div id="outline-container-orgf26b1fb" class="outline-2">
-<h2 id="orgf26b1fb"><span class="section-number-2">7.</span> Learnings</h2>
+<div id="outline-container-orgb1df1d3" class="outline-2">
+<h2 id="orgb1df1d3"><span class="section-number-2">7.</span> Learnings</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgfcb9792" class="outline-3">
-<h3 id="orgfcb9792"><span class="section-number-3">7.1.</span> Cosine similarity enables the model to learn a generic behavior</h3>
+<div id="outline-container-org3cb3522" class="outline-3">
+<h3 id="org3cb3522"><span class="section-number-3">7.1.</span> Cosine similarity enables the model to learn a generic behavior</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2025-11-15 Sat]</span></span>: Similarity metric’s tolerance – <a href="20230416132549-vector_space_retrieval_model.html#ID-219BB181-DE23-4587-9F03-6E6B33DF5645">Cosine similarity</a> between short sentences rewards stylistic closeness more than exact structure.
@@ -1901,8 +1901,8 @@ It is a cool feature to generate polciies that don't enforce specific phrases, b
 </div>
 </div>
 </div>
-<div id="outline-container-org5895019" class="outline-2">
-<h2 id="org5895019"><span class="section-number-2">8.</span> Results</h2>
+<div id="outline-container-orgf2f9e87" class="outline-2">
+<h2 id="orgf2f9e87"><span class="section-number-2">8.</span> Results</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>Train/test cosine similarity now rises from ~0.20 in epoch 1 to 0.97/0.99 by epoch 10, maintaining ≥0.90 through epoch 12 (see logs
@@ -1912,16 +1912,16 @@ around lines 1200‑1290).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org43fc7e2" class="outline-2">
-<h2 id="org43fc7e2"><span class="section-number-2">9.</span> Conclusion</h2>
+<div id="outline-container-orgeac5759" class="outline-2">
+<h2 id="orgeac5759"><span class="section-number-2">9.</span> Conclusion</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 The result is promising for scenarios where there is an agent we benefit from automate their behavior. It is needed to expand the synthetic example to a more challenging situation that resembles reality.
 </p>
 </div>
 </div>
-<div id="outline-container-org4dd90c5" class="outline-2">
-<h2 id="org4dd90c5"><span class="section-number-2">10.</span> Open Questions</h2>
+<div id="outline-container-org55d766e" class="outline-2">
+<h2 id="org55d766e"><span class="section-number-2">10.</span> Open Questions</h2>
 <div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li>How to encourage SOP edits instead of repeated general-block rewrites?</li>
@@ -1930,15 +1930,15 @@ The result is promising for scenarios where there is an agent we benefit from au
 </ul>
 </div>
 </div>
-<div id="outline-container-orga0b5413" class="outline-2">
-<h2 id="orga0b5413"><span class="section-number-2">11.</span> Future Work</h2>
+<div id="outline-container-org276d9a2" class="outline-2">
+<h2 id="org276d9a2"><span class="section-number-2">11.</span> Future Work</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org9bcab0c" class="outline-3">
-<h3 id="org9bcab0c"><span class="section-number-3">11.1.</span> 1. Allow/enforce the coach to edit SOP blocks (enforce block selection, add validation).</h3>
+<div id="outline-container-orgface6ab" class="outline-3">
+<h3 id="orgface6ab"><span class="section-number-3">11.1.</span> 1. Allow/enforce the coach to edit SOP blocks (enforce block selection, add validation).</h3>
 </div>
-<div id="outline-container-org81d8ef3" class="outline-3">
-<h3 id="org81d8ef3"><span class="section-number-3">11.2.</span> 2. Explore prototype discovery or clustering to generalize beyond known topics.</h3>
+<div id="outline-container-org5ef6896" class="outline-3">
+<h3 id="org5ef6896"><span class="section-number-3">11.2.</span> 2. Explore prototype discovery or clustering to generalize beyond known topics.</h3>
 <div class="outline-text-3" id="text-11-2">
 <p>
 Prototype discovery means breaking the input using unsupervised learning and identifying all the present use cases in the training set. Let's say we identify there are 10 different situations, then we could have 10 SOPs pre-defined.
@@ -1953,14 +1953,14 @@ Further, we can break the input use-case by context/procedure and identify how t
 </p>
 </div>
 </div>
-<div id="outline-container-org6536bf2" class="outline-3">
-<h3 id="org6536bf2"><span class="section-number-3">11.3.</span> 3. Add dynamic regression tests that lock in the final prompt and guard against regressions.</h3>
+<div id="outline-container-org43623e0" class="outline-3">
+<h3 id="org43623e0"><span class="section-number-3">11.3.</span> 3. Add dynamic regression tests that lock in the final prompt and guard against regressions.</h3>
 </div>
-<div id="outline-container-orgba12ee3" class="outline-3">
-<h3 id="orgba12ee3"><span class="section-number-3">11.4.</span> 4. Investigate harder policies (more than two responses) or noisy targets.</h3>
+<div id="outline-container-org2ae02f1" class="outline-3">
+<h3 id="org2ae02f1"><span class="section-number-3">11.4.</span> 4. Investigate harder policies (more than two responses) or noisy targets.</h3>
 </div>
-<div id="outline-container-org735bbbc" class="outline-3">
-<h3 id="org735bbbc"><span class="section-number-3">11.5.</span> 5. Add other success metrics beyond cosine similarity.</h3>
+<div id="outline-container-org516843a" class="outline-3">
+<h3 id="org516843a"><span class="section-number-3">11.5.</span> 5. Add other success metrics beyond cosine similarity.</h3>
 <div class="outline-text-3" id="text-11-5">
 <p>
 An interesting metric to measure how indistinguishable is the target and the mimic agent: traing a binary classifier using the target agent as the target, and generate outputs using the initial mimic agent - prior to any training. We are likely to create a very good classifier in identifying when the target agent is the one answering the inquiry.
@@ -1976,8 +1976,8 @@ One way to define the best possible scenario is: if the target agent enables for
 </div>
 </div>
 </div>
-<div id="outline-container-org599822d" class="outline-2">
-<h2 id="org599822d"><span class="section-number-2">12.</span> References</h2>
+<div id="outline-container-orgdfb4836" class="outline-2">
+<h2 id="orgdfb4836"><span class="section-number-2">12.</span> References</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 Lakshya A Agrawal AND Shangyin Tan AND Dilara Soylu AND Noah Ziems AND Rishi Khare AND Krista Opsahl-Ong AND Arnav Singhvi AND Herumb Shandilya AND Michael J Ryan AND Meng Jiang AND Christopher Potts AND Koushik Sen AND Alexandros G. Dimakis AND Ion Stoica AND Dan Klein AND Matei Zaharia AND Omar Khattab (2025). <i>GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning</i>.</p>
@@ -1992,7 +1992,7 @@ Zhang, Qizheng and Hu, Changran and Upasani, Shubhangi and Ma, Boyuan and Hong, 
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Luis Moneda</p>
-<p class="date">Created: 2025-11-16 Sun 17:41</p>
+<p class="date">Created: 2025-11-16 Sun 17:49</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
