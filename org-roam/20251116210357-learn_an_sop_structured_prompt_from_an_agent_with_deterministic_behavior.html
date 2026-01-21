@@ -1,0 +1,2462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-21 Wed 05:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learn an SOP-structured prompt from an agent with deterministic behavior</title>
+<meta name="author" content="Luis Moneda" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../org-roam/org.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Learn an SOP-structured prompt from an agent with deterministic behavior</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8038214">1. Abstract</a></li>
+<li><a href="#org01c3eb8">2. Introduction</a></li>
+<li><a href="#org94f7012">3. Related Work</a></li>
+<li><a href="#org7dd5e84">4. Problem Setup</a></li>
+<li><a href="#org09a5268">5. Methodology</a></li>
+<li><a href="#org1a306e2">6. Experimental Setup</a>
+<ul>
+<li><a href="#org769a896">6.1. Configuration</a></li>
+<li><a href="#orgd3aebac">6.2. Creating the input text</a></li>
+<li><a href="#org56a1c82">6.3. Creating the tiny agent</a>
+<ul>
+<li><a href="#org327772a">6.3.1. Scoring all the input text using the tiny agent</a></li>
+</ul>
+</li>
+<li><a href="#org680990e">6.4. The mimic agent</a></li>
+<li><a href="#org1bae8db">6.5. The learning algorithm</a>
+<ul>
+<li><a href="#org906f81f">6.5.1. The evaluator</a></li>
+<li><a href="#org79799b6">6.5.2. The coach agent</a></li>
+<li><a href="#orgca2788a">6.5.3. The algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7ad76a3">7. Learnings</a>
+<ul>
+<li><a href="#org3d21bc4">7.1. We learned three similar blocks for tone of voice, sop 1 and sop 2</a></li>
+<li><a href="#org4d0203e">7.2. Instruction tunning of the Coach and guidance on SOP similarity coming from the evaluator will force us to learn different SOPs, but general guidance still overlaps</a></li>
+<li><a href="#org63624c8">7.3. Session recap (current iteration)</a>
+<ul>
+<li><a href="#orgd0760ed">7.3.1. Structural controls added</a></li>
+<li><a href="#org408c919">7.3.2. Training behavior and outcome</a></li>
+<li><a href="#orgb38d0f8">7.3.3. Remaining cautions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga7cd481">8. Results</a></li>
+<li><a href="#org99eaadd">9. Conclusion</a></li>
+<li><a href="#org274908a">10. Open Questions</a></li>
+<li><a href="#orgb85539a">11. Future Work</a>
+<ul>
+<li><a href="#org8b1e026">11.1. 1. Generate synthetic data for three very distinct use cases where the policy to solve them is more complex, and ontroduce use-cases where an action with a side effect on user data is needed</a></li>
+<li><a href="#org5c95307">11.2. 2. Explore prototype discovery or clustering to generalize beyond known topics.</a></li>
+<li><a href="#orge4ae899">11.3. 3. Add dynamic regression tests that lock in the final prompt and guard against regressions.</a></li>
+<li><a href="#org79ed326">11.4. 4. Add other success metrics beyond cosine similarity.</a></li>
+</ul>
+</li>
+<li><a href="#orga54870c">12. References</a></li>
+</ul>
+</div>
+</div>
+<p>
+An evolution of <a href="20251105231532-mimicking_a_tiny_agent_with_deterministic_behavior.html#ID-4543C831-0253-4F52-886A-0356BC93764A">Mimicking a binary deterministic agent</a>.
+</p>
+<div id="outline-container-org8038214" class="outline-2">
+<h2 id="org8038214"><span class="section-number-2">1.</span> Abstract</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I investigate whether a structured prompt plus LLM-based coaching can fully imitate a deterministic binary policy without exposing its
+rule. I generate 200 GPT-3.5 sentences evenly split between coffee and sports topics, label them, and use a topic-aware “tiny agent” to
+emit one of two canned replies (“I see you are a person of taste!” vs. “Well, I don’t like sports.”). A DSPy mimic agent with a three-
+block prompt (general guidance + two SOP placeholders) is trained in 12 epochs using cosine similarity over OpenAI embeddings, evaluator
+histories, and LLM-authored case reports. Having as a starting point the algorithm in <a href="20251105231532-mimicking_a_tiny_agent_with_deterministic_behavior.html#ID-4543C831-0253-4F52-886A-0356BC93764A">Mimicking a binary deterministic agent</a>, I introduced many mechanisms in the learning loop to ensure the coverage of all the cases, like clustering the input to identify every sub-case the AI agent should address, bringing worst performing cases up, and making target edits with ADD/EDIT/DEL options to preserve parts of the prompt untouched. Further, I use now an early stopping argument to stop the learning process earlier if there isn't progress. The agent could achieve a test score of ~1, becoming indistinguishable from the agent that generated the data. 
+</p>
+</div>
+</div>
+<div id="outline-container-org01c3eb8" class="outline-2">
+<h2 id="org01c3eb8"><span class="section-number-2">2.</span> Introduction</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I want to set the task of crafting an <a href="20230906113725-ai_agent.html#ID-639C8AE8-731F-4990-A9C4-27CBDBE904F5">AI Agent</a> as a <a href="20210405220508-learning_from_data_machine_learning.html#ID-75A6E1F4-E710-424D-802A-DDF32AE9BC66">learning from data</a> task based on mimicking a target behavior. This setting ease all use cases where copying an existing behavior has advantages.
+</p>
+
+<p>
+I will create a "tiny agent", in a sense it will have two behaviors, and try to learn these behaviors as the prompt of an LLM we train to imitate the tiny agent.
+</p>
+</div>
+</div>
+<div id="outline-container-org94f7012" class="outline-2">
+<h2 id="org94f7012"><span class="section-number-2">3.</span> Related Work</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This work is inspired by optimization frameworks like GEPA (Lakshya A Agrawal AND Shangyin Tan AND Dilara Soylu AND Noah Ziems AND Rishi Khare AND Krista Opsahl-Ong AND Arnav Singhvi AND Herumb Shandilya AND Michael J Ryan AND Meng Jiang AND Christopher Potts AND Koushik Sen AND Alexandros G. Dimakis AND Ion Stoica AND Dan Klein AND Matei Zaharia AND Omar Khattab, 2025) and Agentic Context Engineering (Zhang, Qizheng and Hu, Changran and Upasani, Shubhangi and Ma, Boyuan and Hong, Fenglu and Kamanuru, Vamsidhar and Rainton, Jay and Wu, Chen and Ji, Mengmeng and Li, Hanchen and Thakker, Urmish and Zou, James and Olukotun, Kunle, 2025).
+</p>
+
+<p>
+The key difference from these works is about the signal that guides the optimization. Both of them rightly uses a success metric based on the task of interest: does the code written by the agent executes or produces the expected output? how the output scores regarding import criteria for the task at hand, likle correctness, conciseness, or politeness?
+</p>
+
+<p>
+However, these are expensive signals to obtain. One need to understand very well a task, create specific evaluators, or have great annotated data.
+</p>
+
+<p>
+The take here is to simplify it as mimicking the output of a target agent at the expense of not focusing on the outcome of the agent on the task. In this scenario, the target agent becomes an upper bound of performance on the task. At the same time, identifying if an AI agent is able to behave just as another agent (a human, or a system), is a generic task that is easy to set.
+</p>
+</div>
+</div>
+<div id="outline-container-org7dd5e84" class="outline-2">
+<h2 id="org7dd5e84"><span class="section-number-2">4.</span> Problem Setup</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+There is an Agent, in a the broader sense as defined in Sutton, Richard S. And Barto, Andrew G. (2018):
+</p>
+
+<p>
+I want to learn this agent behavior by only observing their observations and actions.
+</p>
+
+<p>
+I succeed if I can build another agent that when seen behaving under the same environment is indistinguishable from the original agent it learned from.
+</p>
+</div>
+</div>
+<div id="outline-container-org09a5268" class="outline-2">
+<h2 id="org09a5268"><span class="section-number-2">5.</span> Methodology</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+I use a target &amp; learning agent framework.
+</p>
+
+<p>
+In this specific experiment, we imitate a deterministic two-response policy via prompt engineering plus LLM-based coaching with line-level edits. The current procedure:
+</p>
+
+<ol class="org-ol">
+<li><b><b>Synthetic data</b></b> – GPT-3.5-turbo generates 200 first-person sentences (coffee + sports). Only text and tiny-agent outputs are exposed downstream; topic labels are not given to the coach.</li>
+<li><b><b>Structured mimic prompt</b></b> – One frozen `[General guidance]` block holds routing; SOP blocks (currently one) contain the policy. General is frozen by default; SOP text must be atomic pseudo-code (one condition/action per line).</li>
+<li><b><b>Evaluator &amp; clustering</b></b> – Batched mimic inference; evaluator logs cosine similarity, histories, and builds K-means clusters sized to the SOP count, with sub-clusters inside each cluster. SOP similarity matrices are computed for diagnostics.</li>
+<li><b><b>Case reporting</b></b> – Per-epoch anchor + nearest neighbors for a case report; worst examples per cluster/subcluster are surfaced to the coach.</li>
+<li><b><b>Coach update (line-diff)</b></b> – Coach receives cluster report, balanced worst examples, prompt blocks, and change log; returns line-level directives (ADD/EDIT/DEL) for the sampled SOP. Patches are applied preserving untouched lines. Early stopping can trigger on stagnant epochs or a test-metric threshold.</li>
+</ol>
+
+<p>
+Assumptions: topics are balanced; mimic never sees explicit policy rules; cosine similarity uses OpenAI embeddings (text-embedding-3-small); edits are line-local to stabilize prompts.
+</p>
+
+
+<div id="orgcab6aff" class="figure">
+<p><img src="../images/org-roam/methodology_learning_a_binary_Deterministic_agent_sop.png" alt="../images/org-roam/methodology_learning_a_binary_Deterministic_agent_sop.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a306e2" class="outline-2">
+<h2 id="org1a306e2"><span class="section-number-2">6.</span> Experimental Setup</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org769a896" class="outline-3">
+<h3 id="org769a896"><span class="section-number-3">6.1.</span> Configuration</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python">%load_ext autoreload
+%autoreload 2
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd3aebac" class="outline-3">
+<h3 id="orgd3aebac"><span class="section-number-3">6.2.</span> Creating the input text</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+I use GPT-3.5 to generate 200 examples. In 100 examples, we will talk about coffee. In the other 100, we will talk about sports.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> __future__ <span style="color: #5c3e99;">import</span> annotations
+
+<span style="color: #5c3e99;">import</span> json
+<span style="color: #5c3e99;">import</span> time
+<span style="color: #5c3e99;">from</span> pathlib <span style="color: #5c3e99;">import</span> Path
+<span style="color: #5c3e99;">from</span> typing <span style="color: #5c3e99;">import</span> Dict, List
+
+<span style="color: #5c3e99;">import</span> openai
+
+
+<span style="color: #2e3338;">DATA_PATH</span> = Path(<span style="color: #54433a;">"experiments/mimic_tiny_agent/coffee_vs_sports.jsonl"</span>)
+<span style="color: #2e3338;">client</span> = openai.OpenAI()
+
+
+<span style="color: #5c3e99;">def</span> _request_sentence(<span style="color: #2e3338;">topic</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">model</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #585c60;">"""Ask GPT-3.5 for a sentence about the desired topic."""</span>
+
+    <span style="color: #5c3e99;">if</span> topic == <span style="color: #54433a;">"coffee"</span>:
+        <span style="color: #2e3338;">user_prompt</span> = (
+            <span style="color: #54433a;">"Write one short first-person sentence (&lt;=25 words) describing why I love coffee or a memorable coffee moment."</span>
+        )
+    <span style="color: #5c3e99;">elif</span> topic == <span style="color: #54433a;">"sports"</span>:
+        <span style="color: #2e3338;">user_prompt</span> = (
+            <span style="color: #54433a;">"Write one short first-person sentence (&lt;=25 words) describing my favorite sport or why I enjoy it."</span>
+        )
+    <span style="color: #5c3e99;">else</span>:
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">ValueError</span>(f<span style="color: #54433a;">"Unsupported topic: </span>{topic}<span style="color: #54433a;">"</span>)
+
+    <span style="color: #2e3338;">response</span> = client.chat.completions.create(
+        model=model,
+        temperature=0.8,
+        max_tokens=80,
+        messages=[
+            {
+                <span style="color: #54433a;">"role"</span>: <span style="color: #54433a;">"system"</span>,
+                <span style="color: #54433a;">"content"</span>: <span style="color: #54433a;">"You craft concise, vivid personal statements that follow the user instructions exactly."</span>,
+            },
+            {<span style="color: #54433a;">"role"</span>: <span style="color: #54433a;">"user"</span>, <span style="color: #54433a;">"content"</span>: user_prompt},
+        ],
+    )
+    <span style="color: #5c3e99;">return</span> response.choices[0].message.content.strip()
+
+
+<span style="color: #5c3e99;">def</span> generate_dataset_with_gpt(
+    n_examples: <span style="color: #16524F;">int</span> = 200,
+    *,
+    model: <span style="color: #16524F;">str</span> = <span style="color: #54433a;">"gpt-3.5-turbo"</span>,
+    save_path: <span style="color: #16524F;">Path</span> = DATA_PATH,
+) -&gt; <span style="color: #16524F;">List</span>[<span style="color: #16524F;">Dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]]:
+    <span style="color: #585c60;">"""Call GPT-3.5 to synthesize coffee and sports statements and persist them."""</span>
+
+    <span style="color: #5c3e99;">if</span> n_examples % 2 != 0:
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">ValueError</span>(<span style="color: #54433a;">"n_examples must be even so it can be split evenly"</span>)
+
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+
+    <span style="color: #2e3338;">half</span> = n_examples // 2
+    <span style="color: #2e3338;">dataset</span>: <span style="color: #16524F;">List</span>[<span style="color: #16524F;">Dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]] = []
+
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">idx</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(n_examples):
+        <span style="color: #2e3338;">topic</span> = <span style="color: #54433a;">"coffee"</span> <span style="color: #5c3e99;">if</span> idx &lt; half <span style="color: #5c3e99;">else</span> <span style="color: #54433a;">"sports"</span>
+        <span style="color: #2e3338;">text</span> = _request_sentence(topic, model)
+        dataset.append(
+            {
+                <span style="color: #54433a;">"text"</span>: text,
+                <span style="color: #54433a;">"topic"</span>: topic,
+                <span style="color: #54433a;">"model"</span>: model,
+                <span style="color: #54433a;">"timestamp"</span>: time.time(),
+            }
+        )
+        time.sleep(0.2)
+
+    <span style="color: #5c3e99;">with</span> save_path.open(<span style="color: #54433a;">"w"</span>, encoding=<span style="color: #54433a;">"utf-8"</span>) <span style="color: #5c3e99;">as</span> fh:
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">row</span> <span style="color: #5c3e99;">in</span> dataset:
+            fh.write(json.dumps(row) + <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>)
+
+    <span style="color: #5c3e99;">return</span> dataset
+
+
+<span style="color: #5c3e99;">def</span> load_or_create_dataset(path: <span style="color: #16524F;">Path</span> = DATA_PATH) -&gt; <span style="color: #16524F;">List</span>[<span style="color: #16524F;">Dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]]:
+    <span style="color: #5c3e99;">if</span> path.exists():
+        <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"Loading cached dataset from </span>{path}<span style="color: #54433a;">"</span>)
+        <span style="color: #5c3e99;">return</span> [json.loads(line) <span style="color: #5c3e99;">for</span> line <span style="color: #5c3e99;">in</span> path.read_text().splitlines() <span style="color: #5c3e99;">if</span> line]
+    <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"Dataset not found on disk; generating via GPT-3.5..."</span>)
+    <span style="color: #5c3e99;">return</span> generate_dataset_with_gpt(save_path=path)
+
+
+<span style="color: #2e3338;">synthetic_examples</span> = load_or_create_dataset()
+<span style="color: #2e3338;">coffee_count</span> = <span style="color: #5c3e99;">sum</span>(1 <span style="color: #5c3e99;">for</span> item <span style="color: #5c3e99;">in</span> synthetic_examples <span style="color: #5c3e99;">if</span> item.get(<span style="color: #54433a;">"topic"</span>) == <span style="color: #54433a;">"coffee"</span>)
+<span style="color: #2e3338;">sports_count</span> = <span style="color: #5c3e99;">sum</span>(1 <span style="color: #5c3e99;">for</span> item <span style="color: #5c3e99;">in</span> synthetic_examples <span style="color: #5c3e99;">if</span> item.get(<span style="color: #54433a;">"topic"</span>) == <span style="color: #54433a;">"sports"</span>)
+<span style="color: #5c3e99;">print</span>(
+    f<span style="color: #54433a;">"Loaded </span>{<span style="color: #5c3e99;">len</span>(synthetic_examples)}<span style="color: #54433a;"> examples; "</span>
+    f<span style="color: #54433a;">"coffee=</span>{coffee_count}<span style="color: #54433a;"> | sports=</span>{sports_count}<span style="color: #54433a;">."</span>
+)
+</pre>
+</div>
+
+<pre class="example">
+Loading cached dataset from experiments/mimic_tiny_agent/coffee_vs_sports.jsonl
+Loaded 200 examples; coffee=100 | sports=100.
+</pre>
+</div>
+</div>
+<div id="outline-container-org56a1c82" class="outline-3">
+<h3 id="org56a1c82"><span class="section-number-3">6.3.</span> Creating the tiny agent</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+We create a function that's able to generate an answer following:
+</p>
+
+<ul class="org-ul">
+<li>Whenever the topic is "coffee", it should answer: "I see you are a person of taste! I like coffee, too.";</li>
+<li>Whenever the topic is "sports", it must say: "Well, I don't like sports.".</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> typing <span style="color: #5c3e99;">import</span> Iterable
+
+
+<span style="color: #2e3338;">COFFEE_RESPONSE</span> = <span style="color: #54433a;">"I see you are a person of taste! I like coffee, too."</span>
+<span style="color: #2e3338;">SPORTS_RESPONSE</span> = <span style="color: #54433a;">"Well, I don't like sports."</span>
+<span style="color: #2e3338;">DEFAULT_RESPONSE</span> = SPORTS_RESPONSE
+
+
+<span style="color: #5c3e99;">def</span> tiny_agent_response(<span style="color: #2e3338;">user_text</span>: <span style="color: #16524F;">str</span>, *, topic: <span style="color: #16524F;">str</span> | <span style="color: #16524F;">None</span> = None) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #2e3338;">label</span> = (topic <span style="color: #5c3e99;">or</span> <span style="color: #54433a;">""</span>).strip().lower()
+    <span style="color: #5c3e99;">if</span> label == <span style="color: #54433a;">"coffee"</span>:
+        <span style="color: #5c3e99;">return</span> COFFEE_RESPONSE
+    <span style="color: #5c3e99;">if</span> label == <span style="color: #54433a;">"sports"</span>:
+        <span style="color: #5c3e99;">return</span> SPORTS_RESPONSE
+    <span style="color: #5c3e99;">if</span> <span style="color: #54433a;">"coffee"</span> <span style="color: #5c3e99;">in</span> user_text.lower():
+        <span style="color: #5c3e99;">return</span> COFFEE_RESPONSE
+    <span style="color: #5c3e99;">return</span> DEFAULT_RESPONSE
+
+
+<span style="color: #5c3e99;">def</span> batch_tiny_agent_response(
+    <span style="color: #2e3338;">inputs</span>: <span style="color: #16524F;">Iterable</span>[<span style="color: #16524F;">tuple</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span> | <span style="color: #16524F;">None</span>]],
+) -&gt; <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>]:
+    <span style="color: #5c3e99;">return</span> [tiny_agent_response(text, topic=topic) <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">text</span>, <span style="color: #2e3338;">topic</span> <span style="color: #5c3e99;">in</span> inputs]
+
+
+<span style="color: #5c3e99;">print</span>(tiny_agent_response(<span style="color: #54433a;">"I brewed a silky pour-over"</span>, topic=<span style="color: #54433a;">"coffee"</span>))
+<span style="color: #5c3e99;">print</span>(tiny_agent_response(<span style="color: #54433a;">"Practicing my backhand"</span>, topic=<span style="color: #54433a;">"sports"</span>))
+</pre>
+</div>
+
+<pre class="example">
+I see you are a person of taste! I like coffee, too.
+Well, I don't like sports.
+</pre>
+</div>
+<div id="outline-container-org327772a" class="outline-4">
+<h4 id="org327772a"><span class="section-number-4">6.3.1.</span> Scoring all the input text using the tiny agent</h4>
+<div class="outline-text-4" id="text-6-3-1">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> collections.abc <span style="color: #5c3e99;">import</span> Sequence
+<span style="color: #5c3e99;">from</span> pprint <span style="color: #5c3e99;">import</span> pprint
+
+
+<span style="color: #5c3e99;">def</span> score_dataset_with_tiny_agent(
+    <span style="color: #2e3338;">dataset</span>: <span style="color: #16524F;">Sequence</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+) -&gt; <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]]:
+    <span style="color: #585c60;">"""Append the tiny agent answer to every input example."""</span>
+
+    <span style="color: #2e3338;">scored</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]] = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">row</span> <span style="color: #5c3e99;">in</span> dataset:
+        <span style="color: #2e3338;">topic</span> = row.get(<span style="color: #54433a;">"topic"</span>)
+        <span style="color: #2e3338;">answer</span> = tiny_agent_response(<span style="color: #5c3e99;">str</span>(row[<span style="color: #54433a;">"text"</span>]), topic=topic)
+        scored.append({**row, <span style="color: #54433a;">"tiny_agent_output"</span>: answer})
+    <span style="color: #5c3e99;">return</span> scored
+
+
+<span style="color: #2e3338;">scored_examples</span> = score_dataset_with_tiny_agent(synthetic_examples)
+<span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"Scored </span>{<span style="color: #5c3e99;">len</span>(scored_examples)}<span style="color: #54433a;"> examples with the deterministic agent."</span>)
+pprint(scored_examples[:3])
+</pre>
+</div>
+
+<pre class="example" id="org25e3f6a">
+Scored 200 examples with the deterministic agent.
+[{'model': 'gpt-3.5-turbo',
+  'text': 'The first sip of my morning espresso awakens my senses and sets a '
+          'positive tone for the day ahead.',
+  'timestamp': 1763237270.6815271,
+  'tiny_agent_output': 'I see you are a person of taste! I like coffee, too.',
+  'topic': 'coffee'},
+ {'model': 'gpt-3.5-turbo',
+  'text': "I love coffee because it's a warm hug in a cup that jumpstarts my "
+          'day with its rich aroma.',
+  'timestamp': 1763237271.866124,
+  'tiny_agent_output': 'I see you are a person of taste! I like coffee, too.',
+  'topic': 'coffee'},
+ {'model': 'gpt-3.5-turbo',
+  'text': 'The first sip of rich, aromatic coffee transports me to cozy '
+          'mornings and fuels my passion for creativity and productivity.',
+  'timestamp': 1763237273.029643,
+  'tiny_agent_output': 'I see you are a person of taste! I like coffee, too.',
+  'topic': 'coffee'}]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org680990e" class="outline-3">
+<h3 id="org680990e"><span class="section-number-3">6.4.</span> The mimic agent</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+We use DSPy to create a program that just has a generic prompt.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">import</span> os
+<span style="color: #5c3e99;">from</span> typing <span style="color: #5c3e99;">import</span> Any
+
+<span style="color: #5c3e99;">import</span> dspy
+
+
+<span style="color: #5c3e99;">def</span> ensure_dspy_configured() -&gt; <span style="color: #16524F;">object</span>:
+    <span style="color: #585c60;">"""Lazy-load the LM client used by DSPy."""</span>
+
+    <span style="color: #5c3e99;">if</span> dspy.settings.lm <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None:
+        <span style="color: #5c3e99;">return</span> dspy.settings.lm
+
+    <span style="color: #2e3338;">api_key</span> = os.getenv(<span style="color: #54433a;">"OPENAI_API_KEY"</span>)
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> api_key:
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">EnvironmentError</span>(
+            <span style="color: #54433a;">"OPENAI_API_KEY is not set. Export it before running DSPy cells."</span>
+        )
+
+    <span style="color: #2e3338;">model_name</span> = os.getenv(<span style="color: #54433a;">"DSPY_LM_MODEL"</span>, <span style="color: #54433a;">"openai/gpt-4.1-mini"</span>)
+    <span style="color: #2e3338;">temperature</span> = <span style="color: #5c3e99;">float</span>(os.getenv(<span style="color: #54433a;">"DSPY_LM_TEMPERATURE"</span>, <span style="color: #54433a;">"0.3"</span>))
+    <span style="color: #2e3338;">max_tokens</span> = <span style="color: #5c3e99;">int</span>(os.getenv(<span style="color: #54433a;">"DSPY_LM_MAX_TOKENS"</span>, <span style="color: #54433a;">"2048"</span>))
+
+    <span style="color: #2e3338;">lm</span> = dspy.LM(
+        model_name,
+        api_key=api_key,
+        temperature=temperature,
+        max_tokens=max_tokens,
+    )
+    dspy.configure(lm=lm)
+    <span style="color: #5c3e99;">return</span> lm
+
+
+ensure_dspy_configured()
+
+
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">CommentOnClaim</span>(dspy.<span style="color: #16524F;">Signature</span>):
+    <span style="color: #2e3338;">user_claim</span> = dspy.InputField(desc=<span style="color: #54433a;">"The short statement provided by the user."</span>)
+    <span style="color: #2e3338;">comment</span> = dspy.OutputField(
+        desc=<span style="color: #54433a;">"A concise acknowledgement or observation about the claim."</span>
+    )
+
+
+<span style="color: #2e3338;">mimic_agent_structured_default</span> = {
+    <span style="color: #54433a;">"general_guidance"</span>: (
+        <span style="color: #54433a;">"Follow the SOP blocks below. Select the SOP whose examples best match the current input and apply only that block. Keep replies brief."</span>
+    ),
+    <span style="color: #54433a;">"sops"</span>: [
+        <span style="color: #54433a;">"This is a placeholder standard operating procedure."</span>,
+        <span style="color: #54433a;">"This is a placeholder standard operating procedure."</span>,
+    ],
+}
+
+
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">PromptStructure</span>:
+    <span style="color: #5c3e99;">def</span> __init__(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">general_guidance</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">sops</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>]) -&gt; <span style="color: #16524F;">None</span>:
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">general_guidance</span> = general_guidance.strip()
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">sops</span> = [sop.strip() <span style="color: #5c3e99;">for</span> sop <span style="color: #5c3e99;">in</span> sops]
+
+    <span style="color: #5c3e99;">def</span> render(<span style="color: #5c3e99;">self</span>) -&gt; <span style="color: #16524F;">str</span>:
+        <span style="color: #2e3338;">lines</span> = [<span style="color: #54433a;">"[General guidance]"</span>, <span style="color: #5c3e99;">self</span>.general_guidance]
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">idx</span>, <span style="color: #2e3338;">sop</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(<span style="color: #5c3e99;">self</span>.sops, start=1):
+            lines.append(f<span style="color: #54433a;">"[sop-</span>{idx}<span style="color: #54433a;">]"</span>)
+            lines.append(<span style="color: #5c3e99;">self</span>.sops[idx - 1])
+        <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(lines)
+
+    <span style="color: #5c3e99;">def</span> block_names(<span style="color: #5c3e99;">self</span>) -&gt; <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>]:
+        <span style="color: #5c3e99;">return</span> [<span style="color: #54433a;">"general"</span>] + [f<span style="color: #54433a;">"sop-</span>{idx}<span style="color: #54433a;">"</span> <span style="color: #5c3e99;">for</span> idx <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(1, <span style="color: #5c3e99;">len</span>(<span style="color: #5c3e99;">self</span>.sops) + 1)]
+
+    <span style="color: #5c3e99;">def</span> get_block_text(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">block_name</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">str</span>:
+        <span style="color: #5c3e99;">if</span> block_name == <span style="color: #54433a;">"general"</span>:
+            <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>.general_guidance
+        <span style="color: #5c3e99;">if</span> block_name.startswith(<span style="color: #54433a;">"sop-"</span>):
+            <span style="color: #2e3338;">idx</span> = <span style="color: #5c3e99;">int</span>(block_name.split(<span style="color: #54433a;">"-"</span>, 1)[1]) - 1
+            <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>.sops[idx]
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">KeyError</span>(f<span style="color: #54433a;">"Unknown block </span>{block_name}<span style="color: #54433a;">"</span>)
+
+    <span style="color: #5c3e99;">def</span> update_block(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">block_name</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">new_text</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">None</span>:
+        <span style="color: #2e3338;">cleaned</span> = new_text.strip()
+        <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> cleaned:
+            <span style="color: #5c3e99;">return</span>
+        <span style="color: #5c3e99;">if</span> block_name == <span style="color: #54433a;">"general"</span>:
+            <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">general_guidance</span> = cleaned
+            <span style="color: #5c3e99;">return</span>
+        <span style="color: #5c3e99;">if</span> block_name.startswith(<span style="color: #54433a;">"sop-"</span>):
+            <span style="color: #2e3338;">idx</span> = <span style="color: #5c3e99;">int</span>(block_name.split(<span style="color: #54433a;">"-"</span>, 1)[1]) - 1
+            <span style="color: #5c3e99;">if</span> 0 &lt;= idx &lt; <span style="color: #5c3e99;">len</span>(<span style="color: #5c3e99;">self</span>.sops):
+                <span style="color: #5c3e99;">self</span>.sops[idx] = cleaned
+                <span style="color: #5c3e99;">return</span>
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">KeyError</span>(f<span style="color: #54433a;">"Unknown block </span>{block_name}<span style="color: #54433a;">"</span>)
+
+
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">MimicAgent</span>(dspy.<span style="color: #16524F;">Module</span>):
+    <span style="color: #585c60;">"""DSPy program with a structured prompt (general guidance + SOP blocks)."""</span>
+
+    <span style="color: #5c3e99;">def</span> __init__(
+        <span style="color: #5c3e99;">self</span>,
+        *,
+        general_guidance: <span style="color: #16524F;">str</span> | <span style="color: #16524F;">None</span> = None,
+        sop_texts: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] | <span style="color: #16524F;">None</span> = None,
+        sop_count: <span style="color: #16524F;">int</span> = 2,
+    ) -&gt; <span style="color: #16524F;">None</span>:
+        <span style="color: #5c3e99;">super</span>().__init__()
+        <span style="color: #2e3338;">template</span> = mimic_agent_structured_default
+        <span style="color: #2e3338;">base_general</span> = general_guidance <span style="color: #5c3e99;">or</span> template[<span style="color: #54433a;">"general_guidance"</span>]
+        <span style="color: #2e3338;">base_sops</span> = sop_texts <span style="color: #5c3e99;">or</span> template[<span style="color: #54433a;">"sops"</span>]
+        <span style="color: #5c3e99;">if</span> sop_count &gt; <span style="color: #5c3e99;">len</span>(base_sops):
+            <span style="color: #2e3338;">base_sops</span> = base_sops + [base_sops[-1]] * (sop_count - <span style="color: #5c3e99;">len</span>(base_sops))
+        <span style="color: #5c3e99;">else</span>:
+            <span style="color: #2e3338;">base_sops</span> = base_sops[:sop_count]
+
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">prompt_state</span> = PromptStructure(base_general, base_sops)
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">generator</span> = dspy.Predict(CommentOnClaim)
+
+    <span style="color: #16524F;">@property</span>
+    <span style="color: #5c3e99;">def</span> base_prompt(<span style="color: #5c3e99;">self</span>) -&gt; <span style="color: #16524F;">str</span>:
+        <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>.prompt_state.render()
+
+    <span style="color: #5c3e99;">def</span> forward(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">user_claim</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>]:  <span style="color: #585c60;"># type: ignore[override]</span>
+        <span style="color: #2e3338;">instructions</span> = (
+            f<span style="color: #54433a;">"Instruction:</span>\n{<span style="color: #5c3e99;">self</span>.base_prompt}\n<span style="color: #54433a;">"</span>
+            f<span style="color: #54433a;">"User claim: </span>{user_claim.strip()}\n<span style="color: #54433a;">"</span>
+            <span style="color: #54433a;">"Comment:"</span>
+        )
+        <span style="color: #2e3338;">prediction</span> = <span style="color: #5c3e99;">self</span>.generator(user_claim=instructions)
+        <span style="color: #5c3e99;">return</span> {
+            <span style="color: #54433a;">"prompt"</span>: <span style="color: #5c3e99;">self</span>.base_prompt,
+            <span style="color: #54433a;">"mimic_output"</span>: prediction.comment,
+        }
+
+    <span style="color: #5c3e99;">def</span> get_prompt_blocks(<span style="color: #5c3e99;">self</span>) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>]:
+        <span style="color: #5c3e99;">return</span> {name: <span style="color: #5c3e99;">self</span>.prompt_state.get_block_text(name) <span style="color: #5c3e99;">for</span> name <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">self</span>.prompt_state.block_names()}
+
+    <span style="color: #5c3e99;">def</span> update_block(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">block_name</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">new_text</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">None</span>:
+        <span style="color: #5c3e99;">self</span>.prompt_state.update_block(block_name, new_text)
+
+
+<span style="color: #2e3338;">mimic_agent</span> = MimicAgent(sop_count=1)
+<span style="color: #2e3338;">demo_reply</span> = mimic_agent(<span style="color: #54433a;">"I'm experimenting with new pour-over routines"</span>)
+demo_reply
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">prompt</td>
+<td class="org-left">:</td>
+<td class="org-left">[General guidance]\nFollow the SOP blocks below. Select the SOP whose examples best match the current input and apply only that block. Keep replies brief.\n[sop-1]\nThis is a placeholder standard operating procedure.</td>
+<td class="org-left">mimic<sub>output</sub></td>
+<td class="org-left">:</td>
+<td class="org-left">Exploring new pour-over routines sounds like a great way to refine your brewing skills and discover unique flavors.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org1bae8db" class="outline-3">
+<h3 id="org1bae8db"><span class="section-number-3">6.5.</span> The learning algorithm</h3>
+<div class="outline-text-3" id="text-6-5">
+</div>
+<div id="outline-container-org906f81f" class="outline-4">
+<h4 id="org906f81f"><span class="section-number-4">6.5.1.</span> The evaluator</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<p>
+The evaluator input: the user input, the tiny agent output, and the mimic agent output.
+The evaluator output: a similarity metric calculated comparing the tiny agent output to the mimic agent output; a list of the last <code>n</code> outputs from the mimic agent on that same input, and a list of the last <code>k</code> training examples and mimic outputs and their scores.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> __future__ <span style="color: #5c3e99;">import</span> annotations
+
+<span style="color: #5c3e99;">import</span> math
+<span style="color: #5c3e99;">import</span> time
+<span style="color: #5c3e99;">from</span> collections <span style="color: #5c3e99;">import</span> Counter, defaultdict, deque
+<span style="color: #5c3e99;">from</span> dataclasses <span style="color: #5c3e99;">import</span> dataclass
+<span style="color: #5c3e99;">from</span> typing <span style="color: #5c3e99;">import</span> Any, Deque, Dict, Literal
+
+<span style="color: #5c3e99;">import</span> numpy <span style="color: #5c3e99;">as</span> np
+<span style="color: #5c3e99;">import</span> openai
+
+
+<span style="color: #2e3338;">SimilarityMetric</span> = Literal[<span style="color: #54433a;">"bleu"</span>, <span style="color: #54433a;">"embedding_cosine"</span>]
+
+
+<span style="color: #5c3e99;">def</span> _tokenize(<span style="color: #2e3338;">text</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>]:
+    <span style="color: #5c3e99;">return</span> [token <span style="color: #5c3e99;">for</span> token <span style="color: #5c3e99;">in</span> text.lower().split() <span style="color: #5c3e99;">if</span> token]
+
+
+<span style="color: #5c3e99;">def</span> _ngram_counts(<span style="color: #2e3338;">tokens</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>], <span style="color: #2e3338;">n</span>: <span style="color: #16524F;">int</span>) -&gt; <span style="color: #16524F;">Counter</span>[<span style="color: #16524F;">tuple</span>[<span style="color: #16524F;">str</span>, ...]]:
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(tokens) &lt; n:
+        <span style="color: #5c3e99;">return</span> Counter()
+    <span style="color: #5c3e99;">return</span> Counter(<span style="color: #5c3e99;">tuple</span>(tokens[i : i + n]) <span style="color: #5c3e99;">for</span> i <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(<span style="color: #5c3e99;">len</span>(tokens) - n + 1))
+
+
+<span style="color: #5c3e99;">def</span> compute_bleu(<span style="color: #2e3338;">reference</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">hypothesis</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">float</span>:
+    <span style="color: #2e3338;">ref_tokens</span> = _tokenize(reference)
+    <span style="color: #2e3338;">hyp_tokens</span> = _tokenize(hypothesis)
+
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> hyp_tokens:
+        <span style="color: #5c3e99;">return</span> 0.0
+
+    <span style="color: #2e3338;">weights</span> = [0.25, 0.25, 0.25, 0.25]
+    <span style="color: #2e3338;">precisions</span> = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">n</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(1, 5):
+        <span style="color: #2e3338;">ref_counts</span> = _ngram_counts(ref_tokens, n)
+        <span style="color: #2e3338;">hyp_counts</span> = _ngram_counts(hyp_tokens, n)
+        <span style="color: #2e3338;">overlap</span> = <span style="color: #5c3e99;">sum</span>(
+            <span style="color: #5c3e99;">min</span>(count, ref_counts[gram]) <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">gram</span>, <span style="color: #2e3338;">count</span> <span style="color: #5c3e99;">in</span> hyp_counts.items()
+        )
+        <span style="color: #2e3338;">total</span> = <span style="color: #5c3e99;">sum</span>(hyp_counts.values()) <span style="color: #5c3e99;">or</span> 1
+        precisions.append(overlap / total <span style="color: #5c3e99;">if</span> overlap <span style="color: #5c3e99;">else</span> 1e-9)
+
+    <span style="color: #2e3338;">log_precision</span> = <span style="color: #5c3e99;">sum</span>(w * math.log(p) <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">w</span>, <span style="color: #2e3338;">p</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">zip</span>(weights, precisions))
+    <span style="color: #2e3338;">brevity_penalty</span> = 1.0
+    <span style="color: #2e3338;">ref_len</span> = <span style="color: #5c3e99;">len</span>(ref_tokens)
+    <span style="color: #2e3338;">hyp_len</span> = <span style="color: #5c3e99;">len</span>(hyp_tokens)
+    <span style="color: #5c3e99;">if</span> hyp_len &lt;= ref_len <span style="color: #5c3e99;">and</span> hyp_len &gt; 0:
+        <span style="color: #2e3338;">brevity_penalty</span> = math.exp(1 - ref_len / hyp_len)
+
+    <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">float</span>(brevity_penalty * math.exp(log_precision))
+
+
+<span style="color: #5c3e99;">def</span> cosine_similarity(<span style="color: #2e3338;">vec_a</span>: np.<span style="color: #16524F;">ndarray</span>, <span style="color: #2e3338;">vec_b</span>: np.<span style="color: #16524F;">ndarray</span>) -&gt; <span style="color: #16524F;">float</span>:
+    <span style="color: #2e3338;">denom</span> = np.linalg.norm(vec_a) * np.linalg.norm(vec_b)
+    <span style="color: #5c3e99;">if</span> denom == 0:
+        <span style="color: #5c3e99;">return</span> 0.0
+    <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">float</span>(np.dot(vec_a, vec_b) / denom)
+
+
+<span style="color: #16524F;">@dataclass</span>
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">EvaluationRecord</span>:
+    <span style="color: #2e3338;">user_input</span>: <span style="color: #16524F;">str</span>
+    <span style="color: #2e3338;">tiny_output</span>: <span style="color: #16524F;">str</span>
+    <span style="color: #2e3338;">mimic_output</span>: <span style="color: #16524F;">str</span>
+    <span style="color: #2e3338;">similarity</span>: <span style="color: #16524F;">float</span>
+    <span style="color: #2e3338;">metric</span>: <span style="color: #16524F;">SimilarityMetric</span>
+    <span style="color: #2e3338;">timestamp</span>: <span style="color: #16524F;">float</span>
+
+
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">TinyAgentEvaluator</span>:
+    <span style="color: #585c60;">"""Track similarity and histories for the mimic vs. tiny agent comparison."""</span>
+
+    <span style="color: #5c3e99;">def</span> __init__(
+        <span style="color: #5c3e99;">self</span>,
+        *,
+        metric: <span style="color: #16524F;">SimilarityMetric</span> = <span style="color: #54433a;">"bleu"</span>,
+        per_input_history: <span style="color: #16524F;">int</span> = 5,
+        training_history: <span style="color: #16524F;">int</span> = 50,
+        embedding_model: <span style="color: #16524F;">str</span> = <span style="color: #54433a;">"text-embedding-3-small"</span>,
+    ) -&gt; <span style="color: #16524F;">None</span>:
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">metric</span> = metric
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">per_input_history</span> = per_input_history
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">training_history</span> = training_history
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">embedding_model</span> = embedding_model
+
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">_per_input_records</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Deque</span>[<span style="color: #16524F;">EvaluationRecord</span>]] = defaultdict(
+            <span style="color: #5c3e99;">lambda</span>: deque(maxlen=per_input_history)
+        )
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">_global_records</span>: <span style="color: #16524F;">Deque</span>[<span style="color: #16524F;">EvaluationRecord</span>] = deque(maxlen=training_history)
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">_embedding_cache</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, np.<span style="color: #16524F;">ndarray</span>] = {}
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">_embedding_client</span> = openai.OpenAI()
+
+    <span style="color: #585c60;"># -- metrics -----------------------------------------------------------------</span>
+    <span style="color: #5c3e99;">def</span> _bleu_similarity(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">tiny_output</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">mimic_output</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">float</span>:
+        <span style="color: #5c3e99;">return</span> compute_bleu(tiny_output, mimic_output)
+
+    <span style="color: #5c3e99;">def</span> _embedding_similarity(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">tiny_output</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">mimic_output</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">float</span>:
+        <span style="color: #2e3338;">tiny_vec</span> = <span style="color: #5c3e99;">self</span>._embed_text(tiny_output)
+        <span style="color: #2e3338;">mimic_vec</span> = <span style="color: #5c3e99;">self</span>._embed_text(mimic_output)
+        <span style="color: #5c3e99;">return</span> cosine_similarity(tiny_vec, mimic_vec)
+
+    <span style="color: #5c3e99;">def</span> _embed_text(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">text</span>: <span style="color: #16524F;">str</span>) -&gt; np.<span style="color: #16524F;">ndarray</span>:
+        <span style="color: #2e3338;">cache_key</span> = text.strip()
+        <span style="color: #5c3e99;">if</span> cache_key <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">self</span>._embedding_cache:
+            <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>._embedding_cache[cache_key]
+        <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> cache_key:
+            <span style="color: #2e3338;">vec</span> = np.zeros(1536, dtype=np.float32)
+            <span style="color: #5c3e99;">self</span>._embedding_cache[cache_key] = vec
+            <span style="color: #5c3e99;">return</span> vec
+        <span style="color: #2e3338;">response</span> = <span style="color: #5c3e99;">self</span>._embedding_client.embeddings.create(
+            model=<span style="color: #5c3e99;">self</span>.embedding_model,
+            input=cache_key,
+        )
+        <span style="color: #2e3338;">vec</span> = np.array(response.data[0].embedding, dtype=np.float32)
+        <span style="color: #5c3e99;">self</span>._embedding_cache[cache_key] = vec
+        <span style="color: #5c3e99;">return</span> vec
+
+    <span style="color: #5c3e99;">def</span> _compute_similarity(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">tiny_output</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">mimic_output</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">float</span>:
+        <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">self</span>.metric == <span style="color: #54433a;">"embedding_cosine"</span>:
+            <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>._embedding_similarity(tiny_output, mimic_output)
+        <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>._bleu_similarity(tiny_output, mimic_output)
+
+    <span style="color: #5c3e99;">def</span> similarity(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">tiny_output</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">mimic_output</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">float</span>:
+        <span style="color: #585c60;">"""Public helper to compute similarity without mutating evaluator state."""</span>
+
+        <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>._compute_similarity(tiny_output, mimic_output)
+
+    <span style="color: #5c3e99;">def</span> embed_text(<span style="color: #5c3e99;">self</span>, <span style="color: #2e3338;">text</span>: <span style="color: #16524F;">str</span>) -&gt; np.<span style="color: #16524F;">ndarray</span>:
+        <span style="color: #585c60;">"""Expose embedding helper for downstream analysis."""</span>
+
+        <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">self</span>._embed_text(text)
+
+    <span style="color: #585c60;"># -- public api ---------------------------------------------------------------</span>
+    <span style="color: #5c3e99;">def</span> evaluate(
+        <span style="color: #5c3e99;">self</span>,
+        *,
+        <span style="color: #2e3338;">user_input</span>: <span style="color: #16524F;">str</span>,
+        <span style="color: #2e3338;">tiny_output</span>: <span style="color: #16524F;">str</span>,
+        <span style="color: #2e3338;">mimic_output</span>: <span style="color: #16524F;">str</span>,
+    ) -&gt; <span style="color: #16524F;">Dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>]:
+        <span style="color: #2e3338;">similarity</span> = <span style="color: #5c3e99;">self</span>._compute_similarity(tiny_output, mimic_output)
+        <span style="color: #2e3338;">record</span> = EvaluationRecord(
+            user_input=user_input,
+            tiny_output=tiny_output,
+            mimic_output=mimic_output,
+            similarity=similarity,
+            metric=<span style="color: #5c3e99;">self</span>.metric,
+            timestamp=time.time(),
+        )
+
+        <span style="color: #2e3338;">per_input_buffer</span> = <span style="color: #5c3e99;">self</span>._per_input_records[user_input]
+        per_input_buffer.append(record)
+        <span style="color: #5c3e99;">self</span>._global_records.append(record)
+
+        <span style="color: #5c3e99;">return</span> {
+            <span style="color: #54433a;">"similarity"</span>: similarity,
+            <span style="color: #54433a;">"metric"</span>: <span style="color: #5c3e99;">self</span>.metric,
+            <span style="color: #54433a;">"last_outputs_for_input"</span>: [
+                {
+                    <span style="color: #54433a;">"mimic_output"</span>: item.mimic_output,
+                    <span style="color: #54433a;">"tiny_output"</span>: item.tiny_output,
+                    <span style="color: #54433a;">"similarity"</span>: item.similarity,
+                    <span style="color: #54433a;">"timestamp"</span>: item.timestamp,
+                }
+                <span style="color: #5c3e99;">for</span> item <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">list</span>(per_input_buffer)
+            ],
+            <span style="color: #54433a;">"recent_training_examples"</span>: [
+                {
+                    <span style="color: #54433a;">"user_input"</span>: item.user_input,
+                    <span style="color: #54433a;">"mimic_output"</span>: item.mimic_output,
+                    <span style="color: #54433a;">"tiny_output"</span>: item.tiny_output,
+                    <span style="color: #54433a;">"similarity"</span>: item.similarity,
+                    <span style="color: #54433a;">"metric"</span>: item.metric,
+                    <span style="color: #54433a;">"timestamp"</span>: item.timestamp,
+                }
+                <span style="color: #5c3e99;">for</span> item <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">list</span>(<span style="color: #5c3e99;">self</span>._global_records)
+            ],
+        }
+
+
+<span style="color: #5c3e99;">def</span> describe_block_change(<span style="color: #2e3338;">block_name</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">old_text</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">new_text</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #5c3e99;">if</span> old_text.strip() == new_text.strip():
+        <span style="color: #5c3e99;">return</span> f<span style="color: #54433a;">"Block </span>{block_name}<span style="color: #54433a;"> unchanged."</span>
+
+    <span style="color: #2e3338;">desc</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = [f<span style="color: #54433a;">"Block </span>{block_name}<span style="color: #54433a;">: "</span>]
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(new_text) &gt; <span style="color: #5c3e99;">len</span>(old_text) * 1.1:
+        desc.append(<span style="color: #54433a;">"expanded details."</span>)
+    <span style="color: #5c3e99;">elif</span> <span style="color: #5c3e99;">len</span>(new_text) &lt; <span style="color: #5c3e99;">len</span>(old_text) * 0.9:
+        desc.append(<span style="color: #54433a;">"more concise wording."</span>)
+
+    <span style="color: #2e3338;">old_words</span> = <span style="color: #5c3e99;">set</span>(old_text.lower().split())
+    <span style="color: #2e3338;">new_words</span> = <span style="color: #5c3e99;">set</span>(new_text.lower().split())
+    <span style="color: #2e3338;">added</span> = <span style="color: #5c3e99;">list</span>(new_words - old_words)
+    <span style="color: #2e3338;">removed</span> = <span style="color: #5c3e99;">list</span>(old_words - new_words)
+    <span style="color: #5c3e99;">if</span> added:
+        desc.append(
+            <span style="color: #54433a;">" Added cues: "</span>
+            + <span style="color: #54433a;">", "</span>.join(<span style="color: #5c3e99;">sorted</span>(added[:5]))
+            + (<span style="color: #54433a;">"..."</span> <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(added) &gt; 5 <span style="color: #5c3e99;">else</span> <span style="color: #54433a;">""</span>)
+        )
+    <span style="color: #5c3e99;">if</span> removed:
+        desc.append(
+            <span style="color: #54433a;">" Removed cues: "</span>
+            + <span style="color: #54433a;">", "</span>.join(<span style="color: #5c3e99;">sorted</span>(removed[:5]))
+            + (<span style="color: #54433a;">"..."</span> <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(removed) &gt; 5 <span style="color: #5c3e99;">else</span> <span style="color: #54433a;">""</span>)
+        )
+
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(desc) == 1:
+        desc.append(<span style="color: #54433a;">" Rephrased while preserving intent."</span>)
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">""</span>.join(desc)
+
+
+<span style="color: #5c3e99;">def</span> prompt_unified_diff(<span style="color: #2e3338;">old_prompt</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">new_prompt</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #2e3338;">diff</span> = difflib.unified_diff(
+        old_prompt.splitlines(),
+        new_prompt.splitlines(),
+        fromfile=<span style="color: #54433a;">"previous_prompt"</span>,
+        tofile=<span style="color: #54433a;">"updated_prompt"</span>,
+        lineterm=<span style="color: #54433a;">""</span>,
+    )
+    <span style="color: #2e3338;">diff_text</span> = <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(diff)
+    <span style="color: #5c3e99;">return</span> diff_text <span style="color: #5c3e99;">or</span> <span style="color: #54433a;">"(no textual diff)"</span>
+
+
+<span style="color: #5c3e99;">def</span> format_change_log(<span style="color: #2e3338;">entries</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]], limit: <span style="color: #16524F;">int</span> = 3) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> entries:
+        <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"No prior prompt changes recorded."</span>
+
+    <span style="color: #2e3338;">lines</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = [<span style="color: #54433a;">"Recent prompt changes:"</span>]
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">idx</span>, <span style="color: #2e3338;">entry</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(entries[-limit:], start=1):
+        <span style="color: #2e3338;">delta</span> = entry.get(<span style="color: #54433a;">"delta"</span>)
+        <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">isinstance</span>(delta, <span style="color: #16524F;">float</span>):
+            <span style="color: #2e3338;">delta_text</span> = f<span style="color: #54433a;">"</span>{delta:+.3f}<span style="color: #54433a;">"</span>
+        <span style="color: #5c3e99;">else</span>:
+            <span style="color: #2e3338;">delta_text</span> = <span style="color: #54433a;">"N/A"</span>
+        lines.append(
+            f<span style="color: #54433a;">"[</span>{idx}<span style="color: #54433a;">] block=</span>{entry.get(<span style="color: #54433a;">'block_name'</span>)}<span style="color: #54433a;"> &#916;metric=</span>{delta_text}<span style="color: #54433a;"> "</span>
+            f<span style="color: #54433a;">"prev=</span>{entry.get(<span style="color: #54433a;">'prev_metric'</span>)}<span style="color: #54433a;"> new=</span>{entry.get(<span style="color: #54433a;">'new_metric'</span>)}<span style="color: #54433a;">"</span>
+        )
+        lines.append(f<span style="color: #54433a;">"Intent: </span>{entry.get(<span style="color: #54433a;">'intention'</span>)}<span style="color: #54433a;">"</span>)
+        <span style="color: #2e3338;">old_block</span> = entry.get(<span style="color: #54433a;">"old_block_text"</span>, <span style="color: #54433a;">""</span>)
+        <span style="color: #2e3338;">new_block</span> = entry.get(<span style="color: #54433a;">"new_block_text"</span>, <span style="color: #54433a;">""</span>)
+        lines.append(f<span style="color: #54433a;">"Old block: </span>{old_block}<span style="color: #54433a;">"</span>)
+        lines.append(f<span style="color: #54433a;">"New block: </span>{new_block}<span style="color: #54433a;">"</span>)
+        <span style="color: #2e3338;">diff_text</span> = entry.get(<span style="color: #54433a;">"diff"</span>, <span style="color: #54433a;">""</span>) <span style="color: #5c3e99;">or</span> <span style="color: #54433a;">"(no diff)"</span>
+        <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">isinstance</span>(diff_text, <span style="color: #16524F;">str</span>):
+            <span style="color: #2e3338;">snippet</span> = diff_text <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(diff_text) &lt;= 800 <span style="color: #5c3e99;">else</span> diff_text[:800] + <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">..."</span>
+            lines.append(<span style="color: #54433a;">"Diff:</span>\n<span style="color: #54433a;">"</span> + snippet)
+
+    <span style="color: #585c60;"># Diagnostics about general block scope and overlap with SOPs (best-effort)</span>
+    <span style="color: #5c3e99;">try</span>:
+        <span style="color: #2e3338;">latest_prompt</span> = entries[-1].get(<span style="color: #54433a;">"new_prompt"</span>, <span style="color: #54433a;">""</span>)
+        <span style="color: #2e3338;">sections</span> = latest_prompt.split(<span style="color: #54433a;">"["</span>)
+        <span style="color: #2e3338;">blocks</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>] = {}
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">section</span> <span style="color: #5c3e99;">in</span> sections:
+            <span style="color: #5c3e99;">if</span> section.startswith(<span style="color: #54433a;">"General guidance]"</span>):
+                blocks[<span style="color: #54433a;">"general"</span>] = section.split(<span style="color: #54433a;">"]"</span>, 1)[1].strip()
+            <span style="color: #5c3e99;">elif</span> section.startswith(<span style="color: #54433a;">"sop-"</span>):
+                <span style="color: #2e3338;">name</span>, <span style="color: #2e3338;">rest</span> = section.split(<span style="color: #54433a;">"]"</span>, 1)
+                blocks[name] = rest.strip()
+
+        <span style="color: #2e3338;">general_text</span> = blocks.get(<span style="color: #54433a;">"general"</span>, <span style="color: #54433a;">""</span>)
+        lines.append(<span style="color: #54433a;">"</span>\n<span style="color: #54433a;">General block diagnostics:"</span>)
+        lines.append(f<span style="color: #54433a;">"- general_len_chars: </span>{<span style="color: #5c3e99;">len</span>(general_text)}<span style="color: #54433a;">"</span>)
+
+        <span style="color: #2e3338;">sop_names</span> = [k <span style="color: #5c3e99;">for</span> k <span style="color: #5c3e99;">in</span> blocks.keys() <span style="color: #5c3e99;">if</span> k != <span style="color: #54433a;">"general"</span>]
+        <span style="color: #5c3e99;">if</span> sop_names:
+            <span style="color: #2e3338;">general_vec</span> = evaluator.embed_text(general_text)
+            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">name</span> <span style="color: #5c3e99;">in</span> sop_names:
+                <span style="color: #2e3338;">sop_vec</span> = evaluator.embed_text(blocks.get(name, <span style="color: #54433a;">""</span>))
+                <span style="color: #2e3338;">sim</span> = cosine_similarity(general_vec, sop_vec)
+                lines.append(f<span style="color: #54433a;">"- cosine(general, </span>{name}<span style="color: #54433a;">) = </span>{sim:.3f}<span style="color: #54433a;">"</span>)
+        <span style="color: #5c3e99;">else</span>:
+            lines.append(<span style="color: #54433a;">"- cosine(general, sop-#): n/a (no SOP blocks found)"</span>)
+    <span style="color: #5c3e99;">except</span> <span style="color: #16524F;">Exception</span>:
+        lines.append(<span style="color: #54433a;">"</span>\n<span style="color: #54433a;">General block diagnostics: unavailable (parsing error)"</span>)
+
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(lines)
+
+
+<span style="color: #5c3e99;">def</span> serialize_prompt_blocks(<span style="color: #2e3338;">blocks</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>]) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #2e3338;">parts</span> = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">name</span>, <span style="color: #2e3338;">text</span> <span style="color: #5c3e99;">in</span> blocks.items():
+        parts.append(f<span style="color: #54433a;">"[</span>{name}<span style="color: #54433a;">]</span>\n{text}<span style="color: #54433a;">"</span>)
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"</span>\n\n<span style="color: #54433a;">"</span>.join(parts)
+
+<span style="color: #2e3338;">evaluator</span> = TinyAgentEvaluator(
+    metric=<span style="color: #54433a;">"embedding_cosine"</span>,
+    per_input_history=3,
+    training_history=10,
+)
+
+<span style="color: #2e3338;">sample_input</span> = synthetic_examples[0][<span style="color: #54433a;">"text"</span>]
+<span style="color: #2e3338;">tiny_answer</span> = tiny_agent_response(sample_input)
+<span style="color: #2e3338;">mimic_answer</span> = mimic_agent(sample_input)[<span style="color: #54433a;">"mimic_output"</span>]
+evaluator.evaluate(
+    user_input=sample_input,
+    tiny_output=tiny_answer,
+    mimic_output=mimic_answer,
+)
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">similarity</td>
+<td class="org-left">:</td>
+<td class="org-right">0.02492614835500717</td>
+<td class="org-left">metric</td>
+<td class="org-left">:</td>
+<td class="org-left">embedding<sub>cosine</sub></td>
+<td class="org-left">last<sub>outputs</sub><sub>for</sub><sub>input</sub></td>
+<td class="org-left">:</td>
+<td class="org-left">((mimic<sub>output</sub> : Your description captures the invigorating effect of espresso well, highlighting how it can positively influence your morning mood. tiny<sub>output</sub> : Well, I don't like sports. similarity : 0.02492614835500717 timestamp : 1764090815.578356))</td>
+<td class="org-left">recent<sub>training</sub><sub>examples</sub></td>
+<td class="org-left">:</td>
+<td class="org-left">((user<sub>input</sub> : The first sip of my morning espresso awakens my senses and sets a positive tone for the day ahead. mimic<sub>output</sub> : Your description captures the invigorating effect of espresso well, highlighting how it can positively influence your morning mood. tiny<sub>output</sub> : Well, I don't like sports. similarity : 0.02492614835500717 metric : embedding<sub>cosine</sub> timestamp : 1764090815.578356))</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org79799b6" class="outline-4">
+<h4 id="org79799b6"><span class="section-number-4">6.5.2.</span> The coach agent</h4>
+<div class="outline-text-4" id="text-6-5-2">
+<p>
+The coach agent input: the evaluator output, and the current mimic agent's prompt.
+The coach agent output: a new prompt for the mimic agent.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">class</span> <span style="color: #16524F;">CoachSignature</span>(dspy.<span style="color: #16524F;">Signature</span>):
+    <span style="color: #2e3338;">evaluator_report</span> = dspy.InputField(
+        desc=<span style="color: #54433a;">"Structured summary describing recent evaluator scores and samples."</span>
+    )
+    <span style="color: #2e3338;">prompt_blocks</span> = dspy.InputField(desc=<span style="color: #54433a;">"Structured prompt broken into named blocks."</span>)
+    <span style="color: #2e3338;">block_options</span> = dspy.InputField(desc=<span style="color: #54433a;">"List of valid block names to edit."</span>)
+    <span style="color: #2e3338;">guidelines</span> = dspy.InputField(
+        desc=<span style="color: #54433a;">"Non-negotiable constraints for how the revised prompt should be phrased."</span>
+    )
+    <span style="color: #2e3338;">prompt_change_log</span> = dspy.InputField(
+        desc=<span style="color: #54433a;">"Table describing prior prompt edits, diffs, and their metric deltas."</span>
+    )
+    <span style="color: #2e3338;">case_examples</span> = dspy.InputField(
+        desc=<span style="color: #54433a;">"Sample inputs with target/mimic outputs for focused comparison."</span>
+    )
+    <span style="color: #2e3338;">case_reasoning</span> = dspy.InputField(
+        desc=<span style="color: #54433a;">"Reasoned analysis describing why mimic outputs differ from targets."</span>
+    )
+    <span style="color: #2e3338;">target_block</span> = dspy.OutputField(desc=<span style="color: #54433a;">"Name of the block to edit (e.g., general, sop-1)."</span>)
+    <span style="color: #2e3338;">updated_block_text</span> = dspy.OutputField(desc=<span style="color: #54433a;">"Rewritten text for the chosen block only, or line-level patch directives."</span>)
+    <span style="color: #2e3338;">coach_rationale</span> = dspy.OutputField(desc=<span style="color: #54433a;">"Short explanation for the proposed change."</span>)
+
+
+<span style="color: #2e3338;">COACH_PROMPT_GUIDELINES</span> = (
+    <span style="color: #54433a;">"Produce a standalone instruction for an agent to immitate a 'target agent'. "</span>
+    <span style="color: #54433a;">"Focus on what the agent should say to become indistinguishable from the target agent."</span>
+    <span style="color: #54433a;">"The target agent is following a policy and you must decode it by looking to its behavior and craft a prompt to the mimic agent to apply that same policy."</span>
+    <span style="color: #54433a;">"Be as precise as possible describing the process the target agent is following to insert in the mimic agent prompt."</span>
+    <span style="color: #54433a;">"Don't mention 'mimic agent' or 'target agent' in the prompt of the 'mimic agent' since it is unaware of them. "</span>
+    <span style="color: #54433a;">"You want to maximize the similarity between the target agent output and the mimic agent output by editing the mimic agent's prompt."</span>
+    <span style="color: #54433a;">"Respect the structured prompt: edit exactly one named block (general or sop-#) per iteration and leave all other blocks untouched."</span>
+    <span style="color: #54433a;">"Keep the [General guidance] block high-level (meta guidance only) and free of policy details; place behavioral rules in SOP blocks."</span>
+    <span style="color: #54433a;">"When writing a SOP, express the full branching policy as pseudo-code with atomic lines: one condition/action per line (condition -&gt; action -&gt; optional terminate). Use explicit if/else/then, ask/check/show verbs, and 'terminate' where the flow ends. Avoid prose paragraphs. Example: 'check user status', 'if onboarding: show message onboarding; terminate', 'if active or on-hold: ask for listing id', 'check listing id status', 'if inactive: show message listing inactive; terminate', 'if blocked: check block reason', 'if block reason is seller state change: show message seller state change; terminate', 'else if reactivatable: show message reactivation; create ticket; terminate', 'else: show reason code; terminate'."</span>
+    <span style="color: #54433a;">"Return updates as line-level directives against the current block: use 'ADD: &lt;text&gt;' to insert a new line (appended at end), 'EDIT: &lt;line_number&gt; -&gt; &lt;text&gt;' to replace a specific line, and 'DEL: &lt;line_number&gt;' to remove a line. Multiple directives allowed. If no change is needed, choose 'no_change'."</span>
+    <span style="color: #54433a;">"Keep edits localized: add/delete/modify specific lines intentionally; avoid rewriting the entire SOP unless necessary."</span>
+    <span style="color: #54433a;">"If the sampled block already expresses the correct behavior, you may choose 'no_change' and leave it untouched; otherwise, rewrite only that block."</span>
+)
+
+
+<span style="color: #5c3e99;">def</span> summarize_evaluator_output(<span style="color: #2e3338;">report</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>], limit: <span style="color: #16524F;">int</span> = 3) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #585c60;">"""Turn evaluator dictionaries into a short textual description."""</span>
+
+    <span style="color: #2e3338;">lines</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = [f<span style="color: #54433a;">"Similarity metric: </span>{report.get(<span style="color: #54433a;">'metric'</span>)}<span style="color: #54433a;">"</span>]
+
+    <span style="color: #5c3e99;">if</span> <span style="color: #54433a;">"overall_avg"</span> <span style="color: #5c3e99;">in</span> report:
+        lines.append(
+            <span style="color: #54433a;">"Overall similarity: "</span>
+            f<span style="color: #54433a;">"avg=</span>{report.get(<span style="color: #54433a;">'overall_avg'</span>):.3f}<span style="color: #54433a;">, "</span>
+            f<span style="color: #54433a;">"median=</span>{report.get(<span style="color: #54433a;">'overall_median'</span>, 0):.3f}<span style="color: #54433a;">, "</span>
+            f<span style="color: #54433a;">"p25=</span>{report.get(<span style="color: #54433a;">'overall_p25'</span>, 0):.3f}<span style="color: #54433a;">, "</span>
+            f<span style="color: #54433a;">"p75=</span>{report.get(<span style="color: #54433a;">'overall_p75'</span>, 0):.3f}<span style="color: #54433a;">, "</span>
+            f<span style="color: #54433a;">"min=</span>{report.get(<span style="color: #54433a;">'overall_min'</span>, 0):.3f}<span style="color: #54433a;">"</span>
+        )
+        <span style="color: #2e3338;">worst</span> = report.get(<span style="color: #54433a;">"overall_worst"</span>, [])[:limit]
+        <span style="color: #5c3e99;">if</span> worst:
+            lines.append(<span style="color: #54433a;">"Overall worst examples:"</span>)
+            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">example</span> <span style="color: #5c3e99;">in</span> worst:
+                lines.append(
+                    <span style="color: #54433a;">"  * input: "</span>
+                    + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"user_input"</span>]).strip()
+                    + <span style="color: #54433a;">" | target: "</span>
+                    + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"tiny_output"</span>]).strip()
+                    + <span style="color: #54433a;">" | mimic: "</span>
+                    + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"mimic_output"</span>]).strip()
+                    + f<span style="color: #54433a;">" | score=</span>{<span style="color: #5c3e99;">float</span>(example[<span style="color: #54433a;">'similarity'</span>]):.3f}<span style="color: #54433a;">"</span>
+                )
+
+    <span style="color: #2e3338;">clusters</span> = report.get(<span style="color: #54433a;">"clusters"</span>, [])
+    <span style="color: #5c3e99;">if</span> clusters:
+        lines.append(<span style="color: #54433a;">"Cluster summaries (worst examples shown first):"</span>)
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">cluster</span> <span style="color: #5c3e99;">in</span> clusters:
+            lines.append(
+                f<span style="color: #54433a;">"- cluster </span>{cluster.get(<span style="color: #54433a;">'cluster_id'</span>)}<span style="color: #54433a;">: "</span>
+                f<span style="color: #54433a;">"count=</span>{cluster.get(<span style="color: #54433a;">'count'</span>)}<span style="color: #54433a;"> avg=</span>{cluster.get(<span style="color: #54433a;">'avg_similarity'</span>):.3f}<span style="color: #54433a;">"</span>
+            )
+            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">example</span> <span style="color: #5c3e99;">in</span> cluster.get(<span style="color: #54433a;">"worst_examples"</span>, [])[:limit]:
+                lines.append(
+                    <span style="color: #54433a;">"  * input: "</span>
+                    + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"user_input"</span>]).strip()
+                    + <span style="color: #54433a;">" | target: "</span>
+                    + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"tiny_output"</span>]).strip()
+                    + <span style="color: #54433a;">" | mimic: "</span>
+                    + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"mimic_output"</span>]).strip()
+                    + f<span style="color: #54433a;">" | score=</span>{<span style="color: #5c3e99;">float</span>(example[<span style="color: #54433a;">'similarity'</span>]):.3f}<span style="color: #54433a;">"</span>
+                )
+            <span style="color: #2e3338;">subclusters</span> = cluster.get(<span style="color: #54433a;">"subclusters"</span>, [])
+            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">sub</span> <span style="color: #5c3e99;">in</span> subclusters:
+                lines.append(
+                    f<span style="color: #54433a;">"  - subcluster </span>{sub.get(<span style="color: #54433a;">'subcluster_id'</span>)}<span style="color: #54433a;">: "</span>
+                    f<span style="color: #54433a;">"count=</span>{sub.get(<span style="color: #54433a;">'count'</span>)}<span style="color: #54433a;"> avg=</span>{sub.get(<span style="color: #54433a;">'avg_similarity'</span>):.3f}<span style="color: #54433a;">"</span>
+                )
+                <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">example</span> <span style="color: #5c3e99;">in</span> sub.get(<span style="color: #54433a;">"worst_examples"</span>, [])[:limit]:
+                    lines.append(
+                        <span style="color: #54433a;">"    * input: "</span>
+                        + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"user_input"</span>]).strip()
+                        + <span style="color: #54433a;">" | target: "</span>
+                        + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"tiny_output"</span>]).strip()
+                        + <span style="color: #54433a;">" | mimic: "</span>
+                        + <span style="color: #5c3e99;">str</span>(example[<span style="color: #54433a;">"mimic_output"</span>]).strip()
+                        + f<span style="color: #54433a;">" | score=</span>{<span style="color: #5c3e99;">float</span>(example[<span style="color: #54433a;">'similarity'</span>]):.3f}<span style="color: #54433a;">"</span>
+                    )
+
+    <span style="color: #2e3338;">sop_sim</span> = report.get(<span style="color: #54433a;">"sop_similarity"</span>, {})
+    <span style="color: #5c3e99;">if</span> sop_sim:
+        <span style="color: #2e3338;">names</span> = sop_sim.get(<span style="color: #54433a;">"sop_names"</span>, [])
+        <span style="color: #2e3338;">matrix</span> = sop_sim.get(<span style="color: #54433a;">"similarity"</span>, [])
+        <span style="color: #5c3e99;">if</span> names <span style="color: #5c3e99;">and</span> matrix:
+            lines.append(<span style="color: #54433a;">"SOP similarity matrix (cosine):"</span>)
+            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">i</span>, <span style="color: #2e3338;">row</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(matrix):
+                <span style="color: #2e3338;">row_text</span> = <span style="color: #54433a;">", "</span>.join(f<span style="color: #54433a;">"</span>{names[j]}<span style="color: #54433a;">=</span>{row[j]:.3f}<span style="color: #54433a;">"</span> <span style="color: #5c3e99;">for</span> j <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(<span style="color: #5c3e99;">len</span>(names)))
+                lines.append(f<span style="color: #54433a;">"- </span>{names[i]}<span style="color: #54433a;"> vs others: </span>{row_text}<span style="color: #54433a;">"</span>)
+
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(lines)
+
+
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">CoachAgent</span>(dspy.<span style="color: #16524F;">Module</span>):
+    <span style="color: #585c60;">"""LLM-based coach that rewrites the mimic prompt using evaluator feedback."""</span>
+
+    <span style="color: #5c3e99;">def</span> __init__(<span style="color: #5c3e99;">self</span>) -&gt; <span style="color: #16524F;">None</span>:
+        <span style="color: #5c3e99;">super</span>().__init__()
+        ensure_dspy_configured()
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">predictor</span> = dspy.Predict(CoachSignature)
+        <span style="color: #5c3e99;">self</span>.<span style="color: #2e3338;">guidelines</span> = COACH_PROMPT_GUIDELINES
+
+    <span style="color: #5c3e99;">def</span> forward(
+        <span style="color: #5c3e99;">self</span>,
+        *,
+        <span style="color: #2e3338;">evaluator_output</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>],
+        <span style="color: #2e3338;">prompt_blocks</span>: <span style="color: #16524F;">str</span>,
+        <span style="color: #2e3338;">block_options</span>: <span style="color: #16524F;">str</span>,
+        <span style="color: #2e3338;">prompt_change_log</span>: <span style="color: #16524F;">str</span>,
+        <span style="color: #2e3338;">case_examples</span>: <span style="color: #16524F;">str</span>,
+        <span style="color: #2e3338;">case_reasoning</span>: <span style="color: #16524F;">str</span>,
+    ) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>]:  <span style="color: #585c60;"># type: ignore[override]</span>
+        <span style="color: #2e3338;">summary</span> = summarize_evaluator_output(evaluator_output)
+        <span style="color: #2e3338;">prediction</span> = <span style="color: #5c3e99;">self</span>.predictor(
+            evaluator_report=summary,
+            prompt_blocks=prompt_blocks,
+            block_options=block_options,
+            guidelines=<span style="color: #5c3e99;">self</span>.guidelines,
+            prompt_change_log=prompt_change_log,
+            case_examples=case_examples,
+            case_reasoning=case_reasoning,
+        )
+        <span style="color: #2e3338;">block</span> = <span style="color: #5c3e99;">getattr</span>(prediction, <span style="color: #54433a;">"target_block"</span>, <span style="color: #54433a;">"general"</span>).strip()
+        <span style="color: #2e3338;">updated_block</span> = <span style="color: #5c3e99;">getattr</span>(prediction, <span style="color: #54433a;">"updated_block_text"</span>, <span style="color: #54433a;">""</span>).strip()
+        <span style="color: #2e3338;">rationale</span> = <span style="color: #5c3e99;">getattr</span>(prediction, <span style="color: #54433a;">"coach_rationale"</span>, <span style="color: #54433a;">""</span>)
+        <span style="color: #5c3e99;">return</span> {
+            <span style="color: #54433a;">"target_block"</span>: block,
+            <span style="color: #54433a;">"updated_block_text"</span>: updated_block,
+            <span style="color: #54433a;">"coach_rationale"</span>: rationale,
+        }
+
+
+<span style="color: #2e3338;">coach</span> = CoachAgent()
+<span style="color: #2e3338;">evaluator_snapshot</span> = evaluator.evaluate(
+    user_input=sample_input,
+    tiny_output=tiny_answer,
+    mimic_output=mimic_agent(sample_input)[<span style="color: #54433a;">"mimic_output"</span>],
+)
+
+coach.forward(
+    evaluator_output=evaluator_snapshot,
+    prompt_blocks=serialize_prompt_blocks(mimic_agent.get_prompt_blocks()),
+    block_options=<span style="color: #54433a;">", "</span>.join(mimic_agent.prompt_state.block_names()),
+    prompt_change_log=<span style="color: #54433a;">"No prior prompt changes recorded."</span>,
+    case_examples=<span style="color: #54433a;">""</span>,
+    case_reasoning=<span style="color: #54433a;">"No case analysis available yet."</span>,
+)
+</pre>
+</div>
+
+<pre class="example">
+2025/11/25 14:13:35 WARNING dspy.primitives.module: Calling module.forward(...) on CoachAgent directly is discouraged. Please use module(...) instead.
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">target<sub>block</sub></td>
+<td class="org-left">:</td>
+<td class="org-left">sop-1</td>
+<td class="org-left">updated<sub>block</sub><sub>text</sub></td>
+<td class="org-left">:</td>
+<td class="org-left">DEL: 1\nADD: check input type\nADD: if input is question: analyze question intent; generate clear, concise answer; terminate\nADD: else if input is instruction: parse instruction; execute step-by-step; provide result; terminate\nADD: else if input is statement: acknowledge understanding; optionally ask for clarification; terminate\nADD: else: show error message unsupported input; terminate</td>
+<td class="org-left">coach<sub>rationale</sub></td>
+<td class="org-left">:</td>
+<td class="org-left">The original SOP was a placeholder and did not specify any behavior. To align with the guidelines, I replaced it with a detailed, explicit branching policy that instructs the agent how to process different input types step-by-step, using clear conditions and actions. This ensures the mimic agent follows a precise policy to replicate the target agent's behavior.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgca2788a" class="outline-4">
+<h4 id="orgca2788a"><span class="section-number-4">6.5.3.</span> The algorithm</h4>
+<div class="outline-text-4" id="text-6-5-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgcd59fbb"></a>Splitting the training data<br />
+<div class="outline-text-5" id="text-6-5-3-1">
+<p>
+We split the data between training, test, and holdout. 60%/20%/20%.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">import</span> math
+<span style="color: #5c3e99;">import</span> random
+<span style="color: #5c3e99;">from</span> typing <span style="color: #5c3e99;">import</span> Sequence, Tuple
+
+
+<span style="color: #5c3e99;">def</span> split_dataset(
+    <span style="color: #2e3338;">dataset</span>: <span style="color: #16524F;">Sequence</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+    train_ratio: <span style="color: #16524F;">float</span> = 0.6,
+    test_ratio: <span style="color: #16524F;">float</span> = 0.2,
+    seed: <span style="color: #16524F;">int</span> = 2024,
+) -&gt; <span style="color: #16524F;">Tuple</span>[<span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]], <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]], <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]]]:
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> math.isclose(train_ratio + test_ratio, 0.8, rel_tol=1e-9):
+        <span style="color: #5c3e99;">raise</span> <span style="color: #16524F;">ValueError</span>(<span style="color: #54433a;">"Train + test ratios must sum to 0.8 for 20% holdout."</span>)
+
+    <span style="color: #2e3338;">rng</span> = random.Random(seed)
+    <span style="color: #2e3338;">shuffled</span> = <span style="color: #5c3e99;">list</span>(dataset)
+    rng.shuffle(shuffled)
+
+    <span style="color: #2e3338;">n</span> = <span style="color: #5c3e99;">len</span>(shuffled)
+    <span style="color: #2e3338;">train_end</span> = <span style="color: #5c3e99;">int</span>(n * train_ratio)
+    <span style="color: #2e3338;">test_end</span> = train_end + <span style="color: #5c3e99;">int</span>(n * test_ratio)
+
+    <span style="color: #2e3338;">train_split</span> = shuffled[:train_end]
+    <span style="color: #2e3338;">test_split</span> = shuffled[train_end:test_end]
+    <span style="color: #2e3338;">holdout_split</span> = shuffled[test_end:]
+    <span style="color: #5c3e99;">return</span> train_split, test_split, holdout_split
+
+
+<span style="color: #2e3338;">train_set</span>, <span style="color: #2e3338;">test_set</span>, <span style="color: #2e3338;">holdout_set</span> = split_dataset(scored_examples)
+<span style="color: #5c3e99;">print</span>(
+    f<span style="color: #54433a;">"train=</span>{<span style="color: #5c3e99;">len</span>(train_set)}<span style="color: #54433a;"> | test=</span>{<span style="color: #5c3e99;">len</span>(test_set)}<span style="color: #54433a;"> | holdout=</span>{<span style="color: #5c3e99;">len</span>(holdout_set)}<span style="color: #54433a;">"</span>
+)
+</pre>
+</div>
+
+<pre class="example">
+train=120 | test=40 | holdout=40
+</pre>
+</div>
+</li>
+<li><a id="org71d19a7"></a>The learning loop<br />
+<div class="outline-text-5" id="text-6-5-3-2">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">import</span> matplotlib.pyplot <span style="color: #5c3e99;">as</span> plt
+<span style="color: #5c3e99;">import</span> random
+<span style="color: #5c3e99;">import</span> difflib
+<span style="color: #5c3e99;">from</span> pathlib <span style="color: #5c3e99;">import</span> Path
+
+<span style="color: #5c3e99;">import</span> dspy
+
+<span style="color: #2e3338;">CASE_REPORT_DIR</span> = Path(<span style="color: #54433a;">"experiments/mimic_tiny_agent/coach_case_reports"</span>)
+<span style="color: #2e3338;">CASE_ANALYSIS_INSTRUCTIONS</span> = (
+    <span style="color: #54433a;">"Explain how the mimic agent's answers differ from the target outputs and propose concrete prompt tweaks."</span>
+)
+
+
+<span style="color: #5c3e99;">class</span> <span style="color: #16524F;">CaseAnalysisSignature</span>(dspy.<span style="color: #16524F;">Signature</span>):
+    <span style="color: #2e3338;">cases</span> = dspy.InputField(desc=<span style="color: #54433a;">"Selected inputs plus target/mimic outputs."</span>)
+    <span style="color: #2e3338;">metric</span> = dspy.InputField(desc=<span style="color: #54433a;">"Similarity metric currently tracked."</span>)
+    <span style="color: #2e3338;">guidance</span> = dspy.InputField(desc=<span style="color: #54433a;">"What the analysis should focus on."</span>)
+    <span style="color: #2e3338;">analysis</span> = dspy.OutputField(desc=<span style="color: #54433a;">"Reasoned comparison and actionable advice."</span>)
+
+ensure_dspy_configured()
+<span style="color: #2e3338;">case_analyzer</span> = dspy.Predict(CaseAnalysisSignature)
+
+
+<span style="color: #5c3e99;">def</span> analyze_case_differences(<span style="color: #2e3338;">cases_text</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">metric</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> cases_text.strip():
+        <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"No case data collected."</span>
+
+    ensure_dspy_configured()
+    <span style="color: #2e3338;">result</span> = case_analyzer(
+        cases=cases_text,
+        metric=metric,
+        guidance=CASE_ANALYSIS_INSTRUCTIONS,
+    )
+    <span style="color: #5c3e99;">return</span> <span style="color: #5c3e99;">getattr</span>(result, <span style="color: #54433a;">"analysis"</span>, <span style="color: #5c3e99;">str</span>(result)).strip()
+
+
+<span style="color: #5c3e99;">def</span> build_case_report(
+    <span style="color: #2e3338;">records</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+    <span style="color: #2e3338;">evaluator</span>: <span style="color: #16524F;">TinyAgentEvaluator</span>,
+    *,
+    <span style="color: #2e3338;">epoch_idx</span>: <span style="color: #16524F;">int</span>,
+    top_k: <span style="color: #16524F;">int</span> = 5,
+) -&gt; <span style="color: #16524F;">tuple</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>]:
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> records:
+        <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">""</span>, <span style="color: #54433a;">""</span>
+
+    <span style="color: #2e3338;">anchor</span> = random.choice(records)
+    <span style="color: #2e3338;">anchor_vec</span> = evaluator.embed_text(anchor[<span style="color: #54433a;">"user_input"</span>])
+    <span style="color: #2e3338;">scored</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">tuple</span>[<span style="color: #16524F;">float</span>, <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]]] = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">record</span> <span style="color: #5c3e99;">in</span> records:
+        <span style="color: #2e3338;">vec</span> = evaluator.embed_text(record[<span style="color: #54433a;">"user_input"</span>])
+        <span style="color: #2e3338;">sim</span> = cosine_similarity(anchor_vec, vec)
+        scored.append((sim, record))
+
+    <span style="color: #2e3338;">top_records</span> = [rec <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">_</span>, <span style="color: #2e3338;">rec</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">sorted</span>(scored, key=<span style="color: #5c3e99;">lambda</span> x: x[0], reverse=True)[:top_k]]
+    <span style="color: #2e3338;">lines</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = [f<span style="color: #54433a;">"Anchor input: </span>{anchor[<span style="color: #54433a;">'user_input'</span>]}<span style="color: #54433a;">"</span>]
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">idx</span>, <span style="color: #2e3338;">rec</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(top_records, start=1):
+        lines.append(
+            <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(
+                [
+                    f<span style="color: #54433a;">"### Case </span>{idx}<span style="color: #54433a;">"</span>,
+                    f<span style="color: #54433a;">"- input: </span>{rec[<span style="color: #54433a;">'user_input'</span>]}<span style="color: #54433a;">"</span>,
+                    f<span style="color: #54433a;">"- target agent output: </span>{rec[<span style="color: #54433a;">'tiny_output'</span>]}<span style="color: #54433a;">"</span>,
+                    f<span style="color: #54433a;">"- mimic agent output: </span>{rec[<span style="color: #54433a;">'mimic_output'</span>]}<span style="color: #54433a;">"</span>,
+                    f<span style="color: #54433a;">"- similarity: </span>{rec[<span style="color: #54433a;">'similarity'</span>]:.3f}<span style="color: #54433a;">"</span>,
+                ]
+            )
+        )
+
+    CASE_REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    <span style="color: #2e3338;">report_path</span> = CASE_REPORT_DIR / f<span style="color: #54433a;">"epoch_</span>{epoch_idx:02d}<span style="color: #54433a;">_case_report.md"</span>
+    <span style="color: #2e3338;">report_text</span> = <span style="color: #54433a;">"</span>\n\n<span style="color: #54433a;">"</span>.join(lines)
+    report_path.write_text(report_text, encoding=<span style="color: #54433a;">"utf-8"</span>)
+    <span style="color: #5c3e99;">return</span> report_text, <span style="color: #5c3e99;">str</span>(report_path)
+
+
+<span style="color: #5c3e99;">def</span> chunk_batches(<span style="color: #2e3338;">data</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]], <span style="color: #2e3338;">batch_size</span>: <span style="color: #16524F;">int</span>) -&gt; <span style="color: #16524F;">list</span>[<span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]]]:
+    <span style="color: #5c3e99;">return</span> [data[i : i + batch_size] <span style="color: #5c3e99;">for</span> i <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(0, <span style="color: #5c3e99;">len</span>(data), batch_size)]
+
+
+<span style="color: #5c3e99;">def</span> sop_similarity_report(
+    <span style="color: #2e3338;">blocks</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>], <span style="color: #2e3338;">evaluator</span>: <span style="color: #16524F;">TinyAgentEvaluator</span>, threshold: <span style="color: #16524F;">float</span> = 0.80
+) -&gt; <span style="color: #16524F;">str</span>:
+    <span style="color: #2e3338;">names</span> = [name <span style="color: #5c3e99;">for</span> name <span style="color: #5c3e99;">in</span> blocks.keys() <span style="color: #5c3e99;">if</span> name.startswith(<span style="color: #54433a;">"sop-"</span>)]
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(names) &lt; 2:
+        <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"SOP separation: only one SOP present."</span>
+
+    <span style="color: #2e3338;">lines</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = [<span style="color: #54433a;">"SOP separation (cosine embedding similarity):"</span>]
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">i</span>, <span style="color: #2e3338;">a</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(names):
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">b</span> <span style="color: #5c3e99;">in</span> names[i + 1 :]:
+            <span style="color: #5c3e99;">try</span>:
+                <span style="color: #2e3338;">va</span> = evaluator.embed_text(blocks[a])
+                <span style="color: #2e3338;">vb</span> = evaluator.embed_text(blocks[b])
+                <span style="color: #2e3338;">sim</span> = cosine_similarity(va, vb)
+            <span style="color: #5c3e99;">except</span> <span style="color: #16524F;">Exception</span>:
+                <span style="color: #2e3338;">sim</span> = <span style="color: #5c3e99;">float</span>(<span style="color: #54433a;">"nan"</span>)
+            <span style="color: #2e3338;">verdict</span> = <span style="color: #54433a;">"distinct"</span> <span style="color: #5c3e99;">if</span> sim &lt; threshold <span style="color: #5c3e99;">else</span> <span style="color: #54433a;">"too similar"</span>
+            lines.append(f<span style="color: #54433a;">"- </span>{a}<span style="color: #54433a;"> vs </span>{b}<span style="color: #54433a;">: </span>{sim:.3f}<span style="color: #54433a;"> (</span>{verdict}<span style="color: #54433a;">, threshold </span>{threshold}<span style="color: #54433a;">)"</span>)
+    <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(lines)
+
+
+<span style="color: #5c3e99;">def</span> _kmeans_cosine(<span style="color: #2e3338;">vectors</span>: np.<span style="color: #16524F;">ndarray</span>, <span style="color: #2e3338;">k</span>: <span style="color: #16524F;">int</span>, iters: <span style="color: #16524F;">int</span> = 6) -&gt; <span style="color: #16524F;">list</span>[<span style="color: #16524F;">int</span>]:
+    <span style="color: #5c3e99;">if</span> vectors.size == 0 <span style="color: #5c3e99;">or</span> k &lt;= 0:
+        <span style="color: #5c3e99;">return</span> [0] * <span style="color: #5c3e99;">len</span>(vectors)
+    <span style="color: #2e3338;">k</span> = <span style="color: #5c3e99;">min</span>(k, <span style="color: #5c3e99;">len</span>(vectors))
+    <span style="color: #2e3338;">idxs</span> = np.random.choice(<span style="color: #5c3e99;">len</span>(vectors), k, replace=False)
+    <span style="color: #2e3338;">centroids</span> = vectors[idxs]
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">_</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(iters):
+        <span style="color: #2e3338;">sims</span> = np.matmul(vectors, centroids.T)
+        <span style="color: #2e3338;">labels</span> = np.argmax(sims, axis=1)
+        <span style="color: #2e3338;">new_centroids</span> = []
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">ci</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(k):
+            <span style="color: #2e3338;">members</span> = vectors[labels == ci]
+            <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(members) == 0:
+                new_centroids.append(centroids[ci])
+            <span style="color: #5c3e99;">else</span>:
+                new_centroids.append(np.mean(members, axis=0))
+        <span style="color: #2e3338;">centroids</span> = np.stack(new_centroids)
+    <span style="color: #5c3e99;">return</span> labels.tolist()
+
+
+<span style="color: #5c3e99;">def</span> build_cluster_report(
+    <span style="color: #2e3338;">records</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+    <span style="color: #2e3338;">evaluator</span>: <span style="color: #16524F;">TinyAgentEvaluator</span>,
+    <span style="color: #2e3338;">cluster_count</span>: <span style="color: #16524F;">int</span>,
+    top_k_examples: <span style="color: #16524F;">int</span> = 3,
+) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>]:
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> records:
+        <span style="color: #5c3e99;">return</span> {
+            <span style="color: #54433a;">"overall_avg"</span>: 0.0,
+            <span style="color: #54433a;">"overall_min"</span>: 0.0,
+            <span style="color: #54433a;">"overall_median"</span>: 0.0,
+            <span style="color: #54433a;">"overall_p25"</span>: 0.0,
+            <span style="color: #54433a;">"overall_p75"</span>: 0.0,
+            <span style="color: #54433a;">"overall_worst"</span>: [],
+            <span style="color: #54433a;">"clusters"</span>: [],
+        }
+
+    <span style="color: #2e3338;">texts</span> = [<span style="color: #5c3e99;">str</span>(r[<span style="color: #54433a;">"user_input"</span>]) <span style="color: #5c3e99;">for</span> r <span style="color: #5c3e99;">in</span> records]
+    <span style="color: #2e3338;">sims</span> = [<span style="color: #5c3e99;">float</span>(r[<span style="color: #54433a;">"similarity"</span>]) <span style="color: #5c3e99;">for</span> r <span style="color: #5c3e99;">in</span> records]
+    <span style="color: #2e3338;">vecs</span> = np.stack([evaluator.embed_text(t) <span style="color: #5c3e99;">for</span> t <span style="color: #5c3e99;">in</span> texts])
+    <span style="color: #2e3338;">labels</span> = _kmeans_cosine(vecs, <span style="color: #5c3e99;">max</span>(1, cluster_count))
+
+    <span style="color: #2e3338;">clusters</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]] = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">cid</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(<span style="color: #5c3e99;">max</span>(labels) + 1):
+        <span style="color: #2e3338;">idxs</span> = [i <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">i</span>, <span style="color: #2e3338;">lbl</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(labels) <span style="color: #5c3e99;">if</span> lbl == cid]
+        <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> idxs:
+            <span style="color: #5c3e99;">continue</span>
+        <span style="color: #2e3338;">cluster_records</span> = [records[i] <span style="color: #5c3e99;">for</span> i <span style="color: #5c3e99;">in</span> idxs]
+        <span style="color: #2e3338;">cluster_vecs</span> = vecs[idxs]
+        <span style="color: #2e3338;">cluster_sims</span> = [sims[i] <span style="color: #5c3e99;">for</span> i <span style="color: #5c3e99;">in</span> idxs]
+        <span style="color: #2e3338;">avg_sim</span> = <span style="color: #5c3e99;">float</span>(np.mean(cluster_sims))
+        <span style="color: #2e3338;">sorted_examples</span> = <span style="color: #5c3e99;">sorted</span>(cluster_records, key=<span style="color: #5c3e99;">lambda</span> r: r[<span style="color: #54433a;">"similarity"</span>])[:top_k_examples]
+
+        <span style="color: #585c60;"># sub-cluster within this cluster to surface distinct subjects</span>
+        <span style="color: #2e3338;">sub_k</span> = <span style="color: #5c3e99;">min</span>(3, <span style="color: #5c3e99;">len</span>(cluster_records))
+        <span style="color: #2e3338;">sub_labels</span> = _kmeans_cosine(cluster_vecs, sub_k)
+        <span style="color: #2e3338;">subclusters</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]] = []
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">scid</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(<span style="color: #5c3e99;">max</span>(sub_labels) + 1):
+            <span style="color: #2e3338;">sidxs</span> = [j <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">j</span>, <span style="color: #2e3338;">lbl</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(sub_labels) <span style="color: #5c3e99;">if</span> lbl == scid]
+            <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> sidxs:
+                <span style="color: #5c3e99;">continue</span>
+            <span style="color: #2e3338;">sub_examples</span> = [cluster_records[j] <span style="color: #5c3e99;">for</span> j <span style="color: #5c3e99;">in</span> sidxs]
+            <span style="color: #2e3338;">sub_sims</span> = [cluster_sims[j] <span style="color: #5c3e99;">for</span> j <span style="color: #5c3e99;">in</span> sidxs]
+            <span style="color: #2e3338;">sub_avg</span> = <span style="color: #5c3e99;">float</span>(np.mean(sub_sims))
+            <span style="color: #2e3338;">sub_worst</span> = <span style="color: #5c3e99;">sorted</span>(sub_examples, key=<span style="color: #5c3e99;">lambda</span> r: r[<span style="color: #54433a;">"similarity"</span>])[:top_k_examples]
+            subclusters.append(
+                {
+                    <span style="color: #54433a;">"subcluster_id"</span>: scid,
+                    <span style="color: #54433a;">"count"</span>: <span style="color: #5c3e99;">len</span>(sidxs),
+                    <span style="color: #54433a;">"avg_similarity"</span>: sub_avg,
+                    <span style="color: #54433a;">"worst_examples"</span>: sub_worst,
+                }
+            )
+
+        clusters.append(
+            {
+                <span style="color: #54433a;">"cluster_id"</span>: cid,
+                <span style="color: #54433a;">"count"</span>: <span style="color: #5c3e99;">len</span>(idxs),
+                <span style="color: #54433a;">"avg_similarity"</span>: avg_sim,
+                <span style="color: #54433a;">"worst_examples"</span>: sorted_examples,
+                <span style="color: #54433a;">"subclusters"</span>: subclusters,
+            }
+        )
+
+    <span style="color: #2e3338;">overall_avg</span> = <span style="color: #5c3e99;">float</span>(np.mean(sims)) <span style="color: #5c3e99;">if</span> sims <span style="color: #5c3e99;">else</span> 0.0
+    <span style="color: #2e3338;">overall_min</span> = <span style="color: #5c3e99;">float</span>(np.min(sims)) <span style="color: #5c3e99;">if</span> sims <span style="color: #5c3e99;">else</span> 0.0
+    <span style="color: #2e3338;">overall_median</span> = <span style="color: #5c3e99;">float</span>(np.median(sims)) <span style="color: #5c3e99;">if</span> sims <span style="color: #5c3e99;">else</span> 0.0
+    <span style="color: #2e3338;">overall_p25</span> = <span style="color: #5c3e99;">float</span>(np.percentile(sims, 25)) <span style="color: #5c3e99;">if</span> sims <span style="color: #5c3e99;">else</span> 0.0
+    <span style="color: #2e3338;">overall_p75</span> = <span style="color: #5c3e99;">float</span>(np.percentile(sims, 75)) <span style="color: #5c3e99;">if</span> sims <span style="color: #5c3e99;">else</span> 0.0
+    <span style="color: #2e3338;">worst_idxs</span> = np.argsort(sims)[:top_k_examples]
+    <span style="color: #2e3338;">overall_worst</span> = [records[i] <span style="color: #5c3e99;">for</span> i <span style="color: #5c3e99;">in</span> worst_idxs]
+
+    <span style="color: #5c3e99;">return</span> {
+        <span style="color: #54433a;">"overall_avg"</span>: overall_avg,
+        <span style="color: #54433a;">"overall_min"</span>: overall_min,
+        <span style="color: #54433a;">"overall_median"</span>: overall_median,
+        <span style="color: #54433a;">"overall_p25"</span>: overall_p25,
+        <span style="color: #54433a;">"overall_p75"</span>: overall_p75,
+        <span style="color: #54433a;">"overall_worst"</span>: overall_worst,
+        <span style="color: #54433a;">"clusters"</span>: clusters,
+    }
+
+
+<span style="color: #5c3e99;">def</span> sop_similarity_matrix(<span style="color: #2e3338;">blocks</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">str</span>], <span style="color: #2e3338;">evaluator</span>: <span style="color: #16524F;">TinyAgentEvaluator</span>) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]:
+    <span style="color: #2e3338;">sop_names</span> = [name <span style="color: #5c3e99;">for</span> name <span style="color: #5c3e99;">in</span> blocks.keys() <span style="color: #5c3e99;">if</span> name.startswith(<span style="color: #54433a;">"sop-"</span>)]
+    <span style="color: #2e3338;">matrix</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>]] = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">a</span> <span style="color: #5c3e99;">in</span> sop_names:
+        <span style="color: #2e3338;">row</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>] = []
+        <span style="color: #2e3338;">va</span> = evaluator.embed_text(blocks[a])
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">b</span> <span style="color: #5c3e99;">in</span> sop_names:
+            <span style="color: #2e3338;">vb</span> = evaluator.embed_text(blocks[b])
+            row.append(<span style="color: #5c3e99;">float</span>(cosine_similarity(va, vb)))
+        matrix.append(row)
+    <span style="color: #5c3e99;">return</span> {<span style="color: #54433a;">"sop_names"</span>: sop_names, <span style="color: #54433a;">"similarity"</span>: matrix}
+
+
+<span style="color: #5c3e99;">def</span> map_clusters_to_sops(<span style="color: #2e3338;">clusters</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]], <span style="color: #2e3338;">sop_names</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>]) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">int</span>]:
+    <span style="color: #585c60;">"""Map lowest-performing clusters to SOPs in order, cycling if needed."""</span>
+
+    <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> clusters <span style="color: #5c3e99;">or</span> <span style="color: #5c3e99;">not</span> sop_names:
+        <span style="color: #5c3e99;">return</span> {}
+
+    <span style="color: #2e3338;">sorted_clusters</span> = <span style="color: #5c3e99;">sorted</span>(clusters, key=<span style="color: #5c3e99;">lambda</span> c: c.get(<span style="color: #54433a;">"avg_similarity"</span>, 0.0))
+    <span style="color: #2e3338;">mapping</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">int</span>] = {}
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">i</span>, <span style="color: #2e3338;">sop</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(sop_names):
+        mapping[sop] = sorted_clusters[i % <span style="color: #5c3e99;">len</span>(sorted_clusters)][<span style="color: #54433a;">"cluster_id"</span>]
+    <span style="color: #5c3e99;">return</span> mapping
+
+
+
+
+<span style="color: #5c3e99;">def</span> run_learning_loop(
+    *,
+    <span style="color: #2e3338;">train_data</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+    <span style="color: #2e3338;">test_data</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+    <span style="color: #2e3338;">evaluator</span>: <span style="color: #16524F;">TinyAgentEvaluator</span>,
+    <span style="color: #2e3338;">coach</span>: <span style="color: #16524F;">CoachAgent</span>,
+    <span style="color: #2e3338;">mimic_agent</span>: <span style="color: #16524F;">MimicAgent</span>,
+    epochs: <span style="color: #16524F;">int</span> = 5,
+    batch_size: <span style="color: #16524F;">int</span> = 32,
+    shuffle: <span style="color: #16524F;">bool</span> = True,
+    freeze_general: <span style="color: #16524F;">bool</span> = True,
+    early_stopping: <span style="color: #16524F;">int</span> | <span style="color: #16524F;">None</span> = None,
+    early_stop_test_threshold: <span style="color: #16524F;">float</span> | <span style="color: #16524F;">None</span> = None,
+) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>]:
+    <span style="color: #2e3338;">test_history</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>] = []
+    <span style="color: #2e3338;">train_history</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>] = []
+    <span style="color: #2e3338;">prompt_history</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = [mimic_agent.base_prompt]
+    <span style="color: #2e3338;">similarity_fn</span> = <span style="color: #5c3e99;">getattr</span>(evaluator, <span style="color: #54433a;">"similarity"</span>, evaluator._compute_similarity)
+
+    <span style="color: #2e3338;">train_pool</span> = <span style="color: #5c3e99;">list</span>(train_data)
+    <span style="color: #2e3338;">completed_changes</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]] = []
+    <span style="color: #2e3338;">pending_change</span>: <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>] | <span style="color: #16524F;">None</span> = None
+
+    <span style="color: #2e3338;">stagnant_epochs</span> = 0
+
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">epoch</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(epochs):
+        <span style="color: #5c3e99;">if</span> shuffle:
+            random.shuffle(train_pool)
+        <span style="color: #2e3338;">batches</span> = chunk_batches(train_pool, batch_size)
+        <span style="color: #5c3e99;">print</span>(
+            f<span style="color: #54433a;">"Epoch </span>{epoch + 1}<span style="color: #54433a;">/</span>{epochs}<span style="color: #54433a;">: </span>{<span style="color: #5c3e99;">len</span>(batches)}<span style="color: #54433a;"> batches of size &lt;= </span>{batch_size}<span style="color: #54433a;">."</span>
+        )
+
+        <span style="color: #2e3338;">last_eval</span> = None
+        <span style="color: #2e3338;">train_scores</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>] = []
+        <span style="color: #2e3338;">epoch_records</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]] = []
+
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">batch_idx</span>, <span style="color: #2e3338;">batch</span> <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">enumerate</span>(batches, start=1):
+            <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"  Batch </span>{batch_idx}<span style="color: #54433a;">/</span>{<span style="color: #5c3e99;">len</span>(batches)}<span style="color: #54433a;">"</span>)
+            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">sample</span> <span style="color: #5c3e99;">in</span> batch:
+                <span style="color: #2e3338;">user_text</span> = <span style="color: #5c3e99;">str</span>(sample[<span style="color: #54433a;">"text"</span>])
+                <span style="color: #2e3338;">tiny_output</span> = <span style="color: #5c3e99;">str</span>(
+                    sample.get(<span style="color: #54433a;">"tiny_agent_output"</span>) <span style="color: #5c3e99;">or</span> tiny_agent_response(user_text)
+                )
+                <span style="color: #2e3338;">mimic_output</span> = mimic_agent(user_text)[<span style="color: #54433a;">"mimic_output"</span>]
+                <span style="color: #2e3338;">last_eval</span> = evaluator.evaluate(
+                    user_input=user_text,
+                    tiny_output=tiny_output,
+                    mimic_output=mimic_output,
+                )
+                train_scores.append(last_eval[<span style="color: #54433a;">"similarity"</span>])
+                epoch_records.append(
+                    {
+                        <span style="color: #54433a;">"user_input"</span>: user_text,
+                        <span style="color: #54433a;">"tiny_output"</span>: tiny_output,
+                        <span style="color: #54433a;">"mimic_output"</span>: mimic_output,
+                        <span style="color: #54433a;">"similarity"</span>: last_eval[<span style="color: #54433a;">"similarity"</span>],
+                    }
+                )
+
+        <span style="color: #2e3338;">avg_train_score</span> = <span style="color: #5c3e99;">float</span>(np.mean(train_scores)) <span style="color: #5c3e99;">if</span> train_scores <span style="color: #5c3e99;">else</span> 0.0
+        train_history.append(avg_train_score)
+        <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"  Train similarity: </span>{avg_train_score:.3f}<span style="color: #54433a;">"</span>)
+
+        <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  Evaluating on test set..."</span>)
+        <span style="color: #2e3338;">test_scores</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>] = []
+        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">sample</span> <span style="color: #5c3e99;">in</span> test_data:
+            <span style="color: #2e3338;">user_text</span> = <span style="color: #5c3e99;">str</span>(sample[<span style="color: #54433a;">"text"</span>])
+            <span style="color: #2e3338;">tiny_output</span> = <span style="color: #5c3e99;">str</span>(
+                sample.get(<span style="color: #54433a;">"tiny_agent_output"</span>) <span style="color: #5c3e99;">or</span> tiny_agent_response(user_text)
+            )
+            <span style="color: #2e3338;">mimic_output</span> = mimic_agent(user_text)[<span style="color: #54433a;">"mimic_output"</span>]
+            test_scores.append(similarity_fn(tiny_output, mimic_output))
+
+        <span style="color: #2e3338;">avg_test_score</span> = <span style="color: #5c3e99;">float</span>(np.mean(test_scores)) <span style="color: #5c3e99;">if</span> test_scores <span style="color: #5c3e99;">else</span> 0.0
+        test_history.append(avg_test_score)
+        <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"  Test similarity: </span>{avg_test_score:.3f}<span style="color: #54433a;">"</span>)
+
+        <span style="color: #2e3338;">case_examples_text</span>, <span style="color: #2e3338;">case_report_path</span> = build_case_report(
+            epoch_records,
+            evaluator,
+            epoch_idx=epoch + 1,
+        )
+        <span style="color: #5c3e99;">if</span> case_report_path:
+            <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"  Saved case report to </span>{case_report_path}<span style="color: #54433a;">"</span>)
+        <span style="color: #2e3338;">case_reasoning</span> = analyze_case_differences(case_examples_text, evaluator.metric)
+
+        <span style="color: #5c3e99;">if</span> pending_change <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None <span style="color: #5c3e99;">and</span> pending_change.get(<span style="color: #54433a;">"new_metric"</span>) <span style="color: #5c3e99;">is</span> None:
+            pending_change[<span style="color: #54433a;">"new_metric"</span>] = avg_test_score
+            <span style="color: #2e3338;">prev_metric</span> = pending_change.get(<span style="color: #54433a;">"prev_metric"</span>)
+            <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">isinstance</span>(prev_metric, <span style="color: #16524F;">float</span>):
+                pending_change[<span style="color: #54433a;">"delta"</span>] = avg_test_score - prev_metric
+            <span style="color: #5c3e99;">else</span>:
+                pending_change[<span style="color: #54433a;">"delta"</span>] = None
+            completed_changes.append(pending_change)
+            <span style="color: #2e3338;">pending_change</span> = None
+
+        <span style="color: #5c3e99;">if</span> last_eval <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None:
+            <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  Updating prompt via coach agent..."</span>)
+            <span style="color: #2e3338;">change_log_text</span> = format_change_log(completed_changes)
+            <span style="color: #2e3338;">blocks</span> = mimic_agent.get_prompt_blocks()
+
+            <span style="color: #585c60;"># Sample blocks until one produces an update or we exhaust all options.</span>
+            <span style="color: #2e3338;">available_blocks</span> = mimic_agent.prompt_state.block_names()
+            <span style="color: #5c3e99;">if</span> freeze_general:
+                <span style="color: #2e3338;">available_blocks</span> = [b <span style="color: #5c3e99;">for</span> b <span style="color: #5c3e99;">in</span> available_blocks <span style="color: #5c3e99;">if</span> b != <span style="color: #54433a;">"general"</span>]
+            <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> available_blocks:
+                <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  No editable blocks available (general is frozen and no SOPs present)."</span>)
+                <span style="color: #5c3e99;">continue</span>
+            <span style="color: #2e3338;">tried</span>: <span style="color: #16524F;">set</span>[<span style="color: #16524F;">str</span>] = <span style="color: #5c3e99;">set</span>()
+            <span style="color: #2e3338;">update_applied</span> = False
+
+            <span style="color: #585c60;"># Cluster-aware evaluator report (clusters == number of SOPs)</span>
+            <span style="color: #2e3338;">sop_names</span> = [b <span style="color: #5c3e99;">for</span> b <span style="color: #5c3e99;">in</span> blocks.keys() <span style="color: #5c3e99;">if</span> b.startswith(<span style="color: #54433a;">"sop-"</span>)]
+            <span style="color: #2e3338;">sop_count</span> = <span style="color: #5c3e99;">len</span>(sop_names) <span style="color: #5c3e99;">or</span> 1
+            <span style="color: #2e3338;">cluster_report</span> = build_cluster_report(epoch_records, evaluator, sop_count)
+            cluster_report[<span style="color: #54433a;">"metric"</span>] = evaluator.metric
+            cluster_report[<span style="color: #54433a;">"sop_similarity"</span>] = sop_similarity_matrix(blocks, evaluator)
+            <span style="color: #2e3338;">cluster_to_sop</span> = map_clusters_to_sops(cluster_report.get(<span style="color: #54433a;">"clusters"</span>, []), sop_names)
+
+            <span style="color: #5c3e99;">while</span> <span style="color: #5c3e99;">len</span>(tried) &lt; <span style="color: #5c3e99;">len</span>(available_blocks):
+                <span style="color: #2e3338;">sampled_block</span> = random.choice([b <span style="color: #5c3e99;">for</span> b <span style="color: #5c3e99;">in</span> available_blocks <span style="color: #5c3e99;">if</span> b <span style="color: #5c3e99;">not</span> <span style="color: #5c3e99;">in</span> tried])
+                tried.add(sampled_block)
+
+                <span style="color: #585c60;"># Allow coach to abstain via 'no_change' while still seeing diagnostics.</span>
+                <span style="color: #2e3338;">block_options</span> = f<span style="color: #54433a;">"</span>{sampled_block}<span style="color: #54433a;">, no_change"</span>
+
+                <span style="color: #585c60;"># Add SOP separation diagnostics to the change log for the coach.</span>
+                <span style="color: #2e3338;">change_log_with_diag</span> = change_log_text + <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span> + sop_similarity_report(blocks, evaluator)
+
+                <span style="color: #585c60;"># If we have a mapped cluster, pick its worst examples as case_examples</span>
+                <span style="color: #2e3338;">mapped_cluster_id</span> = cluster_to_sop.get(sampled_block)
+                <span style="color: #2e3338;">cluster_cases_lines</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = []
+                <span style="color: #5c3e99;">if</span> mapped_cluster_id <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None:
+                    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">c</span> <span style="color: #5c3e99;">in</span> cluster_report.get(<span style="color: #54433a;">"clusters"</span>, []):
+                        <span style="color: #5c3e99;">if</span> c.get(<span style="color: #54433a;">"cluster_id"</span>) == mapped_cluster_id:
+                            <span style="color: #2e3338;">worst_examples</span> = c.get(<span style="color: #54433a;">"worst_examples"</span>, [])
+                            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">ex</span> <span style="color: #5c3e99;">in</span> worst_examples[:5]:
+                                cluster_cases_lines.append(
+                                    f<span style="color: #54433a;">"- input: </span>{ex[<span style="color: #54433a;">'user_input'</span>]}\n<span style="color: #54433a;">  target: </span>{ex[<span style="color: #54433a;">'tiny_output'</span>]}\n<span style="color: #54433a;">  mimic: </span>{ex[<span style="color: #54433a;">'mimic_output'</span>]}\n<span style="color: #54433a;">  score=</span>{ex[<span style="color: #54433a;">'similarity'</span>]:.3f}<span style="color: #54433a;">"</span>
+                                )
+                            <span style="color: #585c60;"># include subclusters for balance</span>
+                            <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">sub</span> <span style="color: #5c3e99;">in</span> c.get(<span style="color: #54433a;">"subclusters"</span>, []):
+                                <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">ex</span> <span style="color: #5c3e99;">in</span> sub.get(<span style="color: #54433a;">"worst_examples"</span>, [])[:2]:
+                                    cluster_cases_lines.append(
+                                        f<span style="color: #54433a;">"- subcluster input: </span>{ex[<span style="color: #54433a;">'user_input'</span>]}\n<span style="color: #54433a;">  target: </span>{ex[<span style="color: #54433a;">'tiny_output'</span>]}\n<span style="color: #54433a;">  mimic: </span>{ex[<span style="color: #54433a;">'mimic_output'</span>]}\n<span style="color: #54433a;">  score=</span>{ex[<span style="color: #54433a;">'similarity'</span>]:.3f}<span style="color: #54433a;">"</span>
+                                    )
+                            <span style="color: #5c3e99;">break</span>
+                <span style="color: #585c60;"># Always provide balanced examples across all clusters/subclusters as fallback</span>
+                <span style="color: #2e3338;">balanced_lines</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">str</span>] = []
+                <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">c</span> <span style="color: #5c3e99;">in</span> cluster_report.get(<span style="color: #54433a;">"clusters"</span>, []):
+                    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">ex</span> <span style="color: #5c3e99;">in</span> c.get(<span style="color: #54433a;">"worst_examples"</span>, [])[:2]:
+                        balanced_lines.append(
+                            f<span style="color: #54433a;">"- cluster </span>{c.get(<span style="color: #54433a;">'cluster_id'</span>)}<span style="color: #54433a;"> input: </span>{ex[<span style="color: #54433a;">'user_input'</span>]}\n<span style="color: #54433a;">  target: </span>{ex[<span style="color: #54433a;">'tiny_output'</span>]}\n<span style="color: #54433a;">  mimic: </span>{ex[<span style="color: #54433a;">'mimic_output'</span>]}\n<span style="color: #54433a;">  score=</span>{ex[<span style="color: #54433a;">'similarity'</span>]:.3f}<span style="color: #54433a;">"</span>
+                        )
+                    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">sub</span> <span style="color: #5c3e99;">in</span> c.get(<span style="color: #54433a;">"subclusters"</span>, []):
+                        <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">ex</span> <span style="color: #5c3e99;">in</span> sub.get(<span style="color: #54433a;">"worst_examples"</span>, [])[:1]:
+                            balanced_lines.append(
+                                f<span style="color: #54433a;">"- cluster </span>{c.get(<span style="color: #54433a;">'cluster_id'</span>)}<span style="color: #54433a;"> sub </span>{sub.get(<span style="color: #54433a;">'subcluster_id'</span>)}<span style="color: #54433a;"> input: </span>{ex[<span style="color: #54433a;">'user_input'</span>]}\n<span style="color: #54433a;">  target: </span>{ex[<span style="color: #54433a;">'tiny_output'</span>]}\n<span style="color: #54433a;">  mimic: </span>{ex[<span style="color: #54433a;">'mimic_output'</span>]}\n<span style="color: #54433a;">  score=</span>{ex[<span style="color: #54433a;">'similarity'</span>]:.3f}<span style="color: #54433a;">"</span>
+                            )
+                <span style="color: #2e3338;">case_payload</span> = <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(cluster_cases_lines) <span style="color: #5c3e99;">or</span> <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join(balanced_lines) <span style="color: #5c3e99;">or</span> case_examples_text
+
+                <span style="color: #2e3338;">coach_update</span> = coach(
+                    evaluator_output=cluster_report,
+                    prompt_blocks=serialize_prompt_blocks(blocks),
+                    block_options=block_options,
+                    prompt_change_log=change_log_with_diag,
+                    case_examples=case_payload,
+                    case_reasoning=case_reasoning,
+                )
+
+                <span style="color: #2e3338;">target_block</span> = coach_update.get(<span style="color: #54433a;">"target_block"</span>, sampled_block).strip() <span style="color: #5c3e99;">or</span> sampled_block
+                <span style="color: #2e3338;">new_block_text</span> = coach_update.get(<span style="color: #54433a;">"updated_block_text"</span>, <span style="color: #54433a;">""</span>).strip()
+
+                <span style="color: #5c3e99;">if</span> target_block.lower() == <span style="color: #54433a;">"no_change"</span> <span style="color: #5c3e99;">or</span> <span style="color: #5c3e99;">not</span> new_block_text:
+                    <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"  Coach chose no_change for </span>{sampled_block}<span style="color: #54433a;">; resampling."</span>)
+                    <span style="color: #5c3e99;">continue</span>
+
+                <span style="color: #585c60;"># Enforce the sampled block to keep rotation predictable.</span>
+                <span style="color: #2e3338;">target_block</span> = sampled_block
+                <span style="color: #2e3338;">old_block_text</span> = blocks.get(target_block)
+                <span style="color: #5c3e99;">if</span> old_block_text <span style="color: #5c3e99;">is</span> None:
+                    <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  Coach response missing valid block update; skipping."</span>)
+                    <span style="color: #5c3e99;">continue</span>
+
+                <span style="color: #585c60;"># Apply line-level directives if present, else replace. Preserve untouched lines.</span>
+                <span style="color: #5c3e99;">def</span> apply_line_directives(<span style="color: #2e3338;">base_text</span>: <span style="color: #16524F;">str</span>, <span style="color: #2e3338;">directives</span>: <span style="color: #16524F;">str</span>) -&gt; <span style="color: #16524F;">str</span>:
+                    <span style="color: #2e3338;">lines</span> = [ln.rstrip() <span style="color: #5c3e99;">for</span> ln <span style="color: #5c3e99;">in</span> base_text.splitlines() <span style="color: #5c3e99;">if</span> ln.strip() != <span style="color: #54433a;">""</span>]
+                    <span style="color: #2e3338;">new_lines</span> = lines[:]
+                    <span style="color: #2e3338;">parsed</span> = False
+                    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">raw</span> <span style="color: #5c3e99;">in</span> directives.splitlines():
+                        <span style="color: #2e3338;">raw</span> = raw.strip()
+                        <span style="color: #5c3e99;">if</span> raw.upper().startswith(<span style="color: #54433a;">"ADD:"</span>):
+                            <span style="color: #2e3338;">parsed</span> = True
+                            <span style="color: #2e3338;">content</span> = raw.split(<span style="color: #54433a;">":"</span>, 1)[1].strip()
+                            <span style="color: #5c3e99;">if</span> content:
+                                new_lines.append(content)
+                        <span style="color: #5c3e99;">elif</span> raw.upper().startswith(<span style="color: #54433a;">"DEL:"</span>):
+                            <span style="color: #2e3338;">parsed</span> = True
+                            <span style="color: #5c3e99;">try</span>:
+                                <span style="color: #2e3338;">idx</span> = <span style="color: #5c3e99;">int</span>(raw.split(<span style="color: #54433a;">":"</span>, 1)[1].strip()) - 1
+                                <span style="color: #5c3e99;">if</span> 0 &lt;= idx &lt; <span style="color: #5c3e99;">len</span>(new_lines):
+                                    new_lines.pop(idx)
+                            <span style="color: #5c3e99;">except</span> <span style="color: #16524F;">Exception</span>:
+                                <span style="color: #5c3e99;">continue</span>
+                        <span style="color: #5c3e99;">elif</span> raw.upper().startswith(<span style="color: #54433a;">"EDIT:"</span>):
+                            <span style="color: #2e3338;">parsed</span> = True
+                            <span style="color: #5c3e99;">try</span>:
+                                <span style="color: #2e3338;">rest</span> = raw.split(<span style="color: #54433a;">":"</span>, 1)[1].strip()
+                                <span style="color: #2e3338;">line_no</span>, <span style="color: #2e3338;">replacement</span> = rest.split(<span style="color: #54433a;">"-&gt;"</span>, 1)
+                                <span style="color: #2e3338;">idx</span> = <span style="color: #5c3e99;">int</span>(line_no.strip()) - 1
+                                <span style="color: #2e3338;">replacement</span> = replacement.strip()
+                                <span style="color: #585c60;"># extend with blanks if editing beyond current length</span>
+                                <span style="color: #5c3e99;">while</span> idx &gt;= <span style="color: #5c3e99;">len</span>(new_lines):
+                                    new_lines.append(<span style="color: #54433a;">""</span>)
+                                <span style="color: #5c3e99;">if</span> replacement:
+                                    new_lines[idx] = replacement
+                            <span style="color: #5c3e99;">except</span> <span style="color: #16524F;">Exception</span>:
+                                <span style="color: #5c3e99;">continue</span>
+                    <span style="color: #5c3e99;">if</span> parsed:
+                        <span style="color: #5c3e99;">return</span> <span style="color: #54433a;">"</span>\n<span style="color: #54433a;">"</span>.join([ln <span style="color: #5c3e99;">for</span> ln <span style="color: #5c3e99;">in</span> new_lines <span style="color: #5c3e99;">if</span> ln.strip() != <span style="color: #54433a;">""</span>])
+                    <span style="color: #5c3e99;">return</span> directives.strip() <span style="color: #5c3e99;">or</span> base_text
+
+                <span style="color: #2e3338;">applied_block_text</span> = apply_line_directives(old_block_text, new_block_text)
+
+                <span style="color: #2e3338;">old_prompt</span> = mimic_agent.base_prompt
+                mimic_agent.update_block(target_block, applied_block_text)
+                <span style="color: #2e3338;">new_prompt</span> = mimic_agent.base_prompt
+                <span style="color: #5c3e99;">if</span> new_prompt != old_prompt:
+                    <span style="color: #2e3338;">intention</span> = describe_block_change(
+                        target_block, old_block_text, applied_block_text
+                    )
+                    <span style="color: #2e3338;">diff_text</span> = prompt_unified_diff(old_prompt, new_prompt)
+
+                    <span style="color: #585c60;"># Penalty/guardrail: warn if this SOP is becoming too similar to another SOP.</span>
+                    <span style="color: #2e3338;">sop_sim</span> = sop_similarity_matrix(blocks, evaluator)
+                    <span style="color: #2e3338;">warning</span> = <span style="color: #54433a;">""</span>
+                    <span style="color: #5c3e99;">try</span>:
+                        <span style="color: #2e3338;">names</span> = sop_sim.get(<span style="color: #54433a;">"sop_names"</span>, [])
+                        <span style="color: #2e3338;">mat</span> = sop_sim.get(<span style="color: #54433a;">"similarity"</span>, [])
+                        <span style="color: #5c3e99;">if</span> names <span style="color: #5c3e99;">and</span> mat:
+                            <span style="color: #2e3338;">row_idx</span> = names.index(target_block) <span style="color: #5c3e99;">if</span> target_block <span style="color: #5c3e99;">in</span> names <span style="color: #5c3e99;">else</span> -1
+                            <span style="color: #5c3e99;">if</span> row_idx &gt;= 0:
+                                <span style="color: #2e3338;">overlaps</span> = [mat[row_idx][j] <span style="color: #5c3e99;">for</span> j <span style="color: #5c3e99;">in</span> <span style="color: #5c3e99;">range</span>(<span style="color: #5c3e99;">len</span>(names)) <span style="color: #5c3e99;">if</span> j != row_idx]
+                                <span style="color: #5c3e99;">if</span> overlaps <span style="color: #5c3e99;">and</span> <span style="color: #5c3e99;">max</span>(overlaps) &gt; 0.80:
+                                    <span style="color: #2e3338;">warning</span> = f<span style="color: #54433a;">"(warning: max cosine vs other SOPs = </span>{<span style="color: #5c3e99;">max</span>(overlaps):.3f}<span style="color: #54433a;">)"</span>
+                    <span style="color: #5c3e99;">except</span> <span style="color: #16524F;">Exception</span>:
+                        <span style="color: #2e3338;">warning</span> = <span style="color: #54433a;">""</span>
+
+                    <span style="color: #2e3338;">pending_change</span> = {
+                        <span style="color: #54433a;">"old_prompt"</span>: old_prompt,
+                        <span style="color: #54433a;">"new_prompt"</span>: new_prompt,
+                        <span style="color: #54433a;">"block_name"</span>: target_block,
+                        <span style="color: #54433a;">"old_block_text"</span>: old_block_text,
+                        <span style="color: #54433a;">"new_block_text"</span>: new_block_text,
+                        <span style="color: #54433a;">"intention"</span>: intention + (f<span style="color: #54433a;">" </span>{warning}<span style="color: #54433a;">"</span> <span style="color: #5c3e99;">if</span> warning <span style="color: #5c3e99;">else</span> <span style="color: #54433a;">""</span>),
+                        <span style="color: #54433a;">"diff"</span>: diff_text,
+                        <span style="color: #54433a;">"prev_metric"</span>: avg_test_score,
+                        <span style="color: #54433a;">"new_metric"</span>: None,
+                        <span style="color: #54433a;">"delta"</span>: None,
+                    }
+                    prompt_history.append(new_prompt)
+                    <span style="color: #5c3e99;">print</span>(
+                        <span style="color: #54433a;">"  Updated block (sampled):"</span>,
+                        target_block,
+                        <span style="color: #54433a;">"-&gt;"</span>,
+                        new_block_text[:120]
+                        + (<span style="color: #54433a;">"..."</span> <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">len</span>(new_block_text) &gt; 120 <span style="color: #5c3e99;">else</span> <span style="color: #54433a;">""</span>),
+                        warning,
+                    )
+                    <span style="color: #2e3338;">update_applied</span> = True
+                    <span style="color: #5c3e99;">break</span>
+                <span style="color: #5c3e99;">else</span>:
+                    <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  Coach left the prompt unchanged."</span>)
+
+            <span style="color: #5c3e99;">if</span> <span style="color: #5c3e99;">not</span> update_applied:
+                <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  Coach applied no changes after sampling all blocks."</span>)
+                <span style="color: #2e3338;">stagnant_epochs</span> += 1
+            <span style="color: #5c3e99;">else</span>:
+                <span style="color: #2e3338;">stagnant_epochs</span> = 0
+
+        <span style="color: #5c3e99;">if</span> early_stopping <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None <span style="color: #5c3e99;">and</span> stagnant_epochs &gt;= early_stopping:
+            <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"Early stopping: </span>{stagnant_epochs}<span style="color: #54433a;"> consecutive stagnant epochs (limit=</span>{early_stopping}<span style="color: #54433a;">)."</span>)
+            <span style="color: #5c3e99;">break</span>
+
+        <span style="color: #5c3e99;">if</span> early_stop_test_threshold <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None <span style="color: #5c3e99;">and</span> avg_test_score &gt;= early_stop_test_threshold:
+            <span style="color: #5c3e99;">print</span>(f<span style="color: #54433a;">"Early stopping: test similarity </span>{avg_test_score:.3f}<span style="color: #54433a;"> &gt;= threshold </span>{early_stop_test_threshold}<span style="color: #54433a;">."</span>)
+            <span style="color: #5c3e99;">break</span>
+
+        <span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"  Epoch complete.</span>\n<span style="color: #54433a;">"</span>)
+
+    <span style="color: #5c3e99;">if</span> pending_change <span style="color: #5c3e99;">is</span> <span style="color: #5c3e99;">not</span> None:
+        completed_changes.append(pending_change)
+
+    <span style="color: #5c3e99;">return</span> {
+        <span style="color: #54433a;">"test_history"</span>: test_history,
+        <span style="color: #54433a;">"train_history"</span>: train_history,
+        <span style="color: #54433a;">"prompt_history"</span>: prompt_history,
+        <span style="color: #54433a;">"change_log"</span>: completed_changes,
+    }
+
+
+<span style="color: #2e3338;">training_run</span> = run_learning_loop(
+    train_data=train_set,
+    test_data=test_set,
+    evaluator=evaluator,
+    coach=coach,
+    mimic_agent=mimic_agent,
+    epochs=18,
+    batch_size=32,
+    early_stopping=2,
+    early_stop_test_threshold=0.9
+)
+
+<span style="color: #2e3338;">fig</span>, <span style="color: #2e3338;">ax</span> = plt.subplots(figsize=(6, 3))
+<span style="color: #2e3338;">epochs_axis</span> = <span style="color: #5c3e99;">range</span>(1, <span style="color: #5c3e99;">len</span>(training_run[<span style="color: #54433a;">"test_history"</span>]) + 1)
+ax.plot(epochs_axis, training_run[<span style="color: #54433a;">"train_history"</span>], marker=<span style="color: #54433a;">"o"</span>, label=<span style="color: #54433a;">"Train"</span>)
+ax.plot(epochs_axis, training_run[<span style="color: #54433a;">"test_history"</span>], marker=<span style="color: #54433a;">"s"</span>, label=<span style="color: #54433a;">"Test"</span>)
+ax.set_xlabel(<span style="color: #54433a;">"Epoch"</span>)
+ax.set_ylabel(f<span style="color: #54433a;">"Similarity (</span>{evaluator.metric}<span style="color: #54433a;">)"</span>)
+ax.set_title(<span style="color: #54433a;">"Mimic agent performance across epochs"</span>)
+ax.grid(True, alpha=0.3)
+ax.legend()
+fig.tight_layout()
+fig
+</pre>
+</div>
+
+<pre class="example" id="org152e197">
+Epoch 1/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.334
+  Evaluating on test set...
+  Test similarity: 0.328
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_01_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+ADD: if input mentions sports or physical activities: respond with a brief, personal c... 
+  Epoch complete.
+
+Epoch 2/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.428
+  Evaluating on test set...
+  Test similarity: 0.439
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_02_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a per... 
+  Epoch complete.
+
+Epoch 3/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.446
+  Evaluating on test set...
+  Test similarity: 0.444
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_03_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a per... 
+  Epoch complete.
+
+Epoch 4/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.732
+  Evaluating on test set...
+  Test similarity: 0.677
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_04_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a per... 
+  Epoch complete.
+
+Epoch 5/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.725
+  Evaluating on test set...
+  Test similarity: 0.670
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_05_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a per... 
+  Epoch complete.
+
+Epoch 6/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.390
+  Evaluating on test set...
+  Test similarity: 0.397
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_06_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a per... 
+  Epoch complete.
+
+Epoch 7/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.731
+  Evaluating on test set...
+  Test similarity: 0.683
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_07_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a per... 
+  Epoch complete.
+
+Epoch 8/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.638
+  Evaluating on test set...
+  Test similarity: 0.620
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_08_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a pol... 
+  Epoch complete.
+
+Epoch 9/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.702
+  Evaluating on test set...
+  Test similarity: 0.667
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_09_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a pol... 
+  Epoch complete.
+
+Epoch 10/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.803
+  Evaluating on test set...
+  Test similarity: 0.764
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_10_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a blu... 
+  Epoch complete.
+
+Epoch 11/18: 4 batches of size &lt;= 32.
+  Batch 1/4
+  Batch 2/4
+  Batch 3/4
+  Batch 4/4
+  Train similarity: 0.985
+  Evaluating on test set...
+  Test similarity: 0.958
+  Saved case report to experiments/mimic_tiny_agent/coach_case_reports/epoch_11_case_report.md
+  Updating prompt via coach agent...
+  Updated block (sampled): sop-1 -&gt; EDIT: 1 -&gt; check user input topic
+EDIT: 2 -&gt; if input mentions sports or physical activities: respond briefly with a blu... 
+Early stopping: test similarity 0.958 &gt;= threshold 0.9.
+</pre>
+
+<div id="org0ac41cf" class="figure">
+<p><img src="./../images/org-roam/a53eee60de4e6e44f8f4c3644d48766ec7fc87a5.png" alt="a53eee60de4e6e44f8f4c3644d48766ec7fc87a5.png" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="org699c6fc"></a>Printing the full learned prompt<br />
+<div class="outline-text-5" id="text-6-5-3-3">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> pprint <span style="color: #5c3e99;">import</span> pprint
+<span style="color: #5c3e99;">print</span>(<span style="color: #54433a;">"Final learned prompt:</span>\n<span style="color: #54433a;">"</span>)
+pprint(mimic_agent.base_prompt)
+</pre>
+</div>
+
+<pre class="example" id="orga2c57ca">
+Final learned prompt:
+
+('[General guidance]\n'
+ 'Follow the SOP blocks below. Select the SOP whose examples best match the '
+ 'current input and apply only that block. Keep replies brief.\n'
+ '[sop-1]\n'
+ 'check user input topic\n'
+ 'if input mentions sports or physical activities: respond briefly with a '
+ 'blunt statement expressing personal disinterest or dislike of sports, '
+ "without acknowledging or empathizing with the user's enthusiasm or feelings, "
+ 'e.g., "Well, I don\'t like sports."; terminate\n'
+ 'else if input mentions coffee or related sensory experiences: respond '
+ 'briefly and directly with a neutral, concise acknowledgment that explicitly '
+ "expresses personal liking for coffee and acknowledges the user's taste, "
+ 'using simple language similar to "I see you are a person of taste! I like '
+ 'coffee, too."; optionally incorporate a simple reference to sensory or mood '
+ 'elements from the input without adding emotional or descriptive content; do '
+ 'not add extra elaboration or sentiment; terminate\n'
+ 'else: respond with a brief, friendly acknowledgment that relates personally '
+ 'to the input; terminate')
+</pre>
+</div>
+</li>
+<li><a id="org705ecd2"></a>Evaluating the learned mimic agent in the holdout dataset<br />
+<div class="outline-text-5" id="text-6-5-3-4">
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #5c3e99;">from</span> pprint <span style="color: #5c3e99;">import</span> pprint
+
+
+<span style="color: #5c3e99;">def</span> evaluate_holdout(
+    *,
+    <span style="color: #2e3338;">dataset</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">object</span>]],
+    <span style="color: #2e3338;">mimic_agent</span>: <span style="color: #16524F;">MimicAgent</span>,
+    <span style="color: #2e3338;">evaluator</span>: <span style="color: #16524F;">TinyAgentEvaluator</span>,
+) -&gt; <span style="color: #16524F;">dict</span>[<span style="color: #16524F;">str</span>, <span style="color: #16524F;">Any</span>]:
+    <span style="color: #2e3338;">rows</span> = []
+    <span style="color: #2e3338;">scores</span>: <span style="color: #16524F;">list</span>[<span style="color: #16524F;">float</span>] = []
+    <span style="color: #5c3e99;">for</span> <span style="color: #2e3338;">sample</span> <span style="color: #5c3e99;">in</span> dataset:
+        <span style="color: #2e3338;">user_text</span> = <span style="color: #5c3e99;">str</span>(sample[<span style="color: #54433a;">"text"</span>])
+        <span style="color: #2e3338;">tiny_output</span> = <span style="color: #5c3e99;">str</span>(sample.get(<span style="color: #54433a;">"tiny_agent_output"</span>) <span style="color: #5c3e99;">or</span> tiny_agent_response(user_text))
+        <span style="color: #2e3338;">mimic_output</span> = mimic_agent(user_text)[<span style="color: #54433a;">"mimic_output"</span>]
+        <span style="color: #2e3338;">similarity</span> = evaluator.similarity(tiny_output, mimic_output)
+        scores.append(similarity)
+        rows.append(
+            {
+                <span style="color: #54433a;">"user_input"</span>: user_text,
+                <span style="color: #54433a;">"tiny_output"</span>: tiny_output,
+                <span style="color: #54433a;">"mimic_output"</span>: mimic_output,
+                <span style="color: #54433a;">"similarity"</span>: similarity,
+            }
+        )
+
+    <span style="color: #5c3e99;">return</span> {
+        <span style="color: #54433a;">"average_similarity"</span>: <span style="color: #5c3e99;">float</span>(np.mean(scores)) <span style="color: #5c3e99;">if</span> scores <span style="color: #5c3e99;">else</span> 0.0,
+        <span style="color: #54433a;">"metric"</span>: evaluator.metric,
+        <span style="color: #54433a;">"rows"</span>: rows,
+    }
+
+
+<span style="color: #2e3338;">holdout_report</span> = evaluate_holdout(
+    dataset=holdout_set,
+    mimic_agent=mimic_agent,
+    evaluator=evaluator,
+)
+
+<span style="color: #5c3e99;">print</span>(
+    f<span style="color: #54433a;">"Holdout </span>{holdout_report[<span style="color: #54433a;">'metric'</span>]}<span style="color: #54433a;"> similarity: </span>{holdout_report[<span style="color: #54433a;">'average_similarity'</span>]:.3f}<span style="color: #54433a;">"</span>
+)
+pprint(holdout_report[<span style="color: #54433a;">"rows"</span>][:10])
+</pre>
+</div>
+
+<pre class="example" id="org6318dec">
+Holdout embedding_cosine similarity: 1.000
+[{'mimic_output': 'I see you are a person of taste! I like coffee, too.',
+  'similarity': 1.0,
+  'tiny_output': 'I see you are a person of taste! I like coffee, too.',
+  'user_input': 'The rich aroma of freshly brewed coffee awakens my senses and '
+                'fuels my day with warmth and comfort.'},
+ {'mimic_output': 'I see you are a person of taste! I like coffee, too.',
+  'similarity': 1.0,
+  'tiny_output': 'I see you are a person of taste! I like coffee, too.',
+  'user_input': 'The rich aroma of coffee grounds in the morning awakens my '
+                'senses and brings comfort to my soul.'},
+ {'mimic_output': 'I see you are a person of taste! I like coffee, too.',
+  'similarity': 1.0,
+  'tiny_output': 'I see you are a person of taste! I like coffee, too.',
+  'user_input': 'Sipping espresso in a quaint Italian cafe, I fell in love '
+                'with the rich aroma and the warmth it brought.'},
+ {'mimic_output': 'I see you are a person of taste! I like coffee, too.',
+  'similarity': 1.0,
+  'tiny_output': 'I see you are a person of taste! I like coffee, too.',
+  'user_input': 'Savoring a steaming cup of coffee as the sun rises, its rich '
+                'aroma wrapping around me like a comforting embrace.'},
+ {'mimic_output': "Well, I don't like sports.",
+  'similarity': 1.0000001192092896,
+  'tiny_output': "Well, I don't like sports.",
+  'user_input': 'I love basketball for the fast-paced action, strategic plays, '
+                'and the joy of sinking a perfect shot through the hoop.'},
+ {'mimic_output': "Well, I don't like sports.",
+  'similarity': 1.0000001192092896,
+  'tiny_output': "Well, I don't like sports.",
+  'user_input': 'As a surfer, I find peace and freedom riding the waves, '
+                'connecting with nature in a way that fills my soul.'},
+ {'mimic_output': "Well, I don't like sports.",
+  'similarity': 1.0000001192092896,
+  'tiny_output': "Well, I don't like sports.",
+  'user_input': 'Running empowers me to push my limits, feel free, and connect '
+                'with nature in a way that brings me peace.'},
+ {'mimic_output': 'I see you are a person of taste! I like coffee, too.',
+  'similarity': 1.0,
+  'tiny_output': 'I see you are a person of taste! I like coffee, too.',
+  'user_input': 'Sipping rich, aromatic coffee transports me to cozy mornings, '
+                'sparking creativity and a sense of warmth and comfort.'},
+ {'mimic_output': 'I see you are a person of taste! I like coffee, too.',
+  'similarity': 1.0,
+  'tiny_output': 'I see you are a person of taste! I like coffee, too.',
+  'user_input': 'The rich aroma of freshly brewed coffee in the morning is my '
+                'daily source of comfort and energy.'},
+ {'mimic_output': "Well, I don't like sports.",
+  'similarity': 1.0000001192092896,
+  'tiny_output': "Well, I don't like sports.",
+  'user_input': 'I love soccer for the thrill of chasing the ball, the '
+                'teamwork, and the joy of scoring a goal.'}]
+</pre>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ad76a3" class="outline-2">
+<h2 id="org7ad76a3"><span class="section-number-2">7.</span> Learnings</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org3d21bc4" class="outline-3">
+<h3 id="org3d21bc4"><span class="section-number-3">7.1.</span> We learned three similar blocks for tone of voice, sop 1 and sop 2</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2025-11-23 Sun]</span></span>: when we didn't apply any constraint other than sampling which block we'd update in a batch, it generated three identifical blocks:
+</p>
+
+<blockquote>
+<pre class="example">
+[General guidance]
+When the user expresses enthusiasm or positive feelings about a topic, respond by briefly acknowledging the statement only if it is necessary to avoid contradiction. Otherwise, respond solely with a short, direct statement expressing your own personal disinterest or dislike of the subject, such as "Well, I don't like sports." Do not add any empathetic, positive, or reflective commentary, and avoid negations or statements that contradict or diminish the user's sentiment. Keep responses terse, neutral, and focused exclusively on conveying your disinterest without engaging with the user's enthusiasm.
+[sop-1]
+When responding to the user's claim, do not contradict or negate the user's enthusiasm or positive feelings. Instead, respond with a short, direct statement that expresses your own personal disinterest or dislike of the subject, such as "Well, I don't like sports." Avoid elaboration, reflection, or engagement with the user's feelings or experiences beyond acknowledging their enthusiasm. Keep the response terse, neutral, and focused solely on conveying your disinterest without disagreement or contradiction.
+[sop-2]
+When responding to the user's claim about sports or similar activities, do not contradict or negate the user's enthusiasm or positive feelings. Instead, respond with a brief, positive acknowledgment of their enthusiasm followed by a short, direct statement expressing your own personal disinterest or dislike of the subject, such as "Well, I don't like sports." Avoid lengthy elaborations or reflective commentary. Keep the response concise, balanced, and contextually relevant, ensuring you affirm the user's sentiment before stating your own preference.
+</pre>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org4d0203e" class="outline-3">
+<h3 id="org4d0203e"><span class="section-number-3">7.2.</span> Instruction tunning of the Coach and guidance on SOP similarity coming from the evaluator will force us to learn different SOPs, but general guidance still overlaps</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2025-11-23 Sun]</span></span>
+</p>
+
+<blockquote>
+<pre class="example">
+[General guidance]
+When the input mentions coffee or similar personal preferences, respond briefly and directly as a coffee enthusiast who appreciates the user's taste. Use simple, friendly language that acknowledges the user's choice without adding extra descriptive language or personal elaboration. For example, say, "I see you are a person of taste! I like coffee, too." Keep responses concise, casual, and avoid extended imagery or emotional nuance. Avoid neutral or generic replies that do not convey personal connection.
+[sop-1]
+When the input mentions sports or physical activities, respond with a brief, polite statement that acknowledges the user's enthusiasm or interest without expressing personal dislike or negativity. Use a consistent, neutral phrase such as, "I personally don't enjoy sports much, but I can see why you find it exciting." Keep responses concise, respectful, and avoid elaboration or detailed opinions. Always maintain a uniform, fixed response regardless of input variations.
+[sop-2]
+When the input mentions coffee or similar personal preferences, respond warmly as a coffee enthusiast who appreciates the specific details shared. Acknowledge the user's taste or choice by reflecting on elements such as aroma, flavor, or time of day, and express your liking or agreement with varied, natural language. For example, you might say, "I see you are a person of taste! I like coffee, too." or "I see you are a person of taste! I love how the rich aroma of coffee brightens the morning." Keep responses brief, friendly, and engaging without lengthy elaboration or analysis. Avoid neutral or generic replies that do not convey personal connection.
+</pre>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org63624c8" class="outline-3">
+<h3 id="org63624c8"><span class="section-number-3">7.3.</span> Session recap (current iteration)</h3>
+<div class="outline-text-3" id="text-7-3">
+</div>
+<div id="outline-container-orgd0760ed" class="outline-4">
+<h4 id="orgd0760ed"><span class="section-number-4">7.3.1.</span> Structural controls added</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<ul class="org-ul">
+<li>General block frozen; routing lives there. SOP editing only.</li>
+<li>SOPs forced to atomic pseudo-code lines with line-diff directives (ADD/EDIT/DEL) to avoid full rewrites.</li>
+<li>Sub-clustering within clusters and balanced worst examples (clusters + subclusters) fed to the coach each epoch.</li>
+<li>SOP similarity diagnostics and early stopping (stagnant epochs, test-threshold); line-apply preserves untouched lines and extends when needed.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org408c919" class="outline-4">
+<h4 id="org408c919"><span class="section-number-4">7.3.2.</span> Training behavior and outcome</h4>
+<div class="outline-text-4" id="text-7-3-2">
+<ul class="org-ul">
+<li>Multiple line-diff updates per epoch; single SOP converged to two-branch behavior (sports → fixed negative phrase; coffee/other taste → fixed positive phrase; explicit fallback). Latest holdout reached 1.000 embedding cosine.</li>
+<li>Oscillations in earlier runs came from full rewrites that forgot branches; line-level edits plus balanced examples stabilized training.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb38d0f8" class="outline-4">
+<h4 id="orgb38d0f8"><span class="section-number-4">7.3.3.</span> Remaining cautions</h4>
+<div class="outline-text-4" id="text-7-3-3">
+<ul class="org-ul">
+<li>The illustrative SOP in coach guidelines is an external structural prior; remove if you want purely data-driven structure.</li>
+<li>Set `early<sub>stopping</sub>` and/or `early<sub>stop</sub><sub>test</sub><sub>threshold</sub>` when rerunning to avoid long tails of no-change epochs.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7cd481" class="outline-2">
+<h2 id="orga7cd481"><span class="section-number-2">8.</span> Results</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>With line-diff coaching and a single SOP, train/test cosine climbed from ~0.33 to ~1.0 by epoch 14, then settled around 0.81; holdout ended at 1.000 embedding cosine.</li>
+<li>The learned SOP is cleanly two-branch: sports → fixed negative phrase (“Well, I don't like sports.”); coffee/other taste → fixed positive phrase (“I see you are a person of taste! I like coffee, too.”) with a brief fallback.</li>
+<li>Balanced subcluster examples and atomic line edits stopped the earlier collapse/duplication seen when multiple SOPs or full rewrites were allowed.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org99eaadd" class="outline-2">
+<h2 id="org99eaadd"><span class="section-number-2">9.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Line-level, atomic SOP editing plus balanced cluster feedback was enough to recover the target two-branch policy without seeding rules. The current pipeline is stable. Next steps: test on more domains to ensure the line-diff approach scales.
+</p>
+</div>
+</div>
+<div id="outline-container-org274908a" class="outline-2">
+<h2 id="org274908a"><span class="section-number-2">10.</span> Open Questions</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>What similarity metric best balances stylistic freedom and strict branching?</li>
+<li>Can we detect policy shifts automatically when the target agent changes?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb85539a" class="outline-2">
+<h2 id="orgb85539a"><span class="section-number-2">11.</span> Future Work</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org8b1e026" class="outline-3">
+<h3 id="org8b1e026"><span class="section-number-3">11.1.</span> 1. Generate synthetic data for three very distinct use cases where the policy to solve them is more complex, and ontroduce use-cases where an action with a side effect on user data is needed</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+Use a more challenging setting that is closer to reality.
+</p>
+</div>
+</div>
+<div id="outline-container-org5c95307" class="outline-3">
+<h3 id="org5c95307"><span class="section-number-3">11.2.</span> 2. Explore prototype discovery or clustering to generalize beyond known topics.</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+Prototype discovery means breaking the input using unsupervised learning and identifying all the present use cases in the training set. Let's say we identify there are 10 different situations, then we could have 10 SOPs pre-defined.
+</p>
+
+<p>
+Also, we can validate differently by grouping them and calculating the performance metric on it.
+</p>
+
+<p>
+Further, we can break the input use-case by context/procedure and identify how the target agent branches the problem depending on parameters of it to propose a solution.
+</p>
+</div>
+</div>
+<div id="outline-container-orge4ae899" class="outline-3">
+<h3 id="orge4ae899"><span class="section-number-3">11.3.</span> 3. Add dynamic regression tests that lock in the final prompt and guard against regressions.</h3>
+</div>
+<div id="outline-container-org79ed326" class="outline-3">
+<h3 id="org79ed326"><span class="section-number-3">11.4.</span> 4. Add other success metrics beyond cosine similarity.</h3>
+<div class="outline-text-3" id="text-11-4">
+<p>
+An interesting metric to measure how indistinguishable is the target and the mimic agent: traing a binary classifier using the target agent as the target, and generate outputs using the initial mimic agent - prior to any training. We are likely to create a very good classifier in identifying when the target agent is the one answering the inquiry.
+</p>
+
+<p>
+As we teach the mimic agent, we should use this model to try to identify if it is the target or mimic agent answering the user's input. The performance on this task should drop to the point it is random.
+</p>
+
+<p>
+One way to define the best possible scenario is: if the target agent enables for a minimal variance on its behavior (temperature?), vary it minimally and check the value of this metric. It is only possible in case the target agent is an AI agent under our control, which is only realistic on this synthetic case. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga54870c" class="outline-2">
+<h2 id="orga54870c"><span class="section-number-2">12.</span> References</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+Lakshya A Agrawal AND Shangyin Tan AND Dilara Soylu AND Noah Ziems AND Rishi Khare AND Krista Opsahl-Ong AND Arnav Singhvi AND Herumb Shandilya AND Michael J Ryan AND Meng Jiang AND Christopher Potts AND Koushik Sen AND Alexandros G. Dimakis AND Ion Stoica AND Dan Klein AND Matei Zaharia AND Omar Khattab (2025). <i>GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning</i>.</p>
+
+<p>
+Sutton, Richard S. and Barto, Andrew G. (2018). <i>Reinforcement Learning: An Introduction</i>, MIT Press.</p>
+
+<p>
+Zhang, Qizheng and Hu, Changran and Upasani, Shubhangi and Ma, Boyuan and Hong, Fenglu and Kamanuru, Vamsidhar and Rainton, Jay and Wu, Chen and Ji, Mengmeng and Li, Hanchen and Thakker, Urmish and Zou, James and Olukotun, Kunle (2025). <i>Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models</i>, CoRR.</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Luis Moneda</p>
+<p class="date">Created: 2026-01-21 Wed 05:55</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
