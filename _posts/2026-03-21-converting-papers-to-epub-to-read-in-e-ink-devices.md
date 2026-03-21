@@ -1,5 +1,14 @@
 ---
+layout: post
 title: "Converting papers to EPUB to read in e-ink devices"
+date: 2026-03-21
+lang: en
+ref: pdf-to-epub-feedback-loop
+comments: true
+author: moneda
+tags: ai epub kindle e-ink papers
+description: Converting research papers to EPUB for e-ink reading, and why a benchmark feedback loop changed everything
+image: ../../../images/pdf-to-epub/social-share-pdf-to-epub.png
 ---
 
 <h2 id="index">Index</h2>
@@ -30,7 +39,7 @@ Kobo, Boox, etc.</p>
 <h2 id="how-it-works">How it works</h2>
 <p>The conversion pipeline is short: OCR the paper, normalize markdown
 artifacts, then generate EPUB.</p>
-<p><img src="/images//conversion-pipeline.png" /></p>
+<p><img src="/images/pdf-to-epub-feedback-loop/conversion-pipeline.png" /></p>
 <h2 id="the-feedback-loop-breakthrough">The feedback loop
 breakthrough</h2>
 <p>I've been using it for 6 months, and it was ok. I accepted the many
