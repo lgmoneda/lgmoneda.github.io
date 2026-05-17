@@ -97,7 +97,7 @@ body {
 
 .gallery.gallery--mosaic .figure:nth-of-type(8n + 4) {
   grid-column: span 1;
-  grid-row: span 2;
+  grid-row: span 1;
 }
 
 .gallery.gallery--mosaic .figure:nth-of-type(8n + 5) {
@@ -107,7 +107,7 @@ body {
 
 .gallery.gallery--mosaic .figure:nth-of-type(8n + 6) {
   grid-column: span 2;
-  grid-row: span 1;
+  grid-row: span 2;
 }
 
 .gallery.gallery--mosaic .figure:nth-of-type(8n + 7) {
