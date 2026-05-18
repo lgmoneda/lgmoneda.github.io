@@ -94,12 +94,24 @@
   }
 
   function resetGalleryItem(item) {
+    var tileClasses = [
+      'gallery-tile',
+      'gallery-tile--hero',
+      'gallery-tile--feature',
+      'gallery-tile--landscape',
+      'gallery-tile--panorama',
+      'gallery-tile--portrait',
+      'gallery-tile--square',
+      'gallery-tile--wide'
+    ];
+
     item.style.flex = '';
     item.style.width = '';
     item.style.height = '';
     item.style.gridColumn = '';
     item.style.gridRow = '';
     item.style.removeProperty('--gallery-rotate');
+    item.classList.remove.apply(item.classList, tileClasses);
   }
 
   function layoutJustifiedGallery(gallery) {
@@ -202,10 +214,92 @@
     });
   }
 
+  function classifySmartTile(image, index, imageCount) {
+    var ratio = image.naturalWidth / image.naturalHeight;
+
+    if (index === 0 && imageCount > 1) {
+      return 'gallery-tile--hero';
+    }
+
+    if (ratio >= 2.2) {
+      return 'gallery-tile--panorama';
+    }
+
+    if (ratio >= 1.35) {
+      return 'gallery-tile--wide';
+    }
+
+    if (ratio <= 0.75) {
+      return 'gallery-tile--portrait';
+    }
+
+    if (imageCount >= 6 && index % 5 === 4) {
+      return 'gallery-tile--feature';
+    }
+
+    if (ratio >= 1.12) {
+      return 'gallery-tile--landscape';
+    }
+
+    return 'gallery-tile--square';
+  }
+
+  function applyTileOverride(item, fallbackClass) {
+    var image = item.querySelector('img');
+    var override = image && image.getAttribute('data-tile');
+    var allowedOverrides = [
+      'feature',
+      'hero',
+      'landscape',
+      'panorama',
+      'portrait',
+      'square',
+      'wide'
+    ];
+
+    if (!override) {
+      return fallbackClass;
+    }
+
+    if (allowedOverrides.indexOf(override) === -1) {
+      return fallbackClass;
+    }
+
+    return 'gallery-tile--' + override;
+  }
+
+  function layoutSmartMosaicGallery(gallery) {
+    var images = Array.prototype.slice.call(gallery.querySelectorAll('img'));
+    var items = images.map(getGalleryItem).filter(Boolean);
+
+    items.forEach(function (item, index) {
+      var image = images[index];
+      var tileClass = classifySmartTile(image, index, images.length);
+
+      resetGalleryItem(item);
+      prepareGalleryItem(item);
+      item.classList.add('gallery-tile');
+      item.classList.add(applyTileOverride(item, tileClass));
+    });
+  }
+
+  function setupSmartMosaicGalleries() {
+    var galleries = Array.prototype.slice.call(document.querySelectorAll('.gallery--smart-mosaic'));
+
+    galleries.forEach(function (gallery) {
+      var images = Array.prototype.slice.call(gallery.querySelectorAll('img'));
+
+      whenImagesReady(images, function () {
+        layoutSmartMosaicGallery(gallery);
+      });
+    });
+  }
+
   function setupGalleries() {
     setupGalleryLightbox();
     setupJustifiedGalleries();
     setupMosaicGalleries();
+    setupSmartMosaicGalleries();
   }
 
   window.addEventListener('resize', function () {
@@ -213,6 +307,7 @@
     resizeTimer = setTimeout(function () {
       setupJustifiedGalleries();
       setupMosaicGalleries();
+      setupSmartMosaicGalleries();
     }, 100);
   });
 
