@@ -68,9 +68,9 @@ the content I share here is a super great feeling.</p>
 sharing also pushed me to create a hidden subsection on my blog where I
 can write short-form text and publish it. I was also drawn to <a
 href="https://www.casafernandopessoa.pt/en/visit/temporary-exhibitions/game-disquiet/Construction/Loose-papers-found-inside-the-trunk?utm_source=chatgpt.com">Fernando
-Pessoa's trunk</a>, where he stored more than 25k pages from a myriad of
+Pessoa's trunk</a>, where he stored more than 27k pages from a myriad of
 written projects, and from where later people could organize the "Book
-of Disquiet", <a id="cite-pessoa2006livro-1"></a><span class="citation"
+of Disquiet" <a id="cite-pessoa2006livro-1"></a><span class="citation"
 data-cites="pessoa2006livro">(<a href="#ref-pessoa2006livro"
 role="doc-biblioref">Pessoa, 2006</a>)</span>, which is in my current
 top 3 favorite books. In my own trunk, which I call "the attic", I can
