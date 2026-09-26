@@ -1,118 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Em busca</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
+  <meta name="description" content="Um caderno ilustrado de referências, lugares e imagens de Em busca do tempo perdido, de Marcel Proust." />
+  <meta name="theme-color" content="#f5f1e8" />
+  <title>Em busca das referências perdidas · Marcel Proust</title>
+  <link rel="icon" href="data:," />
   <link rel="stylesheet" href="proust.css" />
+  <script src="proust.js" defer></script>
 </head>
 <body>
-  <div class="header-reveal-zone"></div>
-  <header>
-    <h1>Em busca das referências perdidas</h1>
-    <button class="menu-toggle" id="menuToggle">☰</button>
-    <nav class="dropdown-menu" id="dropdownMenu">
-      <ul>
-        <li><a href="#intro" data-section="intro">Introduction</a></li>
-        <li><a href="#combray" data-section="combray">Combray</a></li>
-        <li><a href="#section1" data-section="section1">The Méséglise Way</a></li>
-        <li><a href="#section2" data-section="section2">Swann's Way</a></li>
-        <li><a href="#section3" data-section="section3">Time Regained</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <header class="site-header">
+    <a class="site-title" href="#intro">Em busca das referências perdidas</a>
+    <details class="chapter-menu" id="chapter-menu">
+      <summary>Índice <span aria-hidden="true">☰</span></summary>
+      <nav aria-label="Índice do caderno"><ul>
+        <li><a href="#intro">Apresentação</a></li>
+        <li><a href="#lanterna">01 · A lanterna mágica</a></li>
+        <li><a href="#combray">02 · Combray</a></li>
+        <li><a href="#section1">03 · O caminho de Méséglise</a></li>
+        <li><a href="#section2">04 · No caminho de Swann</a></li>
+        <li><a href="#section3">05 · O tempo redescoberto</a></li>
+        <li><a href="#bibliografia">Fontes e notas</a></li>
+      </ul></nav>
+    </details>
   </header>
-
-  <main>
-  <section class="intro-section" id="intro">
-    <div class="intro-decorations">
-      <div class="decoration-element proust-portrait">
-        <img src="../images/em-busca-do-tempo-perdido/proust-portrait-2.png" alt="Marcel Proust portrait" />
-      </div>
+<main id="main-content">
+<section class="intro-section" id="intro" aria-labelledby="page-title">
+  <div class="intro-content">
+    <p class="eyebrow">Um caderno de leitura · Marcel Proust</p>
+    <h1 id="page-title">Em busca das<br><em>referências perdidas</em></h1>
+    <p class="original-title" lang="fr">À la recherche du temps perdu</p>
+    <p class="intro-description">Uma jornada pelas imagens, lugares e histórias que atravessam <cite>Em busca do tempo perdido</cite>. Um caderno ilustrado para acompanhar a leitura, uma referência de cada vez.</p>
+    <a class="reading-link" href="#lanterna">Começar pela lanterna mágica <span aria-hidden="true">↓</span></a>
+  </div>
+  <figure class="intro-portrait">
+    <img src="../images/em-busca-do-tempo-perdido/proust-portrait-2.webp" width="480" height="720" alt="Ilustração de Marcel Proust dizendo, em francês, ‘Não vá depressa demais’." fetchpriority="high" />
+    <figcaption>Sem pressa, pelo caminho de Proust.</figcaption>
+  </figure>
+</section>
+<nav class="reading-index" aria-label="Percurso de leitura">
+  <p class="eyebrow">Neste caderno</p>
+  <ol>
+    <li><a href="#lanterna"><span>01</span> A lanterna mágica</a></li>
+    <li><a href="#combray"><span>02</span> Combray</a></li>
+    <li><a href="#section1"><span>03</span> Méséglise</a></li>
+    <li><a href="#section2"><span>04</span> No caminho de Swann</a></li>
+    <li><a href="#section3"><span>05</span> O tempo redescoberto</a></li>
+  </ol>
+  <p class="index-note">Caderno em construção. As entradas e suas fontes estão sendo organizadas.</p>
+</nav>
+<section class="reference-section" id="lanterna" aria-labelledby="lanterna-title">
+  <div class="reference-heading">
+    <p class="eyebrow">01 / Uma história dentro da história</p>
+    <h2 id="lanterna-title">A lanterna mágica</h2>
+    <p class="section-subtitle">Geneviève de Brabant</p>
+  </div>
+  <div class="reference-layout">
+    <div class="reference-copy">
+      <p class="eyebrow">No caminho de Swann · Combray</p>
+      <blockquote>
+        <p>“Ao passo sacudido de seu cavalo, Golo, movido por atroz desígnio, saía da pequena floresta triangular que aveludava de um verde sombrio a vertente de uma colina e avançava aos solavancos para o castelo da pobre Geneviève de Brabant.”</p>
+        <footer>Marcel Proust · <cite>No caminho de Swann</cite><sup><a href="#nota-edicao" id="chamada-edicao" role="doc-noteref" aria-label="Nota 1: edição e página">1</a></sup></footer>
+      </blockquote>
+      <aside class="editorial-note">Entrada em preparação. A referência a Geneviève de Brabant já está selecionada; o comentário e a identificação da pintura ainda serão completados.</aside>
     </div>
-    <div class="intro-content">
-      <h2>À la recherche du temps perdu</h2>
-      <div class="intro-text">
-        <p>Essa é uma jornada ilustrada pela obra monumental de Marcel Proust, "Em Busca do Tempo Perdido". Esta experiência imersiva combina as profundas reflexões do autor sobre memória, tempo e natureza humana com recursos visuais para dar vida às suas paisagens literárias.</p>
-
-        <p>E edição utilizada para referência é a da Globo.</p>
-
-        <p>Ao percorrer estas referências ilustradas, você encontrará os principais locais, temas e momentos que definem esta obra-prima — desde a infância do narrador em Combray até as revelações do tempo recuperado. Cada seção oferece trechos textuais e interpretações visuais que iluminam a extraordinária visão literária de Proust.</p>
-
-        <p class="scroll-invitation">Arraste para tomar o caminho de Proust.</p>
-      </div>
-    </div>
-  </section>
-
+    <figure class="reference-art">
+      <a href="../images/em-busca-do-tempo-perdido/2025-07-27_05-57-46_screenshot.png" aria-label="Abrir a pintura em tamanho original">
+        <img src="../images/em-busca-do-tempo-perdido/genevieve.webp" width="1000" height="1241" alt="Pintura de uma mulher com uma criança e uma corça, junto a uma rocha na floresta." loading="lazy" decoding="async" />
+      </a>
+      <figcaption>Imagem selecionada para esta entrada. Autoria, título e fonte a confirmar. <span>Toque na imagem para ampliar.</span></figcaption>
+    </figure>
+  </div>
+</section>
 <section class="full-bleed-section" id="combray">
   <div class="image-container">
-    <img
-      src="../images/em-busca-do-tempo-perdido/combray-garden-realistic.png"
-      alt="Jardim em Combray"
-    />
-    <div class="text">Combray</div>
+    <img src="../images/em-busca-do-tempo-perdido/combray-garden-realistic.webp" alt="Jardim em Combray" loading="lazy" decoding="async" />
+    <div class="chapter-title"><span class="eyebrow">02 / Paisagens da leitura</span><h2>Combray</h2></div>
   </div>
   <div class="content-section plants-decoration">
     <div class="text-content">
+      <p class="editorial-note">Rascunho do protótipo. Os textos em inglês abaixo ainda precisam de revisão e conferência de fontes.</p>
+      <div lang="en" class="draft-text">
       <p>For a long time I used to go to bed early. Sometimes, when I had put out my candle, my eyes would close so quickly that I had not even time to say "I'm going to sleep." And half an hour later the thought that it was time to go to sleep would awaken me.</p>
 
       <p>The real voyage of discovery consists not in seeking new landscapes, but in having new eyes. In Combray, every street corner held a memory, every garden gate whispered secrets of the past. The hawthorn blossoms along the Méséglise way carried with them the essence of childhood summers.</p>
 
       <p>Memory is a strange thing. It can transport us across decades in an instant, triggered by the simplest sensation—the taste of a madeleine dipped in tea, the scent of lime blossoms on a summer evening.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="full-bleed-section" id="section1">
   <div class="image-container">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80" alt="Combray Village Morning" />
-    <div class="text">The Méséglise Way</div>
+    <img src="../images/em-busca-do-tempo-perdido/meseglise-landscape.webp" alt="Paisagem ilustrativa com montanhas e água" loading="lazy" decoding="async" />
+    <div class="chapter-title"><span class="eyebrow">03 / Paisagens da leitura</span><h2>O caminho de Méséglise</h2></div>
   </div>
   <div class="content-section pilriteiros-decoration">
     <div class="text-content">
+      <p class="editorial-note">Rascunho do protótipo. Os textos em inglês abaixo ainda precisam de revisão e conferência de fontes.</p>
+      <div lang="en" class="draft-text">
       <p>The two ways from Combray, Méséglise and Guermantes, have remained for me the prototype of all the ways that lead through life. They seemed to me to be as different from each other as the East is from the West.</p>
 
       <p>Along the Méséglise way, we would walk past Swann's property, catching glimpses through the hedge of his garden where pink hawthorns bloomed with an almost painful beauty. The very air seemed different here, charged with mystery.</p>
 
       <p>I remember how the light fell differently on the Méséglise way, how it seemed to illuminate not just the landscape but something deeper—the very essence of longing itself. The path wound through meadows where poppies blazed like scattered rubies.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="full-bleed-section" id="section2">
   <div class="image-container">
-    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1920&q=80" alt="Méséglise Path Afternoon" />
-    <div class="text">Swann's Way</div>
+    <img src="../images/em-busca-do-tempo-perdido/swann-landscape.webp" alt="Paisagem ilustrativa do percurso de leitura" loading="lazy" decoding="async" />
+    <div class="chapter-title"><span class="eyebrow">04 / Paisagens da leitura</span><h2>No caminho de Swann</h2></div>
   </div>
   <div class="content-section">
     <div class="text-content">
+      <p class="editorial-note">Rascunho do protótipo. Os textos em inglês abaixo ainda precisam de revisão e conferência de fontes.</p>
+      <div lang="en" class="draft-text">
       <p>Swann was one of those men who, having lived for a long time amid the illusions of love, have seen the most diverse types of women enhance or impair the happiness, the disappointments, the sufferings that they have caused him.</p>
 
       <p>The peculiar smile with which she would greet him sometimes in the early days of their acquaintance, when he was not yet in love with her, came back to him now with a mystery that it had never had for him then.</p>
 
       <p>And so it was that Swann's love for Odette became the great passion of his life, transforming him from a man of refined tastes and social ease into someone capable of the deepest suffering and the most exquisite joy.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="full-bleed-section" id="section3">
   <div class="image-container">
-    <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80" alt="Garden at Night" />
-    <div class="text">Time Regained</div>
+    <img src="../images/em-busca-do-tempo-perdido/time-landscape.webp" alt="Paisagem ilustrativa ao fim do percurso" loading="lazy" decoding="async" />
+    <div class="chapter-title"><span class="eyebrow">05 / Paisagens da leitura</span><h2>O tempo redescoberto</h2></div>
   </div>
   <div class="content-section">
     <div class="text-content">
+      <p class="editorial-note">Rascunho do protótipo. Os textos em inglês abaixo ainda precisam de revisão e conferência de fontes.</p>
+      <div lang="en" class="draft-text">
       <p>The real paradises are the paradises that we have lost. In the garden at night, under the starry sky, I understood that time was not lost but transformed, crystallized into art, into memory, into the eternal present of consciousness.</p>
 
       <p>All our final decisions are made in a state of mind that is not going to last. Yet somehow, in the quiet contemplation of memory, we find that what seemed lost forever has been preserved in the amber of recollection.</p>
 
       <p>The true journey of discovery consists not in seeking new landscapes, but in having new eyes. And in the end, we discover that the time we thought was lost was never lost at all—it was simply waiting for us to find the key that would unlock its treasures.</p>
+      </div>
     </div>
   </div>
 </section>
 
-  </main>
-
-  <script src="proust.js"></script>
+<section class="bibliography" id="bibliografia" aria-labelledby="bibliografia-title">
+  <p class="eyebrow">Fontes e notas</p>
+  <h2 id="bibliografia-title">À margem da leitura</h2>
+  <p>Proust, Marcel. <cite>Em busca do tempo perdido, vol. 1: No caminho de Swann.</cite> Editora Globo, 2012.</p>
+  <p id="nota-edicao" class="editorial-note" role="doc-footnote"><span>1.</span> Edição indicada no rascunho original. A página e o crédito da tradução do trecho da lanterna mágica ainda precisam ser conferidos. <a href="#chamada-edicao" role="doc-backlink" aria-label="Voltar ao trecho da lanterna mágica">Voltar ao trecho ↑</a></p>
+  <p class="editorial-note">As paisagens são ilustrações do percurso de leitura. Os textos de apoio das seções seguintes à lanterna mágica permanecem como rascunhos; a seleção ainda não constitui um catálogo completo da obra.</p>
+</section>
+</main>
+  <footer class="site-footer"><span>Em busca das referências perdidas</span><a href="#intro">Voltar ao início ↑</a></footer>
 </body>
 </html>

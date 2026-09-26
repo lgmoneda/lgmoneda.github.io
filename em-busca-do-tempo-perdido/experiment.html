@@ -1,51 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Em busca</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
+  <meta name="description" content="Um caderno ilustrado de referências, lugares e imagens de Em busca do tempo perdido, de Marcel Proust." />
+  <meta name="theme-color" content="#f5f1e8" />
+  <title>Em busca das referências perdidas · Marcel Proust</title>
+  <link rel="icon" href="data:," />
   <link rel="stylesheet" href="proust.css" />
+  <script src="proust.js" defer></script>
 </head>
 <body>
-  <div class="header-reveal-zone"></div>
-  <header>
-    <h1>Em busca dos perdidos nas referências</h1>
-    <button class="menu-toggle" id="menuToggle">☰</button>
-    <nav class="dropdown-menu" id="dropdownMenu">
-      <ul>
-        <li><a href="#intro" data-section="intro">Introduction</a></li>
-        <li><a href="#combray" data-section="combray">Combray</a></li>
-        <li><a href="#section1" data-section="section1">The Méséglise Way</a></li>
-        <li><a href="#section2" data-section="section2">Swann's Way</a></li>
-        <li><a href="#section3" data-section="section3">Time Regained</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <header class="site-header">
+    <a class="site-title" href="#intro">Em busca das referências perdidas</a>
+    <details class="chapter-menu" id="chapter-menu">
+      <summary>Índice <span aria-hidden="true">☰</span></summary>
+      <nav aria-label="Índice do caderno"><ul>
+        <li><a href="#intro">Apresentação</a></li>
+        <li><a href="#lanterna">01 · A lanterna mágica</a></li>
+        <li><a href="#combray">02 · Combray</a></li>
+        <li><a href="#section1">03 · O caminho de Méséglise</a></li>
+        <li><a href="#section2">04 · No caminho de Swann</a></li>
+        <li><a href="#section3">05 · O tempo redescoberto</a></li>
+        <li><a href="#bibliografia">Fontes e notas</a></li>
+      </ul></nav>
+    </details>
   </header>
-
-  <!-- index.html -->
-<main id="main-content">
-  <!-- será preenchido dinamicamente -->
-</main>
-
-<script>
-  fetch("test.html")
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("main-content").innerHTML = html;
-      // Wait a bit for DOM to settle, then initialize decorations
-      setTimeout(() => {
-        if (window.initializeDecorations) {
-          window.initializeDecorations();
-        }
-      }, 100);
-    })
-    .catch(error => {
-      console.error('Error loading content:', error);
-    });
-</script>
-
-
-  <script src="proust.js"></script>
+<main id="main-content" data-content-src="test.html" aria-busy="true"><p class="loading-message" role="status">Carregando o caderno…</p><noscript><p><a href="index.html">Abrir a versão completa do caderno</a></p></noscript></main>
+  <footer class="site-footer"><span>Em busca das referências perdidas</span><a href="#intro">Voltar ao início ↑</a></footer>
 </body>
 </html>
