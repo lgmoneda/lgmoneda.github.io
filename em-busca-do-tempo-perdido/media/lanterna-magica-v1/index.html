@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A lanterna mágica · Combray</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root { color-scheme: dark; font-family: Georgia, serif; background: #161512; color: #ece2cd; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: clamp(20px, 4vw, 56px); }
+    main { max-width: 1280px; margin: auto; }
+    header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    p { margin: 0; }
+    .eyebrow, .meta { font: 11px/1.8 system-ui, sans-serif; letter-spacing: .15em; color: #b0a28a; }
+    .eyebrow { text-transform: uppercase; }
+    h1 { font-weight: normal; font-size: clamp(26px, 4vw, 44px); margin: 7px 0 0; }
+    .projection { position: relative; }
+    canvas { display: block; width: 100%; height: auto; background: center / cover url('poster.jpg'); }
+    video { position: absolute; width: 1px; height: 1px; opacity: .01; pointer-events: none; }
+    button { margin-top: 14px; background: #332b20; color: #ece2cd; border: 1px solid #766449; border-radius: 4px; padding: 10px 18px; cursor: pointer; font: 14px system-ui; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 20px; line-height: 1.7; color: #b6aa95; font-size: 14px; }
+    a { color: #d7c39b; text-underline-offset: 4px; }
+    a:focus-visible { outline: 2px solid #d7c39b; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">Estudo I · Combray</p><h1>A lanterna mágica</h1></div><p class="meta">12 segundos · sem som · em loop</p></header>
+    <div class="projection">
+      <video src="lanterna-magica.mp4" muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <canvas width="1280" height="720" role="img" aria-label="Golo e o castelo projetados pela lanterna mágica nas paredes de um quarto em Combray"></canvas>
+    </div>
+    <button type="button" aria-pressed="false">Reproduzir a projeção</button>
+    <footer><p>Uma interpretação da atmosfera de <cite>No caminho de Swann</cite>.</p><a href="lanterna-magica.mp4" download>Baixar o vídeo ↓</a></footer>
+  </main>
+  <script>
+    const video = document.querySelector('video');
+    const canvas = document.querySelector('canvas');
+    const context = canvas.getContext('2d');
+    const button = document.querySelector('button');
+    let frame;
+    function draw() {
+      if (video.readyState >= 2) context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      if (!video.paused) frame = requestAnimationFrame(draw);
+    }
+    video.addEventListener('play', () => {
+      button.textContent = 'Pausar a projeção'; button.setAttribute('aria-pressed', 'true');
+      cancelAnimationFrame(frame); draw();
+    });
+    video.addEventListener('pause', () => {
+      button.textContent = 'Reproduzir a projeção'; button.setAttribute('aria-pressed', 'false');
+      cancelAnimationFrame(frame);
+    });
+    button.addEventListener('click', async () => {
+      if (!video.paused) return video.pause();
+      try { await video.play(); } catch (_) { button.textContent = 'Tentar reproduzir novamente'; }
+    });
+  </script>
+</body>
+</html>
