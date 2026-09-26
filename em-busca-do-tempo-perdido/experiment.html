@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Em busca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="proust.css" />
+</head>
+<body>
+  <div class="header-reveal-zone"></div>
+  <header>
+    <h1>Em busca dos perdidos nas referências</h1>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav class="dropdown-menu" id="dropdownMenu">
+      <ul>
+        <li><a href="#intro" data-section="intro">Introduction</a></li>
+        <li><a href="#combray" data-section="combray">Combray</a></li>
+        <li><a href="#section1" data-section="section1">The Méséglise Way</a></li>
+        <li><a href="#section2" data-section="section2">Swann's Way</a></li>
+        <li><a href="#section3" data-section="section3">Time Regained</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- index.html -->
+<main id="main-content">
+  <!-- será preenchido dinamicamente -->
+</main>
+
+<script>
+  fetch("test.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("main-content").innerHTML = html;
+      // Wait a bit for DOM to settle, then initialize decorations
+      setTimeout(() => {
+        if (window.initializeDecorations) {
+          window.initializeDecorations();
+        }
+      }, 100);
+    })
+    .catch(error => {
+      console.error('Error loading content:', error);
+    });
+</script>
+
+
+  <script src="proust.js"></script>
+</body>
+</html>
