@@ -115,7 +115,9 @@
       button.addEventListener('click', async () => {
         if (!video.paused) return video.pause();
         try { await video.play(); }
-        catch { button.textContent = 'Tentar reproduzir novamente'; }
+        catch (error) {
+          if (error.name !== 'AbortError') button.textContent = 'Tentar reproduzir novamente';
+        }
       });
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) video.pause();
