@@ -122,3 +122,24 @@ sup a { padding: .3rem; }
   .reference-art { max-width: 350px; margin: 2rem auto; }
   .plants-decoration::before, .pilriteiros-decoration::before { display: none; }
 }
+
+/* Content emitted by Org's HTML exporter. Keep text, captions and notes in Org. */
+.org-intro { margin-top: 1.75rem; font-size: 1.05rem; line-height: 1.8; }
+.org-intro .scroll-invitation { font-style: italic; color: var(--accent); }
+.reference-org-content { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.5rem 4rem; align-items: start; }
+.reference-org-content > * { grid-column: 1; }
+.reference-org-content > blockquote { margin: 0; }
+.reference-org-content > .figure { grid-column: 2; grid-row: 1 / span 3; }
+.org-content .figure { margin: 0; min-width: 0; }
+.org-content .figure img { width: 100%; height: auto; border: 1px solid var(--line); }
+.org-content .figure p:last-child { margin-top: .8rem; font-size: .85rem; color: var(--muted); }
+.org-content .figure .figure-number { display: none; }
+.org-content blockquote p { font-size: clamp(1.15rem, 2vw, 1.5rem); }
+.org-content .footref, .footnum { padding: .3rem; }
+.footdef { margin-top: 1rem; display: flex; gap: .6rem; align-items: baseline; }
+.footpara { margin: 0; min-width: 0; }
+@media (max-width: 700px) {
+  .reference-org-content { display: block; }
+  .reference-org-content > * + * { margin-top: 1.5rem; }
+  .reference-org-content > .figure { margin-top: 2rem; }
+}

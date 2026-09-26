@@ -30,7 +30,11 @@
   function initializeReading() {
     const sections = [...main.querySelectorAll('section[id]')];
     const links = [...menu.querySelectorAll('a')];
-    const themes = { intro: 0, lanterna: 0, combray: 1, section1: 1, section2: 2, section3: 3, bibliografia: 3 };
+    const chapters = sections.filter(section => !['intro', 'footnotes'].includes(section.id));
+    const themes = Object.fromEntries(chapters.map((section, index) => [
+      section.id, chapters.length > 1 ? Math.round(index / (chapters.length - 1) * 3) : 0
+    ]));
+    themes.footnotes = chapters.length > 1 ? 3 : 0;
     let pending = false;
     let previousStage = -1;
     function update() {

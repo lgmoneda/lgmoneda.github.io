@@ -1,59 +1,62 @@
 # Em busca das referências perdidas
 
-An illustrated reading notebook for Marcel Proust's *Em busca do tempo perdido*.
+The **Org note is the source of truth** for this illustrated Proust notebook:
 
-## Preview and editing
+- Org-roam ID: `5B137E92-A79C-46BF-9A35-05FAD1D52545`
+- Source: `/Users/luis.moneda/Library/CloudStorage/Dropbox/Agenda/roam/20250726200917-em_busca_do_tempo_perdido_referencias.org`
+- Existing Emacs command: `M-x lgm/org-roam-export-proust-page`
 
-From the repository root:
+Edit prose, headings, image links, captions, citations and footnotes in that note. Keep private notes and unpublished chapters tagged `:noexport:`. The note currently exports its introduction and **A lanterna mágica**; the four later draft chapters and the private lantern research are excluded.
+
+## Export and preview
+
+Run the existing command from the Org buffer. Its entry point in `dot-emacs/settings/publishing-settings.el` loads this repository's `export-proust.el`, then calls `lmoneda/export-proust-site`.
+
+The exporter writes all three generated files together:
+
+- `test.html`: the Org content fragment, retaining the original export destination.
+- `index.html`: the full standalone page, including content without a JavaScript fetch.
+- `experiment.html`: the fragment preview, with a loading state and fallback link.
+
+Navigation is generated from the exported headings. Re-exporting updates both page variants and their menus; there is no separate HTML synchronization command. The exporter uses the current buffer, including unsaved edits, without saving or modifying the Org source. It does not execute Babel, commit or push.
+
+For a local preview, run from the repository root:
 
 ```sh
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8765/em-busca-do-tempo-perdido/`.
+Open `http://127.0.0.1:8765/em-busca-do-tempo-perdido/`. The Org note's existing port-4000 link also works when the site is served there through Jekyll.
 
-- `test.html` is the editable HTML content fragment, retaining the original fragment/export workflow.
-- Run `python3 em-busca-do-tempo-perdido/sync-content.py` after editing it to update the standalone `index.html`. The standalone page includes all content without requiring JavaScript or a fetch.
-- `experiment.html` previews the fragment through a fetch. Use the local HTTP server for this page; on loading failure it links to the complete standalone page.
-- `proust.css` and `proust.js` are shared by both versions. The index navigation in both HTML shells should be updated when adding a chapter.
-- Original PNGs are retained in `../images/em-busca-do-tempo-perdido/`. The page serves smaller WebP derivatives, and the painting links to its original.
+## Presentation and assets
 
-## Review of the original prototype — 2026-09-26
+- `page-template.html` contains the page shell; `proust.css` and `proust.js` provide the shared presentation. Edit these files for layout changes.
+- `export-proust.el` derives from Org's HTML exporter. Org handles `:noexport:`, nested content, citations, captions and global footnotes. Citation processors and bibliography settings come from normal Org configuration/source keywords.
+- Top-level `ID` or `CUSTOM_ID` supplies the section anchor. `TITLE`, `IMG` and `ALT` remain supported. An `intro` section gets the opening layout. Entries with a figure use the painting layout; image-led entries without a figure use the landscape layout.
+- Inline image files are copied from paths relative to the Org file. Existing WebP derivatives are used only when newer than their originals; changed source images fall back to the original until re-optimized.
+- Original PNGs and the initial prototype remain preserved in Git. The earlier stock landscape copies remain available for future use, but are not published while their chapters are `:noexport:`.
 
-### Resolved
+## Review — 2026-09-26
 
-- The main page omitted the lantern reference from the experiment; both now include it, its painting, the excerpt, a footnote and source notes.
-- The fixed header was overridden by `position: relative`, then hidden by JavaScript. Replaced with a sticky header and a native disclosure index that works with touch, keyboard and without JavaScript. Escape returns focus to the index control.
-- The experiment's navigation pointed at missing content and queried sections before its fetch completed. Its content now initializes after loading, including incoming fragment links; HTTP failures have a visible fallback.
-- The introduction had overlapping fixed portrait art, excessive top space and repeated titles. The portrait now belongs to the introduction, with responsive typography and a visible reading route.
-- Forced scroll snapping, hover-only header recovery and large minimum heights impeded reading. Scrolling is native; chapter imagery and text have independent, content-appropriate heights.
-- Fixed-width images, narrow percentage text columns, justified text and viewport-based ornaments were unsuitable for small screens. Text, painting and navigation now reflow at narrow widths; decorations stay behind the margins.
-- Decoration creation was not invoked on the main page and could duplicate on the experiment. Replaced the generated animated decoration trees with lightweight CSS artwork.
-- Repeated scroll timers, debug logging and individual ornament selectors were removed. Theme updates use a single animation-frame callback and actual chapter positions, including on resize.
-- Night colors previously left captions/notes with hard-coded dark foregrounds. Foreground, background, links, borders and notes now use a coherent palette; color changes occur together. Reduced motion disables smooth scrolling.
-- Headings, language declarations, image descriptions, skip navigation and visible keyboard focus are now explicit. Navigation is in Portuguese; retained English draft text is marked `lang="en"`.
-- Test captions, fake footnotes and empty sections were replaced with meaningful source notes. Unverified draft passages are explicitly labeled.
-- Large images now have WebP display versions and lazy loading below the introduction. The painting required color-preserving conversion via a JPEG intermediate; direct PNG-to-WebP conversion produced incorrect colors and was rejected during visual review.
-- The existing remote landscape photos now have local copies, avoiding blank chapter images when the external host fails. No external font request is required.
+The first visual pass mistakenly treated the generated fragment as editable content and included chapters excluded by the Org source. This has been corrected: the actual Org note has been exported through the existing Emacs command, and generated content now follows the source.
 
-### Editorial work still needed
+The retained visual improvements cover responsive typography and image sizing, a sticky keyboard/touch index, normal scrolling, readable palettes, reduced-motion support, lighter image assets, and a working fragment preview. Navigation and lighting now follow the exported sections. The unused animated ornament machinery and repeated scroll timers were removed.
 
-This is a visual and functional revision of the existing prototype, not a completed reference catalogue. The English passages remain draft material from the original page; their wording and attribution have not been authenticated. The selected Portuguese excerpt is preserved from the original fragment, but its page and translation credit still need confirmation against the stated Globo 2012 edition. The painting's title, artist and source were absent from the original files and remain unidentified. The three stock landscapes illustrate the prototype; they are not documentation of Proust's locations.
+The source still contains a test caption and footnote, and the painting's attribution is not specified. Those source-authored placeholders are preserved; complete them in Org. Page/translation verification and a full reference catalogue remain editorial work.
 
-The branch's initial commit preserves all original project files and PNGs before this review.
+## Verification
 
-### Verification
+Run the exporter regression tests with an Emacs executable:
 
-- Viewed the original desktop page and the revised desktop introduction, lantern entry, landscape chapter and source notes in a browser.
-- Checked the revised layout at 390px and 320px using browser iframe viewports, including the narrow menu and lantern entry.
-- Exercised chapter navigation, menu closing after selection, Escape dismissal, and the experiment's direct `#lanterna` link.
-- Inspected the final dark palette and corrected the painting's color conversion by comparison with the original.
-- Validated HTML tag nesting, duplicate IDs, internal anchors, local file/image references, fragment parity and JavaScript syntax. Ran `git diff --check` for the scoped changes.
-- These checks do not constitute validation on physical mobile devices or a literary source audit.
+```sh
+emacs --batch -Q -l em-busca-do-tempo-perdido/tests/export-proust-test.el -f ert-run-tests-batch-and-exit
+```
 
-## Existing landscape sources
+The four tests cover excluded parents/children, generated navigation, global footnotes across sections, local image copying/captions, and duplicate IDs without overwriting the existing page. The renderer was byte-compiled and the live Emacs command was exercised on the real note. The rendered Org output was inspected in the browser.
 
-These URLs came from the original prototype. The local WebP copies retain the same photos:
+The preceding visual pass was also checked at desktop, 390px and 320px viewport widths. These are browser viewport checks, not physical mobile device tests or a literary source audit.
+
+## Original prototype landscape sources
 
 | Local file | Original source |
 | --- | --- |
