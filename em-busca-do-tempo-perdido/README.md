@@ -63,3 +63,7 @@ The preceding visual pass was also checked at desktop, 390px and 320px viewport 
 | `meseglise-landscape.webp` | https://images.unsplash.com/photo-1506744038136-46273834b3fb |
 | `swann-landscape.webp` | https://images.unsplash.com/photo-1500534623283-312aade485b7 |
 | `time-landscape.webp` | https://images.unsplash.com/photo-1503264116251-35a269479413 |
+
+## Lantern video
+
+The Org note embeds the lantern study in “A lanterna mágica” through an HTML export block. `proust.js` enhances the native video with the Safari-compatible canvas player; playback starts on request. Without JavaScript, native video controls remain available. Media files live in `media/lanterna-magica-v1/`. Keep the embed and its caption in Org when editing or re-exporting.
