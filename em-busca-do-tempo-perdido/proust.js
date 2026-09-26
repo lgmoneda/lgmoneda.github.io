@@ -85,6 +85,42 @@
         main.removeAttribute('aria-busy');
       }
     }
+    main.querySelectorAll('[data-lantern-player]').forEach(player => {
+      const video = player.querySelector('video');
+      const canvas = player.querySelector('canvas');
+      const button = player.querySelector('button');
+      const context = canvas.getContext('2d');
+      if (!context) return;
+      player.classList.add('lantern-enhanced');
+      canvas.hidden = false;
+      button.hidden = false;
+      video.controls = false;
+      video.setAttribute('aria-hidden', 'true');
+      let frame;
+      function draw() {
+        if (video.readyState >= 2) context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        if (!video.paused) frame = requestAnimationFrame(draw);
+      }
+      video.addEventListener('play', () => {
+        button.textContent = 'Pausar a projeção';
+        button.setAttribute('aria-pressed', 'true');
+        cancelAnimationFrame(frame);
+        draw();
+      });
+      video.addEventListener('pause', () => {
+        button.textContent = 'Reproduzir a projeção';
+        button.setAttribute('aria-pressed', 'false');
+        cancelAnimationFrame(frame);
+      });
+      button.addEventListener('click', async () => {
+        if (!video.paused) return video.pause();
+        try { await video.play(); }
+        catch { button.textContent = 'Tentar reproduzir novamente'; }
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) video.pause();
+      });
+    });
     initializeReading();
   }
   start();

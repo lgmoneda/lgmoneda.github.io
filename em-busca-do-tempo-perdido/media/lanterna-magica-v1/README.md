@@ -34,5 +34,5 @@ Verified the full MP4 decodes without errors; checked frame samples across the
 loop and played the canvas preview in Safari. The scene uses simple slide motion;
 the horse's legs are not articulated.
 
-This study is separate from the published reading page. The project's Org note
-(ID `5B137E92-A79C-46BF-9A35-05FAD1D52545`) remains the source for that page.
+This study is embedded in the reading page through the project's Org note
+(ID `5B137E92-A79C-46BF-9A35-05FAD1D52545`). The standalone preview remains available.
